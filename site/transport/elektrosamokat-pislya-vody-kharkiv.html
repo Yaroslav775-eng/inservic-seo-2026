@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт електросамоката після води у Харкові — InService</title>
+  <meta name="description" content="Електросамокат після води у Харкові: діагностика контролера, акумулятора, BMS, зарядного порту, дисплея, мотор-колеса, проводки та корозії. InService, вул. Дерев'янка, 58." />
+  <link rel="canonical" href="https://inservic.com.ua/elektrosamokat-pislya-vody-kharkiv/" />
+  <meta property="og:title" content="Ремонт електросамоката після води у Харкові — InService" />
+  <meta property="og:description" content="Після дощу або залиття не вмикайте і не заряджайте самокат. Перевіряємо контролер, АКБ/BMS, порт, дисплей, мотор-колесо і проводку." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" />
+<style>
+    :root {
+      --bg: #f3f6f9;
+      --card: #ffffff;
+      --text: #0f2b46;
+      --muted: #5f7184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0b63d3;
+      --blue-soft: #eef6ff;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12, 99, 206, .13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255, 157, 47, .24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: #111b29; color: #edf3fb; font-size: 13px; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 9px 0; }
+    .site-head {
+      margin: 18px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .brand small { display: block; color: var(--muted); margin-top: 2px; }
+    .head-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .phone { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      border-radius: 999px;
+      color: #38506a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumbs { margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--orange-dark); text-decoration: none; }
+    .hero { margin-bottom: 18px; }
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,157,47,.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f3f9ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .hero-copy { padding: 36px; }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(270px 220px at 80% 8%, rgba(255,157,47,.24), transparent 70%),
+        linear-gradient(180deg, #f8fbff, #eef5fc);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd8bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.03em; }
+    h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 760px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: var(--orange-soft); border: 1px solid #ffd4b5; color: #944114; font-size: 13px; font-weight: 800; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+    }
+    .btn-main { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff; box-shadow: 0 14px 28px rgba(242,101,34,.22); }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
+    .scooter-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 45px rgba(20,42,61,.08);
+    }
+    .scooter-photo {
+      height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef5;
+      margin-bottom: 16px;
+    }
+    .scooter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-stat { border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: #fbfdff; }
+    .hero-stat b { display:block; font-size: 20px; color: var(--orange-dark); margin-bottom: 3px; }
+    .section { margin: 18px 0; }
+    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.96); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 18px; }
+    .section-head p { max-width: 650px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .mini-card, .issue-card, .brand-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      min-height: 100%;
+    }
+    .issue-card { text-decoration: none; display: block; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .issue-card:hover, .brand-card:hover { transform: translateY(-3px); border-color: rgba(255,157,47,.62); box-shadow: 0 18px 30px rgba(20,42,61,.09); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff;
+      font-weight: 900; margin-bottom: 12px; box-shadow: 0 12px 22px rgba(242,101,34,.18);
+    }
+    .issue-card em, .brand-card em { display: inline-block; margin-top: 10px; color: var(--orange-dark); font-style: normal; font-weight: 900; font-size: 13px; }
+    .brand-card { text-decoration: none; color: inherit; display:block; }
+    .brand-name { display: block; font-size: 22px; font-weight: 900; margin-bottom: 6px; letter-spacing: -.02em; }
+    .price-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .price-table th, .price-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .price-table th { background: #17324d; color: #fff; font-size: 13px; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-table td:nth-child(2) { font-weight: 900; color: var(--orange-dark); white-space: nowrap; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .step::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--orange); color:#fff; font-weight: 900; margin-bottom: 10px; }
+    .faq { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px 18px; }
+    summary { cursor: pointer; font-weight: 900; color: var(--text); }
+    details p { margin-top: 10px; }
+    .callout { border-left: 4px solid var(--orange); background: #fff8f1; border-radius: 18px; padding: 16px 18px; color: #70411f; }
+    .seo-text { columns: 2; column-gap: 34px; }
+    .seo-text p { break-inside: avoid; }
+    .seo-copy { display: grid; gap: 18px; }
+    .seo-copy h3 { margin-top: 6px; }
+    .seo-copy p { font-size: 16px; }
+    .seo-copy ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy li { margin-bottom: 7px; }
+    .seo-copy ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy > h2 { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .seo-copy > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .seo-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .seo-copy th, .seo-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .seo-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .seo-copy tr:last-child td { border-bottom: 0; }
+    .symptom-table { display: grid; gap: 10px; }
+    .symptom-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr 0.9fr;
+      gap: 12px;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px;
+    }
+    .symptom-row strong { color: var(--text); }
+    .symptom-row span { color: var(--muted); }
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 20px;
+    }
+    .form-box {
+      border: 1px solid #ffd3b5;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff8f1, #fff);
+      padding: 22px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px 13px;
+      color: var(--muted);
+      min-height: 46px;
+    }
+    .field.wide { grid-column: 1 / -1; min-height: 82px; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .handoff-item { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .handoff-item b { display: block; color: var(--text); margin-bottom: 5px; }
+    .keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .keyword-list span { padding: 7px 10px; border-radius: 999px; background: #eef6ff; color: #255b92; font-size: 12px; font-weight: 800; }
+    .content-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .content-checklist div { border: 1px solid var(--line); border-radius: 16px; padding: 13px; background: #fbfdff; color: var(--muted); }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 9px 12px; border-radius: 999px; background: var(--blue-soft); color: #245a91; text-decoration: none; font-weight: 800; font-size: 13px; }
+    .long-copy { display: grid; gap: 14px; }
+    .long-copy h2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .long-copy h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .long-copy ul, .long-copy ol { margin: 0 0 6px; padding-left: 22px; color: var(--muted); }
+    .long-copy li { margin-bottom: 7px; }
+    .long-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .long-copy th, .long-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .long-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .long-copy tr:last-child td { border-bottom: 0; }
+    .footer-note { margin: 24px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4, .steps, .handoff-grid, .content-checklist, .symptom-row, .form-grid { grid-template-columns: 1fr; }
+      .field.wide { grid-column: auto; }
+      .hero-visual { border-left: 0; border-top: 1px solid var(--line); min-height: auto; }
+      .section-head { display: block; }
+      .seo-text { columns: 1; }
+      .site-head { align-items: flex-start; flex-direction: column; }
+      .head-actions { justify-content: flex-start; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Ремонт електросамоката після води у Харкові", "serviceType": "Діагностика та ремонт електросамоката після води", "areaServed": "Харків", "provider": {"@type": "LocalBusiness", "name": "InService", "url": "https://inservic.com.ua/", "telephone": "+38-067-652-60-04", "address": {"@type": "PostalAddress", "addressLocality": "Харків", "streetAddress": "вул. Дерев'янка, 58"}}, "offers": {"@type": "AggregateOffer", "priceCurrency": "UAH", "lowPrice": "100"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чи можна заряджати електросамокат після дощу?", "acceptedAnswer": {"@type": "Answer", "text": "Краще не заряджати самокат до перевірки, бо волога в порту, батареї або BMS може спричинити коротке замикання."}}, {"@type": "Question", "name": "Чи достатньо просто висушити електросамокат?", "acceptedAnswer": {"@type": "Answer", "text": "Не завжди. Зовні самокат може висохнути, але всередині деки, роз’ємів або плати може залишатися волога і корозія."}}, {"@type": "Question", "name": "Що перевіряють після води?", "acceptedAnswer": {"@type": "Answer", "text": "Контролер, акумулятор, BMS, зарядний порт, дисплей, мотор-колесо, проводку і роз’єми."}}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="container inner"><span>Сервісний центр InService у Харкові та Києві</span><span>Харків: вул. Дерев'янка, 58 · Пн-Сб 10:00-18:00, Неділя — вихідний</span></div></div>
+  <header class="container site-head"><div class="brand"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /><div><strong>Ремонт електротранспорту</strong><small>Після води, дощу, залиття, корозії</small></div></div><div class="head-actions"><a class="phone" href="tel:+380676526004">+38 (067) 652-60-04</a><a class="btn btn-main" href="#contact">Записатися</a></div></header>
+  <nav class="container nav" aria-label="Навігація сторінкою"><a href="remont-elektrosamokativ-kharkiv.html">Самокати</a><a href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html">Не заряджається</a><a href="elektrosamokat-ne-vmykayetsya-kharkiv.html">Не вмикається</a><a href="remont-kontrolera-elektrosamokata-kharkiv.html">Контролер</a><a href="#actions">Що робити</a><a href="#prices">Ціни</a><a href="#faq">FAQ</a><a href="#contact">Заявка</a></nav>
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Головна</a> / <a href="electric-transport.html">Електротранспорт</a> / <a href="remont-elektrosamokativ-kharkiv.html">Ремонт електросамокатів</a> / Після води</div>
+    <section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">Сторінка поломки</span><h1>Ремонт електросамоката після води у Харкові</h1><p class="lead">Якщо самокат потрапив під дощ, у калюжу або був залитий, не вмикайте і не заряджайте його до перевірки. Діагностуємо контролер, АКБ/BMS, порт зарядки, дисплей, мотор-колесо, проводку та корозію.</p><div class="chips"><span class="chip">Не заряджати до огляду</span><span class="chip">Діагностика від 100 грн</span><span class="chip">Харків, Дерев'янка 58</span></div><div class="btns"><a class="btn btn-main" href="#contact">Отримати консультацію</a><a class="btn btn-ghost" href="tel:+380676526004">Подзвонити</a></div></div><div class="hero-visual"><div class="scooter-card"><div class="scooter-photo"><img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Ремонт електросамоката після води" /></div><div class="hero-stats"><div class="hero-stat"><b>H2O</b><span>волога і корозія</span></div><div class="hero-stat"><b>CTRL</b><span>контролер</span></div><div class="hero-stat"><b>АКБ</b><span>BMS і батарея</span></div><div class="hero-stat"><b>від 100 грн</b><span>діагностика</span></div></div></div></div></div></div></section>
+    <section id="actions" class="section panel"><div class="section-head"><div><span class="eyebrow">Перші дії</span><h2>Що зробити одразу після води</h2></div><p>Головне — не погіршити стан електроніки. Волога плюс живлення часто дають коротке замикання.</p></div><div class="grid-3"><div class="mini-card"><span class="icon">OFF</span><h3>Вимкнути</h3><p>Не перевіряти “чи поїде”, якщо є підозра, що вода потрапила всередину.</p></div><div class="mini-card"><span class="icon">220</span><h3>Не заряджати</h3><p>Зарядка через мокрий порт або BMS може пошкодити батарею і плату.</p></div><div class="mini-card"><span class="icon">HOT</span><h3>Не гріти феном</h3><p>Гаряче повітря може пошкодити пластик, ущільнення і загнати вологу глибше.</p></div></div></section>
+    <section id="diagnostics" class="section panel"><div class="section-head"><div><span class="eyebrow">Діагностика</span><h2>Що перевіряє майстер після залиття</h2></div><p>Після води перевіряємо не один симптом, а весь ланцюг: від зарядного порту до контролера, батареї і мотор-колеса.</p></div><div class="symptom-table"><div class="symptom-row"><strong>Контролер і плати</strong><span>Окислення, коротке замикання, силові елементи, роз'єми.</span><em>Часто причина помилок і ривків</em></div><div class="symptom-row"><strong>АКБ / BMS</strong><span>Напруга, баланс, плата захисту, зарядний ланцюг.</span><em>Важливо для безпеки</em></div><div class="symptom-row"><strong>Порт, дисплей, мотор</strong><span>Зарядка, кнопка, датчики, мотор-колесо, проводка.</span><em>Дає повну картину ремонту</em></div></div></section>
+    <section id="prices" class="section panel"><div class="section-head"><div><span class="eyebrow">Ціни</span><h2>Орієнтовна вартість після води</h2></div><p>Фінальна ціна залежить від того, які вузли постраждали. Чесний формат — діагностика і погодження ремонту після огляду.</p></div><table class="price-table"><thead><tr><th>Послуга</th><th>Ціна</th><th>Коментар</th></tr></thead><tbody><tr><td>Діагностика після води</td><td>від 100 грн</td><td>Електроніка, АКБ, порт, проводка, мотор</td></tr><tr><td>Очищення контактів</td><td>від 300 грн</td><td>Окислення, роз'єми, локальна корозія</td></tr><tr><td>Ремонт контролера після води</td><td>від 400 грн</td><td>Після перевірки плати</td></tr><tr><td>Відновлення проводки</td><td>від 300 грн</td><td>Контакти, обриви, роз'єми</td></tr><tr><td>Ремонт зарядного порту</td><td>від 200 грн</td><td>Якщо не заряджається після вологи</td></tr></tbody></table></section>
+    <section id="seo-text" class="section panel"><div class="section-head"><div><span class="eyebrow">SEO-текст</span><h2>Повний текст сторінки</h2></div><p>Текст відрізняється від сторінок “не заряджається” і “не вмикається”: тут головний фокус — вода, корозія, коротке замикання і термінові дії.</p></div><div class="long-copy"><h2>Ремонт електросамоката після води у Харкові</h2>
+<p>Якщо електросамокат потрапив під сильний дощ, заїхав у глибоку калюжу, його помили водою або всередині деки з'явилась волога, техніку краще не вмикати і не заряджати до діагностики. Вода може потрапити в контролер, батарейний відсік, BMS, зарядний порт, дисплей, ручку газу, гальмівні датчики, мотор-колесо та роз'єми. У InService у Харкові майстер перевіряє не один вузол, а весь ланцюг, який міг постраждати від вологи.</p>
+<p>Головна небезпека води — не завжди миттєва поломка. Самокат може ще вмикатися після дощу, але всередині вже починається окислення контактів і корозія доріжок на платах. Через кілька днів можуть з'явитися помилки, ривки, відсутність зарядки, самовільне вимкнення або повна відмова запуску.</p>
+
+<h2>Що зробити одразу після потрапляння води</h2>
+<p>До приїзду в сервіс важливо не погіршити ситуацію. Не потрібно перевіряти “чи поїде”, підключати зарядку або сушити самокат гарячим повітрям. Такі дії можуть спровокувати коротке замикання чи загнати вологу глибше в роз'єми.</p>
+<ul>
+  <li>Вимкніть електросамокат, якщо він ще працює;</li>
+  <li>Не ставте його на зарядку;</li>
+  <li>Не використовуйте фен, обігрівач або гаряче повітря;</li>
+  <li>Витріть зовнішню воду сухою тканиною;</li>
+  <li>Не розбирайте батарею самостійно без досвіду;</li>
+  <li>Якомога швидше привезіть самокат на діагностику.</li>
+</ul>
+
+<h2>Які вузли перевіряємо після води</h2>
+<p>Після залиття важливо знайти не лише очевидну несправність, а й місця, де корозія може проявитися пізніше. Саме тому перевірка охоплює електроніку, живлення, механіку і контакти.</p>
+<table>
+  <thead><tr><th>Вузол</th><th>Ризик після води</th><th>Що перевіряємо</th></tr></thead>
+  <tbody>
+    <tr><td>Контролер</td><td>Коротке замикання, помилки, відсутність тяги</td><td>Плату, роз'єми, силові елементи, сліди окислення</td></tr>
+    <tr><td>Акумулятор і BMS</td><td>Блокування зарядки, просідання, небезпечний перегрів</td><td>Напругу, баланс, плату захисту, контакти батареї</td></tr>
+    <tr><td>Зарядний порт</td><td>Не заряджається або заряд іде нестабільно</td><td>Роз'єм, контакти, проводку, сліди вологи</td></tr>
+    <tr><td>Дисплей і кнопка</td><td>Самокат не вмикається, не реагує на кнопку</td><td>Плату дисплея, шлейфи, кнопку живлення</td></tr>
+    <tr><td>Мотор-колесо</td><td>Ривки, шум, помилки датчиків Холла</td><td>Кабель, фази, датчики, підшипники, герметичність</td></tr>
+    <tr><td>Проводка</td><td>Обриви, нестабільний контакт, періодичні помилки</td><td>Роз'єми в деці, рульовій стійці та місцях згину</td></tr>
+  </tbody>
+</table>
+
+<h2>Як проходить діагностика після залиття</h2>
+<p>Майстер уточнює, що саме сталося: самокат потрапив під дощ, був у калюжі, його мили, він стояв на балконі або перестав працювати після поїздки мокрою дорогою. Далі перевіряється, чи вмикали самокат після контакту з водою, чи ставили його на зарядку і які симптоми з'явилися першими.</p>
+<p>Після зовнішнього огляду майстер перевіряє електронні вузли, роз'єми, плату контролера, батарейний ланцюг, зарядний порт і мотор-колесо. Якщо видно окислення, потрібне очищення контактів і оцінка, чи не пошкоджені доріжки, елементи плати або ізоляція проводки.</p>
+
+<h2>Ремонт після води: що може знадобитися</h2>
+<p>У простих випадках достатньо діагностики, очищення, просушки вузлів і відновлення контактів. Якщо вода пошкодила плату, контролер, BMS, дисплей або проводку, обсяг робіт буде більшим. Не варто обіцяти фіксовану ціну без огляду, бо наслідки залиття можуть бути різними навіть у двох однакових моделях.</p>
+<table>
+  <thead><tr><th>Робота</th><th>Ціна від</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>Діагностика після води</td><td>від 100 грн</td><td>Огляд електроніки, живлення, портів і роз'ємів</td></tr>
+    <tr><td>Очищення контактів</td><td>від 300 грн</td><td>Залежить від кількості уражених місць</td></tr>
+    <tr><td>Ремонт контролера після води</td><td>від 400 грн</td><td>Після перевірки плати і силових елементів</td></tr>
+    <tr><td>Відновлення проводки</td><td>від 300 грн</td><td>Обриви, окислені контакти, пошкоджені роз'єми</td></tr>
+    <tr><td>Ремонт зарядного порту</td><td>від 200 грн</td><td>Якщо заряд іде нестабільно або не йде зовсім</td></tr>
+  </tbody>
+</table>
+
+<h2>Бренди, які приймаємо</h2>
+<p>InService працює з електросамокатами Xiaomi, Ninebot, Kugoo, Crosser, Giant, Proove, Koko City та іншими моделями. У Xiaomi та Ninebot після води часто перевіряють батарейний ланцюг, BMS, дисплей, контролер і зарядний порт. У Kugoo, Crosser і потужніших моделей додатково дивляться силову проводку, мотор-колесо, роз'єми та сліди перегріву.</p>
+
+<h2>Коли звертатися терміново</h2>
+<p>Не відкладайте діагностику, якщо після води самокат не заряджається, не вмикається, смикається, показує помилку, запахло гаром, гріється батарея або колесо важко обертається. Чим швидше прибрати вологу та перевірити контакти, тим більше шансів обійтися без дорогої заміни вузлів.</p>
+<p>Адреса сервісу для ремонту електротранспорту: Харків, вул. Дерев'янка, 58. Графік роботи: Пн-Сб з 10:00 до 18:00, неділя — вихідний. Перед візитом бажано зателефонувати і коротко описати, коли саме самокат намок і що після цього відбулося.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Чи можна заряджати електросамокат після дощу?</h3>
+<p>Краще не заряджати його до перевірки. Якщо волога потрапила в порт, батарею або BMS, зарядка може спричинити коротке замикання.</p>
+<h3>Чи достатньо просто висушити самокат?</h3>
+<p>Не завжди. Зовні самокат може бути сухим, але всередині деки, роз'ємів або плати може залишатися волога і починатися корозія.</p>
+<h3>Самокат після води вмикається. Чи треба їхати в сервіс?</h3>
+<p>Так, якщо був сильний дощ, калюжа або миття водою. Частина проблем проявляється не одразу, а через кілька днів.</p>
+<h3>Чи даєте гарантію на ремонт після води?</h3>
+<p>Умови гарантії залежать від ступеня пошкодження. Після діагностики майстер пояснює, які вузли можна відновити і які ризики залишаються.</p></div></section>
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Перелінковка</span><h2>Пов'язані сторінки</h2></div></div><div class="grid-4"><a class="issue-card" href="remont-elektrosamokativ-kharkiv.html"><h3>Ремонт електросамокатів</h3><p>Основна сторінка послуги.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html"><h3>Не заряджається</h3><p>Порт, BMS, АКБ, зарядний пристрій.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-ne-vmykayetsya-kharkiv.html"><h3>Не вмикається</h3><p>Кнопка, дисплей, батарея, контролер.</p><em>Перейти</em></a><a class="issue-card" href="remont-kontrolera-elektrosamokata-kharkiv.html"><h3>Ремонт контролера</h3><p>Плата управління після води.</p><em>Перейти</em></a></div></section>
+    <section id="contact" class="section panel"><div class="section-head"><div><span class="eyebrow">Заявка</span><h2>Залишити заявку після води</h2></div><p>Опишіть, що сталося: дощ, калюжа, миття, волога всередині, не заряджається, не вмикається або показує помилку.</p></div><div class="grid-2"><div class="form-box"><h3>Що повідомити майстру</h3><div class="form-grid"><div class="field">Ім'я</div><div class="field">Телефон</div><div class="field">Бренд і модель</div><div class="field">Коли намок</div><div class="field wide">Коментар: після дощу, після калюжі, не вмикається, не заряджається, був запах, гріється, помилка на дисплеї.</div></div><div class="btns" style="margin-top:16px;"><a class="btn btn-main" href="tel:+380676526004">Подзвонити</a></div></div><div class="mini-card"><h3>Адреса сервісу</h3><p><strong>Харків:</strong> вул. Дерев'янка, 58</p><p><strong>Телефони:</strong> <a href="tel:+380676526004">+38 (067) 652-60-04</a>, <a href="tel:+380631492439">+38 (063) 149-24-39</a>, <a href="tel:+380665474037">+38 (066) 547-40-37</a></p><p><strong>Графік:</strong> Пн-Сб: 10:00-18:00 · Неділя — вихідний</p><p>Якщо самокат ще вмикається після води, краще не тестувати його повторно до огляду.</p></div></div></section>
+    <div class="footer-note">Прототип сторінки поломки для InService: електросамокат після води у Харкові.</div>
+  </main>
+</body>
+</html>

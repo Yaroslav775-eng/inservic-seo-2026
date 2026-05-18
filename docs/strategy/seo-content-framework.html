@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контент-матрица — Ремонт электросамокатов InService</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1b2431;
+      --muted: #607184;
+      --line: #d9e2ee;
+      --brand: #f26522;
+      --brand-soft: #fff2ea;
+      --accent: #0b63d3;
+      --good: #edf9f0;
+      --warn: #fff7ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(880px 320px at 0% -10%, #deebff 0%, transparent 60%),
+        radial-gradient(640px 260px at 100% -10%, #ffe6d9 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #152132;
+      color: #edf3fb;
+      font-size: 13px;
+    }
+
+    .topbar .inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .hero,
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 24px;
+      box-shadow: 0 20px 46px rgba(18, 34, 58, 0.07);
+    }
+
+    .hero {
+      margin: 28px 0 16px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .hero-copy,
+    .hero-side,
+    .panel {
+      padding: 30px;
+    }
+
+    .hero-side {
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(260px 180px at 100% 0%, rgba(242, 101, 34, 0.16), transparent 70%),
+        linear-gradient(180deg, #f9fbff 0%, #f1f6fd 100%);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #ffd7c2;
+      background: var(--brand-soft);
+      color: #9d4316;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 18px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #d5e1f4;
+      background: #f3f8ff;
+      color: #284b77;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .section {
+      margin: 16px 0;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      padding: 16px;
+    }
+
+    .mini b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .note {
+      border-radius: 18px;
+      padding: 16px 18px;
+      border: 1px solid #ffd8c4;
+      background: linear-gradient(180deg, #fffaf7 0%, #fff2ea 100%);
+    }
+
+    .ok {
+      border-color: #cfe5d6;
+      background: linear-gradient(180deg, #fafffb 0%, var(--good) 100%);
+    }
+
+    .warn {
+      border-color: #f2e1b8;
+      background: linear-gradient(180deg, #fffdf8 0%, var(--warn) 100%);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f6f9fd;
+      color: #506278;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .quote {
+      margin-top: 10px;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px dashed #cdd9ea;
+      background: #fbfdff;
+      color: #425266;
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 8px 0 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h1 { font-size: 31px; }
+      h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · Контент-матрица · Электросамокаты · Харьков</div>
+      <div>Документ для подготовки текстов и наполнения страниц</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Следующий документ после структуры</div>
+          <h1>Контент-матрица для SEO-страниц<br />по ремонту электросамокатов</h1>
+          <p>Этот документ нужен нам не для публикации “как есть”, а как рабочая система. По нему мы потом сможем быстро наполнять страницы без хаоса: будет понятно, какой текст нужен на каждой странице, какой блок за что отвечает и где должен быть SEO, а где продажа.</p>
+          <div class="chips">
+            <span class="chip">Главная страница услуги</span>
+            <span class="chip">Страница бренда</span>
+            <span class="chip">Страница поломки</span>
+            <span class="chip">Текстовый каркас</span>
+            <span class="chip">Понятные заготовки</span>
+          </div>
+          <div class="note">
+            <strong>Главная идея:</strong> сначала мы утверждаем не финальные тексты, а <strong>систему наполнения</strong>. После этого уже можно быстро писать или генерировать содержимое для каждой страницы без потери логики.
+          </div>
+        </div>
+        <div class="hero-side">
+          <h3>Что мы здесь фиксируем</h3>
+          <div class="grid-2">
+            <div class="mini ok">
+              <b>Типы страниц</b>
+              Главная услуга, бренд, поломка.
+            </div>
+            <div class="mini ok">
+              <b>Набор блоков</b>
+              Какие смысловые блоки должны быть у каждого типа страницы.
+            </div>
+            <div class="mini ok">
+              <b>Смысл текста</b>
+              Что именно должен объяснять каждый блок.
+            </div>
+            <div class="mini warn">
+              <b>Не финальный копирайтинг</b>
+              Пока не пишем “идеальную редактуру”, а делаем рабочую матрицу наполнения.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>1. Как мы делим тексты по функциям</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <b>SEO-текст</b>
+          Объясняет Google, о чем страница: услуга, город, симптом, бренд, типовые работы.
+        </div>
+        <div class="mini">
+          <b>Коммерческий текст</b>
+          Объясняет клиенту, почему стоит оставить заявку именно здесь: сроки, гарантия, честная диагностика, цены.
+        </div>
+        <div class="mini">
+          <b>Текст доверия</b>
+          Убирает сомнение: отзывы, реальные модели, адреса, контакты, этапы ремонта, бренд InService.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>2. Что обязательно должно быть на любой странице</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Элемент</th>
+            <th>Что это</th>
+            <th>Зачем нужен</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Title</td>
+            <td>SEO-заголовок для выдачи</td>
+            <td>Помогает ранжироваться по нужному запросу</td>
+          </tr>
+          <tr>
+            <td>Meta Description</td>
+            <td>Короткое описание страницы</td>
+            <td>Повышает понятность сниппета и CTR</td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>Главный заголовок страницы</td>
+            <td>Фиксирует главный интент</td>
+          </tr>
+          <tr>
+            <td>Вступительный абзац</td>
+            <td>Первое краткое объяснение</td>
+            <td>Сразу показывает, что пользователь попал по адресу</td>
+          </tr>
+          <tr>
+            <td>Блок цен или ориентиров</td>
+            <td>Прайс / диапазоны</td>
+            <td>Снижает тревожность и усиливает конверсию</td>
+          </tr>
+          <tr>
+            <td>CTA</td>
+            <td>Призыв оставить заявку</td>
+            <td>Двигает к целевому действию</td>
+          </tr>
+          <tr>
+            <td>FAQ</td>
+            <td>Вопросы и ответы</td>
+            <td>Закрывает возражения и усиливает SEO</td>
+          </tr>
+          <tr>
+            <td>Внутренние ссылки</td>
+            <td>Связи с другими страницами</td>
+            <td>Создает кластер и помогает навигации</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>3. Контент-каркас для главной страницы услуги</h2>
+      <p>Главная страница услуги — это центральная страница всей темы. Она должна быть одновременно SEO-страницей, продающей страницей и картой дальнейших переходов.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Блок</th>
+            <th>Что в нем пишем</th>
+            <th>Пример условного текста</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero</td>
+            <td>Коротко объясняем услугу, город, сроки, гарантию и CTA</td>
+            <td>Ремонт электросамокатов в Харькове. Диагностика, понятные цены, гарантия и быстрые сроки.</td>
+          </tr>
+          <tr>
+            <td>Преимущества</td>
+            <td>4-6 причин обратиться именно в InService</td>
+            <td>Бесплатная диагностика при ремонте, работа с популярными брендами, честный прайс, 2 точки приема.</td>
+          </tr>
+          <tr>
+            <td>Бренды</td>
+            <td>Показываем, какие марки ремонтируем и куда можно перейти дальше</td>
+            <td>Xiaomi, Ninebot, Kugoo, Crosser, Giant, Prove, Кока Сити.</td>
+          </tr>
+          <tr>
+            <td>Поломки</td>
+            <td>Показываем популярные симптомы и ссылки на дочерние страницы</td>
+            <td>Не включается, не заряжается, быстро садится аккумулятор, после воды или удара.</td>
+          </tr>
+          <tr>
+            <td>Прайс</td>
+            <td>Даём ориентиры по базовым работам</td>
+            <td>Диагностика от 100 грн, ремонт контроллера, замена АКБ, ремонт после воды и т.д.</td>
+          </tr>
+          <tr>
+            <td>Как проходит ремонт</td>
+            <td>5 шагов процесса</td>
+            <td>Прием → диагностика → согласование → ремонт → тест и выдача.</td>
+          </tr>
+          <tr>
+            <td>Отзывы</td>
+            <td>Живые короткие отзывы или микро-кейсы</td>
+            <td>“Починили Xiaomi за день”, “понятно объяснили причину поломки”.</td>
+          </tr>
+          <tr>
+            <td>FAQ</td>
+            <td>Закрываем типовые вопросы</td>
+            <td>Сколько стоит, сколько длится, есть ли гарантия, можно ли починить после воды.</td>
+          </tr>
+          <tr>
+            <td>Контакты и заявка</td>
+            <td>Адрес, телефоны, карта, форма</td>
+            <td>Оставьте модель и проблему — сориентируем по цене и срокам.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="quote">
+        <strong>Рабочий принцип:</strong> главная страница не должна быть “статьей ради статьи”. Она должна объяснять услугу, показывать цены, вести в бренды и поломки и подталкивать к заявке.
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>4. Контент-каркас для страницы бренда</h2>
+      <p>Страница бренда нужна, когда человек уже знает свою марку самоката и ищет более точное решение.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Блок</th>
+            <th>Что в нем пишем</th>
+            <th>Пример для Xiaomi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero под бренд</td>
+            <td>Название бренда + город + краткое УТП</td>
+            <td>Ремонт электросамокатов Xiaomi в Харькове.</td>
+          </tr>
+          <tr>
+            <td>Какие модели ремонтируем</td>
+            <td>Список популярных моделей</td>
+            <td>M365, Pro 2, 4 Pro и другие.</td>
+          </tr>
+          <tr>
+            <td>Типовые поломки бренда</td>
+            <td>Те неисправности, которые чаще встречаются именно у этой марки</td>
+            <td>BMS, контроллер, аккумулятор, дисплей, мотор-колесо.</td>
+          </tr>
+          <tr>
+            <td>Прайс</td>
+            <td>Ориентиры по популярным работам</td>
+            <td>Диагностика, ремонт контроллера, замена аккумулятора.</td>
+          </tr>
+          <tr>
+            <td>Почему InService</td>
+            <td>Доверие и аргументы</td>
+            <td>Опыт, запчасти, гарантия, понятный процесс.</td>
+          </tr>
+          <tr>
+            <td>FAQ по бренду</td>
+            <td>Отдельные вопросы по этой марке</td>
+            <td>Какие модели ремонтируете? Сколько занимает замена АКБ?</td>
+          </tr>
+          <tr>
+            <td>Перелинковка</td>
+            <td>Ссылка назад на главную страницу услуги и при необходимости на поломки</td>
+            <td>Не заряжается Xiaomi? Перейдите в страницу симптома.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="quote">
+        <strong>Рабочий принцип:</strong> страница бренда должна быть не копией главной, а уточнением. Она отвечает на вопрос: “Вы ремонтируете именно мой бренд?”
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>5. Контент-каркас для страницы поломки</h2>
+      <p>Страница поломки нужна, когда человек не ищет бренд, а ищет решение конкретной проблемы.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Блок</th>
+            <th>Что в нем пишем</th>
+            <th>Пример для “не заряжается”</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hero по симптому</td>
+            <td>Формулируем проблему человеческим языком</td>
+            <td>Электросамокат не заряжается — что делать.</td>
+          </tr>
+          <tr>
+            <td>Возможные причины</td>
+            <td>Объясняем 3-6 вероятных причин</td>
+            <td>Разъем, зарядка, BMS, аккумулятор, проводка.</td>
+          </tr>
+          <tr>
+            <td>Что мы проверяем</td>
+            <td>Коротко и понятно объясняем диагностику</td>
+            <td>Проверяем вход питания, BMS, напряжение и состояние батареи.</td>
+          </tr>
+          <tr>
+            <td>Какие работы могут понадобиться</td>
+            <td>Показываем возможные сценарии ремонта</td>
+            <td>Замена разъема, ремонт платы, замена аккумулятора.</td>
+          </tr>
+          <tr>
+            <td>Ориентир по цене</td>
+            <td>Даем диапазон, не обещая финальную смету без диагностики</td>
+            <td>Точная стоимость после диагностики, но базовые ориентиры показываем.</td>
+          </tr>
+          <tr>
+            <td>Когда нельзя откладывать</td>
+            <td>Добавляем чувство срочности там, где это уместно</td>
+            <td>Если самокат греется, искрит или резко теряет заряд — лучше не откладывать.</td>
+          </tr>
+          <tr>
+            <td>FAQ</td>
+            <td>Закрываем страхи и возражения</td>
+            <td>Можно ли ездить дальше? Опасно ли это? Сколько длится ремонт?</td>
+          </tr>
+          <tr>
+            <td>Перелинковка</td>
+            <td>Ссылаемся на бренды и на главную услугу</td>
+            <td>Если это Xiaomi — можно перейти на брендовую страницу Xiaomi.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="quote">
+        <strong>Рабочий принцип:</strong> страница поломки должна отвечать на мысль клиента: “У меня вот такая проблема — кто мне сейчас нормально объяснит, что с этим делать?”
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>6. Какой объем текста нужен</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Тип страницы</th>
+            <th>Минимум</th>
+            <th>Комфортный объем</th>
+            <th>Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Главная страница услуги</td>
+            <td>1200–1600 слов</td>
+            <td>1800–2500 слов</td>
+            <td>Тут важны и SEO, и продажа, и перелинковка</td>
+          </tr>
+          <tr>
+            <td>Страница бренда</td>
+            <td>800–1200 слов</td>
+            <td>1200–1800 слов</td>
+            <td>Нужно показать знание бренда, но без воды</td>
+          </tr>
+          <tr>
+            <td>Страница поломки</td>
+            <td>700–1000 слов</td>
+            <td>1000–1500 слов</td>
+            <td>Важно писать ясно и конкретно под симптом</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>7. Что мы подготавливаем сейчас “для себя”</h2>
+      <div class="grid-2">
+        <div class="mini ok">
+          <b>Не финальные тексты</b>
+          А набор текстовых сценариев для каждого типа страницы.
+        </div>
+        <div class="mini ok">
+          <b>Не идеальную редактуру</b>
+          А понятные заготовки, которые потом можно доработать.
+        </div>
+        <div class="mini ok">
+          <b>Не хаотичное наполнение</b>
+          А систему, по которой каждая новая страница делается быстро и одинаково качественно.
+        </div>
+        <div class="mini warn">
+          <b>Не распыление</b>
+          Сначала 1 сильная главная, потом бренды и поломки, потом масштабирование.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>8. Какой следующий шаг после этой матрицы</h2>
+      <div class="note">
+        <strong>Следующий рабочий шаг:</strong> на основе этой матрицы составить таблицу по конкретным страницам.<br /><br />
+        Для каждой страницы у нас должно появиться:
+        <br />1. URL
+        <br />2. H1
+        <br />3. Title
+        <br />4. Meta Description
+        <br />5. Блоки
+        <br />6. Что именно писать в каждом блоке
+      </div>
+    </section>
+  </main>
+
+  <div class="container footer">
+    Контент-матрица · InService · рабочий документ для подготовки текстов
+  </div>
+</body>
+</html>

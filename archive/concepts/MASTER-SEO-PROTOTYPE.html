@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MASTER SEO PROTOTYPE — InService</title>
+  <style>
+    :root{
+      --bg:#f3f6fb;--card:#fff;--line:#d8e1ee;--text:#1f2a37;--muted:#5b6b7b;
+      --brand:#f26522;--brand-soft:#fff3ec;--ok:#198754;--blue:#0b57d0;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#eef3fb 0,#f8fbff 100%);color:var(--text);line-height:1.55}
+    .wrap{max-width:1220px;margin:0 auto;padding:20px}
+    .hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+    h1{margin:0 0 8px;font-size:34px}
+    h2{margin:0 0 10px;font-size:26px}
+    h3{margin:0 0 8px;font-size:19px}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid #ffd8c4;background:var(--brand-soft);color:#9a4014}
+
+    .nav{position:sticky;top:0;z-index:10;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:14px}
+    .nav a{color:var(--blue);text-decoration:none;margin-right:12px;font-size:14px}
+
+    .section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+
+    .block{border:1px dashed #cfd9e7;border-radius:10px;padding:12px;background:#fff;margin:10px 0}
+    .tag{display:inline-block;font-size:12px;border:1px solid #d9e6ff;background:#eef4ff;color:#1e4da3;border-radius:999px;padding:3px 8px}
+    .mini{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff;font-size:14px}
+
+    table{width:100%;border-collapse:collapse;border:1px solid var(--line);background:#fff;font-size:14px;border-radius:10px;overflow:hidden}
+    th,td{border-bottom:1px solid #e8edf4;padding:9px;text-align:left}
+    th{background:var(--brand-soft)}
+
+    .map{display:grid;grid-template-columns:1fr 90px 1fr;gap:10px;align-items:start}
+    .col-title{font-size:20px;margin:0 0 10px}
+    .node{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff;margin-bottom:8px}
+    .node.main{border-color:#9ec5ff;background:#eef5ff}
+    .node .title{font-weight:700}
+    .url{font-family:Consolas,monospace;font-size:12px;color:#20486e;word-break:break-word}
+    .middle{display:flex;flex-direction:column;gap:26px;align-items:center;padding-top:54px;color:#6c7d90}
+    .arrow{font-size:24px;line-height:1}
+
+    .flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .step{border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px}
+    .step b{color:var(--blue)}
+
+    .check{margin:0;padding-left:18px}
+    .check li{margin:6px 0}
+    .ok{color:var(--ok);font-weight:700}
+
+    .footer{font-size:13px;color:var(--muted);text-align:center;padding:8px 0 2px}
+
+    @media (max-width:980px){
+      .grid2,.grid3,.grid4,.flow{grid-template-columns:1fr}
+      .map{grid-template-columns:1fr}
+      .middle{display:none}
+      h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>MASTER ПРОТОТИП: открыл и сразу понял</h1>
+      <p class="muted">Для страницы “Ремонт электросамокатов в Харькове” + структура дочерних страниц RU/UA.</p>
+      <div class="chips">
+        <span class="chip">Что будет на странице</span>
+        <span class="chip">Какие страницы связаны</span>
+        <span class="chip">Как запускать по неделям</span>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="#page">1. Страница услуги</a>
+      <a href="#map">2. Карта RU/UA</a>
+      <a href="#links">3. Логика ссылок</a>
+      <a href="#plan">4. План запуска</a>
+      <a href="#approve">5. Что утвердить</a>
+    </nav>
+
+    <section class="section" id="page">
+      <h2>1) Как выглядит страница услуги</h2>
+      <div class="block">
+        <h3>Первый экран <span class="tag">Конверсия</span></h3>
+        <p class="muted">H1 + УТП + 2 кнопки: “Оставить заявку” и “Смотреть цены”.</p>
+      </div>
+
+      <div class="grid4">
+        <div class="mini"><b>Гарантия</b><br/>до 6 месяцев</div>
+        <div class="mini"><b>Скорость</b><br/>ремонт от 1 часа</div>
+        <div class="mini"><b>Опыт</b><br/>профильные мастера</div>
+        <div class="mini"><b>Запчасти</b><br/>ходовые в наличии</div>
+      </div>
+
+      <div class="block">
+        <h3>Бренды <span class="tag">SEO охват</span></h3>
+        <div class="grid4">
+          <div class="mini">Xiaomi</div><div class="mini">Ninebot</div><div class="mini">Kugoo</div><div class="mini">Dualtron</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>Цены и сроки <span class="tag">Коммерческий фактор</span></h3>
+        <table>
+          <thead><tr><th>Услуга</th><th>Цена от</th><th>Срок</th></tr></thead>
+          <tbody>
+            <tr><td>Диагностика</td><td>0–300 грн</td><td>30–60 мин</td></tr>
+            <tr><td>Ремонт контроллера</td><td>1200 грн</td><td>1 день</td></tr>
+            <tr><td>Замена аккумулятора</td><td>2500 грн</td><td>1 день</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="block">
+        <h3>Поломки <span class="tag">Проблемные запросы</span></h3>
+        <div class="grid4">
+          <div class="mini">Не включается</div>
+          <div class="mini">Не заряжается</div>
+          <div class="mini">После воды</div>
+          <div class="mini">Потеря мощности</div>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>FAQ + Контакты + Финальная форма <span class="tag">Дожим</span></h3>
+        <p class="muted">В конце страницы закрываем возражения и повторяем CTA на заявку.</p>
+      </div>
+    </section>
+
+    <section class="section" id="map">
+      <h2>2) Карта страниц RU/UA</h2>
+      <div class="map">
+        <div>
+          <h3 class="col-title">RU ветка</h3>
+          <div class="node main"><div class="title">Главная RU</div><div class="url">/ru/remont-elektrosamokatov-kharkov/</div></div>
+          <div class="node"><div class="title">Поломка: не включается</div><div class="url">/ru/remont-elektrosamokatov-kharkov/ne-vklyuchaetsya/</div></div>
+          <div class="node"><div class="title">Поломка: не заряжается</div><div class="url">/ru/remont-elektrosamokatov-kharkov/ne-zaryazhaetsya/</div></div>
+          <div class="node"><div class="title">Бренд: Xiaomi</div><div class="url">/ru/remont-elektrosamokatov-kharkov/xiaomi/</div></div>
+          <div class="node"><div class="title">Бренд: Kugoo</div><div class="url">/ru/remont-elektrosamokatov-kharkov/kugoo/</div></div>
+        </div>
+
+        <div class="middle">
+          <div>hreflang</div>
+          <div class="arrow">⇄</div>
+          <div class="arrow">⇄</div>
+          <div class="arrow">⇄</div>
+          <div class="arrow">⇄</div>
+          <div class="arrow">⇄</div>
+        </div>
+
+        <div>
+          <h3 class="col-title">UA ветка</h3>
+          <div class="node main"><div class="title">Головна UA</div><div class="url">/remont-elektrosamokativ-kharkiv/</div></div>
+          <div class="node"><div class="title">Поломка: не вмикається</div><div class="url">/remont-elektrosamokativ-kharkiv/ne-vmykaetsya/</div></div>
+          <div class="node"><div class="title">Поломка: не заряджається</div><div class="url">/remont-elektrosamokativ-kharkiv/ne-zaryadzhayetsya/</div></div>
+          <div class="node"><div class="title">Бренд: Xiaomi</div><div class="url">/remont-elektrosamokativ-kharkiv/xiaomi/</div></div>
+          <div class="node"><div class="title">Бренд: Kugoo</div><div class="url">/remont-elektrosamokativ-kharkiv/kugoo/</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="links">
+      <h2>3) Логика ссылок (очень просто)</h2>
+      <div class="grid3">
+        <div class="mini"><b>Шаг 1</b><br/>Главная RU ссылается на все RU дочерние.</div>
+        <div class="mini"><b>Шаг 2</b><br/>Главная UA ссылается на все UA дочерние.</div>
+        <div class="mini"><b>Шаг 3</b><br/>Каждая дочерняя ссылается обратно на свою главную.</div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <h2>4) План запуска по неделям</h2>
+      <div class="flow">
+        <div class="step"><b>Нед 1–2</b><br/>Главные страницы RU+UA</div>
+        <div class="step"><b>Нед 3–4</b><br/>Страницы поломок RU+UA</div>
+        <div class="step"><b>Нед 5–6</b><br/>Страницы брендов RU+UA</div>
+        <div class="step"><b>Нед 7–8</b><br/>Проверка результатов и точечное расширение</div>
+      </div>
+    </section>
+
+    <section class="section" id="approve">
+      <h2>5) Что нужно утвердить сейчас</h2>
+      <ul class="check">
+        <li>Название главной услуги (RU/UA)</li>
+        <li>Список первых 4 поломок</li>
+        <li>Список первых 4 брендов</li>
+        <li>Диапазоны цен и сроков</li>
+      </ul>
+      <p class="ok">После этого можно сразу запускать производство контента.</p>
+    </section>
+
+    <div class="footer">Формат сделан специально как “открыл и понял”, без технической каши.</div>
+  </div>
+</body>
+</html>

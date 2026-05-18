@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService Prototype Map</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --text: #17324d;
+      --muted: #617487;
+      --accent: #ff9d2f;
+      --accent-2: #fff0df;
+      --line: #dde6ee;
+      --shadow: 0 16px 40px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(255,157,47,0.18), transparent 28%),
+        linear-gradient(180deg, #f8fafc 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 40px 0 64px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(255,157,47,0.16), rgba(255,255,255,0.95));
+      border: 1px solid rgba(255,157,47,0.28);
+      border-radius: 32px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(23,50,77,0.12);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.08;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .panel {
+      grid-column: span 12;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    .panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,157,47,0.55);
+      box-shadow: 0 16px 30px rgba(23,50,77,0.10);
+    }
+
+    .card.primary {
+      background: linear-gradient(180deg, #fff7ef, #ffffff);
+      border-color: rgba(255,157,47,0.32);
+    }
+
+    .card .label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      color: #b56b07;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .card span {
+      color: var(--muted);
+      line-height: 1.55;
+      display: block;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .tree {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .tree-box {
+      padding: 18px;
+      border-radius: 20px;
+      background: #fbfdff;
+      border: 1px solid var(--line);
+    }
+
+    .tree-box strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (min-width: 980px) {
+      .panel.half { grid-column: span 6; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">InService / рабочая карта проекта</div>
+      <h1>Один вход в проект, одна логика страниц, один набор файлов</h1>
+      <p class="lead">
+        Этот файл нужен как точка входа: отсюда можно быстро открыть главную, хаб электротранспорта,
+        страницу электросамокатов, стратегические документы и архив старых концептов.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Основные рабочие страницы</h2>
+        <p>Это три файла, с которыми мы работаем в первую очередь и которые дальше можно спокойно улучшать без хаоса.</p>
+        <div class="cards">
+          <a class="card primary" href="site/inservic-homepage-copy-2026-05-15.html">
+            <div class="label">Главная</div>
+            <strong>Копия живой главной</strong>
+            <span>Основной файл для встраивания нового блока “Электротранспорт” и новых иконок разделов.</span>
+          </a>
+          <a class="card primary" href="site/transport/electric-transport.html">
+            <div class="label">Хаб</div>
+            <strong>Ремонт электротранспорта</strong>
+            <span>Навигационная страница второго уровня: типы устройств, переходы в направления, понятная структура.</span>
+          </a>
+          <a class="card primary" href="site/transport/remont-elektrosamokativ-kharkiv.html">
+            <div class="label">Money Page</div>
+            <strong>Ремонт електросамокатів у Харкові</strong>
+            <span>Первая эталонная SEO-страница: семантика, бренды, поломки, цены, FAQ, заявки и CTA.</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="panel half">
+        <h2>Дочерние ветки самокатов</h2>
+        <p>Эти страницы нужны уже после того, как мы утвердим логику хаба и главной страницы самокатов.</p>
+        <div class="cards">
+          <a class="card" href="site/brands/xiaomi.html">
+            <div class="label">Бренды</div>
+            <strong>Xiaomi, Ninebot, Kugoo и другие</strong>
+            <span>Отдельные брендовые заготовки лежат в папке <code>site/brands/</code>.</span>
+          </a>
+          <a class="card" href="site/issues/ne-zaryazhaetsya.html">
+            <div class="label">Поломки</div>
+            <strong>Не заряжается, не включается, АКБ, вода</strong>
+            <span>Отдельные заготовки по проблемам лежат в папке <code>site/issues/</code>.</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="panel half">
+        <h2>Стратегические документы</h2>
+        <p>Тут лежат наши опорные HTML-документы по семантике, контенту и структуре. Их удобно держать отдельно от верстки.</p>
+        <div class="cards">
+          <a class="card primary" href="docs/strategy/electric-transport-seo-roadmap.html">
+            <div class="label">Roadmap</div>
+            <strong>Electric Transport SEO Roadmap</strong>
+            <span>Главная карта запуска: URL, этапы, блоки страниц, бренды, поломки и приоритеты.</span>
+          </a>
+          <a class="card" href="docs/strategy/seo-structure-plan.html">
+            <div class="label">Структура</div>
+            <strong>SEO Structure Plan</strong>
+            <span>Логика уровней, хабов, money-pages и развития ветки самокатов.</span>
+          </a>
+          <a class="card" href="docs/strategy/seo-content-framework.html">
+            <div class="label">Контент</div>
+            <strong>SEO Content Framework</strong>
+            <span>Какие блоки и какие типы текстов нужны на страницах.</span>
+          </a>
+          <a class="card primary" href="docs/strategy/semantic-core-electric-transport.html">
+            <div class="label">Семантика</div>
+            <strong>Semantic Core Electric Transport</strong>
+            <span>Новое ядро по всем страницам электротранспорта: запросы, интент, частотность, этапы и решение по URL.</span>
+          </a>
+          <a class="card primary" href="docs/handoff/remont-elektrosamokativ-kharkiv-handoff.html">
+            <div class="label">Handoff</div>
+            <strong>ТЗ для верстки: электросамокаты Харьков</strong>
+            <span>Отдельный документ для верстальщика: SEO-паспорт, структура блоков, ключи, schema и правила переноса.</span>
+          </a>
+          <a class="card" href="docs/strategy/semantic-core-scooters.html">
+            <div class="label">Семантика</div>
+            <strong>Semantic Core Scooters</strong>
+            <span>Семантическое ядро, кластеры и опорные запросы по ветке самокатов.</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Иерархия, которую мы держим</h2>
+        <p>Чтобы дальше не рвать структуру, работаем по этой лестнице: сначала тип устройства, потом уже бренд или поломка.</p>
+        <div class="tree">
+          <div class="tree-box">
+            <strong>Уровень 1</strong>
+            <ul class="list">
+              <li>Главная сайта</li>
+              <li>Крупные сервисные категории</li>
+              <li>Электротранспорт как отдельный вход</li>
+            </ul>
+          </div>
+          <div class="tree-box">
+            <strong>Уровень 2</strong>
+            <ul class="list">
+              <li>Электросамокаты</li>
+              <li>Электроскутеры</li>
+              <li>Электровелосипеды</li>
+              <li>Гироскутеры / гироборды / моноколеса</li>
+            </ul>
+          </div>
+          <div class="tree-box">
+            <strong>Уровень 3</strong>
+            <ul class="list">
+              <li>Бренды электросамокатов</li>
+              <li>Поломки электросамокатов</li>
+              <li>Потом — аналогичные ветки для других устройств</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-note">
+          Рабочее правило: сначала дорабатываем главную и хаб, потом главную страницу самокатов, и только после этого расширяем бренды и поломки.
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Архив и старые концепты</h2>
+        <p>Ничего не потеряли: ранние версии и демо вынесены отдельно, чтобы они не мешали в основном потоке работы, но были под рукой.</p>
+        <div class="cards">
+          <a class="card" href="archive/concepts/MASTER-SEO-PROTOTYPE.html">
+            <div class="label">Архив</div>
+            <strong>Concepts</strong>
+            <span>Ранние презентационные и структурные версии лежат в <code>archive/concepts/</code>.</span>
+          </a>
+          <a class="card" href="archive/demos/simple-prototype/index.html">
+            <div class="label">Демо</div>
+            <strong>Demos</strong>
+            <span>Упрощенные демо-схемы и маленькие тестовые сценарии лежат в <code>archive/demos/</code>.</span>
+          </a>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
+
+
+

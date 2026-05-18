@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — Слайд-прототип для клиента</title>
+  <style>
+    :root {
+      --bg:#0f172a;
+      --surface:#ffffff;
+      --text:#0f172a;
+      --muted:#5b6472;
+      --brand:#f26522;
+      --line:#d8e1ee;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, #1e293b, #0f172a);
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    .dock {
+      position: fixed;
+      right: 14px;
+      top: 14px;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .dock a {
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.1);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      backdrop-filter: blur(4px);
+    }
+
+    .slide {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 26px 18px;
+      scroll-snap-align: start;
+    }
+    .slides {
+      scroll-snap-type: y mandatory;
+    }
+
+    .card {
+      width: min(1000px, 94vw);
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 24px 48px rgba(0,0,0,.25);
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 12px;
+      border: 1px solid #ffd8c2;
+      background: #fff4ec;
+      color: #9f4517;
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    h1,h2 {
+      margin: 0 0 10px;
+      line-height: 1.2;
+      letter-spacing: -.2px;
+    }
+    h1 { font-size: 40px; }
+    h2 { font-size: 30px; }
+    p { margin: 0 0 10px; color: var(--muted); }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+    .box b { display: block; margin-bottom: 4px; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr 60px 1fr;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: stretch;
+    }
+    .node {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+    .main {
+      border-color: #ffc7a7;
+      background: #fff8f3;
+    }
+    .arrow {
+      display: grid;
+      place-items: center;
+      color: #8ca0b9;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .url {
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      color: #3b5877;
+      word-break: break-word;
+      margin-top: 6px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+    .step b { color: #0a63d8; }
+
+    .final {
+      background: linear-gradient(135deg, #f26522 0%, #ff8a52 100%);
+      color: #fff;
+      border: none;
+    }
+    .final p { color: rgba(255,255,255,.95); }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .grid2, .grid3, .timeline { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="dock">
+    <a href="#s1">1</a>
+    <a href="#s2">2</a>
+    <a href="#s3">3</a>
+    <a href="#s4">4</a>
+    <a href="#s5">5</a>
+  </div>
+
+  <main class="slides">
+    <section class="slide" id="s1">
+      <article class="card">
+        <span class="kicker">Слайд 1 / Что делаем</span>
+        <h1>Главная страница услуги + дочерние страницы</h1>
+        <p>Цель: закрыть спрос по “ремонт электросамокатов Харьков” без перегруза сайта.</p>
+        <div class="grid3">
+          <div class="box"><b>Главная</b>1 страница услуги</div>
+          <div class="box"><b>Бренды</b>отдельные страницы</div>
+          <div class="box"><b>Поломки</b>отдельные страницы</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide" id="s2">
+      <article class="card">
+        <span class="kicker">Слайд 2 / Как ходит пользователь</span>
+        <h2>Простая логика перехода</h2>
+        <div class="flow">
+          <div class="node main">
+            <b>Главная услуги</b>
+            <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <b>Страница бренда</b>
+            <div class="url">/ru/.../xiaomi/</div>
+          </div>
+          <div class="arrow">←</div>
+          <div class="node">
+            <b>Возврат</b>
+            <div class="url">обратно на главную</div>
+          </div>
+        </div>
+        <div class="flow" style="margin-top:10px;">
+          <div class="node main">
+            <b>Главная услуги</b>
+            <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <b>Страница поломки</b>
+            <div class="url">/ru/.../ne-zaryazhaetsya/</div>
+          </div>
+          <div class="arrow">←</div>
+          <div class="node">
+            <b>Возврат</b>
+            <div class="url">обратно на главную</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide" id="s3">
+      <article class="card">
+        <span class="kicker">Слайд 3 / Что на главной</span>
+        <h2>Блоки главной страницы</h2>
+        <div class="grid3">
+          <div class="box"><b>Hero</b>H1 + УТП + CTA</div>
+          <div class="box"><b>Доверие</b>Гарантия, сроки, опыт</div>
+          <div class="box"><b>Бренды</b>Xiaomi, Ninebot, Kugoo, Dualtron</div>
+          <div class="box"><b>Цены</b>Таблица работ и сроков</div>
+          <div class="box"><b>Поломки</b>Не включается, не заряжается…</div>
+          <div class="box"><b>FAQ + Контакты</b>Вопросы, карта, форма</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="slide" id="s4">
+      <article class="card">
+        <span class="kicker">Слайд 4 / Сколько страниц</span>
+        <h2>Стартовый объем без перегруза</h2>
+        <div class="grid2">
+          <div class="box">
+            <b>RU</b>
+            <p>1 главная + 4 бренда + 4 поломки</p>
+            <p><b>Итого: 9 страниц</b></p>
+          </div>
+          <div class="box">
+            <b>UA</b>
+            <p>1 главная + 4 бренда + 4 поломки</p>
+            <p><b>Итого: 9 страниц</b></p>
+          </div>
+        </div>
+        <p>Всего старт: <b>18 страниц</b> (управляемо и реально).</p>
+      </article>
+    </section>
+
+    <section class="slide" id="s5">
+      <article class="card final">
+        <span class="kicker" style="border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.2);color:#fff;">Слайд 5 / План</span>
+        <h2 style="color:#fff;">План запуска на 8 недель</h2>
+        <div class="timeline">
+          <div class="step"><b>Неделя 1–2</b><br/>Главные RU + UA</div>
+          <div class="step"><b>Неделя 3–4</b><br/>Поломки RU + UA</div>
+          <div class="step"><b>Неделя 5–6</b><br/>Бренды RU + UA</div>
+          <div class="step"><b>Неделя 7–8</b><br/>Проверка и дожим</div>
+        </div>
+        <p style="margin-top:10px;"><b>Следующий шаг:</b> утверждаем 4 бренда + 4 поломки и начинаем тексты.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

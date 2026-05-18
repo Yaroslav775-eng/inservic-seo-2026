@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт гиробордов в Харькове — InService</title>
+  <meta name="description" content="Прототип страницы InService по ремонту гиробордов в Харькове." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1c2430;
+      --muted: #5f6d7f;
+      --line: #dae3ef;
+      --brand: #f26522;
+      --brand-dark: #d94e0f;
+      --brand-soft: #fff3ec;
+      --accent: #0b63d3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 300px at 0% -10%, #e4ecff 0%, transparent 60%),
+        radial-gradient(700px 260px at 100% -10%, #ffe8dc 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+    .topbar { background: #101826; color: #fff; font-size: 13px; }
+    .topbar .inner { padding: 8px 0; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .site-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 18px 0 12px;
+      border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 16px 18px;
+      box-shadow: 0 14px 30px rgba(18, 34, 58, 0.08);
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 14px; }
+    .brand-wrap img { width: 165px; height: auto; display: block; }
+    .brand-copy { font-size: 13px; color: var(--muted); }
+    .brand-copy strong { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
+    .head-meta { text-align: right; font-size: 13px; color: var(--muted); }
+    .breadcrumbs { margin: 0 0 12px; font-size: 13px; color: var(--muted); }
+    .breadcrumbs a { color: var(--brand); text-decoration: none; }
+    .hero { padding: 28px 0 20px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 14px; }
+    .panel { border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 18px; box-shadow: 0 14px 30px rgba(18, 34, 58, 0.08); }
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; color: #9f4316; border: 1px solid #ffd9c5; background: var(--brand-soft); border-radius: 999px; padding: 4px 10px; margin-bottom: 10px; }
+    h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.15; }
+    h2 { margin: 0 0 10px; font-size: 26px; line-height: 1.2; }
+    h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.2; }
+    p { margin: 0 0 10px; color: var(--muted); }
+    .chips, .pill-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .chip, .pill-links a {
+      border: 1px solid #d5e2f6; background: #f4f8ff; color: #285181; border-radius: 999px; padding: 6px 10px;
+      font-size: 12px; text-decoration: none; font-weight: 700;
+    }
+    .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn { display: inline-block; text-decoration: none; border-radius: 10px; font-size: 14px; font-weight: 700; padding: 10px 14px; }
+    .btn-main { background: var(--brand); color: #fff; }
+    .btn-main:hover { background: var(--brand-dark); }
+    .btn-ghost { border: 1px solid var(--line); color: var(--text); background: #fff; }
+    .btn-ghost:hover { border-color: #ffc8ac; background: #fff8f3; }
+    .hero-visual {
+      min-height: 100%; display: grid; align-items: start; gap: 14px; padding: 22px;
+      background: radial-gradient(220px 160px at 100% 0%, rgba(242, 101, 34, 0.16), transparent 70%), linear-gradient(180deg, #fdfefe 0%, #f3f8ff 100%);
+      border-radius: 14px;
+    }
+    .hero-kicker { display: inline-flex; width: fit-content; border-radius: 999px; background: rgba(255,255,255,0.94); border: 1px solid var(--line); padding: 7px 12px; font-size: 12px; font-weight: 700; color: #1d375c; }
+    .hero-stat { border: 1px solid rgba(207,219,235,.9); border-radius: 16px; background: rgba(255,255,255,.92); padding: 14px; }
+    .hero-stat b { display: block; margin-bottom: 4px; font-size: 18px; }
+    .hero-stat span { color: var(--muted); font-size: 14px; }
+    .section { margin-bottom: 14px; }
+    .grid-3, .grid-4 { display: grid; gap: 10px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .mini { border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%); padding: 14px 12px; }
+    .mini b { display: block; margin-bottom: 4px; color: var(--text); }
+    .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .card-link {
+      display: block; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 18px; padding: 16px 15px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); box-shadow: 0 12px 28px rgba(18,34,58,0.06);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card-link:hover { transform: translateY(-3px); border-color: #ffc5a6; box-shadow: 0 18px 35px rgba(18,34,58,0.1); }
+    .card-link.current { border-color: #ffc5a6; background: linear-gradient(180deg, #fffaf6 0%, #fff3ec 100%); }
+    .card-link b { display:block; margin-bottom:8px; font-size:18px; color: var(--text); }
+    .card-link span { display:block; color: var(--muted); font-size:14px; }
+    .card-link em { display:inline-flex; margin-top:12px; padding:5px 10px; border-radius:999px; border:1px solid #ffd3be; background:#fff5ef; color:#a44716; font-size:11px; font-style:normal; font-weight:700; }
+    .callout { margin-top: 12px; border: 1px solid #ffd5bf; background: #fff7f2; border-radius: 12px; padding: 12px 14px; color: #8f3f16; font-size: 14px; font-weight: 600; }
+    footer { margin: 16px 0 28px; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 980px) {
+      .hero-grid, .card-grid, .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .site-head { flex-direction: column; align-items: flex-start; }
+      .head-meta { text-align: left; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 24px; }
+    }
+    @media (max-width: 640px) {
+      .hero-grid, .card-grid, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · Харьков · Пн-Сб 10:00–18:00</div>
+      <div>+38 (067) 652-60-04 · Telegram · Viber</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="site-head">
+      <div class="brand-wrap">
+        <a href="../russian-scooter-page.html"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /></a>
+        <div class="brand-copy">
+          <strong>Сервисный центр InService</strong>
+          Ремонт техники, электротранспорта и электроники в Харькове и Киеве
+        </div>
+      </div>
+      <div class="head-meta">
+        <div>г. Харьков, Проспект Науки, 17</div>
+        <div>г. Харьков, ул. Деревянка, 58</div>
+        <div><strong>+38 (067) 652-60-04</strong> · <strong>+38 (063) 149-24-39</strong> · <strong>+38 (066) 547-40-37</strong></div>
+      </div>
+    </section>
+
+    <div class="breadcrumbs">
+      <a href="electric-transport.html">Ремонт электротранспорта</a> / Ремонт гиробордов в Харькове
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="panel">
+          <span class="eyebrow">Поддерживающее направление</span>
+          <h1>Ремонт гиробордов в Харькове</h1>
+          <p>Гироборды логично держать как отдельную услугу внутри общего блока электротранспорта, но не смешивать их с самокатами.</p>
+          <div class="chips">
+            <span class="chip">Диагностика</span>
+            <span class="chip">Коммерческая посадочная</span>
+            <span class="chip">SEO-структура</span>
+            <span class="chip">В стиле InService</span>
+          </div>
+          <div class="btns">
+            <a href="electric-transport.html" class="btn btn-main">Вернуться к хабу электротранспорта</a>
+            <a href="../russian-scooter-page.html#structure" class="btn btn-ghost">Вернуться к структуре</a>
+          </div>
+        </article>
+        <aside class="panel">
+          <div class="hero-visual">
+            <div class="hero-kicker">Будущая сервисная страница</div>
+            <div class="hero-stat"><b>Что здесь будет</b><span>Прайс, симптомы, типовые работы, доверие, FAQ и заявка под конкретное направление.</span></div>
+            <div class="hero-stat"><b>Зачем эта страница</b><span>Направление стоит держать в структуре как отдельную услугу второй волны.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>Что раскроем на полной версии</h2>
+      <div class="grid-4">
+        <div class="mini"><b>Типовые работы</b>Платы управления, корпус, батареи, колеса, зарядка.</div>
+        <div class="mini"><b>Частые симптомы</b>Не включается, не держит заряд, не едет, проблемы после удара.</div>
+        <div class="mini"><b>Цены и сроки</b>Компактный прайс под частые ремонты и диагностику.</div>
+        <div class="mini"><b>Доверие и SEO</b>Страница усиливает навигацию и общую архитектуру услуг.</div>
+      </div>
+      <div class="callout">Направление стоит держать в структуре как отдельную услугу второй волны.</div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Прототип страницы направления в рамках структуры InService.
+  </footer>
+</body>
+</html>

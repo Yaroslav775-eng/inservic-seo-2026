@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — Полная схема страниц (электросамокаты)</title>
+  <style>
+    :root {
+      --brand: #f26522;
+      --ink: #1d1d1f;
+      --muted: #5d6670;
+      --line: #e6e6e6;
+      --soft: #f6f6f6;
+      --ok: #17803d;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: var(--ink); line-height: 1.55; background: #fff; }
+    .container { width: min(1160px, 92%); margin: 0 auto; }
+    .top { background: #111; color: #fff; font-size: 13px; }
+    .top .container { padding: 8px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .hero { padding: 28px 0 20px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #fafafa 0%, #fff 100%); }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    h2 { margin: 0 0 10px; font-size: 26px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p { margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .badge { display: inline-block; margin: 0 8px 8px 0; padding: 4px 9px; border-radius: 999px; font-size: 12px; border: 1px solid #ffd8c6; background: #fff5f0; color: #a44717; }
+    .btn { display: inline-block; text-decoration: none; padding: 9px 14px; border-radius: 6px; font-weight: 700; font-size: 14px; }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-ghost { border: 1px solid #ccc; color: #333; }
+    .grid2, .grid3 { display: grid; gap: 12px; }
+    .grid2 { grid-template-columns: 1fr 1fr; }
+    .grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fff; }
+    .block { padding: 24px 0; }
+    .alt { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .page-link { display: block; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: #0a4ea5; margin-bottom: 8px; background: #fff; }
+    .page-link:hover { border-color: #ffceb3; background: #fffaf7; }
+    .tree { border: 1px dashed #cfcfcf; border-radius: 8px; padding: 12px; background: #fff; }
+    ul { margin: 0; padding-left: 18px; }
+    .ok { color: var(--ok); font-weight: 700; }
+    .mono { font-family: Consolas, monospace; font-size: 13px; }
+    @media (max-width: 900px) { .grid2, .grid3 { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="container">
+      <div>InService · Харьков</div>
+      <div>Полная схема: главная + дочерние страницы</div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Главная страница услуги (money page)</h1>
+      <p class="muted">Это центральная страница, от которой идут ссылки на бренды и поломки.</p>
+      <span class="badge">RU и UA версии</span>
+      <span class="badge">Внутренняя перелинковка</span>
+      <span class="badge">SEO + понятная структура</span>
+      <p style="margin-top:10px;">
+        <a class="btn btn-primary" href="#ru-pages">Смотреть RU структуру</a>
+        <a class="btn btn-ghost" href="#ua-pages">Смотреть UA структуру</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container grid2">
+      <div class="card">
+        <h2>Главные URL</h2>
+        <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/</a>
+        <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/</a>
+        <p class="muted">Обе страницы зеркальные по смыслу и связаны hreflang.</p>
+      </div>
+      <div class="card">
+        <h2>Логика ссылок</h2>
+        <ul>
+          <li>Главная ссылается на все дочерние страницы.</li>
+          <li>Каждая дочерняя ссылается обратно на главную.</li>
+          <li>RU страница ссылается на RU дочерние, UA на UA дочерние.</li>
+          <li>Между RU и UA ставятся пары hreflang.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="ru-pages">
+    <div class="container">
+      <h2>RU: полный набор стартовых страниц</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3>Главная</h3>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/</a>
+        </div>
+        <div class="card">
+          <h3>Поломки</h3>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/ne-vklyuchaetsya/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/ne-zaryazhaetsya/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/zamena-akkumulyatora/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/remont-kontrollera/</a>
+        </div>
+        <div class="card">
+          <h3>Бренды</h3>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/xiaomi/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/ninebot/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/kugoo/</a>
+          <a class="page-link mono" href="#">/ru/remont-elektrosamokatov-kharkov/dualtron/</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ua-pages">
+    <div class="container">
+      <h2>UA: полный набор стартовых страниц</h2>
+      <div class="grid3">
+        <div class="card">
+          <h3>Головна</h3>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/</a>
+        </div>
+        <div class="card">
+          <h3>Поломки</h3>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/ne-vmykaetsya/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/ne-zaryadzhayetsya/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/zamina-akumulyatora/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/remont-kontrolera/</a>
+        </div>
+        <div class="card">
+          <h3>Бренди</h3>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/xiaomi/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/ninebot/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/kugoo/</a>
+          <a class="page-link mono" href="#">/remont-elektrosamokativ-kharkiv/dualtron/</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="container grid2">
+      <div class="card">
+        <h2>Визуально как дерево</h2>
+        <div class="tree mono">
+          /ru/remont-elektrosamokatov-kharkov/<br/>
+          ├─ ne-vklyuchaetsya/<br/>
+          ├─ ne-zaryazhaetsya/<br/>
+          ├─ zamena-akkumulyatora/<br/>
+          ├─ remont-kontrollera/<br/>
+          ├─ xiaomi/<br/>
+          ├─ ninebot/<br/>
+          ├─ kugoo/<br/>
+          └─ dualtron/
+        </div>
+      </div>
+      <div class="card">
+        <h2>Что важно</h2>
+        <ul>
+          <li>Это умеренный старт: 10 страниц RU+UA.</li>
+          <li>Не перегружает сайт и команду.</li>
+          <li>После 6–8 недель смотрим GSC и расширяем только то, что растет.</li>
+        </ul>
+        <p class="ok">Так структуру уже можно отдавать в работу контент-менеджеру.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

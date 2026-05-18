@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Понятный прототип SEO-страницы (для заказчика)</title>
+  <style>
+    :root {
+      --brand:#f26522;
+      --brand-soft:#fff3ec;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#f8fafc;
+      --ok:#166534;
+      --warn:#92400e;
+      --note:#fff7ed;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px}
+    .hero{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px}
+    h1{margin:0 0 8px;font-size:32px}
+    .sub{margin:0;color:var(--muted)}
+    .topchips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .chip{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--brand-soft);border:1px solid #ffd8c2;color:#9a3f15}
+
+    .nav{position:sticky;top:0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:14px;z-index:5}
+    .nav a{margin-right:12px;color:#0b57d0;text-decoration:none;font-size:14px}
+
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+    .card h2{margin:0 0 8px;font-size:24px}
+    .card h3{margin:0 0 6px;font-size:18px}
+
+    .block{border:1px dashed #d1d5db;border-radius:10px;padding:12px;margin:10px 0;background:#fff}
+    .block-head{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+    .tag{font-size:12px;border:1px solid #dbeafe;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:3px 8px}
+
+    .explain{margin-top:8px;background:var(--note);border:1px solid #fed7aa;border-radius:8px;padding:10px;font-size:13px}
+    .explain b{color:var(--warn)}
+
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mini{border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}
+
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border:1px solid #e5e7eb;padding:8px;text-align:left}
+    .table th{background:var(--brand-soft)}
+
+    .tree{font-family:Consolas,monospace;font-size:12px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:10px;white-space:pre-wrap}
+    .ok{color:var(--ok);font-weight:700}
+
+    .timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .step{border:1px solid var(--line);border-radius:8px;padding:10px;background:#fff}
+    .step b{color:#0b57d0}
+
+    @media (max-width:980px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){h1{font-size:27px}.timeline{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Понятный прототип страницы услуги</h1>
+      <p class="sub">Цель: чтобы заказчик сразу понял структуру, объем работ и зачем каждый блок.</p>
+      <div class="topchips">
+        <span class="chip">Услуга: Ремонт электросамокатов в Харькове</span>
+        <span class="chip">RU + UA зеркала</span>
+        <span class="chip">Без перегруза: старт с 10 страниц</span>
+      </div>
+    </section>
+
+    <nav class="nav">
+      <a href="#page">1. Как выглядит страница</a>
+      <a href="#links">2. Какие страницы связаны</a>
+      <a href="#plan">3. План внедрения</a>
+      <a href="#result">4. Что получаем</a>
+    </nav>
+
+    <section class="grid">
+      <main>
+        <article class="card" id="page">
+          <h2>1) Структура главной страницы услуги</h2>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 1: Первый экран (Hero)</h3><span class="tag">Конверсия</span></div>
+            <div class="mini">H1 + УТП + кнопки: “Оставить заявку” / “Смотреть цены”</div>
+            <div class="explain"><b>Зачем:</b> человек сразу понимает где он, что ему предлагают и как быстро связаться.</div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 2: Доверие</h3><span class="tag">Продажи</span></div>
+            <div class="cols">
+              <div class="mini">Гарантия</div><div class="mini">Сроки</div>
+              <div class="mini">Опыт мастеров</div><div class="mini">Запчасти</div>
+            </div>
+            <div class="explain"><b>Зачем:</b> снимает страх “развод/долго/некачественно”.</div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 3: Бренды</h3><span class="tag">SEO охват</span></div>
+            <div class="mini">Xiaomi / Ninebot / Kugoo / Dualtron (ссылки на дочерние страницы)</div>
+            <div class="explain"><b>Зачем:</b> закрываем брендовые запросы и ведем на узкие посадочные.</div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 4: Цены и сроки</h3><span class="tag">Коммерческий фактор</span></div>
+            <table class="table">
+              <thead><tr><th>Услуга</th><th>Цена от</th><th>Срок</th></tr></thead>
+              <tbody>
+                <tr><td>Диагностика</td><td>0–300 грн</td><td>30–60 мин</td></tr>
+                <tr><td>Ремонт контроллера</td><td>1200 грн</td><td>1 день</td></tr>
+                <tr><td>Замена аккумулятора</td><td>2500 грн</td><td>1 день</td></tr>
+              </tbody>
+            </table>
+            <div class="explain"><b>Зачем:</b> повышает доверие и CTR, уменьшает “пустые” звонки.</div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 5: Поломки</h3><span class="tag">SEO охват</span></div>
+            <div class="mini">Не включается / Не заряжается / После воды / Потеря мощности</div>
+            <div class="explain"><b>Зачем:</b> закрывает проблемные запросы и ведет на страницы по симптомам.</div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>Блок 6: FAQ + Контакты + Финальный CTA</h3><span class="tag">Дожим</span></div>
+            <div class="mini">FAQ (8–12 вопросов), карта, телефон, повтор кнопки заявки</div>
+            <div class="explain"><b>Зачем:</b> закрываем возражения и приводим к заявке в конце страницы.</div>
+          </div>
+        </article>
+
+        <article class="card" id="links">
+          <h2>2) Полная карта страниц (не перегруженная)</h2>
+          <div class="cols">
+            <div>
+              <h3>RU</h3>
+              <div class="tree">/ru/remont-elektrosamokatov-kharkov/
+├─ ne-vklyuchaetsya/
+├─ ne-zaryazhaetsya/
+├─ zamena-akkumulyatora/
+├─ remont-kontrollera/
+├─ xiaomi/
+├─ ninebot/
+├─ kugoo/
+└─ dualtron/</div>
+            </div>
+            <div>
+              <h3>UA</h3>
+              <div class="tree">/remont-elektrosamokativ-kharkiv/
+├─ ne-vmykaetsya/
+├─ ne-zaryadzhayetsya/
+├─ zamina-akumulyatora/
+├─ remont-kontrolera/
+├─ xiaomi/
+├─ ninebot/
+├─ kugoo/
+└─ dualtron/</div>
+            </div>
+          </div>
+          <div class="explain"><b>Зачем такая схема:</b> 1 главная + 8 дочерних на язык = достаточный охват без хаоса.</div>
+        </article>
+
+        <article class="card" id="plan">
+          <h2>3) План запуска (чтобы было реально сделать)</h2>
+          <div class="timeline">
+            <div class="step"><b>Нед 1–2</b><br/>Главные страницы RU+UA</div>
+            <div class="step"><b>Нед 3–4</b><br/>4 страницы поломок RU+UA</div>
+            <div class="step"><b>Нед 5–6</b><br/>4 страницы брендов RU+UA</div>
+            <div class="step"><b>Нед 7–8</b><br/>Анализ GSC и точечное расширение</div>
+          </div>
+        </article>
+      </main>
+
+      <aside>
+        <article class="card">
+          <h2>Ключевая идея</h2>
+          <p>Мы не “штампуем” 40+ страниц. Делаем <b>короткий и сильный кластер</b>, который можно качественно поддерживать.</p>
+        </article>
+
+        <article class="card" id="result">
+          <h2>4) Что получает заказчик</h2>
+          <ul>
+            <li>Понятную структуру сайта под SEO.</li>
+            <li>Прогнозируемый объем работ по неделям.</li>
+            <li>Логику масштабирования только по данным.</li>
+            <li>Страницы, которые ведут к заявкам.</li>
+          </ul>
+          <p class="ok">Результат: удобно для команды и понятно для клиента.</p>
+        </article>
+
+        <article class="card">
+          <h2>Финальный контроль</h2>
+          <ul>
+            <li>RU/UA зеркала связаны hreflang</li>
+            <li>Главная ↔ дочерние взаимные ссылки</li>
+            <li>Цены/сроки/FAQ заполнены реальными данными</li>
+          </ul>
+        </article>
+      </aside>
+    </section>
+  </div>
+</body>
+</html>

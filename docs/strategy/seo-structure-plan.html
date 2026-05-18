@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEO-план структуры — Ремонт электросамокатов InService</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --card: #ffffff;
+      --text: #182230;
+      --muted: #617286;
+      --line: #d7e0ec;
+      --brand: #f26522;
+      --brand-dark: #cc4d12;
+      --brand-soft: #fff2ea;
+      --accent: #0d63d6;
+      --ok: #eaf8ef;
+      --warn: #fff7e9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 320px at 0% -10%, #dfeaff 0%, transparent 60%),
+        radial-gradient(680px 260px at 100% -10%, #ffe5d7 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #142031;
+      color: #edf3fb;
+      font-size: 13px;
+    }
+
+    .topbar .inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 26px;
+      box-shadow: 0 24px 50px rgba(18, 34, 58, 0.09);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 0;
+    }
+
+    .hero-copy {
+      padding: 34px;
+    }
+
+    .hero-side {
+      padding: 34px;
+      background:
+        radial-gradient(260px 180px at 100% 0%, rgba(242, 101, 34, 0.18), transparent 70%),
+        linear-gradient(180deg, #f9fbff 0%, #f0f5fd 100%);
+      border-left: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #ffd8c4;
+      background: var(--brand-soft);
+      color: #9f4316;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 16px 0 18px;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid #d4e0f3;
+      background: #f3f8ff;
+      color: #244b77;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .panel {
+      margin: 16px 0;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(18, 34, 58, 0.06);
+      padding: 28px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .mini b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .callout {
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid #ffd7c3;
+      background: linear-gradient(180deg, #fffaf7 0%, #fff3eb 100%);
+    }
+
+    .callout strong {
+      color: var(--text);
+    }
+
+    .good {
+      border-color: #cfe8d7;
+      background: linear-gradient(180deg, #f9fffb 0%, var(--ok) 100%);
+    }
+
+    .warn {
+      border-color: #f4e2b8;
+      background: linear-gradient(180deg, #fffdf7 0%, var(--warn) 100%);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #f6f9fd;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #4e6179;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .tree {
+      display: grid;
+      gap: 10px;
+    }
+
+    .tree-root,
+    .tree-branch,
+    .tree-leaf {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px 16px;
+    }
+
+    .tree-root {
+      border-color: #ffd4bd;
+      background: linear-gradient(180deg, #fff9f4 0%, #fff2e9 100%);
+    }
+
+    .tree-branch {
+      margin-left: 30px;
+      background: linear-gradient(180deg, #fbfdff 0%, #f4f8ff 100%);
+    }
+
+    .tree-leaf {
+      margin-left: 60px;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .legend span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #fff;
+      font-size: 12px;
+      color: #53657c;
+    }
+
+    .footer {
+      padding: 10px 0 34px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h1 { font-size: 31px; }
+      h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · SEO-план структуры · Ремонт электросамокатов · Харьков</div>
+      <div>Документ для согласования и передачи верстальщику</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Главный документ</div>
+            <h1>План SEO-структуры<br />для страницы “Ремонт электросамокатов”</h1>
+            <p>Задача документа: дать понятный план, по которому мы собираем HTML-прототип, а потом передаем его верстальщику без хаоса и догадок. Документ нужен не для обсуждения “в целом”, а для принятия конкретных решений: какие страницы делаем, какие блоки ставим, какие тексты готовим и зачем это нужно для роста.</p>
+            <div class="chips">
+              <span class="chip">1 главная страница услуги</span>
+              <span class="chip">2 ветки структуры</span>
+              <span class="chip">Бренды + поломки</span>
+              <span class="chip">RU + UA зеркала</span>
+              <span class="chip">Под Google и лиды</span>
+            </div>
+            <div class="callout">
+              <strong>Главная идея:</strong> мы не делаем “много страниц ради много страниц”. Мы строим одну сильную страницу услуги и от нее аккуратно расширяемся в две понятные ветки: <strong>бренды</strong> и <strong>поломки</strong>.
+            </div>
+          </div>
+          <div class="hero-side">
+            <h3>Что уже понятно по выдаче</h3>
+            <div class="grid-2">
+              <div class="mini good">
+                <b>Что у конкурентов работает</b>
+                Город в заголовке, гарантия, отзывы, бренды, цены, адреса, понятный CTA, фокус на самокатах.
+              </div>
+              <div class="mini warn">
+                <b>Что мешает нам сейчас</b>
+                У InService две похожие страницы по одной теме, поэтому вес и релевантность размазываются.
+              </div>
+            </div>
+            <div class="legend">
+              <span>FreshIT силен в доверии</span>
+              <span>Service-Pro силен в “ремонтируем все”</span>
+              <span>ScooterMaster силен в нишевости</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>1. Цель проекта</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <b>SEO-цель</b>
+          Вывести основную страницу услуги и дочерние страницы в более сильную локальную выдачу по Харькову.
+        </div>
+        <div class="mini">
+          <b>Маркетинговая цель</b>
+          Сделать страницу понятной для собственника, пользователя и верстальщика: чтобы было видно, как она продает и как масштабируется.
+        </div>
+        <div class="mini">
+          <b>Практическая цель</b>
+          Подготовить HTML-прототип, который потом можно без лишних обсуждений переверстать в WordPress-шаблон.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>2. Главная проблема, которую мы решаем</h2>
+      <div class="grid-2">
+        <div class="mini warn">
+          <b>Сейчас</b>
+          У сайта уже есть статья и отдельная сервисная страница по очень близкой теме. Это создает путаницу и риск каннибализации. Визуально и структурно тема “электросамокаты” пока не выглядит как сильный отдельный кластер.
+        </div>
+        <div class="mini good">
+          <b>После внедрения</b>
+          У нас будет одна основная страница услуги, от которой логично отходят две понятные ветки: страницы брендов и страницы поломок. Пользователь сразу понимает, куда нажимать, а Google видит четкую структуру.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Базовая структура сайта по этой теме</h2>
+      <div class="tree">
+        <div class="tree-root">
+          <b>Главная страница услуги</b><br />
+          Ремонт электросамокатов в Харькове
+        </div>
+        <div class="tree-branch">
+          <b>Ветка 1: Бренды</b><br />
+          Нужна для брендового спроса, когда человек уже знает марку самоката.
+        </div>
+        <div class="tree-leaf">Xiaomi</div>
+        <div class="tree-leaf">Ninebot</div>
+        <div class="tree-leaf">Kugoo</div>
+        <div class="tree-leaf">Crosser</div>
+        <div class="tree-leaf">Giant</div>
+        <div class="tree-leaf">Prove</div>
+        <div class="tree-leaf">Кока Сити</div>
+        <div class="tree-branch">
+          <b>Ветка 2: Поломки</b><br />
+          Нужна для проблемных запросов, когда человек ищет решение по симптому.
+        </div>
+        <div class="tree-leaf">Не включается</div>
+        <div class="tree-leaf">Не заряжается</div>
+        <div class="tree-leaf">Быстро садится аккумулятор / замена аккумулятора</div>
+        <div class="tree-leaf">После воды или удара</div>
+      </div>
+      <p style="margin-top:12px;"><strong>Логика ссылок:</strong> главная страница услуги ссылается на бренды и поломки. Каждая дочерняя страница ссылается обратно на главную.</p>
+    </section>
+
+    <section class="panel">
+      <h2>4. Что именно делаем на старте</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Этап</th>
+            <th>Что делаем</th>
+            <th>Зачем это нужно</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Этап 1</td>
+            <td>Собираем сильную главную страницу услуги в RU</td>
+            <td>Это будет основная money-page, на которую идет главный коммерческий спрос</td>
+          </tr>
+          <tr>
+            <td>Этап 2</td>
+            <td>Делаем RU-страницы по 4 приоритетным брендам</td>
+            <td>Закрываем брендовый спрос и усиливаем структуру</td>
+          </tr>
+          <tr>
+            <td>Этап 3</td>
+            <td>Делаем RU-страницы по 4 поломкам</td>
+            <td>Закрываем теплые запросы с явной болью пользователя</td>
+          </tr>
+          <tr>
+            <td>Этап 4</td>
+            <td>Делаем UA-зеркала этой же структуры</td>
+            <td>Наращиваем охват и выстраиваем правильную многоязычную связку</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>5. Какие блоки должны быть на главной странице услуги</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <b>1. Hero</b>
+          H1, короткое УТП, срок, гарантия, диагностика, 2 CTA.
+        </div>
+        <div class="mini">
+          <b>2. Почему клиенты обращаются</b>
+          4-6 карточек доверия: скорость, гарантия, честный прайс, бренды.
+        </div>
+        <div class="mini">
+          <b>3. Бренды</b>
+          Кликабельные карточки брендов с переходом на дочерние страницы.
+        </div>
+        <div class="mini">
+          <b>4. Поломки</b>
+          Кликабельные карточки симптомов с переходом на дочерние страницы.
+        </div>
+        <div class="mini">
+          <b>5. Прайс</b>
+          Понятная таблица цен и пометка, что точная цена определяется после диагностики.
+        </div>
+        <div class="mini">
+          <b>6. Как проходит ремонт</b>
+          Диагностика → согласование → ремонт → тест → выдача.
+        </div>
+        <div class="mini">
+          <b>7. Отзывы</b>
+          3-6 отзывов или кейсов, чтобы усилить доверие.
+        </div>
+        <div class="mini">
+          <b>8. FAQ</b>
+          Вопросы по срокам, гарантии, диагностике, самостоятельному ремонту.
+        </div>
+        <div class="mini">
+          <b>9. Контакты</b>
+          Харьков, адреса, телефоны, карта, график работы.
+        </div>
+        <div class="mini">
+          <b>10. Финальная заявка</b>
+          Форма, мессенджеры, четкий призыв оставить модель и проблему.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>6. Какие блоки должны быть на странице бренда</h2>
+      <div class="grid-2">
+        <div class="mini"><b>Hero под бренд</b>Например: “Ремонт электросамокатов Xiaomi в Харькове”.</div>
+        <div class="mini"><b>Какие модели ремонтируем</b>M365, Pro 2, 4 Pro и т.д.</div>
+        <div class="mini"><b>Типовые поломки бренда</b>Контроллер, BMS, аккумулятор, дисплей, мотор-колесо.</div>
+        <div class="mini"><b>Прайс / ориентиры</b>Сколько стоят частые работы именно по бренду.</div>
+        <div class="mini"><b>Почему доверяют нам</b>Опыт, гарантия, запчасти, сроки.</div>
+        <div class="mini"><b>FAQ по бренду</b>Отдельные вопросы по этой марке.</div>
+        <div class="mini"><b>Перелинковка</b>Ссылка назад на основную страницу услуги.</div>
+        <div class="mini"><b>Форма заявки</b>С уточнением модели и симптома.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>7. Какие блоки должны быть на странице поломки</h2>
+      <div class="grid-2">
+        <div class="mini"><b>Hero по симптому</b>Например: “Электросамокат не заряжается”.</div>
+        <div class="mini"><b>Возможные причины</b>Разъем, BMS, зарядка, проводка, аккумулятор.</div>
+        <div class="mini"><b>Что проверяем</b>Коротко и понятно, без перегруза техничкой.</div>
+        <div class="mini"><b>Какие работы могут понадобиться</b>Замена разъема, ремонт BMS, замена АКБ и т.д.</div>
+        <div class="mini"><b>Ориентир по цене</b>Диапазоны по типовым сценариям.</div>
+        <div class="mini"><b>Когда нельзя тянуть</b>Если проблема опасна или может стать дороже.</div>
+        <div class="mini"><b>Перелинковка</b>Ссылки на бренды и на главную страницу услуги.</div>
+        <div class="mini"><b>Форма заявки</b>“Опишите симптом — сориентируем по ремонту”.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>8. Какие SEO-элементы должны быть на каждой странице</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Элемент</th>
+            <th>Для чего нужен</th>
+            <th>Пример для страницы услуги</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Title</td>
+            <td>Основной заголовок для Google</td>
+            <td>Ремонт электросамокатов в Харькове — цены, диагностика, гарантия | InService</td>
+          </tr>
+          <tr>
+            <td>Meta Description</td>
+            <td>Описание страницы в выдаче</td>
+            <td>Ремонт электросамокатов в Харькове: диагностика, замена аккумулятора, ремонт контроллера, гарантия.</td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>Главный заголовок на странице</td>
+            <td>Ремонт электросамокатов в Харькове</td>
+          </tr>
+          <tr>
+            <td>URL</td>
+            <td>Понятный адрес страницы</td>
+            <td>/ru/remont-elektrosamokatov-kharkov/</td>
+          </tr>
+          <tr>
+            <td>H2/H3</td>
+            <td>Логичная структура контента</td>
+            <td>Цены, бренды, поломки, FAQ, отзывы, контакты</td>
+          </tr>
+          <tr>
+            <td>FAQ Schema</td>
+            <td>Усиливает понимание страницы поиском</td>
+            <td>Вопросы по срокам, гарантии, диагностике</td>
+          </tr>
+          <tr>
+            <td>Service / LocalBusiness Schema</td>
+            <td>Локальный и сервисный сигнал</td>
+            <td>Сервисный центр в Харькове</td>
+          </tr>
+          <tr>
+            <td>Внутренние ссылки</td>
+            <td>Связывают страницы в кластер</td>
+            <td>Бренды и поломки ссылаются на главную</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>9. Какие тексты нам нужны</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <b>Текст для SEO</b>
+          Объясняет Google, о чем страница: услуга, город, симптом, бренд, цены, типовые проблемы.
+        </div>
+        <div class="mini">
+          <b>Текст для человека</b>
+          Объясняет клиенту, почему обратиться именно сюда: сроки, гарантия, опыт, честная диагностика.
+        </div>
+        <div class="mini">
+          <b>Текст для конверсии</b>
+          Подталкивает к действию: оставить заявку, позвонить, отправить модель и проблему.
+        </div>
+      </div>
+      <div class="callout" style="margin-top:14px;">
+        <strong>Простая формула текста на любой странице:</strong><br />
+        1. Что это за услуга / проблема<br />
+        2. Какие модели / случаи обслуживаем<br />
+        3. Какие симптомы и работы закрываем<br />
+        4. Как проходит ремонт<br />
+        5. Сколько стоит<br />
+        6. Почему нам доверяют<br />
+        7. Как оставить заявку
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>10. Что нужно сделать, чтобы выглядеть лучше конкурентов</h2>
+      <div class="grid-3">
+        <div class="mini good">
+          <b>Быть понятнее FreshIT</b>
+          Не просто перечислить преимущества, а сразу связать их с брендами, поломками и четкой заявкой.
+        </div>
+        <div class="mini good">
+          <b>Быть структурнее Service-Pro</b>
+          Не “ремонтируем все подряд”, а показывать аккуратную карту: услуга → бренд → поломка.
+        </div>
+        <div class="mini good">
+          <b>Быть ближе к нише, как ScooterMaster</b>
+          Показать специализацию на самокатах и понимание популярных моделей и симптомов.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>11. План внедрения для верстальщика</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Шаг</th>
+            <th>Что отдаем в верстку</th>
+            <th>Результат</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Шаг 1</td>
+            <td>Главная страница услуги в HTML</td>
+            <td>Готовая money-page под вставку в шаблон</td>
+          </tr>
+          <tr>
+            <td>Шаг 2</td>
+            <td>Брендовые карточки и переходы</td>
+            <td>Видно, как структура расширяется</td>
+          </tr>
+          <tr>
+            <td>Шаг 3</td>
+            <td>Карточки поломок и переходы</td>
+            <td>Страница начинает работать как SEO-кластер</td>
+          </tr>
+          <tr>
+            <td>Шаг 4</td>
+            <td>Отдельные шаблоны бренда и поломки</td>
+            <td>Можно быстро наполнять дочерние страницы</td>
+          </tr>
+          <tr>
+            <td>Шаг 5</td>
+            <td>RU-версия → UA-зеркало</td>
+            <td>Структура готова для двух языков</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>12. Что утверждаем сейчас</h2>
+      <div class="grid-2">
+        <div class="mini">
+          <b>1. Главная страница услуги</b>
+          Это основной центр всей темы “электросамокаты”.
+        </div>
+        <div class="mini">
+          <b>2. Две ветки структуры</b>
+          Бренды и поломки.
+        </div>
+        <div class="mini">
+          <b>3. Стартовый объем</b>
+          1 главная страница + 4 бренда + 4 поломки в RU, потом зеркалим на UA.
+        </div>
+        <div class="mini">
+          <b>4. Логика внедрения</b>
+          Сначала HTML-прототип, потом верстка, потом наполнение текстами и публикация.
+        </div>
+      </div>
+      <div class="callout" style="margin-top:14px;">
+        <strong>Итог:</strong> если собственник утверждает этот план, мы дальше уже не спорим “что делать”, а спокойно собираем финальную HTML-структуру и готовим текстовые блоки под каждую страницу.
+      </div>
+    </section>
+  </main>
+
+  <div class="container footer">
+    SEO-план структуры · InService · подготовлено для согласования и передачи в верстку
+  </div>
+</body>
+</html>

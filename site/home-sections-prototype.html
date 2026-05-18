@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Главная с разделами электротранспорта — InService</title>
+  <meta name="description" content="Пример главной страницы InService с иконками новых разделов электротранспорта и логикой переходов." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1c2430;
+      --muted: #5f6d7f;
+      --line: #dae3ef;
+      --brand: #f26522;
+      --brand-dark: #d94e0f;
+      --brand-soft: #fff3ec;
+      --accent: #0b63d3;
+      --shadow: 0 18px 40px rgba(18, 34, 58, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, #ffb03b 0 110px, transparent 110px),
+        radial-gradient(900px 300px at 0% -10%, #e4ecff 0%, transparent 60%),
+        radial-gradient(700px 260px at 100% -10%, #ffe8dc 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .zigzag {
+      height: 26px;
+      background:
+        linear-gradient(-45deg, transparent 16px, #fff 0) 0 0/32px 32px repeat-x,
+        linear-gradient(45deg, transparent 16px, #fff 0) 16px 0/32px 32px repeat-x;
+      margin-top: 84px;
+    }
+
+    .topbar {
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 0 0;
+    }
+
+    .topbar .inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .site-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 18px 0 18px;
+      border: 1px solid rgba(255,255,255,.32);
+      background: rgba(20, 28, 41, 0.78);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 14px 18px;
+      box-shadow: 0 14px 30px rgba(18, 34, 58, 0.16);
+      color: #fff;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-wrap img {
+      width: 165px;
+      height: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .brand-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,.8);
+    }
+
+    .brand-copy strong {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .head-meta {
+      text-align: right;
+      font-size: 13px;
+      color: rgba(255,255,255,.82);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      margin: 18px 0 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #9f4316;
+      border: 1px solid #ffd9c5;
+      background: var(--brand-soft);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 42px;
+      line-height: 1.08;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 29px;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+
+    .chip {
+      border: 1px solid #d5e2f6;
+      background: #f4f8ff;
+      color: #285181;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 15px;
+    }
+
+    .btn-main {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-main:hover { background: var(--brand-dark); }
+
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .btn-ghost:hover {
+      border-color: #ffc8ac;
+      background: #fff8f3;
+    }
+
+    .hero-visual {
+      min-height: 100%;
+      display: grid;
+      gap: 14px;
+      align-items: start;
+      padding: 22px;
+      border-radius: 16px;
+      background:
+        radial-gradient(220px 160px at 100% 0%, rgba(242, 101, 34, 0.16), transparent 70%),
+        linear-gradient(180deg, #fdfefe 0%, #f3f8ff 100%);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid var(--line);
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1d375c;
+    }
+
+    .hero-stat {
+      border: 1px solid rgba(207,219,235,.9);
+      border-radius: 16px;
+      background: rgba(255,255,255,.92);
+      padding: 14px;
+    }
+
+    .hero-stat b {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .grid-main,
+    .device-grid,
+    .info-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid-main {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .device-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .device-card,
+    .info-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 12px 28px rgba(18,34,58,0.06);
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .service-card:hover,
+    .device-card:hover {
+      transform: translateY(-4px);
+      border-color: #ffc5a6;
+      box-shadow: 0 18px 35px rgba(18,34,58,0.1);
+    }
+
+    .service-thumb {
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .service-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(28,36,48,0) 0%, rgba(28,36,48,.14) 100%);
+    }
+
+    .service-copy {
+      padding: 15px;
+    }
+
+    .service-copy b,
+    .device-copy b,
+    .info-card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .service-copy span,
+    .device-copy span,
+    .info-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid #ffd3be;
+      background: #fff5ef;
+      color: #a44716;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .device-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .device-card.current {
+      border-color: #ffc5a6;
+      background: linear-gradient(180deg, #fffaf6 0%, #fff3ec 100%);
+    }
+
+    .device-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      flex: 0 0 56px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, #fff5ef 0%, #ffe9dc 100%);
+      border: 1px solid #ffd3be;
+      color: var(--brand);
+    }
+
+    .device-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .device-copy {
+      min-width: 0;
+    }
+
+    .info-card {
+      padding: 16px;
+    }
+
+    .mini-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .mini-links a {
+      text-decoration: none;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid #d5e2f6;
+      background: #f4f8ff;
+      color: #285181;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mini-links a:hover {
+      border-color: #ffc8ac;
+      background: #fff5ef;
+      color: #9f4316;
+    }
+
+    .callout {
+      margin-top: 12px;
+      border: 1px solid #ffd5bf;
+      background: #fff7f2;
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: #8f3f16;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin: 18px 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-main,
+      .device-grid,
+      .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .head-meta { text-align: left; }
+      h1 { font-size: 34px; }
+      h2 { font-size: 25px; }
+    }
+
+    @media (max-width: 640px) {
+      .hero,
+      .grid-main,
+      .device-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · Харьков · Ежедневно 09:00–19:00</div>
+      <div>+38 (067) 652-60-04 · +38 (066) 547-40-37</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section class="site-head">
+      <div class="brand-wrap">
+        <img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" />
+        <div class="brand-copy">
+          <strong>Сервисный центр InService</strong>
+          Ремонт техники, электротранспорта и электроники в Харькове и Киеве
+        </div>
+      </div>
+      <div class="head-meta">
+        <div>г. Харьков, Проспект Науки, 17</div>
+        <div>г. Харьков, ул. Деревянко, 58</div>
+        <div><strong>+38 (067) 652-60-04</strong> · <strong>+38 (066) 547-40-37</strong></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="zigzag"></div>
+
+  <main class="container">
+    <section class="hero">
+      <article class="panel">
+        <span class="eyebrow">Пример главной страницы</span>
+        <h1>Главная с новыми разделами электротранспорта</h1>
+        <p>Это пример того, как можно усилить главную без перегруза. На первом уровне остаются крупные сервисные категории, а внутри блока электротранспорта появляются новые понятные разделы с иконками и переходами.</p>
+        <div class="chips">
+          <span class="chip">Главная не перегружена</span>
+          <span class="chip">Есть путь в электротранспорт</span>
+          <span class="chip">Дальше идут бренды и поломки</span>
+        </div>
+        <div class="btns">
+          <a class="btn btn-main" href="#services">Смотреть главные разделы</a>
+          <a class="btn btn-ghost" href="#electric-transport">Смотреть блок электротранспорта</a>
+        </div>
+      </article>
+
+      <aside class="panel">
+        <div class="hero-visual">
+          <div class="hero-kicker">Логика вложенности</div>
+          <div class="hero-stat">
+            <b>Главная</b>
+            <span>Показывает крупные категории услуг и ведет пользователя в нужный сервисный кластер.</span>
+          </div>
+          <div class="hero-stat">
+            <b>Электротранспорт</b>
+            <span>Уже внутри показывает типы устройств, а на следующем уровне — бренды и поломки.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel" id="services">
+      <h2>Как могут выглядеть главные разделы на главной</h2>
+      <div class="grid-main">
+        <a class="service-card" href="#">
+          <div class="service-thumb" style="background-image:url('https://inservic.com.ua/wp-content/uploads/2021/06/remont-kofemashin-v-harkove.jpg');"></div>
+          <div class="service-copy">
+            <b>Кофемашины</b>
+            <span>Сильная сервисная категория с отдельной страницей и своей детализацией.</span>
+            <em class="tag">Основной раздел</em>
+          </div>
+        </a>
+
+        <a class="service-card" href="transport/electric-transport.html">
+          <div class="service-thumb" style="background-image:url('https://inservic.com.ua/wp-content/uploads/2017/08/el.png');"></div>
+          <div class="service-copy">
+            <b>Электротранспорт</b>
+            <span>Отдельный хаб, который внутри уже раскладывается по типам устройств.</span>
+            <em class="tag">Новый усиленный раздел</em>
+          </div>
+        </a>
+
+        <a class="service-card" href="#">
+          <div class="service-thumb" style="background-image:url('https://inservic.com.ua/wp-content/uploads/2021/06/remont-generatoriv-u-harkovi.jpg');"></div>
+          <div class="service-copy">
+            <b>Генераторы</b>
+            <span>Самостоятельный кластер услуг с отдельными типами генераторов и подкатегориями.</span>
+            <em class="tag">Основной раздел</em>
+          </div>
+        </a>
+      </div>
+      <div class="callout">На главной лучше показывать не бренды и не поломки самокатов, а именно крупные направления. Так пользователю проще выбрать свой путь, а структура сайта остается чистой.</div>
+    </section>
+
+    <section class="panel" id="electric-transport">
+      <h2>Пример блока “Электротранспорт” с иконками новых разделов</h2>
+      <p>Вот этот блок уже можно ставить либо на главную, либо использовать как основу для отдельной страницы `Ремонт электротранспорта`.</p>
+      <div class="device-grid">
+        <a class="device-card current" href="russian-scooter-page.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 18h10"></path><path d="M7 18a2 2 0 1 0 0 .1"></path><path d="M17 18a2 2 0 1 0 0 .1"></path><path d="M9 18l2-7h4l2 7"></path><path d="M12 11V6h3"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Электросамокаты</b>
+            <span>Главная money-page. Внутри нее уже будут бренды, поломки, прайс, FAQ и заявка.</span>
+            <em class="tag">Приоритет №1</em>
+          </div>
+        </a>
+
+        <a class="device-card" href="transport/electric-scooters.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 17h13"></path><circle cx="7" cy="17" r="2"></circle><circle cx="18" cy="17" r="2"></circle><path d="M10 17l2-6h4l2 6"></path><path d="M12 11l-1-3h4"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Электроскутеры</b>
+            <span>Отдельная страница под собственный спрос, собственные типовые поломки и отдельный прайс.</span>
+            <em class="tag">Следующий раздел</em>
+          </div>
+        </a>
+
+        <a class="device-card" href="transport/electric-bicycles.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"></circle><circle cx="18" cy="17" r="3"></circle><path d="M6 17l4-8h4"></path><path d="M10 9l4 8"></path><path d="M13 9h4"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Электровелосипеды</b>
+            <span>Самостоятельная услуга под мотор-колеса, аккумуляторы, зарядку, контроллеры и обслуживание.</span>
+            <em class="tag">Следующий раздел</em>
+          </div>
+        </a>
+
+        <a class="device-card" href="transport/gyro-scooters.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><circle cx="7" cy="17" r="2.5"></circle><circle cx="17" cy="17" r="2.5"></circle><path d="M7 14v-3"></path><path d="M17 14v-3"></path><path d="M9 14h6"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Гироскутеры</b>
+            <span>Поддерживающий раздел внутри электротранспорта, который расширяет охват без смешения с самокатами.</span>
+            <em class="tag">Вторая волна</em>
+          </div>
+        </a>
+
+        <a class="device-card" href="transport/hoverboards.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 15h16"></path><circle cx="7" cy="17" r="2"></circle><circle cx="17" cy="17" r="2"></circle><path d="M8 15l2-4h4l2 4"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Гироборды</b>
+            <span>Отдельное устройство со своей логикой ремонта, своими симптомами и отдельной подачей.</span>
+            <em class="tag">Вторая волна</em>
+          </div>
+        </a>
+
+        <a class="device-card" href="transport/monowheels.html">
+          <div class="device-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="16" r="4"></circle><path d="M9 8h6"></path><path d="M10 8v3"></path><path d="M14 8v3"></path></svg>
+          </div>
+          <div class="device-copy">
+            <b>Моноколеса</b>
+            <span>Дополнительный сервисный раздел, который логично входит в электротранспорт как отдельный тип устройства.</span>
+            <em class="tag">Вторая волна</em>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Как это раскладывается дальше</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <b>1. Главная сайта</b>
+          <span>Показывает крупные сервисные разделы. Электротранспорт здесь выглядит как сильная категория, а не как набор хаотичных ссылок.</span>
+        </div>
+        <div class="info-card">
+          <b>2. Электротранспорт</b>
+          <span>Делит пользователей по типам устройств. Здесь человек выбирает свой тип техники, а не бренд и не симптом.</span>
+        </div>
+        <div class="info-card">
+          <b>3. Электросамокаты</b>
+          <span>Уже внутри страницы самокатов появляются бренды и поломки, потому что это следующий уровень детализации.</span>
+        </div>
+      </div>
+      <div class="mini-links">
+        <a href="transport/electric-transport.html">Открыть хаб электротранспорта</a>
+        <a href="russian-scooter-page.html">Открыть страницу электросамокатов</a>
+        <a href="brands/xiaomi.html">Пример брендовой страницы</a>
+        <a href="issues/ne-zaryazhaetsya.html">Пример страницы поломки</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Пример главной страницы с иконками новых разделов для обсуждения структуры InService.
+  </footer>
+</body>
+</html>

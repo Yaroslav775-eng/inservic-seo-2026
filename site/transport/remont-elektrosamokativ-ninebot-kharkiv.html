@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт електросамокатів Ninebot у Харкові — InService</title>
+  <meta name="description" content="Ремонт електросамокатів Ninebot у Харкові: ES2, ES4, Max G30, F-серія. Діагностика батареї, BMS, контролера, дисплея, зарядки, мотор-колеса. InService, вул. Дерев'янка, 58." />
+  <link rel="canonical" href="https://inservic.com.ua/remont-elektrosamokativ-ninebot-kharkiv/" />
+  <meta property="og:title" content="Ремонт електросамокатів Ninebot у Харкові — InService" />
+  <meta property="og:description" content="Ninebot ES2, ES4, Max G30, F-серія: не заряджається, помилки, додаткова батарея, BMS, контролер, мотор-колесо." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" />
+<style>
+    :root {
+      --bg: #f3f6f9;
+      --card: #ffffff;
+      --text: #0f2b46;
+      --muted: #5f7184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0b63d3;
+      --blue-soft: #eef6ff;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12, 99, 206, .13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255, 157, 47, .24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: #111b29; color: #edf3fb; font-size: 13px; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 9px 0; }
+    .site-head {
+      margin: 18px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .brand small { display: block; color: var(--muted); margin-top: 2px; }
+    .head-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .phone { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      border-radius: 999px;
+      color: #38506a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumbs { margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--orange-dark); text-decoration: none; }
+    .hero { margin-bottom: 18px; }
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,157,47,.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f3f9ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .hero-copy { padding: 36px; }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(270px 220px at 80% 8%, rgba(255,157,47,.24), transparent 70%),
+        linear-gradient(180deg, #f8fbff, #eef5fc);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd8bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.03em; }
+    h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 760px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: var(--orange-soft); border: 1px solid #ffd4b5; color: #944114; font-size: 13px; font-weight: 800; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+    }
+    .btn-main { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff; box-shadow: 0 14px 28px rgba(242,101,34,.22); }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
+    .scooter-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 45px rgba(20,42,61,.08);
+    }
+    .scooter-photo {
+      height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef5;
+      margin-bottom: 16px;
+    }
+    .scooter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-stat { border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: #fbfdff; }
+    .hero-stat b { display:block; font-size: 20px; color: var(--orange-dark); margin-bottom: 3px; }
+    .section { margin: 18px 0; }
+    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.96); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 18px; }
+    .section-head p { max-width: 650px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .mini-card, .issue-card, .brand-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      min-height: 100%;
+    }
+    .issue-card { text-decoration: none; display: block; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .issue-card:hover, .brand-card:hover { transform: translateY(-3px); border-color: rgba(255,157,47,.62); box-shadow: 0 18px 30px rgba(20,42,61,.09); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff;
+      font-weight: 900; margin-bottom: 12px; box-shadow: 0 12px 22px rgba(242,101,34,.18);
+    }
+    .issue-card em, .brand-card em { display: inline-block; margin-top: 10px; color: var(--orange-dark); font-style: normal; font-weight: 900; font-size: 13px; }
+    .brand-card { text-decoration: none; color: inherit; display:block; }
+    .brand-name { display: block; font-size: 22px; font-weight: 900; margin-bottom: 6px; letter-spacing: -.02em; }
+    .price-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .price-table th, .price-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .price-table th { background: #17324d; color: #fff; font-size: 13px; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-table td:nth-child(2) { font-weight: 900; color: var(--orange-dark); white-space: nowrap; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .step::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--orange); color:#fff; font-weight: 900; margin-bottom: 10px; }
+    .faq { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px 18px; }
+    summary { cursor: pointer; font-weight: 900; color: var(--text); }
+    details p { margin-top: 10px; }
+    .callout { border-left: 4px solid var(--orange); background: #fff8f1; border-radius: 18px; padding: 16px 18px; color: #70411f; }
+    .seo-text { columns: 2; column-gap: 34px; }
+    .seo-text p { break-inside: avoid; }
+    .seo-copy { display: grid; gap: 18px; }
+    .seo-copy h3 { margin-top: 6px; }
+    .seo-copy p { font-size: 16px; }
+    .seo-copy ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy li { margin-bottom: 7px; }
+    .seo-copy ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy > h2 { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .seo-copy > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .seo-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .seo-copy th, .seo-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .seo-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .seo-copy tr:last-child td { border-bottom: 0; }
+    .symptom-table { display: grid; gap: 10px; }
+    .symptom-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr 0.9fr;
+      gap: 12px;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px;
+    }
+    .symptom-row strong { color: var(--text); }
+    .symptom-row span { color: var(--muted); }
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 20px;
+    }
+    .form-box {
+      border: 1px solid #ffd3b5;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff8f1, #fff);
+      padding: 22px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px 13px;
+      color: var(--muted);
+      min-height: 46px;
+    }
+    .field.wide { grid-column: 1 / -1; min-height: 82px; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .handoff-item { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .handoff-item b { display: block; color: var(--text); margin-bottom: 5px; }
+    .keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .keyword-list span { padding: 7px 10px; border-radius: 999px; background: #eef6ff; color: #255b92; font-size: 12px; font-weight: 800; }
+    .content-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .content-checklist div { border: 1px solid var(--line); border-radius: 16px; padding: 13px; background: #fbfdff; color: var(--muted); }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 9px 12px; border-radius: 999px; background: var(--blue-soft); color: #245a91; text-decoration: none; font-weight: 800; font-size: 13px; }
+    .long-copy { display: grid; gap: 14px; }
+    .long-copy h2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .long-copy h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .long-copy ul, .long-copy ol { margin: 0 0 6px; padding-left: 22px; color: var(--muted); }
+    .long-copy li { margin-bottom: 7px; }
+    .long-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .long-copy th, .long-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .long-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .long-copy tr:last-child td { border-bottom: 0; }
+    .footer-note { margin: 24px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4, .steps, .handoff-grid, .content-checklist, .symptom-row, .form-grid { grid-template-columns: 1fr; }
+      .field.wide { grid-column: auto; }
+      .hero-visual { border-left: 0; border-top: 1px solid var(--line); min-height: auto; }
+      .section-head { display: block; }
+      .seo-text { columns: 1; }
+      .site-head { align-items: flex-start; flex-direction: column; }
+      .head-actions { justify-content: flex-start; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Ремонт електросамокатів Ninebot у Харкові", "serviceType": "Ремонт електросамокатів Ninebot", "areaServed": "Харків", "provider": {"@type": "LocalBusiness", "name": "InService", "url": "https://inservic.com.ua/", "telephone": "+38-067-652-60-04", "address": {"@type": "PostalAddress", "addressLocality": "Харків", "streetAddress": "вул. Дерев'янка, 58"}}, "offers": {"@type": "AggregateOffer", "priceCurrency": "UAH", "lowPrice": "100"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чи ремонтуєте Ninebot ES2 та ES4?", "acceptedAnswer": {"@type": "Answer", "text": "Так, приймаємо ES2, ES4 та близькі моделі. Для ES4 окремо перевіряється додаткова батарея, зарядний ланцюг."}}, {"@type": "Question", "name": "Чому Ninebot не заряджається?", "acceptedAnswer": {"@type": "Answer", "text": "Причина може бути в зарядному порту, зарядному пристрої, батареї, BMS, додатковому модулі, контролері або проводці."}}, {"@type": "Question", "name": "Чи ремонтуєте Ninebot після води?", "acceptedAnswer": {"@type": "Answer", "text": "Так, але краще не вмикати, не заряджати самокат до огляду."}}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="container inner"><span>Сервісний центр InService у Харкові та Києві</span><span>Харків: вул. Дерев'янка, 58 · Пн-Сб 10:00-18:00, Неділя — вихідний</span></div></div>
+  <header class="container site-head"><div class="brand"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /><div><strong>Ремонт електросамокатів Ninebot</strong><small>ES2, ES4, Max G30, F-серія</small></div></div><div class="head-actions"><a class="phone" href="tel:+380676526004">+38 (067) 652-60-04</a><a class="btn btn-main" href="#contact">Записатися</a></div></header>
+  <nav class="container nav" aria-label="Навігація сторінкою"><a href="remont-elektrosamokativ-kharkiv.html">Самокати</a><a href="#models">Моделі</a><a href="#diagnostics">Діагностика</a><a href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html">Не заряджається</a><a href="remont-akumulyatora-elektrosamokata-kharkiv.html">Акумулятор</a><a href="remont-kontrolera-elektrosamokata-kharkiv.html">Контролер</a><a href="#faq">FAQ</a><a href="#contact">Заявка</a></nav>
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Головна</a> / <a href="electric-transport.html">Електротранспорт</a> / <a href="remont-elektrosamokativ-kharkiv.html">Ремонт електросамокатів</a> / Ninebot</div>
+    <section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">Брендова сторінка</span><h1>Ремонт електросамокатів Ninebot у Харкові</h1><p class="lead">Діагностуємо Ninebot ES2, ES4, Max G30, F-серію та інші моделі Segway-Ninebot: батарею, BMS, додатковий модуль, контролер, дисплей, зарядний порт, мотор-колесо і проводку.</p><div class="chips"><span class="chip">ES2 / ES4 / Max G30</span><span class="chip">Діагностика від 100 грн</span><span class="chip">Харків, Дерев'янка 58</span></div><div class="btns"><a class="btn btn-main" href="#contact">Отримати консультацію</a><a class="btn btn-ghost" href="tel:+380676526004">Подзвонити</a></div></div><div class="hero-visual"><div class="scooter-card"><div class="scooter-photo"><img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Ремонт електросамокатів Ninebot" /></div><div class="hero-stats"><div class="hero-stat"><b>ES4</b><span>додаткова батарея</span></div><div class="hero-stat"><b>G30</b><span>Max-серія</span></div><div class="hero-stat"><b>BMS</b><span>живлення</span></div><div class="hero-stat"><b>від 100 грн</b><span>діагностика</span></div></div></div></div></div></div></section>
+    <section id="models" class="section panel"><div class="section-head"><div><span class="eyebrow">Моделі</span><h2>Які Ninebot приймаємо</h2></div><p>Якщо модель невідома, можна показати фото деки, дисплея або напис у додатку.</p></div><div class="grid-3"><div class="mini-card"><span class="icon">ES</span><h3>ES2 / ES4</h3><p>Дисплей, проводка, додаткова батарея, зарядка, підсвітка, контролер.</p></div><div class="mini-card"><span class="icon">G30</span><h3>Max G30</h3><p>АКБ, мотор-колесо, контролер, зарядний вузол, наслідки води.</p></div><div class="mini-card"><span class="icon">F</span><h3>F / E-серії</h3><p>Зарядка, дисплей, BMS, проводка, гальма, мотор-колесо.</p></div></div></section>
+    <section id="diagnostics" class="section panel"><div class="section-head"><div><span class="eyebrow">Поломки Ninebot</span><h2>З якими симптомами звертаються</h2></div><p>Для Ninebot важливо перевірити не тільки симптом, а й зв'язок між батареєю, контролером, дисплеєм, мотором і додатковими модулями.</p></div><div class="symptom-table"><div class="symptom-row"><strong>Не заряджається</strong><span>Порт, зарядний пристрій, BMS, батарея, додатковий модуль.</span><em>Перевіряємо зарядний ланцюг</em></div><div class="symptom-row"><strong>Помилка на дисплеї</strong><span>Контролер, мотор, датчики, роз'єми, батарея.</span><em>Дивимося код і вузли</em></div><div class="symptom-row"><strong>Смикається або не їде</strong><span>Мотор-колесо, контролер, ручка газу, проводка.</span><em>Перевіряємо керування</em></div></div></section>
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Моделі Ninebot</span><h2>Часті проблеми ES2, ES4 і Max G30</h2></div><p>Цей блок робить сторінку окремою від Xiaomi: у Ninebot є свої вузли, помилки і батарейні особливості.</p></div><table class="price-table"><thead><tr><th>Серія</th><th>Що часто перевіряємо</th><th>Коментар</th></tr></thead><tbody><tr><td>ES2</td><td>Дисплей, проводка, контролер, зарядка, підсвітка</td><td>Важлива перевірка роз'ємів, сигналів</td></tr><tr><td>ES4</td><td>Додаткова батарея, контакти, BMS, зарядний ланцюг</td><td>Проблеми можуть бути в батарейному модулі або його роз'ємах</td></tr><tr><td>Max G30</td><td>АКБ, мотор-колесо, контролер, зарядка, волога</td><td>Сильніше навантаження на мотор, батарею, силову частину</td></tr></tbody></table></section>
+    <section id="prices" class="section panel"><div class="section-head"><div><span class="eyebrow">Ціни</span><h2>Орієнтовна вартість ремонту Ninebot</h2></div><p>Точна ціна залежить від моделі і стану вузла, тому фінальна сума погоджується після діагностики.</p></div><table class="price-table"><thead><tr><th>Послуга</th><th>Ціна</th><th>Коментар</th></tr></thead><tbody><tr><td>Діагностика Ninebot</td><td>від 100 грн</td><td>Живлення, зарядка, контролер, дисплей, мотор</td></tr><tr><td>Перевірка АКБ / BMS</td><td>від 100 грн</td><td>Батарея, баланс, додатковий модуль ES4</td></tr><tr><td>Ремонт зарядного порту</td><td>від 200 грн</td><td>Якщо заряд іде нестабільно або не йде зовсім</td></tr><tr><td>Ремонт контролера</td><td>від 400 грн</td><td>Після перевірки плати і роз'ємів</td></tr><tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд плати, порту, дисплея, проводки</td></tr></tbody></table></section>
+    <section id="seo-text" class="section panel"><div class="section-head"><div><span class="eyebrow">SEO-текст</span><h2>Повний текст сторінки</h2></div><p>Текст унікальний для Ninebot: ES2, ES4, Max G30, додаткова батарея, коди помилок, додаток, BMS, контролер, мотор.</p></div><div class="long-copy"><h2>Ремонт електросамокатів Ninebot у Харкові</h2>
+<p>Електросамокати Ninebot / Segway-Ninebot мають свої особливості в діагностиці: у різних серіях відрізняється батарейний ланцюг, дисплей, контролер, мотор-колесо, зарядні роз'єми, взаємодія з додатком. У сервісі InService у Харкові майстер перевіряє не тільки очевидну поломку, а весь ланцюг, який може впливати на запуск, зарядку, тягу, помилки, стабільність роботи.</p>
+<p>Брендова сторінка Ninebot потрібна для окремого інтенту: власник ES2, ES4, Max G30, F-серії або іншої моделі хоче зрозуміти, чи приймають саме його самокат, які типові проблеми бувають, що перевіряється перед ремонтом.</p>
+
+<h2>Моделі Ninebot, які можна привезти на діагностику</h2>
+<p>Найчастіше на діагностику привозять Ninebot ES2, ES4, Max G30, моделі F-серії, E-серії та близькі модифікації Segway-Ninebot. Якщо модель невідома, можна показати фото деки, дисплея або напис у додатку.</p>
+<ul>
+  <li>Ninebot ES2;</li>
+  <li>Ninebot ES4 з додатковою батареєю;</li>
+  <li>Ninebot Max G30;</li>
+  <li>Ninebot F-серія;</li>
+  <li>Ninebot E-серія;</li>
+  <li>Інші електросамокати Segway-Ninebot.</li>
+</ul>
+
+<h2>Типові поломки Ninebot</h2>
+<p>У Ninebot важливо не поспішати із заміною контролера або батареї. Одна помилка може бути пов'язана з роз'ємом, додатковою батареєю, зарядним портом, BMS, мотор-колесом, гальмівними датчиками чи проводкою. Саме тому майстер перевіряє кілька вузлів, не тільки той, на який вказує симптом.</p>
+<table>
+  <thead><tr><th>Симптом</th><th>Ймовірні причини</th><th>Що перевіряємо</th></tr></thead>
+  <tbody>
+    <tr><td>Не заряджається</td><td>Порт, зарядний пристрій, BMS, батарея, роз'єми</td><td>Зарядний ланцюг, контакти</td></tr>
+    <tr><td>Не вмикається</td><td>Глибокий розряд, дисплей, кнопка, контролер, батарея</td><td>Живлення, дисплей, плата управління</td></tr>
+    <tr><td>Помилка або код на дисплеї</td><td>Контролер, мотор, датчики, додаткова батарея, проводка</td><td>Коди, роз'єми, сигнали, стан плат</td></tr>
+    <tr><td>Смикається або не їде</td><td>Мотор-колесо, датчики Холла, контролер, ручка газу</td><td>Мотор, фази, датчики, керування</td></tr>
+    <tr><td>Після води працює нестабільно</td><td>Окислення роз'ємів, плати, порту, дисплея</td><td>Огляд корозії, наслідків вологи</td></tr>
+  </tbody>
+</table>
+
+<h2>Окремо про ES2, ES4 та Max G30</h2>
+<p>У серії ES часто потрібно уважно перевіряти контакти, роз'єми, додаткову батарею, підсвітку, гальмівні сигнали, проводку в стійці. У ES4 додаткова батарея може впливати на зарядку, помилки, стабільність роботи. У Max G30 частіше звертають увагу на мотор-колесо, батарею, зарядний вузол, контролер, стан після вологи.</p>
+<table>
+  <thead><tr><th>Серія</th><th>Що часто перевіряємо</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>ES2</td><td>Дисплей, проводку, контролер, зарядку, підсвітку</td><td>Важлива перевірка роз'ємів, сигналів</td></tr>
+    <tr><td>ES4</td><td>Додаткову батарею, контакти, BMS, зарядний ланцюг</td><td>Проблеми можуть бути в батарейному модулі або його роз'ємах</td></tr>
+    <tr><td>Max G30</td><td>АКБ, мотор-колесо, контролер, зарядку, вологу</td><td>Сильніше навантаження на мотор, батарею, силову частину</td></tr>
+  </tbody>
+</table>
+
+<h2>Що перевіряє майстер</h2>
+<p>Діагностика починається з моделі, симптомів і історії поломки: чи був дощ, падіння, довге зберігання, зарядка чужим блоком або попередній ремонт. Далі перевіряється батарея, BMS, зарядний порт, дисплей, контролер, мотор-колесо, проводка, роз'єми і поведінка самоката під навантаженням.</p>
+<p>Якщо самокат підключається до додатку Segway-Ninebot, корисно показати майстру помилки або поведінку в додатку. Це не замінює діагностику, але допомагає швидше зрозуміти, який вузол потребує уваги.</p>
+
+<h2>Типові роботи по Ninebot</h2>
+<p>Сторінка не є окремим прайсом, але показує, які роботи найчастіше потрібні власникам Ninebot. Ціни залишаються орієнтовними і погоджуються після огляду.</p>
+<ul>
+  <li>Перевірка зарядного порту, зарядного пристрою, роз'ємів;</li>
+  <li>Діагностика акумулятора, BMS, додаткової батареї ES4;</li>
+  <li>Ремонт або заміна контролера після помилок чи води;</li>
+  <li>Перевірка дисплея, кнопки, ручки газу, гальмівних сигналів;</li>
+  <li>Ремонт мотор-колеса, датчиків Холла, підшипників, фазних дротів;</li>
+  <li>Огляд після дощу, калюжі, миття або тривалого простою.</li>
+</ul>
+
+<h2>Орієнтовні ціни на ремонт</h2>
+<p>Фінальна вартість залежить від моделі, стану вузла, наслідків води, доступності деталей. Тому точну суму коректно називати після діагностики.</p>
+<table>
+  <thead><tr><th>Послуга</th><th>Ціна від</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>Діагностика Ninebot</td><td>від 100 грн</td><td>Живлення, зарядка, контролер, дисплей, мотор</td></tr>
+    <tr><td>Перевірка АКБ / BMS</td><td>від 100 грн</td><td>Батарея, баланс, додатковий модуль ES4</td></tr>
+    <tr><td>Ремонт зарядного порту</td><td>від 200 грн</td><td>Якщо заряд іде нестабільно або не йде зовсім</td></tr>
+    <tr><td>Ремонт контролера</td><td>від 400 грн</td><td>Після перевірки плати і роз'ємів</td></tr>
+    <tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд плати, порту, дисплея, проводки</td></tr>
+  </tbody>
+</table>
+
+<h2>Що взяти з собою</h2>
+<p>На діагностику бажано взяти зарядний пристрій, якщо проблема пов'язана із зарядкою, батареєю або запуском. Якщо є код помилки на дисплеї чи в додатку, зробіть фото. Для ES4 важливо повідомити, чи встановлена додаткова батарея, чи були проблеми з її контактами.</p>
+<p>Адреса сервісу для ремонту електротранспорту: Харків, вул. Дерев'янка, 58. Графік роботи: Пн-Сб з 10:00 до 18:00, неділя — вихідний.</p>
+
+<h2>Гарантія та погодження робіт</h2>
+<p>Перед ремонтом майстер пояснює, який вузол несправний, які роботи потрібні, що може вплинути на результат. Гарантійні умови залежать від виду робіт, стану деталей, наявності слідів води, попередніх втручань. Спочатку проводиться діагностика, погодження, потім ремонт.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Чи ремонтуєте Ninebot ES2 та ES4?</h3>
+<p>Так, можна привезти ES2, ES4 та близькі моделі. Для ES4 окремо перевіряється додаткова батарея, контакти, зарядний ланцюг.</p>
+<h3>Чому Ninebot не заряджається?</h3>
+<p>Причина може бути в зарядному порту, зарядному пристрої, батареї, BMS, додатковому модулі, контролері або проводці.</p>
+<h3>Що робити, якщо Ninebot показує помилку?</h3>
+<p>Зробіть фото коду на дисплеї або в додатку, не розбирайте самокат самостійно. Майстер перевірить, який вузол викликає помилку.</p>
+<h3>Чи ремонтуєте Ninebot після води?</h3>
+<p>Так, але краще не вмикати, не заряджати самокат до огляду. Волога може пошкодити плату, порт, дисплей, батарею або роз'єми.</p></div></section>
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Перелінковка</span><h2>Пов'язані сторінки</h2></div></div><div class="grid-4"><a class="issue-card" href="remont-elektrosamokativ-kharkiv.html"><h3>Ремонт електросамокатів</h3><p>Основна сторінка послуги.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html"><h3>Не заряджається</h3><p>Порт, BMS, АКБ, зарядний пристрій.</p><em>Перейти</em></a><a class="issue-card" href="remont-akumulyatora-elektrosamokata-kharkiv.html"><h3>Ремонт акумулятора</h3><p>Батарея, BMS, швидкий розряд.</p><em>Перейти</em></a><a class="issue-card" href="remont-kontrolera-elektrosamokata-kharkiv.html"><h3>Ремонт контролера</h3><p>Плата управління, помилки, ривки.</p><em>Перейти</em></a></div></section>
+    <section id="contact" class="section panel"><div class="section-head"><div><span class="eyebrow">Заявка</span><h2>Залишити заявку на ремонт Ninebot</h2></div><p>Опишіть модель Ninebot і симптом: не заряджається, помилка, не їде, після води, проблема з батареєю або додатковим модулем.</p></div><div class="grid-2"><div class="form-box"><h3>Що повідомити майстру</h3><div class="form-grid"><div class="field">Ім'я</div><div class="field">Телефон</div><div class="field">Модель Ninebot</div><div class="field">Симптом</div><div class="field wide">Коментар: ES2, ES4, Max G30, F-серія, не заряджається, помилка, додаткова батарея, після води.</div></div><div class="btns" style="margin-top:16px;"><a class="btn btn-main" href="tel:+380676526004">Подзвонити</a></div></div><div class="mini-card"><h3>Адреса сервісу</h3><p><strong>Харків:</strong> вул. Дерев'янка, 58</p><p><strong>Телефони:</strong> <a href="tel:+380676526004">+38 (067) 652-60-04</a>, <a href="tel:+380631492439">+38 (063) 149-24-39</a>, <a href="tel:+380665474037">+38 (066) 547-40-37</a></p><p><strong>Графік:</strong> Пн-Сб: 10:00-18:00 · Неділя — вихідний</p><p>Якщо є код помилки в додатку або на дисплеї, покажіть його майстру.</p></div></div></section>
+    <div class="footer-note">Брендова сторінка для InService: ремонт електросамокатів Ninebot у Харкові.</div>
+  </main>
+</body>
+</html>

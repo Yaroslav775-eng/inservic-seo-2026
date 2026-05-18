@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт електротранспорту Giant у Харкові — InService</title>
+  <meta name="description" content="Ремонт електротранспорту Giant у Харкові: діагностика батареї, BMS, зарядки, дисплея, контролера, мотора, датчиків, проводки та наслідків води." />
+  <link rel="canonical" href="https://inservic.com.ua/remont-elektrotransportu-giant-kharkiv/" />
+  <meta property="og:title" content="Ремонт електротранспорту Giant у Харкові — InService" />
+  <meta property="og:description" content="Giant: електровелосипеди та електротранспорт. Батарея, BMS, дисплей, контролер, мотор, датчики, зарядка, вода." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" />
+<style>
+    :root {
+      --bg: #f3f6f9;
+      --card: #ffffff;
+      --text: #0f2b46;
+      --muted: #5f7184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0b63d3;
+      --blue-soft: #eef6ff;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12, 99, 206, .13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255, 157, 47, .24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: #111b29; color: #edf3fb; font-size: 13px; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 9px 0; }
+    .site-head {
+      margin: 18px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .brand small { display: block; color: var(--muted); margin-top: 2px; }
+    .head-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .phone { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      border-radius: 999px;
+      color: #38506a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumbs { margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--orange-dark); text-decoration: none; }
+    .hero { margin-bottom: 18px; }
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,157,47,.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f3f9ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .hero-copy { padding: 36px; }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(270px 220px at 80% 8%, rgba(255,157,47,.24), transparent 70%),
+        linear-gradient(180deg, #f8fbff, #eef5fc);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd8bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.03em; }
+    h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 760px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: var(--orange-soft); border: 1px solid #ffd4b5; color: #944114; font-size: 13px; font-weight: 800; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+    }
+    .btn-main { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff; box-shadow: 0 14px 28px rgba(242,101,34,.22); }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
+    .scooter-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 45px rgba(20,42,61,.08);
+    }
+    .scooter-photo {
+      height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef5;
+      margin-bottom: 16px;
+    }
+    .scooter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-stat { border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: #fbfdff; }
+    .hero-stat b { display:block; font-size: 20px; color: var(--orange-dark); margin-bottom: 3px; }
+    .section { margin: 18px 0; }
+    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.96); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 18px; }
+    .section-head p { max-width: 650px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .mini-card, .issue-card, .brand-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      min-height: 100%;
+    }
+    .issue-card { text-decoration: none; display: block; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .issue-card:hover, .brand-card:hover { transform: translateY(-3px); border-color: rgba(255,157,47,.62); box-shadow: 0 18px 30px rgba(20,42,61,.09); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff;
+      font-weight: 900; margin-bottom: 12px; box-shadow: 0 12px 22px rgba(242,101,34,.18);
+    }
+    .issue-card em, .brand-card em { display: inline-block; margin-top: 10px; color: var(--orange-dark); font-style: normal; font-weight: 900; font-size: 13px; }
+    .brand-card { text-decoration: none; color: inherit; display:block; }
+    .brand-name { display: block; font-size: 22px; font-weight: 900; margin-bottom: 6px; letter-spacing: -.02em; }
+    .price-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .price-table th, .price-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .price-table th { background: #17324d; color: #fff; font-size: 13px; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-table td:nth-child(2) { font-weight: 900; color: var(--orange-dark); white-space: nowrap; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .step::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--orange); color:#fff; font-weight: 900; margin-bottom: 10px; }
+    .faq { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px 18px; }
+    summary { cursor: pointer; font-weight: 900; color: var(--text); }
+    details p { margin-top: 10px; }
+    .callout { border-left: 4px solid var(--orange); background: #fff8f1; border-radius: 18px; padding: 16px 18px; color: #70411f; }
+    .seo-text { columns: 2; column-gap: 34px; }
+    .seo-text p { break-inside: avoid; }
+    .seo-copy { display: grid; gap: 18px; }
+    .seo-copy h3 { margin-top: 6px; }
+    .seo-copy p { font-size: 16px; }
+    .seo-copy ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy li { margin-bottom: 7px; }
+    .seo-copy ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy > h2 { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .seo-copy > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .seo-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .seo-copy th, .seo-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .seo-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .seo-copy tr:last-child td { border-bottom: 0; }
+    .symptom-table { display: grid; gap: 10px; }
+    .symptom-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr 0.9fr;
+      gap: 12px;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px;
+    }
+    .symptom-row strong { color: var(--text); }
+    .symptom-row span { color: var(--muted); }
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 20px;
+    }
+    .form-box {
+      border: 1px solid #ffd3b5;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff8f1, #fff);
+      padding: 22px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px 13px;
+      color: var(--muted);
+      min-height: 46px;
+    }
+    .field.wide { grid-column: 1 / -1; min-height: 82px; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .handoff-item { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .handoff-item b { display: block; color: var(--text); margin-bottom: 5px; }
+    .keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .keyword-list span { padding: 7px 10px; border-radius: 999px; background: #eef6ff; color: #255b92; font-size: 12px; font-weight: 800; }
+    .content-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .content-checklist div { border: 1px solid var(--line); border-radius: 16px; padding: 13px; background: #fbfdff; color: var(--muted); }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 9px 12px; border-radius: 999px; background: var(--blue-soft); color: #245a91; text-decoration: none; font-weight: 800; font-size: 13px; }
+    .long-copy { display: grid; gap: 14px; }
+    .long-copy h2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .long-copy h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .long-copy ul, .long-copy ol { margin: 0 0 6px; padding-left: 22px; color: var(--muted); }
+    .long-copy li { margin-bottom: 7px; }
+    .long-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .long-copy th, .long-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .long-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .long-copy tr:last-child td { border-bottom: 0; }
+    .footer-note { margin: 24px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4, .steps, .handoff-grid, .content-checklist, .symptom-row, .form-grid { grid-template-columns: 1fr; }
+      .field.wide { grid-column: auto; }
+      .hero-visual { border-left: 0; border-top: 1px solid var(--line); min-height: auto; }
+      .section-head { display: block; }
+      .seo-text { columns: 1; }
+      .site-head { align-items: flex-start; flex-direction: column; }
+      .head-actions { justify-content: flex-start; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Ремонт електротранспорту Giant у Харкові", "serviceType": "Ремонт електротранспорту Giant", "areaServed": "Харків", "provider": {"@type": "LocalBusiness", "name": "InService", "url": "https://inservic.com.ua/", "telephone": "+38-067-652-60-04", "address": {"@type": "PostalAddress", "addressLocality": "Харків", "streetAddress": "вул. Дерев'янка, 58"}}, "offers": {"@type": "AggregateOffer", "priceCurrency": "UAH", "lowPrice": "100"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чи ремонтуєте електровелосипеди Giant?", "acceptedAnswer": {"@type": "Answer", "text": "Так, електротранспорт Giant можна привезти на діагностику. Майстер перевірить батарею, зарядку, дисплей, контролер, мотор, датчики та проводку."}}, {"@type": "Question", "name": "Чому Giant не заряджається?", "acceptedAnswer": {"@type": "Answer", "text": "Причина може бути в зарядному пристрої, порту, батареї, BMS, контактах або проводці."}}, {"@type": "Question", "name": "Чи можна звернутися без точної моделі?", "acceptedAnswer": {"@type": "Answer", "text": "Так. Покажіть фото рами, дисплея, батареї або шильдика."}}]}</script>
+</head>
+<body>
+  <header class="container site-head"><div class="brand"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /><div><strong>Ремонт електротранспорту Giant</strong><small>електровелосипеди, батарея, мотор</small></div></div><div class="head-actions"><a class="phone" href="tel:+380676526004">+38 (067) 652-60-04</a><a class="btn btn-main" href="#contact">Записатися</a></div></header>
+  <nav class="container nav" aria-label="Навігація сторінкою"><a href="remont-elektrosamokativ-kharkiv.html">Самокати</a><a href="electric-bicycles.html">Електровелосипеди</a><a href="#diagnostics">Симптоми</a><a href="remont-akumulyatora-elektrosamokata-kharkiv.html">Батарея</a><a href="remont-kontrolera-elektrosamokata-kharkiv.html">Контролер</a><a href="elektrosamokat-pislya-vody-kharkiv.html">Після води</a><a href="#faq">FAQ</a><a href="#contact">Заявка</a></nav>
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Головна</a> / <a href="electric-transport.html">Електротранспорт</a> / <a href="remont-elektrosamokativ-kharkiv.html">Ремонт електросамокатів</a> / Giant</div>
+    <section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">Брендова сторінка</span><h1>Ремонт електротранспорту Giant у Харкові</h1><p class="lead">Діагностика електротранспорту Giant: батарея, BMS, зарядний порт, дисплей, контролер, мотор, датчики, проводка, гальма та наслідки води. Спочатку уточнюємо модель і симптом, потім погоджуємо варіанти ремонту.</p><div class="chips"><span class="chip">Giant e-bike / електротранспорт</span><span class="chip">Діагностика від 100 грн</span><span class="chip">Харків, Дерев'янка 58</span></div><div class="btns"><a class="btn btn-main" href="#contact">Отримати консультацію</a><a class="btn btn-ghost" href="tel:+380676526004">Подзвонити</a></div></div><div class="hero-visual"><div class="scooter-card"><div class="scooter-photo"><img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Ремонт електротранспорту Giant" /></div><div class="hero-stats"><div class="hero-stat"><b>АКБ</b><span>живлення і BMS</span></div><div class="hero-stat"><b>Мотор</b><span>тяга і датчики</span></div><div class="hero-stat"><b>Дисплей</b><span>помилки системи</span></div><div class="hero-stat"><b>від 100 грн</b><span>діагностика</span></div></div></div></div></div></div></section>
+
+    <section id="models" class="section panel"><div class="section-head"><div><span class="eyebrow">Формат</span><h2>Що можна привезти на діагностику</h2></div><p>Для Giant важливо спочатку уточнити модель, тип системи та симптом.</p></div><div class="grid-3"><div class="mini-card"><span class="icon">АКБ</span><h3>Батарея / BMS</h3><p>Зарядка, напруга, баланс, роз'єми, сліди води.</p></div><div class="mini-card"><span class="icon">M</span><h3>Мотор і датчики</h3><p>Тяга, PAS, сигнали, проводка, поведінка під навантаженням.</p></div><div class="mini-card"><span class="icon">D</span><h3>Дисплей / контролер</h3><p>Помилки, живлення, комунікація вузлів, плата управління.</p></div></div></section>
+
+    <section id="diagnostics" class="section panel"><div class="section-head"><div><span class="eyebrow">Симптоми Giant</span><h2>З якими проблемами звертаються</h2></div><p>Сторінка зроблена чесно: Giant більше схожий на e-bike напрям, тому ключова логіка — діагностика електровузлів і механіки.</p></div><div class="symptom-table"><div class="symptom-row"><strong>Не вмикається</strong><span>Батарея, BMS, дисплей, контролер, проводка.</span><em>Перевіряємо живлення</em></div><div class="symptom-row"><strong>Не заряджається</strong><span>Порт, зарядний пристрій, АКБ, контакти.</span><em>Дивимося зарядний ланцюг</em></div><div class="symptom-row"><strong>Швидко сідає батарея</strong><span>Знос елементів, дисбаланс, BMS, навантаження.</span><em>Оцінюємо АКБ</em></div><div class="symptom-row"><strong>Немає допомоги мотора</strong><span>PAS/датчики, контролер, мотор, проводка.</span><em>Перевіряємо сигнали</em></div><div class="symptom-row"><strong>Після води</strong><span>Окислення плати, порту, роз'ємів, дисплея.</span><em>Оглядаємо корозію</em></div></div></section>
+
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Вузли Giant</span><h2>Електроніка та механіка</h2></div><p>Одна несправність може зачіпати батарею, датчики, мотор, контролер і механічне навантаження одночасно.</p></div><table class="price-table"><thead><tr><th>Вузол</th><th>Що перевіряємо</th><th>Навіщо</th></tr></thead><tbody><tr><td>Батарея</td><td>Напругу, BMS, баланс, роз'єм, сліди води</td><td>Зрозуміти стан живлення</td></tr><tr><td>Контролер / дисплей</td><td>Плату, помилки, живлення, сигнали</td><td>Не міняти вузол без підтвердження</td></tr><tr><td>Мотор / датчики</td><td>Тягу, PAS, проводку, навантаження</td><td>Повернути стабільну роботу системи</td></tr></tbody></table></section>
+
+    <section id="prices" class="section panel"><div class="section-head"><div><span class="eyebrow">Ціни</span><h2>Орієнтовна вартість діагностики Giant</h2></div><p>Точна ціна залежить від моделі, електросистеми та доступності деталей, тому фінальна сума погоджується після огляду.</p></div><table class="price-table"><thead><tr><th>Послуга</th><th>Ціна</th><th>Коментар</th></tr></thead><tbody><tr><td>Діагностика Giant</td><td>від 100 грн</td><td>Живлення, зарядка, дисплей, датчики, мотор</td></tr><tr><td>Перевірка батареї / BMS</td><td>від 100 грн</td><td>Напруга, баланс, роз'єми, сліди води</td></tr><tr><td>Перевірка зарядного вузла</td><td>від 200 грн</td><td>Порт, блок живлення, контакти</td></tr><tr><td>Діагностика контролера</td><td>від 400 грн</td><td>Після перевірки плати та проводки</td></tr><tr><td>Огляд після води</td><td>від 400 грн</td><td>Плата, порт, роз'єми, корозія</td></tr></tbody></table></section>
+
+    <section id="seo-text" class="section panel"><div class="section-head"><div><span class="eyebrow">SEO-текст</span><h2>Повний текст сторінки</h2></div><p>Текст унікальний для Giant: електровелосипеди, батарея, BMS, мотор, датчики, дисплей, контролер, вода.</p></div><div class="long-copy"><h2>Ремонт електротранспорту Giant у Харкові</h2>
+<p>Giant частіше асоціюється з велосипедами та електровелосипедами, тому сторінку варто будувати не як шаблонну сторінку електросамоката, а як обережну бренд-сторінку для електротранспорту Giant. Основний інтерес користувача — зрозуміти, чи можна перевірити батарею, зарядку, мотор, контролер, дисплей, датчики, проводку та механічну частину.</p>
+<p>У сервісі InService у Харкові можна звернутися з електротранспортом Giant для первинної діагностики. Якщо модель невідома, достатньо показати фото рами, дисплея, батареї, зарядного роз'єму або напису на велосипеді. Це допомагає визначити тип системи, симптоми та доцільність ремонту.</p>
+
+<h2>Що можна привезти на діагностику</h2>
+<p>Для Giant важливо не обіцяти універсальний ремонт усіх моделей без огляду. Частина робіт залежить від конструкції, доступності деталей, типу батареї, двигуна, контролера та попередніх втручань. На сторінці потрібно чесно пояснити: спочатку майстер дивиться техніку, потім погоджує варіанти ремонту.</p>
+<ul>
+  <li>Електровелосипеди Giant;</li>
+  <li>Міський електротранспорт Giant;</li>
+  <li>Моделі з проблемами зарядки, батареї, дисплея або датчиків;</li>
+  <li>Техніку після води, падіння, удару, довгого зберігання;</li>
+  <li>Інші модифікації після уточнення фото, моделі та симптомів.</li>
+</ul>
+
+<h2>Типові симптоми</h2>
+<p>Найчастіше власник звертається, коли транспорт не вмикається, не заряджається, швидко розряджається, не допомагає мотор, з'являється помилка на дисплеї, зникає тяга або виникають проблеми з гальмами, колесами чи проводкою. Причина може бути електронною або механічною, тому діагностика має охоплювати весь вузол, а не тільки один видимий симптом.</p>
+<table>
+  <thead><tr><th>Симптом</th><th>Ймовірні причини</th><th>Що перевіряємо</th></tr></thead>
+  <tbody>
+    <tr><td>Не вмикається</td><td>Батарея, BMS, кнопка, дисплей, контролер, проводка</td><td>Живлення, напругу, роз'єми</td></tr>
+    <tr><td>Не заряджається</td><td>Зарядний пристрій, порт, АКБ, контакти</td><td>Зарядний ланцюг та батарею</td></tr>
+    <tr><td>Швидко сідає батарея</td><td>Знос елементів, дисбаланс, навантаження, BMS</td><td>Ємність, баланс, просадку напруги</td></tr>
+    <tr><td>Не працює допомога мотора</td><td>Датчик педалювання, контролер, мотор, проводка</td><td>PAS/датчики, сигнали, силову частину</td></tr>
+    <tr><td>Помилка на дисплеї</td><td>Дисплей, датчики, контролер, роз'єми</td><td>Код помилки, комунікацію вузлів</td></tr>
+    <tr><td>Після води працює нестабільно</td><td>Окислення порту, плати, контактів, дисплея</td><td>Корозію та наслідки вологи</td></tr>
+  </tbody>
+</table>
+
+<h2>Електроніка та механіка Giant</h2>
+<p>Електротранспорт Giant потребує комплексного підходу, тому що несправність може проявлятися в електроніці, але мати механічну причину. Наприклад, підвищене навантаження на колесо, гальма або трансмісію може впливати на батарею та мотор. Нестабільний контакт у роз'ємі може виглядати як проблема контролера або дисплея.</p>
+<table>
+  <thead><tr><th>Вузол</th><th>Що перевіряємо</th><th>Навіщо це потрібно</th></tr></thead>
+  <tbody>
+    <tr><td>Батарея</td><td>Напругу, BMS, баланс, роз'єм, сліди води</td><td>Щоб зрозуміти реальний стан живлення</td></tr>
+    <tr><td>Контролер</td><td>Плату, силові ланцюги, сигнали, контакти</td><td>Щоб не міняти вузол без підтвердження</td></tr>
+    <tr><td>Дисплей</td><td>Живлення, помилки, кнопки, зв'язок з системою</td><td>Щоб побачити причину збою або помилки</td></tr>
+    <tr><td>Мотор / колесо</td><td>Датчики, проводку, шум, навантаження</td><td>Щоб перевірити тягу та безпечність руху</td></tr>
+    <tr><td>Гальма та механіка</td><td>Колодки, ротор, трос/гідролінію, люфти</td><td>Щоб транспорт був безпечним після ремонту</td></tr>
+  </tbody>
+</table>
+
+<h2>Що робить майстер під час діагностики</h2>
+<p>Майстер спочатку уточнює історію поломки: коли з'явився симптом, чи був дощ, удар, падіння, перевезення, довге зберігання, зарядка іншим блоком або попередній ремонт. Далі перевіряється батарея, зарядний пристрій, порт, дисплей, контролер, мотор, датчики, проводка, гальма та механічні вузли.</p>
+<p>Якщо транспорт вмикається, але поводиться нестабільно під навантаженням, потрібен тест роботи системи. Якщо техніка була після води, краще не заряджати її до огляду, тому що волога може пошкодити плату, BMS або роз'єми.</p>
+
+<h2>Які роботи можуть знадобитися</h2>
+<p>Після огляду майстер пояснює, що саме несправне, які роботи можливі та чи є сенс ремонтувати вузол. Для Giant можуть знадобитися такі роботи:</p>
+<ul>
+  <li>Діагностика батареї, BMS, зарядного порту;</li>
+  <li>Перевірка зарядного пристрою, роз'ємів, проводки;</li>
+  <li>Діагностика контролера, дисплея, датчиків;</li>
+  <li>Перевірка мотора, колеса, шумів, навантаження;</li>
+  <li>Огляд гальм, колодок, ротора, троса або гідролінії;</li>
+  <li>Відновлення проводки після обриву, окислення, невдалого втручання;</li>
+  <li>Огляд після води, падіння, удару або довгого зберігання.</li>
+</ul>
+
+<h2>Орієнтовні ціни</h2>
+<p>Вартість залежить від моделі Giant, типу електросистеми, стану батареї, доступності деталей і попередніх втручань. Тому точну суму краще називати після діагностики, а на сторінці залишати стартові орієнтири.</p>
+<table>
+  <thead><tr><th>Робота</th><th>Ціна</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>Діагностика електротранспорту Giant</td><td>від 100 грн</td><td>Живлення, зарядка, дисплей, датчики, мотор</td></tr>
+    <tr><td>Перевірка батареї / BMS</td><td>від 100 грн</td><td>Напруга, баланс, роз'єми, сліди води</td></tr>
+    <tr><td>Перевірка зарядного вузла</td><td>від 200 грн</td><td>Порт, зарядний пристрій, контакти</td></tr>
+    <tr><td>Діагностика контролера</td><td>від 400 грн</td><td>Після перевірки плати та проводки</td></tr>
+    <tr><td>Огляд після води</td><td>від 400 грн</td><td>Плата, порт, роз'єми, корозія</td></tr>
+  </tbody>
+</table>
+
+<h2>Що взяти з собою</h2>
+<p>На діагностику бажано взяти сам транспорт, зарядний пристрій, ключі, якщо вони є, і показати симптом: не заряджається, не вмикається, швидко сідає батарея, немає допомоги мотора, є помилка на дисплеї, був контакт з водою. Якщо є фото або відео помилки, їх також варто показати майстру.</p>
+<p>Адреса сервісу для електротранспорту: Харків, вул. Дерев'янка, 58. Графік роботи: Пн-Сб з 10:00 до 18:00, неділя — вихідний.</p>
+
+<h2>Гарантія та погодження робіт</h2>
+<p>Перед ремонтом майстер погоджує обсяг робіт і пояснює, які деталі можуть знадобитися. Гарантійні умови залежать від типу ремонту, стану вузла, слідів води, доступності деталей, попередніх втручань. Такий підхід особливо важливий для Giant, де електроніка і механіка часто пов'язані між собою.</p>
+
+<h2>FAQ</h2>
+<h3>Чи ремонтуєте електровелосипеди Giant?</h3>
+<p>Так, електротранспорт Giant можна привезти на діагностику. Майстер перевірить батарею, зарядку, дисплей, контролер, мотор, датчики та проводку.</p>
+<h3>Чому Giant не заряджається?</h3>
+<p>Причина може бути в зарядному пристрої, порту, батареї, BMS, контактах або проводці. Точну причину видно після перевірки.</p>
+<h3>Чи можна звернутися без точної моделі?</h3>
+<p>Так. Покажіть фото рами, дисплея, батареї або шильдика. Це допоможе швидше визначити конструкцію та можливість ремонту.</p>
+<h3>Чи ремонтуєте Giant після води?</h3>
+<p>Так, але краще не вмикати і не заряджати техніку до огляду. Волога може пошкодити плату, BMS, порт або роз'єми.</p></div></section>
+
+    <section id="faq" class="section panel"><div class="section-head"><div><span class="eyebrow">FAQ</span><h2>Питання по Giant</h2></div><p>Короткі відповіді перед зверненням у сервіс.</p></div><div class="faq-list"><details open><summary>Чи ремонтуєте електровелосипеди Giant?</summary><p>Так, електротранспорт Giant можна привезти на діагностику. Майстер перевірить батарею, зарядку, дисплей, контролер, мотор, датчики та проводку.</p></details><details><summary>Чому Giant не заряджається?</summary><p>Причина може бути в зарядному пристрої, порту, батареї, BMS, контактах або проводці. Точну причину видно після перевірки.</p></details><details><summary>Чи можна без точної моделі?</summary><p>Так. Покажіть фото рами, дисплея, батареї або шильдика, і майстер зорієнтує по діагностиці.</p></details></div></section>
+
+    <section id="contact" class="section panel contact-panel"><div><span class="eyebrow">Заявка</span><h2>Привезіть Giant на діагностику</h2><p>Адреса: Харків, вул. Дерев'янка, 58. Графік: Пн-Сб 10:00-18:00, неділя — вихідний.</p><p><strong>Телефони:</strong> <a href="tel:+380676526004">+38 (067) 652-60-04</a>, <a href="tel:+380631492439">+38 (063) 149-24-39</a>, <a href="tel:+380665474037">+38 (066) 547-40-37</a></p></div><div class="form-card"><strong>Що сказати майстру</strong><p>Назвіть модель Giant, симптом, чи був дощ, удар, падіння або попередній ремонт. Візьміть зарядний пристрій.</p><a class="btn btn-main" href="tel:+380676526004">Подзвонити</a></div></section>
+  </main>
+</body>
+</html>

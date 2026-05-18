@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEO Структура — прототип</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --line: #d7e0ea;
+      --text: #1f2d3d;
+      --muted: #5f7286;
+      --accent: #0d6efd;
+      --ok: #198754;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+    .sub {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .lang {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+    }
+    .lang h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .node {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    .main {
+      border-color: #9dc3ff;
+      background: #eef5ff;
+    }
+    .label {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .url {
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      color: #2b4c76;
+      word-break: break-all;
+    }
+    .children {
+      border-left: 2px dashed #bdd2ef;
+      margin-left: 10px;
+      padding-left: 12px;
+      margin-top: 10px;
+    }
+    .legend {
+      margin-top: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .legend p { margin: 8px 0; }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+      border: 1px solid;
+    }
+    .t-main { border-color: #9dc3ff; color: #0b4fb3; background: #eef5ff; }
+    .t-child { border-color: #cfe0f3; color: #31506f; background: #f7fbff; }
+    .hrf {
+      margin-top: 14px;
+      padding: 10px;
+      border: 1px dashed #b7c7db;
+      border-radius: 10px;
+      color: #355170;
+      font-size: 13px;
+    }
+    .ok {
+      color: var(--ok);
+      font-weight: 700;
+    }
+    @media (max-width: 840px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Прототип структуры SEO-страниц</h1>
+    <p class="sub">Минимальная модель без перегруза: 10 страниц (RU+UA).</p>
+
+    <div class="grid">
+      <section class="lang">
+        <h2>UA ветка</h2>
+
+        <div class="node main">
+          <div class="label">Главная услуга (UA)</div>
+          <div class="url">/remont-elektrosamokativ-kharkiv/</div>
+
+          <div class="children">
+            <div class="node">
+              <div class="label">Поломка: не вмикається</div>
+              <div class="url">/remont-elektrosamokativ-kharkiv/ne-vmykaetsya/</div>
+            </div>
+            <div class="node">
+              <div class="label">Поломка: не заряджається</div>
+              <div class="url">/remont-elektrosamokativ-kharkiv/ne-zaryadzhayetsya/</div>
+            </div>
+            <div class="node">
+              <div class="label">Бренд: Xiaomi</div>
+              <div class="url">/remont-elektrosamokativ-kharkiv/xiaomi/</div>
+            </div>
+            <div class="node">
+              <div class="label">Бренд: Kugoo</div>
+              <div class="url">/remont-elektrosamokativ-kharkiv/kugoo/</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lang">
+        <h2>RU ветка</h2>
+
+        <div class="node main">
+          <div class="label">Главная услуга (RU)</div>
+          <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+
+          <div class="children">
+            <div class="node">
+              <div class="label">Поломка: не включается</div>
+              <div class="url">/ru/remont-elektrosamokatov-kharkov/ne-vklyuchaetsya/</div>
+            </div>
+            <div class="node">
+              <div class="label">Поломка: не заряжается</div>
+              <div class="url">/ru/remont-elektrosamokatov-kharkov/ne-zaryazhaetsya/</div>
+            </div>
+            <div class="node">
+              <div class="label">Бренд: Xiaomi</div>
+              <div class="url">/ru/remont-elektrosamokatov-kharkov/xiaomi/</div>
+            </div>
+            <div class="node">
+              <div class="label">Бренд: Kugoo</div>
+              <div class="url">/ru/remont-elektrosamokatov-kharkov/kugoo/</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="legend">
+      <p><span class="tag t-main">Главная</span> центр кластера по запросу “ремонт электросамокатов Харьков”.</p>
+      <p><span class="tag t-child">Дочерние</span> узкие страницы по поломкам и брендам.</p>
+      <div class="hrf">
+        Между UA и RU страницами ставим <strong>hreflang</strong> пары (зеркала).<br/>
+        Внутри каждой ветки: главная ссылается на дочерние, дочерние — обратно на главную.
+      </div>
+      <p class="ok">Итого: 10 страниц на старт — спокойно и управляемо.</p>
+    </section>
+  </div>
+</body>
+</html>

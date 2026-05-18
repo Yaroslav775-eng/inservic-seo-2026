@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт электротранспорта в Харькове — InService</title>
+  <meta name="description" content="Ремонт электротранспорта в Харькове: электросамокаты, электроскутеры, электровелосипеды, гироскутеры, гироборды и моноколеса. Диагностика, гарантия, понятные цены." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1c2430;
+      --muted: #5f6d7f;
+      --line: #dae3ef;
+      --brand: #f26522;
+      --brand-dark: #d94e0f;
+      --brand-soft: #fff3ec;
+      --accent: #0b63d3;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 300px at 0% -10%, #e4ecff 0%, transparent 60%),
+        radial-gradient(700px 260px at 100% -10%, #ffe8dc 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .topbar {
+      background: #101826;
+      color: #fff;
+      font-size: 13px;
+    }
+
+    .topbar .inner {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .site-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 18px 0 12px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: 0 14px 30px rgba(18, 34, 58, 0.08);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-wrap img {
+      width: 165px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-copy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .brand-copy strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .head-meta {
+      text-align: right;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .breadcrumbs {
+      margin: 0 0 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .breadcrumbs a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 28px 0 20px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr;
+      gap: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 14px 30px rgba(18, 34, 58, 0.08);
+    }
+
+    .hero-copy {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 101, 34, 0.14) 0%, rgba(242, 101, 34, 0) 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #9f4316;
+      border: 1px solid #ffd9c5;
+      background: var(--brand-soft);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 36px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 16px;
+    }
+
+    .chip {
+      border: 1px solid #d5e2f6;
+      background: #f4f8ff;
+      color: #285181;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 14px;
+    }
+
+    .btn-main {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .hero-visual {
+      min-height: 100%;
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      background:
+        radial-gradient(220px 160px at 100% 0%, rgba(242, 101, 34, 0.16), transparent 70%),
+        linear-gradient(180deg, #fdfefe 0%, #f3f8ff 100%);
+      border-radius: 14px;
+      position: relative;
+    }
+
+    .hero-visual img {
+      width: min(100%, 360px);
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      filter: drop-shadow(0 26px 34px rgba(27, 44, 78, 0.16));
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      justify-self: start;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section {
+      margin-bottom: 14px;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .service-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: #ffc8ac;
+      box-shadow: 0 18px 35px rgba(28, 36, 48, 0.08);
+    }
+
+    .service-media {
+      height: 130px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .service-body {
+      padding: 14px;
+    }
+
+    .service-body b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .service-body span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .service-body em {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #ffd3be;
+      background: #fff5ef;
+      color: #a44716;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+    }
+
+    .mini b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .branch-root {
+      border: 1px solid #ffd4bf;
+      background: linear-gradient(180deg, #fff9f5 0%, #fff4ec 100%);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill-list span {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #53657c;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    footer {
+      margin: 16px 0 28px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .site-head { flex-direction: column; align-items: flex-start; }
+      .head-meta { text-align: left; }
+      h1 { font-size: 30px; }
+      h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · Харьков · Ежедневно 09:00–19:00</div>
+      <div>+38 (067) 652-60-04 · Telegram · Viber</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="site-head">
+      <div class="brand-wrap">
+        <img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" />
+        <div class="brand-copy">
+          <strong>Сервисный центр InService</strong>
+          Ремонт техники, электротранспорта и электроники в Харькове и Киеве
+        </div>
+      </div>
+      <div class="head-meta">
+        <div>г. Харьков, Проспект Науки, 17</div>
+        <div>г. Харьков, ул. Деревянко, 58</div>
+        <div><strong>+38 (067) 652-60-04</strong> · <strong>+38 (066) 547-40-37</strong></div>
+      </div>
+    </section>
+
+    <div class="breadcrumbs">
+      <a href="https://inservic.com.ua/ru/">Главная</a> / Ремонт электротранспорта в Харькове
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="panel hero-copy">
+          <span class="eyebrow">Страница-хаб (RU)</span>
+          <h1>Ремонт электротранспорта в Харькове</h1>
+          <p>Эта страница собирает спрос по электротранспорту и распределяет пользователя по отдельным услугам: электросамокаты, электроскутеры, электровелосипеды, гироскутеры, гироборды и моноколеса.</p>
+          <div class="chips">
+            <span class="chip">Хаб-страница</span>
+            <span class="chip">6 направлений</span>
+            <span class="chip">Локальное SEO</span>
+            <span class="chip">Главный фокус: электросамокаты</span>
+          </div>
+          <div class="btns">
+            <a href="#services" class="btn btn-main">Выбрать направление</a>
+            <a href="#scooter-branch" class="btn btn-ghost">Смотреть ветку самокатов</a>
+          </div>
+          <p class="note">Логика страницы: это не конкурирующая money-page, а родительская точка входа в подуслуги по электротранспорту.</p>
+        </article>
+
+        <aside class="panel">
+          <div class="hero-visual">
+            <img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Ремонт электротранспорта" />
+            <div class="hero-badge">Диагностика, ремонт и обслуживание с гарантией</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section panel" id="services">
+      <h2>Услуги по электротранспорту</h2>
+      <div class="grid-3">
+        <a class="service-card" href="russian-scooter-page.html">
+          <div class="service-media" style="background-image:url('https://inservic.com.ua/wp-content/uploads/2017/08/el.png');"></div>
+          <div class="service-body">
+            <b>Ремонт электросамокатов</b>
+            <span>Главная money-page по направлению: бренды, поломки, прайс и заявка.</span>
+            <em>Приоритет №1</em>
+          </div>
+        </a>
+        <a class="service-card" href="#">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="service-body">
+            <b>Ремонт электроскутеров</b>
+            <span>Отдельная страница услуги под самостоятельный спрос по Харькову.</span>
+            <em>Первая волна</em>
+          </div>
+        </a>
+        <a class="service-card" href="#">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="service-body">
+            <b>Ремонт электровелосипедов</b>
+            <span>Самостоятельная услуга с подтвержденным спросом и отдельной посадочной.</span>
+            <em>Первая волна</em>
+          </div>
+        </a>
+        <a class="service-card" href="#">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="service-body">
+            <b>Ремонт гироскутеров</b>
+            <span>Узкое направление второй волны, которое закрывает отдельный тип транспорта.</span>
+            <em>Вторая волна</em>
+          </div>
+        </a>
+        <a class="service-card" href="#">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1579700408582-e2ea4ef5b8f4?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="service-body">
+            <b>Ремонт гиробордов</b>
+            <span>Нишевая услуга с отдельной карточкой и отдельной посадочной страницей.</span>
+            <em>Вторая волна</em>
+          </div>
+        </a>
+        <a class="service-card" href="#">
+          <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="service-body">
+            <b>Ремонт моноколес</b>
+            <span>Еще одна подуслуга внутри хаба, чтобы не смешивать разные интенты в одной странице.</span>
+            <em>Вторая волна</em>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section panel" id="scooter-branch">
+      <h2>Как дальше раскрывается ветка электросамокатов</h2>
+      <div class="branch-root">
+        <b>Главная страница электросамокатов</b><br />
+        Это уже не хаб, а коммерческая страница под главный спрос: цены, доверие, FAQ, бренды, поломки, локальные сигналы и форма заявки.
+      </div>
+      <div class="grid-2">
+        <div class="mini">
+          <b>Ветка 1: бренды</b>
+          Пользователь знает марку и ищет более точную страницу.
+          <div class="pill-list">
+            <span>Xiaomi</span>
+            <span>Ninebot / Segway</span>
+            <span>Kugoo</span>
+            <span>Crosser</span>
+            <span>Giant</span>
+            <span>Prove</span>
+            <span>Кока Сити</span>
+          </div>
+        </div>
+        <div class="mini">
+          <b>Ветка 2: поломки</b>
+          Пользователь ищет решение по симптому, а не по бренду.
+          <div class="pill-list">
+            <span>Не заряжается</span>
+            <span>Не включается</span>
+            <span>Ремонт контроллера</span>
+            <span>Замена аккумулятора</span>
+            <span>После воды / удара</span>
+          </div>
+        </div>
+      </div>
+      <p class="note">Таким образом страница `электротранспорт` не мешает продвижению `электросамокатов`, а наоборот — усиливает ее внутренними ссылками и логикой структуры.</p>
+    </section>
+  </main>
+
+  <footer>
+    Прототип в стиле `russian-scooter-page.html` для новой структуры `электротранспорт → подуслуги → электросамокаты`.
+  </footer>
+</body>
+</html>

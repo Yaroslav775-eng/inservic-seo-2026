@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Прототип + пояснения для заказчика</title>
+  <style>
+    :root {
+      --brand: #f26522;
+      --ink: #1d1d1f;
+      --muted: #5f6772;
+      --line: #e5e7eb;
+      --soft: #f7f7f8;
+      --note-bg: #fff7ed;
+      --note-border: #fed7aa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+    }
+    .container { width: min(1160px, 92%); margin: 0 auto; }
+    .head {
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+    .head .container { padding: 20px 0; }
+    h1 { margin: 0 0 8px; font-size: 32px; }
+    .sub { color: var(--muted); margin: 0; }
+
+    .legend {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .pill {
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: #fff;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      padding: 18px 0 30px;
+    }
+
+    .block {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px;
+      background: #fff;
+      margin-bottom: 12px;
+    }
+    .block h2 { margin: 0 0 8px; font-size: 24px; }
+    .block h3 { margin: 0 0 6px; font-size: 18px; }
+    .muted { color: var(--muted); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 9px 13px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-ghost { border: 1px solid #ccc; color: #333; }
+
+    .grid2, .grid3, .grid4 { display: grid; gap: 10px; }
+    .grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid #ededed;
+      padding: 9px;
+      text-align: left;
+    }
+    th { background: #fff3ec; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 9px 10px;
+      margin-bottom: 8px;
+      background: #fff;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+
+    .note {
+      border: 1px solid var(--note-border);
+      background: var(--note-bg);
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 13px;
+    }
+    .note b { color: #9a3412; }
+
+    .sidebar .note { margin-bottom: 10px; }
+    .mono { font-family: Consolas, monospace; font-size: 12px; }
+
+    .tree {
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 10px;
+      background: #fafafa;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .hero-grid, .grid4, .grid3, .grid2 { grid-template-columns: 1fr; }
+      h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="head">
+    <div class="container">
+      <h1>Прототип страницы + заметки для заказчика</h1>
+      <p class="sub">Услуга: Ремонт электросамокатов в Харькове (RU/UA зеркала)</p>
+      <div class="legend">
+        <span class="pill">Оранжевые заметки: зачем блок нужен</span>
+        <span class="pill">Слева: как будет страница</span>
+        <span class="pill">Справа: логика SEO-структуры</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <section>
+      <div class="block">
+        <div class="hero-grid">
+          <div>
+            <h2>Ремонт электросамокатов в Харькове</h2>
+            <p class="muted">Диагностика в день обращения. Гарантия. Срок от 1 часа.</p>
+            <a class="btn btn-primary" href="#">Оставить заявку</a>
+            <a class="btn btn-ghost" href="#">Смотреть цены</a>
+          </div>
+          <div class="card">
+            <b>Форма заявки</b>
+            <p class="muted">Имя · Телефон · Модель · Проблема</p>
+          </div>
+        </div>
+      </div>
+      <div class="note"><b>Пояснение:</b> Первый экран нужен, чтобы пользователь сразу понял услугу, город, преимущества и оставил заявку без лишних кликов.</div>
+
+      <div class="block">
+        <h3>Почему нам доверяют</h3>
+        <div class="grid4">
+          <div class="card">Гарантия</div>
+          <div class="card">Срочный ремонт</div>
+          <div class="card">Опытные мастера</div>
+          <div class="card">Запчасти в наличии</div>
+        </div>
+      </div>
+      <div class="note"><b>Пояснение:</b> Это блок доверия. Он повышает конверсию и снижает сомнения перед заявкой.</div>
+
+      <div class="block">
+        <h3>Бренды</h3>
+        <div class="grid3">
+          <div class="card">Xiaomi</div>
+          <div class="card">Ninebot</div>
+          <div class="card">Kugoo</div>
+        </div>
+      </div>
+      <div class="note"><b>Пояснение:</b> Блок брендов закрывает брендовые запросы и ведет на дочерние страницы по моделям.</div>
+
+      <div class="block">
+        <h3>Цены и сроки</h3>
+        <table>
+          <thead><tr><th>Услуга</th><th>Цена от</th><th>Срок</th></tr></thead>
+          <tbody>
+            <tr><td>Диагностика</td><td>0–300 грн</td><td>30–60 мин</td></tr>
+            <tr><td>Ремонт контроллера</td><td>1200 грн</td><td>1 день</td></tr>
+            <tr><td>Замена аккумулятора</td><td>2500 грн</td><td>1 день</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note"><b>Пояснение:</b> Таблица цен дает прозрачность и улучшает коммерческие факторы для SEO и продаж.</div>
+
+      <div class="block">
+        <h3>Частые поломки</h3>
+        <div class="grid2">
+          <div class="card">Не включается</div>
+          <div class="card">Не заряжается</div>
+          <div class="card">После воды</div>
+          <div class="card">Потеря мощности</div>
+        </div>
+      </div>
+      <div class="note"><b>Пояснение:</b> Этот блок закрывает проблемные поисковые запросы и ведет на страницы “по поломке”.</div>
+
+      <div class="block">
+        <h3>FAQ</h3>
+        <details open><summary>Сколько длится ремонт?</summary><p>Обычно 1 день.</p></details>
+        <details><summary>Есть ли гарантия?</summary><p>Да, на работы и запчасти.</p></details>
+      </div>
+      <div class="note"><b>Пояснение:</b> FAQ усиливает релевантность и помогает попадать в расширенные ответы/AI-подборки.</div>
+
+      <div class="block">
+        <h3>Контакты + карта + финальный CTA</h3>
+        <p class="muted">Адрес, телефон, график, кнопка заявки.</p>
+      </div>
+      <div class="note"><b>Пояснение:</b> Финальный блок закрывает пользователя на действие: звонок или заявка.</div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="note">
+        <b>Что это за страница:</b><br/>
+        Центральная страница услуги (money page), которая собирает основной коммерческий трафик.
+      </div>
+
+      <div class="block">
+        <h3>RU URL</h3>
+        <div class="mono">/ru/remont-elektrosamokatov-kharkov/</div>
+      </div>
+      <div class="block">
+        <h3>UA URL</h3>
+        <div class="mono">/remont-elektrosamokativ-kharkiv/</div>
+      </div>
+
+      <div class="block">
+        <h3>Дерево страниц</h3>
+        <div class="tree">/ru/remont-elektrosamokatov-kharkov/
+├─ ne-vklyuchaetsya/
+├─ ne-zaryazhaetsya/
+├─ zamena-akkumulyatora/
+├─ remont-kontrollera/
+├─ xiaomi/
+├─ ninebot/
+├─ kugoo/
+└─ dualtron/
+
+/remont-elektrosamokativ-kharkiv/
+├─ ne-vmykaetsya/
+├─ ne-zaryadzhayetsya/
+├─ zamina-akumulyatora/
+├─ remont-kontrolera/
+├─ xiaomi/
+├─ ninebot/
+├─ kugoo/
+└─ dualtron/</div>
+      </div>
+
+      <div class="note">
+        <b>Как читается заказчиком:</b><br/>
+        1. Есть 1 главная страница услуги.<br/>
+        2. Есть дочерние страницы по брендам и поломкам.<br/>
+        3. RU и UA версии зеркальные.<br/>
+        4. Масштабируем после результатов, а не сразу на 40+ страниц.
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

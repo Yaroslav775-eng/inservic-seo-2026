@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — Одностраничная схема</title>
+  <style>
+    :root {
+      --bg:#eef3fb;
+      --card:#ffffff;
+      --line:#d8e2ef;
+      --text:#1c2735;
+      --muted:#607184;
+      --brand:#f26522;
+      --brand-soft:#fff3ec;
+      --blue:#0b63d2;
+      --ok:#167a3f;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI",Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 360px at 0% -15%, #dfe9ff 0%, transparent 60%),
+        radial-gradient(800px 300px at 100% -10%, #ffe8dc 0%, transparent 55%),
+        var(--bg);
+    }
+    .wrap{max-width:1180px;margin:0 auto;padding:20px}
+    .sheet{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 20px 45px rgba(18,34,58,.1);
+      padding:22px;
+    }
+    h1{margin:0 0 8px;font-size:34px;line-height:1.18}
+    p{margin:0;color:var(--muted)}
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:700;
+      color:#9a4115;
+      background:var(--brand-soft);
+      border:1px solid #ffd8c3;
+      border-radius:999px;
+      padding:4px 10px;
+      margin-bottom:10px;
+    }
+
+    .top-grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:12px;
+    }
+    .mini-card{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:#fff;
+    }
+    .mini-card b{display:block;margin-bottom:6px}
+
+    .diagram{
+      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:#fbfdff;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 60px 1fr;
+      gap:10px;
+      align-items:stretch;
+      margin-bottom:10px;
+    }
+
+    .node{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:#fff;
+    }
+
+    .node.main{
+      border-color:#ffc8aa;
+      background:linear-gradient(180deg,#fff8f4 0%,#fff 100%);
+    }
+
+    .title{font-weight:800;margin-bottom:4px}
+    .url{font-family:Consolas,monospace;font-size:12px;color:#365b84;word-break:break-word}
+    .arrow{display:grid;place-items:center;color:#8aa0ba;font-size:28px;font-weight:800}
+
+    .branches{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .branch{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:#fff;
+    }
+    .branch h3{margin:0 0 8px;font-size:18px}
+    .branch ul{margin:0;padding-left:18px;color:var(--muted)}
+    .branch li{margin:5px 0}
+
+    .bottom{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:10px;
+    }
+
+    .fact{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:#fff;
+      font-size:14px;
+    }
+    .fact b{display:block;margin-bottom:4px;color:var(--blue)}
+
+    .ok{color:var(--ok);font-weight:800}
+
+    @media (max-width:980px){
+      h1{font-size:28px}
+      .top-grid{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .arrow{transform:rotate(90deg)}
+      .branches{grid-template-columns:1fr}
+      .bottom{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="sheet">
+      <span class="kicker">ONE PAGE · СХЕМА ДЛЯ СОБСТВЕННИКА</span>
+      <h1>Ремонт электросамокатов в Харькове: понятная структура</h1>
+      <p>Одна главная страница услуги + отдельные страницы по брендам и поломкам. Без перегруза.</p>
+
+      <div class="top-grid">
+        <div class="mini-card">
+          <b>Главная идея</b>
+          Сначала человек попадает на главную услуги, дальше идет в нужный раздел: по бренду или по проблеме.
+        </div>
+        <div class="mini-card">
+          <b>Стартовый объем</b>
+          RU: 1 + 4 + 4<br/>UA: 1 + 4 + 4<br/><span class="ok">Всего: 18 страниц</span>
+        </div>
+      </div>
+
+      <div class="diagram">
+        <div class="row">
+          <div class="node main">
+            <div class="title">Главная страницы услуги (RU)</div>
+            <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="node">
+            <div class="title">Отсюда переход в дочерние страницы</div>
+            <div class="url">бренды и поломки</div>
+          </div>
+        </div>
+
+        <div class="branches">
+          <div class="branch">
+            <h3>Ветка “Бренды”</h3>
+            <ul>
+              <li>Xiaomi</li>
+              <li>Ninebot</li>
+              <li>Kugoo</li>
+              <li>Dualtron</li>
+            </ul>
+          </div>
+
+          <div class="branch">
+            <h3>Ветка “Поломки”</h3>
+            <ul>
+              <li>Не включается</li>
+              <li>Не заряжается</li>
+              <li>Замена аккумулятора</li>
+              <li>Ремонт контроллера</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="fact"><b>Как ссылать</b>Главная ссылается на дочерние. Каждая дочерняя — обратно на главную.</div>
+        <div class="fact"><b>Языки</b>RU и UA зеркальные по структуре и связаны hreflang.</div>
+        <div class="fact"><b>Запуск</b>Сначала 18 страниц, дальше расширяем только по данным.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Електросамокат не вмикається у Харкові — діагностика від 100 грн | InService</title>
+  <meta name="description" content="Електросамокат не вмикається у Харкові: перевірка акумулятора, BMS, кнопки живлення, дисплея, контролера, проводки та наслідків води. InService, вул. Дерев'янка, 58." />
+  <link rel="canonical" href="https://inservic.com.ua/elektrosamokat-ne-vmykayetsya-kharkiv/" />
+  <meta property="og:title" content="Електросамокат не вмикається у Харкові — InService" />
+  <meta property="og:description" content="Діагностика причини: акумулятор, BMS, кнопка, дисплей, контролер, проводка, вода або глибокий розряд." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" />
+<style>
+    :root {
+      --bg: #f3f6f9;
+      --card: #ffffff;
+      --text: #0f2b46;
+      --muted: #5f7184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0b63d3;
+      --blue-soft: #eef6ff;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12, 99, 206, .13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255, 157, 47, .24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: #111b29; color: #edf3fb; font-size: 13px; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 9px 0; }
+    .site-head {
+      margin: 18px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .brand small { display: block; color: var(--muted); margin-top: 2px; }
+    .head-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .phone { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      border-radius: 999px;
+      color: #38506a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumbs { margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--orange-dark); text-decoration: none; }
+    .hero { margin-bottom: 18px; }
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,157,47,.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f3f9ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .hero-copy { padding: 36px; }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(270px 220px at 80% 8%, rgba(255,157,47,.24), transparent 70%),
+        linear-gradient(180deg, #f8fbff, #eef5fc);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd8bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.03em; }
+    h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 760px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: var(--orange-soft); border: 1px solid #ffd4b5; color: #944114; font-size: 13px; font-weight: 800; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+    }
+    .btn-main { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff; box-shadow: 0 14px 28px rgba(242,101,34,.22); }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
+    .scooter-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 45px rgba(20,42,61,.08);
+    }
+    .scooter-photo {
+      height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef5;
+      margin-bottom: 16px;
+    }
+    .scooter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-stat { border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: #fbfdff; }
+    .hero-stat b { display:block; font-size: 20px; color: var(--orange-dark); margin-bottom: 3px; }
+    .section { margin: 18px 0; }
+    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.96); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 18px; }
+    .section-head p { max-width: 650px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .mini-card, .issue-card, .brand-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      min-height: 100%;
+    }
+    .issue-card { text-decoration: none; display: block; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .issue-card:hover, .brand-card:hover { transform: translateY(-3px); border-color: rgba(255,157,47,.62); box-shadow: 0 18px 30px rgba(20,42,61,.09); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff;
+      font-weight: 900; margin-bottom: 12px; box-shadow: 0 12px 22px rgba(242,101,34,.18);
+    }
+    .issue-card em, .brand-card em { display: inline-block; margin-top: 10px; color: var(--orange-dark); font-style: normal; font-weight: 900; font-size: 13px; }
+    .brand-card { text-decoration: none; color: inherit; display:block; }
+    .brand-name { display: block; font-size: 22px; font-weight: 900; margin-bottom: 6px; letter-spacing: -.02em; }
+    .price-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .price-table th, .price-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .price-table th { background: #17324d; color: #fff; font-size: 13px; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-table td:nth-child(2) { font-weight: 900; color: var(--orange-dark); white-space: nowrap; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .step::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--orange); color:#fff; font-weight: 900; margin-bottom: 10px; }
+    .faq { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px 18px; }
+    summary { cursor: pointer; font-weight: 900; color: var(--text); }
+    details p { margin-top: 10px; }
+    .callout { border-left: 4px solid var(--orange); background: #fff8f1; border-radius: 18px; padding: 16px 18px; color: #70411f; }
+    .seo-text { columns: 2; column-gap: 34px; }
+    .seo-text p { break-inside: avoid; }
+    .seo-copy { display: grid; gap: 18px; }
+    .seo-copy h3 { margin-top: 6px; }
+    .seo-copy p { font-size: 16px; }
+    .seo-copy ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy li { margin-bottom: 7px; }
+    .seo-copy ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy > h2 { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .seo-copy > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .seo-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .seo-copy th, .seo-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .seo-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .seo-copy tr:last-child td { border-bottom: 0; }
+    .symptom-table { display: grid; gap: 10px; }
+    .symptom-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr 0.9fr;
+      gap: 12px;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px;
+    }
+    .symptom-row strong { color: var(--text); }
+    .symptom-row span { color: var(--muted); }
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 20px;
+    }
+    .form-box {
+      border: 1px solid #ffd3b5;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff8f1, #fff);
+      padding: 22px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px 13px;
+      color: var(--muted);
+      min-height: 46px;
+    }
+    .field.wide { grid-column: 1 / -1; min-height: 82px; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .handoff-item { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .handoff-item b { display: block; color: var(--text); margin-bottom: 5px; }
+    .keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .keyword-list span { padding: 7px 10px; border-radius: 999px; background: #eef6ff; color: #255b92; font-size: 12px; font-weight: 800; }
+    .content-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .content-checklist div { border: 1px solid var(--line); border-radius: 16px; padding: 13px; background: #fbfdff; color: var(--muted); }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 9px 12px; border-radius: 999px; background: var(--blue-soft); color: #245a91; text-decoration: none; font-weight: 800; font-size: 13px; }
+    .long-copy { display: grid; gap: 14px; }
+    .long-copy h2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .long-copy h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .long-copy ul, .long-copy ol { margin: 0 0 6px; padding-left: 22px; color: var(--muted); }
+    .long-copy li { margin-bottom: 7px; }
+    .long-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .long-copy th, .long-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .long-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .long-copy tr:last-child td { border-bottom: 0; }
+    .footer-note { margin: 24px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4, .steps, .handoff-grid, .content-checklist, .symptom-row, .form-grid { grid-template-columns: 1fr; }
+      .field.wide { grid-column: auto; }
+      .hero-visual { border-left: 0; border-top: 1px solid var(--line); min-height: auto; }
+      .section-head { display: block; }
+      .seo-text { columns: 1; }
+      .site-head { align-items: flex-start; flex-direction: column; }
+      .head-actions { justify-content: flex-start; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Ремонт електросамоката, який не вмикається, у Харкові", "serviceType": "Діагностика та ремонт електросамоката, який не вмикається", "areaServed": "Харків", "provider": {"@type": "LocalBusiness", "name": "InService", "url": "https://inservic.com.ua/", "telephone": "+38-067-652-60-04", "address": {"@type": "PostalAddress", "addressLocality": "Харків", "streetAddress": "вул. Дерев'янка, 58"}}, "offers": {"@type": "AggregateOffer", "priceCurrency": "UAH", "lowPrice": "100"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чому електросамокат не вмикається після зарядки?", "acceptedAnswer": {"@type": "Answer", "text": "Причина може бути в батареї, BMS, кнопці живлення, дисплеї, контролері, проводці, зарядному пристрої. Точну причину видно після діагностики."}}, {"@type": "Question", "name": "Чи можна вмикати самокат після води?", "acceptedAnswer": {"@type": "Answer", "text": "Краще не вмикати самокат після води до огляду, щоб не погіршити стан плати, роз’ємів або акумулятора."}}, {"@type": "Question", "name": "Скільки коштує діагностика?", "acceptedAnswer": {"@type": "Answer", "text": "Орієнтир діагностики стартує від 100 грн. Остаточна вартість ремонту погоджується після перевірки."}}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="container inner"><span>Сервісний центр InService у Харкові та Києві</span><span>Харків: вул. Дерев'янка, 58 · Пн-Сб 10:00-18:00, Неділя — вихідний</span></div></div>
+  <header class="container site-head"><div class="brand"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /><div><strong>Ремонт електротранспорту</strong><small>Акумулятори, BMS, контролери, дисплеї, проводка</small></div></div><div class="head-actions"><a class="phone" href="tel:+380676526004">+38 (067) 652-60-04</a><a class="btn btn-main" href="#contact">Записатися</a></div></header>
+  <nav class="container nav" aria-label="Навігація сторінкою"><a href="remont-elektrosamokativ-kharkiv.html">Самокати</a><a href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html">Не заряджається</a><a href="remont-akumulyatora-elektrosamokata-kharkiv.html">Акумулятор</a><a href="remont-kontrolera-elektrosamokata-kharkiv.html">Контролер</a><a href="#causes">Причини</a><a href="#prices">Ціни</a><a href="#faq">FAQ</a><a href="#contact">Заявка</a></nav>
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Головна</a> / <a href="electric-transport.html">Електротранспорт</a> / <a href="remont-elektrosamokativ-kharkiv.html">Ремонт електросамокатів</a> / Не вмикається</div>
+    <section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">Сторінка поломки</span><h1>Електросамокат не вмикається у Харкові</h1><p class="lead">Перевіряємо акумулятор, BMS, кнопку живлення, дисплей, контролер, проводку та роз'єми. Знаходимо причину, погоджуємо ціну до ремонту і тестуємо самокат після робіт.</p><div class="chips"><span class="chip">Діагностика від 100 грн</span><span class="chip">Після води, простою або падіння</span><span class="chip">Харків, Дерев'янка 58</span></div><div class="btns"><a class="btn btn-main" href="#contact">Отримати консультацію</a><a class="btn btn-ghost" href="tel:+380676526004">Подзвонити</a></div></div><div class="hero-visual"><div class="scooter-card"><div class="scooter-photo"><img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Електросамокат не вмикається" /></div><div class="hero-stats"><div class="hero-stat"><b>АКБ</b><span>перевірка живлення</span></div><div class="hero-stat"><b>BMS</b><span>плата захисту</span></div><div class="hero-stat"><b>CTRL</b><span>контролер і дисплей</span></div><div class="hero-stat"><b>від 100 грн</b><span>діагностика</span></div></div></div></div></div></div></section>
+    <section id="symptoms" class="section panel"><div class="section-head"><div><span class="eyebrow">Симптоми</span><h2>Коли потрібна діагностика запуску</h2></div><p>Повна відмова запуску може бути пов'язана з батареєю, кнопкою, дисплеєм, контролером або проводкою. Завдання сторінки — пояснити це без паніки і без обіцянок “замінити все”.</p></div><div class="grid-3"><div class="mini-card"><span class="icon">ON</span><h3>Немає реакції</h3><p>Самокат не реагує на кнопку, дисплей не світиться, звуків немає.</p></div><div class="mini-card"><span class="icon">BAT</span><h3>Після зарядки</h3><p>Зарядний пристрій підключали, але самокат все одно не запускається.</p></div><div class="mini-card"><span class="icon">H2O</span><h3>Після води</h3><p>Після дощу, калюж або миття краще не вмикати техніку до перевірки.</p></div></div></section>
+    <section id="causes" class="section panel"><div class="section-head"><div><span class="eyebrow">Причини</span><h2>Що може заважати електросамокату вмикатися</h2></div><p>Симптом “не вмикається” часто перетинається з акумулятором, зарядкою і контролером, тому сторінка має вести користувача до діагностики, а не до випадкової покупки запчастини.</p></div><div class="grid-3"><a class="issue-card" href="remont-akumulyatora-elektrosamokata-kharkiv.html"><span class="icon">АКБ</span><h3>Глибокий розряд</h3><p>Після зими, довгого простою батарея може піти в захист.</p><em>Перевірити АКБ</em></a><div class="issue-card"><span class="icon">BTN</span><h3>Кнопка або дисплей</h3><p>Обрив шлейфа, пошкодження кнопки, несправність плати дисплея.</p><em>Діагностика запуску</em></div><a class="issue-card" href="remont-kontrolera-elektrosamokata-kharkiv.html"><span class="icon">CTRL</span><h3>Контролер</h3><p>Плата управління може не отримувати живлення або блокувати старт.</p><em>Перевірити контролер</em></a><div class="issue-card"><span class="icon">WIRE</span><h3>Проводка</h3><p>Після удару, складання може зникнути контакт у рульовій стійці чи деці.</p><em>Знайти обрив</em></div><div class="issue-card"><span class="icon">BMS</span><h3>BMS</h3><p>Плата захисту батареї може блокувати запуск через напругу або дисбаланс.</p><em>Перевірити плату</em></div><div class="issue-card"><span class="icon">H2O</span><h3>Волога</h3><p>Корозія на платах і роз'ємах часто проявляється саме відсутністю запуску.</p><em>Огляд після води</em></div></div></section>
+    <section id="diagnostics" class="section panel"><div class="section-head"><div><span class="eyebrow">Діагностика</span><h2>Що перевіряє майстер</h2></div><p>Порядок перевірки допомагає не міняти контролер або акумулятор навмання.</p></div><div class="symptom-table"><div class="symptom-row"><strong>Живлення</strong><span>Напруга АКБ, BMS, зарядний ланцюг, контакти.</span><em>Відсікає проблему батареї</em></div><div class="symptom-row"><strong>Керування</strong><span>Кнопка, дисплей, шлейфи, сигнали до контролера.</span><em>Показує, чи доходить команда старту</em></div><div class="symptom-row"><strong>Плата і проводка</strong><span>Контролер, роз'єми, сліди води, обриви, корозія.</span><em>Дає рішення: ремонт чи заміна</em></div></div></section>
+    <section id="prices" class="section panel"><div class="section-head"><div><span class="eyebrow">Ціни</span><h2>Орієнтовна вартість</h2></div><p>Фінальна ціна залежить від причини. На сторінці використовуємо формат “від” і пояснюємо, що рішення приймається після огляду.</p></div><table class="price-table"><thead><tr><th>Послуга</th><th>Ціна</th><th>Коментар</th></tr></thead><tbody><tr><td>Первинна діагностика</td><td>від 100 грн</td><td>Живлення, кнопка, дисплей, АКБ, контролер</td></tr><tr><td>Відновлення контакту або проводки</td><td>від 300 грн</td><td>Після пошуку обриву</td></tr><tr><td>Перевірка акумулятора / BMS</td><td>від 100 грн</td><td>Напруга, баланс, плата захисту</td></tr><tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд плат, чистка, перевірка роз'ємів</td></tr><tr><td>Ремонт кнопки, дисплея або контролера</td><td>після діагностики</td><td>Залежить від моделі і доступності деталей</td></tr></tbody></table></section>
+    <section id="seo-text" class="section panel"><div class="section-head"><div><span class="eyebrow">SEO-текст</span><h2>Повний текст сторінки</h2></div><p>Текст закриває симптом, причини, діагностику, ціни, бренди, локальний блок і FAQ.</p></div><div class="long-copy"><h2>Електросамокат не вмикається у Харкові</h2>
+<p>Якщо електросамокат не вмикається, причина не завжди очевидна з першого погляду. Самокат може не реагувати на кнопку живлення, не показувати заряд на дисплеї, вимикатися одразу після старту, інколи оживати тільки після підключення зарядного пристрою. У сервісі InService у Харкові майстер перевіряє весь ланцюг живлення: акумулятор, BMS, кнопку, дисплей, контролер, проводку, роз'єми та наслідки потрапляння вологи.</p>
+<p>Для користувача важливо не розбирати самокат навмання. У різних моделях Xiaomi, Ninebot, Kugoo, Crosser, Proove, Koko City однаковий симптом може мати різні причини. Іноді достатньо відновити контакт, зарядний ланцюг, а іноді потрібна діагностика батареї, контролера чи плати дисплея.</p>
+
+<h2>Коли варто звернутися в сервіс</h2>
+<p>Сторінка потрібна для ситуацій, коли самокат повністю не запускається або запускається нестабільно. Це високий ремонтний інтент: людина вже має несправність і хоче зрозуміти, скільки коштує перевірка, чи можна відремонтувати техніку та куди її привезти в Харкові.</p>
+<ul>
+  <li>Самокат не реагує на кнопку живлення;</li>
+  <li>Дисплей не світиться після зарядки;</li>
+  <li>Самокат вмикається і одразу вимикається;</li>
+  <li>Після зими, довгого простою немає запуску;</li>
+  <li>Після дощу, миття, падіння зникло живлення;</li>
+  <li>Зарядний пристрій підключений, але техніка не стартує.</li>
+</ul>
+
+<h2>Основні причини несправності</h2>
+<p>Повна відмова запуску зазвичай пов'язана з живленням та керуванням. Майстер не міняє деталі без перевірки, тому що проблема може бути як у дорогому вузлі, так і в простому контакті.</p>
+<table>
+  <thead><tr><th>Причина</th><th>Як проявляється</th><th>Що перевіряємо</th></tr></thead>
+  <tbody>
+    <tr><td>Глибокий розряд акумулятора</td><td>Самокат не вмикається після простою</td><td>Напругу батареї, BMS, можливість відновлення</td></tr>
+    <tr><td>Несправна кнопка або дисплей</td><td>Немає реакції на натискання</td><td>Кнопку живлення, шлейф, плату дисплея</td></tr>
+    <tr><td>Проблема контролера</td><td>Самокат може мигати, пищати, не стартувати</td><td>Живлення контролера, роз'єми, плату, помилки</td></tr>
+    <tr><td>Пошкоджена проводка</td><td>Після удару, складання зникло живлення</td><td>Обриви, контакти, роз'єми в рульовій стійці та деці</td></tr>
+    <tr><td>Волога і корозія</td><td>Після дощу самокат перестав запускатися</td><td>Плати, роз'єми, доріжки, сліди короткого замикання</td></tr>
+  </tbody>
+</table>
+
+<h2>Як проходить діагностика</h2>
+<p>Діагностика починається з опису симптомів: коли самокат перестав вмикатися, чи був дощ, падіння, довге зберігання, спроби зарядки, попередній ремонт. Далі майстер перевіряє напругу акумулятора, стан зарядного ланцюга, реакцію кнопки, дисплей, контролер і проводку.</p>
+<p>Якщо є ознаки води, самокат краще не вмикати повторно до огляду. Волога може залишатися всередині деки та роз'ємів і створювати нові пошкодження при подачі живлення. Після перевірки клієнт отримує зрозуміле пояснення: що саме несправне, чи є сенс ремонтувати вузол, які деталі можуть знадобитися і скільки часу займе робота.</p>
+
+<h2>Орієнтовні ціни</h2>
+<p>На такій сторінці краще не обіцяти фіксовану ціну без огляду. Симптом “не вмикається” може означати різні поломки, тому чесний формат — діагностика від 100 грн і ремонт після погодження.</p>
+<table>
+  <thead><tr><th>Робота</th><th>Ціна від</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>Первинна діагностика</td><td>від 100 грн</td><td>Перевірка живлення, кнопки, дисплея, АКБ і контролера</td></tr>
+    <tr><td>Відновлення контакту або проводки</td><td>від 300 грн</td><td>Залежить від місця обриву і доступу до вузла</td></tr>
+    <tr><td>Ремонт кнопки або дисплея</td><td>після огляду</td><td>Потрібно перевірити сумісність і стан плати</td></tr>
+    <tr><td>Діагностика акумулятора / BMS</td><td>від 100 грн</td><td>Оцінка напруги, балансу, плати захисту</td></tr>
+    <tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд плат, чистка, перевірка роз'ємів</td></tr>
+  </tbody>
+</table>
+
+<h2>Які бренди приймаємо</h2>
+<p>InService працює з популярними міськими електросамокатами та менш поширеними моделями. Для Xiaomi і Ninebot часто важлива перевірка батареї, BMS, дисплея та контролера. Для Kugoo, Crosser і Proove додатково дивляться силову частину, роз'єми, навантаження та сумісність контролера з мотором. Якщо бренд або модель рідкісні, майстер спочатку оцінює доступність деталей і доцільність ремонту.</p>
+
+<h2>Що взяти з собою</h2>
+<p>На діагностику бажано привезти сам електросамокат і зарядний пристрій. Якщо є код помилки, фото дисплея та відео поведінки самоката до повної відмови, це допоможе швидше знайти причину. Адреса для ремонту електротранспорту: Харків, вул. Дерев'янка, 58. Графік роботи: Пн-Сб з 10:00 до 18:00, неділя — вихідний.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Чому електросамокат не вмикається після зарядки?</h3>
+<p>Причина може бути в батареї, BMS, кнопці живлення, дисплеї, контролері, проводці, зарядному пристрої. Точно визначити несправність можна після діагностики.</p>
+<h3>Чи можна пробувати вмикати самокат після води?</h3>
+<p>Краще ні. Якщо всередині залишилась волога, повторне ввімкнення може погіршити стан плати, роз'ємів та акумулятора.</p>
+<h3>Чи завжди потрібна заміна акумулятора?</h3>
+<p>Ні. Іноді причина в BMS, контактах, зарядному ланцюгу, кнопці, контролері. Рішення приймається після перевірки.</p>
+<h3>Скільки часу займає ремонт?</h3>
+<p>Прості випадки можна перевірити в день звернення. Складні несправності після води, глибокого розряду, пошкодження контролера можуть потребувати більше часу.</p></div></section>
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Перелінковка</span><h2>Пов'язані сторінки</h2></div></div><div class="grid-4"><a class="issue-card" href="remont-elektrosamokativ-kharkiv.html"><h3>Ремонт електросамокатів</h3><p>Основна сторінка послуги.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-ne-zaryadzhayetsya-kharkiv.html"><h3>Не заряджається</h3><p>Зарядний ланцюг, порт, BMS.</p><em>Перейти</em></a><a class="issue-card" href="remont-akumulyatora-elektrosamokata-kharkiv.html"><h3>Ремонт акумулятора</h3><p>Батарея, BMS, глибокий розряд.</p><em>Перейти</em></a><a class="issue-card" href="remont-kontrolera-elektrosamokata-kharkiv.html"><h3>Ремонт контролера</h3><p>Плата управління і запуск.</p><em>Перейти</em></a><a class="issue-card" href="remont-motor-kolesa-elektrosamokata-kharkiv.html"><h3>Ремонт мотор-колеса</h3><p>Ривки, шум, перегрів, датчики Холла, підшипники.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-pislya-vody-kharkiv.html"><h3>Після води</h3><p>Дощ, залиття, корозія, контролер, АКБ/BMS.</p><em>Перейти</em></a></div></section>
+    <section id="contact" class="section panel"><div class="section-head"><div><span class="eyebrow">Заявка</span><h2>Залишити заявку на діагностику запуску</h2></div><p>Опишіть симптом: не реагує на кнопку, не вмикається після зарядки, був дощ, падіння або довгий простій.</p></div><div class="grid-2"><div class="form-box"><h3>Що повідомити майстру</h3><div class="form-grid"><div class="field">Ім'я</div><div class="field">Телефон</div><div class="field">Бренд і модель</div><div class="field">Що сталося</div><div class="field wide">Коментар: не вмикається, після зарядки, після води, після зими, після падіння, не світиться дисплей.</div></div><div class="btns" style="margin-top:16px;"><a class="btn btn-main" href="tel:+380676526004">Подзвонити</a></div></div><div class="mini-card"><h3>Адреса сервісу</h3><p><strong>Харків:</strong> вул. Дерев'янка, 58</p><p><strong>Телефони:</strong> <a href="tel:+380676526004">+38 (067) 652-60-04</a>, <a href="tel:+380631492439">+38 (063) 149-24-39</a>, <a href="tel:+380665474037">+38 (066) 547-40-37</a></p><p><strong>Графік:</strong> Пн-Сб: 10:00-18:00 · Неділя — вихідний</p><p>Бажано взяти зарядний пристрій і показати фото або відео симптома, якщо воно є.</p></div></div></section>
+    <div class="footer-note">Прототип сторінки поломки для InService: електросамокат не вмикається у Харкові.</div>
+  </main>
+</body>
+</html>

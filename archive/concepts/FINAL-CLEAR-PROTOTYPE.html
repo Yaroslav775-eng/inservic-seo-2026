@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Финальный прототип структуры</title>
+  <style>
+    :root{--bg:#f5f7fb;--card:#fff;--line:#d9e2ef;--text:#1f2a37;--muted:#617286;--brand:#f26522;--link:#0b57d0}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    h1{margin:0 0 8px;font-size:32px}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .box{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}
+    .main{border-color:#ffc7a7;background:#fff7f2}
+    .title{font-weight:700;margin-bottom:6px}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .path{font-family:Consolas,monospace;font-size:12px;color:#36577a}
+    .arrow{font-size:20px;color:#8aa0b8;margin:0 6px}
+    .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+    .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:700}
+    .pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .page{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}
+    .page h3{margin:0 0 6px;font-size:16px}
+    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.pages{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card">
+      <h1>Прототип: как это реально работает</h1>
+      <p class="muted">Одна главная страница услуги + отдельные страницы брендов и поломок.</p>
+    </section>
+
+    <section class="card">
+      <div class="title">1) Главная страница услуги</div>
+      <div class="box main">
+        <div><b>Ремонт электросамокатов в Харькове</b></div>
+        <div class="path">/ru/remont-elektrosamokatov-kharkov/</div>
+        <p class="small">На этой странице есть кнопки/ссылки в бренды и поломки.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="title">2) Куда с нее переходят</div>
+      <div class="flow">
+        <span>Главная</span><span class="arrow">→</span><span>Бренд</span>
+        <span class="arrow">|</span>
+        <span>Главная</span><span class="arrow">→</span><span>Поломка</span>
+      </div>
+      <p class="small">И с каждой дочерней страницы есть ссылка обратно на главную.</p>
+    </section>
+
+    <section class="card">
+      <div class="title">3) Пример страниц (кликабельно)</div>
+      <div class="pages">
+        <div class="page">
+          <h3>Главная RU</h3>
+          <a href="#ru-main">Открыть блок</a>
+          <div class="path">/ru/remont-elektrosamokatov-kharkov/</div>
+        </div>
+        <div class="page">
+          <h3>Бренд Xiaomi</h3>
+          <a href="#ru-brand">Открыть блок</a>
+          <div class="path">/ru/remont-elektrosamokatov-kharkov/xiaomi/</div>
+        </div>
+        <div class="page">
+          <h3>Поломка: не заряжается</h3>
+          <a href="#ru-issue">Открыть блок</a>
+          <div class="path">/ru/remont-elektrosamokatov-kharkov/ne-zaryazhaetsya/</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="ru-main">
+      <div class="title">Главная RU (демо блока)</div>
+      <div class="grid">
+        <div class="box">
+          <b>Бренды</b><br/>
+          <a href="#ru-brand">Xiaomi</a><br/>
+          <a href="#ru-brand">Kugoo</a>
+        </div>
+        <div class="box">
+          <b>Поломки</b><br/>
+          <a href="#ru-issue">Не заряжается</a><br/>
+          <a href="#ru-issue">Не включается</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="ru-brand">
+      <div class="title">Страница бренда Xiaomi</div>
+      <p class="small">Это отдельная страница под брендовый запрос.</p>
+      <a href="#ru-main">← Назад на главную услуги</a>
+    </section>
+
+    <section class="card" id="ru-issue">
+      <div class="title">Страница поломки: не заряжается</div>
+      <p class="small">Это отдельная страница под запрос по симптому.</p>
+      <a href="#ru-main">← Назад на главную услуги</a>
+    </section>
+
+    <section class="card">
+      <div class="title">4) Что делать дальше</div>
+      <p>Если эта логика понятна, делаем 1 главную + 4 бренда + 4 поломки (RU), потом зеркалим на UA.</p>
+      <a class="btn" href="#ru-main">Понял, идем дальше</a>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — Внятный прототип страницы</title>
+  <style>
+    :root {
+      --bg:#f3f6fb;
+      --card:#ffffff;
+      --line:#d7dfeb;
+      --text:#1f2a37;
+      --muted:#5c6b7a;
+      --brand:#f26522;
+      --brand-soft:#fff4ed;
+      --ok:#157347;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    .wrap{max-width:1140px;margin:0 auto;padding:20px}
+    .hero,.section,.aside-card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+
+    .hero{padding:20px;margin-bottom:14px}
+    h1{margin:0 0 6px;font-size:32px}
+    .sub{margin:0;color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid #ffd9c7;background:var(--brand-soft);color:#9a4014}
+
+    .layout{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+    .section{padding:16px;margin-bottom:12px}
+    .section h2{margin:0 0 8px;font-size:24px}
+    .section h3{margin:0 0 6px;font-size:18px}
+    .muted{color:var(--muted)}
+
+    .block{border:1px dashed #cfd8e4;border-radius:10px;padding:12px;margin-top:10px;background:#fff}
+    .block-head{display:flex;justify-content:space-between;gap:8px;align-items:center}
+    .tag{font-size:12px;border:1px solid #dbe7ff;background:#eff4ff;color:#1f4ea8;border-radius:999px;padding:3px 8px}
+
+    .grid2,.grid3{display:grid;gap:10px}
+    .grid2{grid-template-columns:1fr 1fr}
+    .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .mini{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}
+    .mini b{display:block;margin-bottom:4px}
+
+    table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+    th,td{padding:9px;border-bottom:1px solid #e8edf4;text-align:left}
+    th{background:var(--brand-soft)}
+
+    .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .btn{display:inline-block;padding:9px 13px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700}
+    .btn-main{background:var(--brand);color:#fff}
+    .btn-ghost{border:1px solid #cfd8e4;color:#1f2a37;background:#fff}
+
+    .aside-card{padding:14px;margin-bottom:12px}
+    .aside-card h3{margin:0 0 8px}
+    .tree{font-family:Consolas,monospace;font-size:12px;background:#f9fbff;border:1px solid #dee7f3;border-radius:10px;padding:10px;white-space:pre-wrap;line-height:1.6}
+    .ok{color:var(--ok);font-weight:700}
+
+    .footer-note{margin-top:10px;font-size:13px;color:var(--muted)}
+
+    @media (max-width:960px){.layout{grid-template-columns:1fr}.grid3,.grid2{grid-template-columns:1fr}h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Внятный прототип: “Ремонт электросамокатов в Харькове”</h1>
+      <p class="sub">Одна главная страница услуги + дочерние по поломкам и брендам. RU и UA зеркала.</p>
+      <div class="chips">
+        <span class="chip">Понятно заказчику</span>
+        <span class="chip">Без перегруза</span>
+        <span class="chip">Старт с 10 страниц</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main>
+        <section class="section">
+          <h2>Как выглядит главная страница услуги</h2>
+          <div class="block">
+            <div class="block-head"><h3>1) Первый экран</h3><span class="tag">Конверсия</span></div>
+            <p class="muted">H1 + УТП + кнопки “Оставить заявку” и “Смотреть цены”.</p>
+            <div class="btns"><a class="btn btn-main" href="#">Оставить заявку</a><a class="btn btn-ghost" href="#">Смотреть цены</a></div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>2) Почему нам доверяют</h3><span class="tag">Доверие</span></div>
+            <div class="grid2">
+              <div class="mini"><b>Гарантия</b>До 6 месяцев</div>
+              <div class="mini"><b>Срок</b>От 1 часа</div>
+              <div class="mini"><b>Опыт</b>Профильные мастера</div>
+              <div class="mini"><b>Запчасти</b>Ходовые в наличии</div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>3) Бренды</h3><span class="tag">SEO охват</span></div>
+            <div class="grid3">
+              <div class="mini"><b>Xiaomi</b>Отдельная дочерняя страница</div>
+              <div class="mini"><b>Ninebot</b>Отдельная дочерняя страница</div>
+              <div class="mini"><b>Kugoo</b>Отдельная дочерняя страница</div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>4) Цены и сроки</h3><span class="tag">Коммерция</span></div>
+            <table>
+              <thead><tr><th>Услуга</th><th>Цена от</th><th>Срок</th></tr></thead>
+              <tbody>
+                <tr><td>Диагностика</td><td>0–300 грн</td><td>30–60 мин</td></tr>
+                <tr><td>Ремонт контроллера</td><td>1200 грн</td><td>1 день</td></tr>
+                <tr><td>Замена аккумулятора</td><td>2500 грн</td><td>1 день</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>5) Частые поломки</h3><span class="tag">Проблемные запросы</span></div>
+            <div class="grid2">
+              <div class="mini"><b>Не включается</b>Дочерняя страница</div>
+              <div class="mini"><b>Не заряжается</b>Дочерняя страница</div>
+              <div class="mini"><b>После воды</b>Дочерняя страница</div>
+              <div class="mini"><b>Потеря мощности</b>Дочерняя страница</div>
+            </div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3>6) FAQ + Контакты + финальная форма</h3><span class="tag">Дожим</span></div>
+            <p class="muted">Закрываем возражения и ведем к заявке в конце страницы.</p>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="aside-card">
+          <h3>Карта страниц (RU)</h3>
+          <div class="tree">/ru/remont-elektrosamokatov-kharkov/
+├─ ne-vklyuchaetsya/
+├─ ne-zaryazhaetsya/
+├─ xiaomi/
+└─ kugoo/</div>
+        </div>
+
+        <div class="aside-card">
+          <h3>Карта страниц (UA)</h3>
+          <div class="tree">/remont-elektrosamokativ-kharkiv/
+├─ ne-vmykaetsya/
+├─ ne-zaryadzhayetsya/
+├─ xiaomi/
+└─ kugoo/</div>
+        </div>
+
+        <div class="aside-card">
+          <h3>Как читать схему</h3>
+          <p>1. Есть <b>главная услуги</b>.</p>
+          <p>2. От нее идут <b>дочерние</b> по брендам и поломкам.</p>
+          <p>3. RU и UA версии зеркальные по структуре.</p>
+          <p class="ok">Это уже можно показывать клиенту как финальный черновик.</p>
+        </div>
+      </aside>
+    </div>
+
+    <p class="footer-note">Файл подготовлен как “понятный прототип”, без лишней технической детализации.</p>
+  </div>
+</body>
+</html>

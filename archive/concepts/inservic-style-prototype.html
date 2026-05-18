@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — прототип страницы услуги</title>
+  <style>
+    :root {
+      --brand: #f26522;
+      --brand-dark: #d84f10;
+      --ink: #1d1d1f;
+      --muted: #5d6670;
+      --line: #e6e6e6;
+      --bg: #ffffff;
+      --soft: #f5f5f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    .top {
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+    }
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+    .top .container {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo { font-size: 22px; font-weight: 700; }
+    .logo span { color: var(--brand); }
+    .menu { display: flex; gap: 16px; font-size: 14px; color: #333; }
+
+    .hero {
+      background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner {
+      padding: 42px 0 32px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 24px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 40px;
+      line-height: 1.15;
+      letter-spacing: -.3px;
+    }
+    .lead { color: var(--muted); margin: 0 0 16px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .badge {
+      border: 1px solid #ffd4bf;
+      background: #fff7f3;
+      color: #a44516;
+      border-radius: 20px;
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 11px 16px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-block;
+    }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-ghost { border: 1px solid #ccc; color: #333; background: #fff; }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 16px;
+    }
+    .panel h3 { margin: 0 0 10px; font-size: 20px; }
+    .panel input, .panel textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      border: 1px solid #d3d3d3;
+      border-radius: 6px;
+      font: inherit;
+    }
+    .panel textarea { min-height: 86px; resize: vertical; }
+
+    section.block { padding: 30px 0; }
+    section.block.alt { background: var(--soft); }
+    h2 { margin: 0 0 14px; font-size: 30px; }
+    .sub { color: var(--muted); margin: -4px 0 14px; }
+
+    .grid4, .grid3, .grid2 {
+      display: grid;
+      gap: 12px;
+    }
+    .grid4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid #ededed;
+      padding: 10px;
+      text-align: left;
+    }
+    th { background: #fff3ec; }
+
+    ol.steps { margin: 0; padding-left: 20px; }
+    ol.steps li { margin-bottom: 8px; }
+
+    details {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+    summary { cursor: pointer; font-weight: 700; }
+
+    .cta {
+      background: #202327;
+      color: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+      color: #666;
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .grid4 { grid-template-columns: 1fr 1fr; }
+      .grid3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 25px; }
+      .grid4, .grid3, .grid2 { grid-template-columns: 1fr; }
+      .cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="container">
+      <div>Харьков · Ежедневно 09:00–19:00</div>
+      <div>+38 (0XX) XXX-XX-XX · Telegram · Viber</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">In<span>Service</span></div>
+      <nav class="menu">
+        <span>Услуги</span>
+        <span>Цены</span>
+        <span>Отзывы</span>
+        <span>Контакты</span>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h1>Ремонт электросамокатов<br/>в Харькове</h1>
+        <p class="lead">Диагностика в день обращения, согласование сметы до начала работ и гарантия на ремонт.</p>
+        <div class="badges">
+          <span class="badge">Срок от 1 часа</span>
+          <span class="badge">Гарантия до 6 месяцев</span>
+          <span class="badge">Xiaomi / Ninebot / Kugoo</span>
+        </div>
+        <div class="btns">
+          <a class="btn btn-primary" href="#lead">Оставить заявку</a>
+          <a class="btn btn-ghost" href="#prices">Смотреть цены</a>
+        </div>
+      </div>
+      <aside class="panel" id="lead">
+        <h3>Быстрая заявка</h3>
+        <input placeholder="Имя" />
+        <input placeholder="Телефон" />
+        <textarea placeholder="Модель и проблема"></textarea>
+        <a class="btn btn-primary" href="#">Отправить</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <h2>Почему нам доверяют</h2>
+      <div class="grid4">
+        <div class="card"><h3>Гарантия</h3><div class="muted">До 6 месяцев на работы</div></div>
+        <div class="card"><h3>Скорость</h3><div class="muted">Срочный ремонт в день обращения</div></div>
+        <div class="card"><h3>Опыт</h3><div class="muted">Профильные мастера</div></div>
+        <div class="card"><h3>Запчасти</h3><div class="muted">Ходовые позиции в наличии</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="brands">
+    <div class="container">
+      <h2>Какие бренды ремонтируем</h2>
+      <p class="sub">Отдельные подстраницы по брендам, чтобы закрывать узкие запросы.</p>
+      <div class="grid3">
+        <div class="card"><h3>Xiaomi</h3><div class="muted">Батарея, BMS, контроллер</div></div>
+        <div class="card"><h3>Ninebot / Segway</h3><div class="muted">Ошибки, датчики, электроника</div></div>
+        <div class="card"><h3>Kugoo</h3><div class="muted">Складной механизм, питание</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="prices">
+    <div class="container">
+      <h2>Цены и сроки</h2>
+      <table>
+        <thead>
+          <tr><th>Услуга</th><th>Цена от</th><th>Срок</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Диагностика</td><td>0–300 грн</td><td>30–60 мин</td></tr>
+          <tr><td>Замена камеры/покрышки</td><td>450 грн</td><td>1–2 часа</td></tr>
+          <tr><td>Ремонт контроллера</td><td>1200 грн</td><td>1 день</td></tr>
+          <tr><td>Замена аккумулятора</td><td>2500 грн</td><td>1 день</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block alt" id="issues">
+    <div class="container">
+      <h2>Частые поломки</h2>
+      <div class="grid2">
+        <div class="card"><h3>Не включается</h3><div class="muted">Проверка питания, батареи, контроллера.</div></div>
+        <div class="card"><h3>Не заряжается</h3><div class="muted">Разъем, зарядка, BMS, цепи питания.</div></div>
+        <div class="card"><h3>Теряет тягу</h3><div class="muted">Диагностика мотор-колеса и силовой части.</div></div>
+        <div class="card"><h3>После воды</h3><div class="muted">Чистка, сушка, восстановление контактов.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="process">
+    <div class="container">
+      <h2>Как проходит ремонт</h2>
+      <ol class="steps">
+        <li>Прием и первичный осмотр</li>
+        <li>Диагностика</li>
+        <li>Согласование стоимости</li>
+        <li>Ремонт и тест</li>
+        <li>Выдача с гарантией</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block alt" id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+      <details open>
+        <summary>Сколько длится ремонт?</summary>
+        <p>Чаще всего в течение 1 дня. Сложные случаи 2–3 дня.</p>
+      </details>
+      <details>
+        <summary>Есть ли гарантия?</summary>
+        <p>Да, на работы и установленные запчасти.</p>
+      </details>
+      <details>
+        <summary>Можно срочно сегодня?</summary>
+        <p>Да, при свободной очереди и наличии деталей.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h3 style="margin:0 0 6px;">Нужен срочный ремонт электросамоката?</h3>
+          <div>Оставьте модель и симптом, и мы сразу сориентируем по цене и сроку.</div>
+        </div>
+        <a class="btn btn-primary" href="#lead">Оставить заявку</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">Прототип в логике текущего сайта: акцентный оранжевый стиль, блоки услуги, цены, FAQ и форма.</div>
+  </footer>
+</body>
+</html>

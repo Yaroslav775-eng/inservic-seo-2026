@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InService — Визуальная презентация структуры</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d1726;
+      --bg2: #132238;
+      --card: #ffffff;
+      --line: #d8e3f0;
+      --text: #132033;
+      --muted: #5d6f86;
+      --brand: #f26522;
+      --brand-soft: #fff2ea;
+      --accent: #0b66d6;
+      --ok: #0f8f4a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(1200px 600px at 0% -20%, #1e2f4b 0%, transparent 60%),
+        radial-gradient(900px 400px at 100% -10%, #2a1f1a 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .top {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      padding: 10px 16px;
+      background: rgba(8, 16, 28, 0.7);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: 14px;
+      opacity: .95;
+    }
+
+    .brand b { color: #ff8a57; }
+
+    .progress-wrap {
+      flex: 1;
+      max-width: 420px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, #ff8a57, #f26522);
+      transition: width .25s ease;
+    }
+
+    .counter {
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      min-width: 48px;
+      text-align: right;
+    }
+
+    .deck {
+      height: 100vh;
+      width: 100vw;
+      display: grid;
+      place-items: center;
+      padding: 68px 16px 90px;
+    }
+
+    .slide {
+      display: none;
+      width: min(1020px, 96vw);
+      max-height: calc(100vh - 170px);
+      overflow: auto;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.35);
+      padding: 24px;
+    }
+
+    .slide.active { display: block; }
+
+    .kicker {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #9f4517;
+      background: var(--brand-soft);
+      border: 1px solid #ffd9c6;
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin-bottom: 12px;
+    }
+
+    h1, h2 {
+      margin: 0 0 10px;
+      line-height: 1.2;
+      letter-spacing: -.2px;
+    }
+
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+
+    p { margin: 0 0 10px; color: var(--muted); }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .cards-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .flow {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .node {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .node.main {
+      border-color: #ffc8ab;
+      background: linear-gradient(180deg, #fff9f5 0%, #fff 100%);
+    }
+
+    .node .title {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .url {
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      color: #38597c;
+      word-break: break-word;
+    }
+
+    .arrow {
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      color: #91a6bf;
+      font-weight: 800;
+    }
+
+    .list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .list li { margin: 6px 0; }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px;
+    }
+
+    .step b { color: var(--accent); }
+
+    .approve {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #c6f0d5;
+      background: #effcf4;
+      color: #155b2f;
+      font-weight: 700;
+    }
+
+    .controls {
+      position: fixed;
+      inset: auto 0 18px 0;
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .btn-prev {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+    }
+
+    .btn-next {
+      background: linear-gradient(90deg, #ff8a57, #f26522);
+      color: #fff;
+    }
+
+    .btn-next:disabled, .btn-prev:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 920px) {
+      h1 { font-size: 30px; }
+      h2 { font-size: 26px; }
+      .cards-3, .cards-2, .timeline { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); }
+      .slide { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">IN<b>SERVICE</b> · SEO STRUCTURE</div>
+    <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+    <div class="counter" id="counter">1 / 5</div>
+  </header>
+
+  <main class="deck">
+    <section class="slide active">
+      <span class="kicker">Слайд 1 — Идея</span>
+      <h1>Одна главная страница + отдельные страницы брендов и поломок</h1>
+      <p>Это понятная схема: человек заходит на услугу, потом выбирает свой бренд или свою проблему.</p>
+      <div class="cards-3">
+        <div class="card"><b>Главная услуги</b>“Ремонт электросамокатов в Харькове”</div>
+        <div class="card"><b>Бренды</b>Xiaomi, Ninebot, Kugoo, Dualtron</div>
+        <div class="card"><b>Поломки</b>Не включается, не заряжается и т.д.</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <span class="kicker">Слайд 2 — Переходы</span>
+      <h2>Как человек ходит по сайту</h2>
+      <p>Никакой сложности: главная → узкая страница → обратно на главную.</p>
+      <div class="flow">
+        <div class="node main">
+          <div class="title">Главная услуги</div>
+          <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node">
+          <div class="title">Страница бренда</div>
+          <div class="url">/ru/.../xiaomi/</div>
+        </div>
+      </div>
+      <div class="flow" style="margin-top:10px;">
+        <div class="node main">
+          <div class="title">Главная услуги</div>
+          <div class="url">/ru/remont-elektrosamokatov-kharkov/</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node">
+          <div class="title">Страница поломки</div>
+          <div class="url">/ru/.../ne-zaryazhaetsya/</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <span class="kicker">Слайд 3 — Главная страница</span>
+      <h2>Что именно будет на главной</h2>
+      <div class="cards-3">
+        <div class="card"><b>Hero</b>H1 + УТП + кнопка заявки</div>
+        <div class="card"><b>Доверие</b>Гарантия, сроки, опыт</div>
+        <div class="card"><b>Бренды</b>Ссылки на страницы брендов</div>
+        <div class="card"><b>Цены</b>Таблица “услуга / цена / срок”</div>
+        <div class="card"><b>Поломки</b>Ссылки на страницы поломок</div>
+        <div class="card"><b>FAQ + Контакты</b>Вопросы, карта, финальная форма</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <span class="kicker">Слайд 4 — Объем</span>
+      <h2>Сколько страниц делаем на старт</h2>
+      <div class="cards-2">
+        <div class="card">
+          <b>RU</b>
+          <ul class="list">
+            <li>1 главная услуги</li>
+            <li>4 страницы брендов</li>
+            <li>4 страницы поломок</li>
+          </ul>
+          <p><b>Итого: 9 страниц RU</b></p>
+        </div>
+        <div class="card">
+          <b>UA</b>
+          <ul class="list">
+            <li>1 главная услуги</li>
+            <li>4 страницы брендов</li>
+            <li>4 страницы поломок</li>
+          </ul>
+          <p><b>Итого: 9 страниц UA</b></p>
+        </div>
+      </div>
+      <p><b>Всего старт: 18 страниц.</b> Это адекватно и не перегружает сайт.</p>
+    </section>
+
+    <section class="slide">
+      <span class="kicker">Слайд 5 — План и решение</span>
+      <h2>Как запускаем</h2>
+      <div class="timeline">
+        <div class="step"><b>Нед 1–2</b><br/>Главные RU + UA</div>
+        <div class="step"><b>Нед 3–4</b><br/>Поломки RU + UA</div>
+        <div class="step"><b>Нед 5–6</b><br/>Бренды RU + UA</div>
+        <div class="step"><b>Нед 7–8</b><br/>Дожим по результатам</div>
+      </div>
+      <div class="approve">Для старта утверждаем: 4 бренда, 4 поломки, цены и сроки.</div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <button class="btn-prev" id="prev">← Назад</button>
+    <button class="btn-next" id="next">Дальше →</button>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const counter = document.getElementById('counter');
+    const progress = document.getElementById('progress');
+    let i = 0;
+
+    function render() {
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      prev.disabled = i === 0;
+      next.disabled = i === slides.length - 1;
+      counter.textContent = `${i + 1} / ${slides.length}`;
+      progress.style.width = `${((i + 1) / slides.length) * 100}%`;
+    }
+
+    prev.addEventListener('click', () => { if (i > 0) { i--; render(); } });
+    next.addEventListener('click', () => { if (i < slides.length - 1) { i++; render(); } });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' && i < slides.length - 1) { i++; render(); }
+      if (e.key === 'ArrowLeft' && i > 0) { i--; render(); }
+    });
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prove — InService</title>
+  <meta name="description" content="Ремонт электросамокатов Prove в Харькове. Прототип будущей брендовой страницы сервиса InService в Харькове." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1c2430;
+      --muted: #5f6d7f;
+      --line: #dae3ef;
+      --brand: #f26522;
+      --brand-dark: #d94e0f;
+      --brand-soft: #fff3ec;
+      --accent: #0b63d3;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(180deg, #f7faff 0%, #eef4fb 100%); color: var(--text); }
+    .topbar { background: #1f2c3f; color: #d7e2f0; font-size: 13px; }
+    .topbar .inner, .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; }
+    .site-head { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 0 12px; }
+    .site-head img { height: 56px; width: auto; }
+    .head-meta { text-align: right; font-size: 14px; color: var(--muted); }
+    .head-meta strong { display: block; color: var(--text); font-size: 17px; }
+    .crumbs { font-size: 13px; color: var(--muted); margin: 8px 0 20px; }
+    .crumbs a { color: var(--accent); text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; }
+    .panel { background: rgba(255,255,255,0.92); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 18px 50px rgba(28,36,48,0.08); }
+    .hero-copy { padding: 28px; }
+    .eyebrow { display: inline-block; margin-bottom: 10px; padding: 5px 10px; border-radius: 999px; border: 1px solid #ffd9c5; background: var(--brand-soft); color: #9f4316; font-size: 12px; font-weight: 700; }
+    h1 { margin: 0 0 12px; font-size: 38px; line-height: 1.1; }
+    h2 { margin: 0 0 10px; font-size: 27px; line-height: 1.15; }
+    h3 { margin: 0 0 8px; font-size: 19px; }
+    p { margin: 0 0 10px; color: var(--muted); line-height: 1.6; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px; }
+    .chip { padding: 6px 10px; border-radius: 999px; border: 1px solid #d5e2f6; background: #f4f8ff; color: #285181; font-size: 12px; font-weight: 700; }
+    .btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn { display: inline-block; padding: 11px 15px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; }
+    .btn-main { background: var(--brand); color: #fff; }
+    .btn-ghost { border: 1px solid var(--line); color: var(--text); background: #fff; }
+    .hero-side { padding: 18px; display: flex; align-items: stretch; }
+    .brand-visual { width: 100%; border-radius: 18px; padding: 24px; color: #fff; background: linear-gradient(145deg, #203149 0%, #0b63d3 45%, #f26522 100%); display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; position: relative; overflow: hidden; }
+    .brand-visual::after { content: ''; position: absolute; inset: auto -40px -40px auto; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.12); }
+    .brand-mark { font-size: 34px; font-weight: 900; letter-spacing: 1px; max-width: 80%; line-height: 1; }
+    .brand-sub { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.86); max-width: 85%; }
+    .hero-list { display: grid; gap: 10px; margin-top: 14px; }
+    .hero-list div { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; padding: 10px 12px; font-size: 13px; }
+    .sections { display: grid; gap: 18px; margin: 18px 0 24px; }
+    .section { padding: 24px; }
+    .grid-4, .grid-3 { display: grid; gap: 12px; }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mini { border: 1px solid var(--line); border-radius: 16px; padding: 14px; background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%); }
+    .mini b { display: block; margin-bottom: 6px; color: var(--text); }
+    .callout { border: 1px solid #ffd4bf; background: linear-gradient(180deg, #fff9f5 0%, #fff4ec 100%); border-radius: 18px; padding: 18px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .links a { text-decoration: none; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--text); padding: 7px 12px; font-size: 13px; font-weight: 700; }
+    footer { margin: 18px 0 30px; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .grid-4, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .site-head { flex-direction: column; align-items: flex-start; } .head-meta { text-align: left; } h1 { font-size: 31px; } }
+    @media (max-width: 640px) { .grid-4, .grid-3 { grid-template-columns: 1fr; } .topbar .inner { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div>InService · Харьков · Ежедневно 09:00–19:00</div>
+      <div>+38 (067) 652-60-04 · Telegram · Viber</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <header class="site-head">
+      <a href="../russian-scooter-page.html"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /></a>
+      <div class="head-meta">
+        <strong>Ремонт электротранспорта в Харькове</strong>
+        <div>Проспект Науки, 17 · ул. Деревянко, 58</div>
+      </div>
+    </header>
+
+    <div class="crumbs"><a href="../russian-scooter-page.html">Ремонт электросамокатов</a> / Prove</div>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">Брендовая посадочная</div>
+        <h1>Ремонт электросамокатов Prove в Харькове</h1>
+        <p>Это заготовка будущей SEO-страницы под отдельный бренд. Она нужна, чтобы закрыть брендовый спрос, усилить структуру сайта и привести теплый трафик людей, которые уже знают свою модель.</p>
+        <div class="chips">
+          <span class="chip">Под бренд Prove</span>
+          <span class="chip">Типовые поломки</span>
+          <span class="chip">Цены и сроки</span>
+          <span class="chip">FAQ и CTA</span>
+        </div>
+        <p><strong>Что будет на финальной странице:</strong> модели актуальные модели Prove для города и прогулок, частые неисправности, ориентиры по цене, блок доверия, ответы на вопросы и внутренняя перелинковка с основной услугой.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="../russian-scooter-page.html">Вернуться на главную страницу услуги</a>
+          <a class="btn btn-ghost" href="tel:+380676526004">Позвонить в сервис</a>
+        </div>
+      </div>
+      <div class="panel hero-side">
+        <div class="brand-visual">
+          <div>
+            <div class="brand-mark">Prove</div>
+            <p class="brand-sub">Отдельная страница под бренд помогает точнее закрыть коммерческий запрос и показать релевантность для конкретной техники.</p>
+          </div>
+          <div class="hero-list">
+            <div><strong>Запрос:</strong> ремонт электросамокатов Prove в Харькове</div>
+            <div><strong>Фокус работ:</strong> аккумулятор, дисплей, зарядка, мотор</div>
+            <div><strong>Следующий шаг:</strong> наполнить реальными кейсами, ценами и моделями.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sections">
+      <section class="panel section">
+        <h2>Что раскроем на странице Prove</h2>
+        <div class="grid-4">
+          <div class="mini"><b>Популярные модели</b>Покажем, какие модели бренда обслуживаем и какие узлы ремонтируем чаще всего.</div>
+          <div class="mini"><b>Типовые симптомы</b>Не включается, не заряжается, быстро садится, шумит мотор, люфтит механизм.</div>
+          <div class="mini"><b>Цены и сроки</b>Добавим понятную таблицу работ, чтобы посетитель быстро сориентировался.</div>
+          <div class="mini"><b>SEO и доверие</b>FAQ, внутренние ссылки, отзывы, гарантии и блок заявки под конкретный бренд.</div>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <h2>Какие задачи закроет эта посадочная</h2>
+        <div class="grid-3">
+          <div class="mini"><b>Брендовый трафик</b>Страница поможет собирать запросы людей, которые ищут ремонт именно Prove.</div>
+          <div class="mini"><b>Чище структура сайта</b>Главная услуга будет ссылаться на бренды, а бренды — возвращать вес обратно в основной раздел.</div>
+          <div class="mini"><b>Подготовка под масштабирование</b>После Prove можно добавлять новые бренды и модели без хаоса в структуре.</div>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <h2>Какие блоки появятся перед публикацией</h2>
+        <div class="callout">
+          <p><strong>Статус:</strong> это красивая заглушка-прототип. Перед публикацией мы наполним ее полноценным контентом под бренд.</p>
+          <div class="links">
+            <a href="../russian-scooter-page.html#prices">Подтянуть базовый прайс</a>
+            <a href="../russian-scooter-page.html#faq">Связать с FAQ</a>
+            <a href="../russian-scooter-page.html#lead-form">Свести к форме заявки</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Прототип брендовой страницы для структуры SEO-кластера InService.
+  </footer>
+</body>
+</html>

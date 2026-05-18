@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ремонт мотор-колеса електросамоката у Харкові — InService</title>
+  <meta name="description" content="Ремонт мотор-колеса електросамоката у Харкові: діагностика датчиків Холла, підшипників, обмотки, проводки, перегріву, шуму та ривків. InService, вул. Дерев'янка, 58." />
+  <link rel="canonical" href="https://inservic.com.ua/remont-motor-kolesa-elektrosamokata-kharkiv/" />
+  <meta property="og:title" content="Ремонт мотор-колеса електросамоката у Харкові — InService" />
+  <meta property="og:description" content="Самокат не їде, смикається, гуде або гріється? Перевірка мотор-колеса, датчиків Холла, підшипників, проводки і контролера." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" />
+<style>
+    :root {
+      --bg: #f3f6f9;
+      --card: #ffffff;
+      --text: #0f2b46;
+      --muted: #5f7184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0b63d3;
+      --blue-soft: #eef6ff;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12, 99, 206, .13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255, 157, 47, .24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.58;
+    }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .topbar { background: #111b29; color: #edf3fb; font-size: 13px; }
+    .topbar .inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 9px 0; }
+    .site-head {
+      margin: 18px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.94);
+      border-radius: 22px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 168px; height: auto; display: block; }
+    .brand small { display: block; color: var(--muted); margin-top: 2px; }
+    .head-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .phone { font-weight: 800; text-decoration: none; color: var(--text); }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .nav a {
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.88);
+      border-radius: 999px;
+      color: #38506a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .breadcrumbs { margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+    .breadcrumbs a { color: var(--orange-dark); text-decoration: none; }
+    .hero { margin-bottom: 18px; }
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,157,47,.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f3f9ff 100%);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .hero-copy { padding: 36px; }
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(270px 220px at 80% 8%, rgba(255,157,47,.24), transparent 70%),
+        linear-gradient(180deg, #f8fbff, #eef5fc);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd8bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.03em; }
+    h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.02em; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 760px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 22px; }
+    .chip { padding: 8px 11px; border-radius: 999px; background: var(--orange-soft); border: 1px solid #ffd4b5; color: #944114; font-size: 13px; font-weight: 800; }
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      border: 1px solid transparent;
+    }
+    .btn-main { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff; box-shadow: 0 14px 28px rgba(242,101,34,.22); }
+    .btn-ghost { background: #fff; color: var(--text); border-color: var(--line); }
+    .scooter-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 45px rgba(20,42,61,.08);
+    }
+    .scooter-photo {
+      height: 190px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef5;
+      margin-bottom: 16px;
+    }
+    .scooter-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .hero-stat { border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: #fbfdff; }
+    .hero-stat b { display:block; font-size: 20px; color: var(--orange-dark); margin-bottom: 3px; }
+    .section { margin: 18px 0; }
+    .panel { border: 1px solid var(--line); background: rgba(255,255,255,.96); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-end; margin-bottom: 18px; }
+    .section-head p { max-width: 650px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .mini-card, .issue-card, .brand-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      min-height: 100%;
+    }
+    .issue-card { text-decoration: none; display: block; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .issue-card:hover, .brand-card:hover { transform: translateY(-3px); border-color: rgba(255,157,47,.62); box-shadow: 0 18px 30px rgba(20,42,61,.09); }
+    .icon {
+      width: 46px; height: 46px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: #fff;
+      font-weight: 900; margin-bottom: 12px; box-shadow: 0 12px 22px rgba(242,101,34,.18);
+    }
+    .issue-card em, .brand-card em { display: inline-block; margin-top: 10px; color: var(--orange-dark); font-style: normal; font-weight: 900; font-size: 13px; }
+    .brand-card { text-decoration: none; color: inherit; display:block; }
+    .brand-name { display: block; font-size: 22px; font-weight: 900; margin-bottom: 6px; letter-spacing: -.02em; }
+    .price-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .price-table th, .price-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .price-table th { background: #17324d; color: #fff; font-size: 13px; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-table td:nth-child(2) { font-weight: 900; color: var(--orange-dark); white-space: nowrap; }
+    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .step { position: relative; border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .step::before { counter-increment: step; content: counter(step); width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:999px; background: var(--orange); color:#fff; font-weight: 900; margin-bottom: 10px; }
+    .faq { display: grid; gap: 10px; }
+    details { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px 18px; }
+    summary { cursor: pointer; font-weight: 900; color: var(--text); }
+    details p { margin-top: 10px; }
+    .callout { border-left: 4px solid var(--orange); background: #fff8f1; border-radius: 18px; padding: 16px 18px; color: #70411f; }
+    .seo-text { columns: 2; column-gap: 34px; }
+    .seo-text p { break-inside: avoid; }
+    .seo-copy { display: grid; gap: 18px; }
+    .seo-copy h3 { margin-top: 6px; }
+    .seo-copy p { font-size: 16px; }
+    .seo-copy ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy li { margin-bottom: 7px; }
+    .seo-copy ol { margin: 0; padding-left: 20px; color: var(--muted); }
+    .seo-copy > h2 { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+    .seo-copy > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .seo-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .seo-copy th, .seo-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .seo-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .seo-copy tr:last-child td { border-bottom: 0; }
+    .symptom-table { display: grid; gap: 10px; }
+    .symptom-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr 0.9fr;
+      gap: 12px;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 14px;
+    }
+    .symptom-row strong { color: var(--text); }
+    .symptom-row span { color: var(--muted); }
+    .route-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fff, #fbfdff);
+      padding: 20px;
+    }
+    .form-box {
+      border: 1px solid #ffd3b5;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff8f1, #fff);
+      padding: 22px;
+    }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .field {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      padding: 12px 13px;
+      color: var(--muted);
+      min-height: 46px;
+    }
+    .field.wide { grid-column: 1 / -1; min-height: 82px; }
+    .handoff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .handoff-item { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 16px; }
+    .handoff-item b { display: block; color: var(--text); margin-bottom: 5px; }
+    .keyword-list { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .keyword-list span { padding: 7px 10px; border-radius: 999px; background: #eef6ff; color: #255b92; font-size: 12px; font-weight: 800; }
+    .content-checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+    .content-checklist div { border: 1px solid var(--line); border-radius: 16px; padding: 13px; background: #fbfdff; color: var(--muted); }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 9px 12px; border-radius: 999px; background: var(--blue-soft); color: #245a91; text-decoration: none; font-weight: 800; font-size: 13px; }
+    .long-copy { display: grid; gap: 14px; }
+    .long-copy h2 { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .long-copy h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    .long-copy ul, .long-copy ol { margin: 0 0 6px; padding-left: 22px; color: var(--muted); }
+    .long-copy li { margin-bottom: 7px; }
+    .long-copy table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    .long-copy th, .long-copy td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .long-copy th { background: #17324d; color: #fff; font-size: 13px; }
+    .long-copy tr:last-child td { border-bottom: 0; }
+    .footer-note { margin: 24px 0 40px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-2, .grid-3, .grid-4, .steps, .handoff-grid, .content-checklist, .symptom-row, .form-grid { grid-template-columns: 1fr; }
+      .field.wide { grid-column: auto; }
+      .hero-visual { border-left: 0; border-top: 1px solid var(--line); min-height: auto; }
+      .section-head { display: block; }
+      .seo-text { columns: 1; }
+      .site-head { align-items: flex-start; flex-direction: column; }
+      .head-actions { justify-content: flex-start; }
+    }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Ремонт мотор-колеса електросамоката у Харкові", "serviceType": "Ремонт мотор-колеса електросамоката", "areaServed": "Харків", "provider": {"@type": "LocalBusiness", "name": "InService", "url": "https://inservic.com.ua/", "telephone": "+38-067-652-60-04", "address": {"@type": "PostalAddress", "addressLocality": "Харків", "streetAddress": "вул. Дерев'янка, 58"}}, "offers": {"@type": "AggregateOffer", "priceCurrency": "UAH", "lowPrice": "100"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Чому електросамокат смикається при старті?", "acceptedAnswer": {"@type": "Answer", "text": "Причина може бути в датчиках Холла, контролері, мотор-колесі, ручці газу або проводці. Потрібна діагностика."}}, {"@type": "Question", "name": "Чи завжди потрібна заміна мотор-колеса?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Часто можна відновити проводку, контакти, підшипники або окремі елементи. Заміна потрібна не в кожному випадку."}}, {"@type": "Question", "name": "Скільки коштує діагностика мотор-колеса?", "acceptedAnswer": {"@type": "Answer", "text": "Орієнтир діагностики стартує від 100 грн. Остаточна вартість залежить від причини поломки та моделі."}}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="container inner"><span>Сервісний центр InService у Харкові та Києві</span><span>Харків: вул. Дерев'янка, 58 · Пн-Сб 10:00-18:00, Неділя — вихідний</span></div></div>
+  <header class="container site-head"><div class="brand"><img src="https://inservic.com.ua/wp-content/uploads/2019/09/logo.png" alt="InService" /><div><strong>Ремонт електротранспорту</strong><small>Мотор-колеса, контролери, АКБ, проводка</small></div></div><div class="head-actions"><a class="phone" href="tel:+380676526004">+38 (067) 652-60-04</a><a class="btn btn-main" href="#contact">Записатися</a></div></header>
+  <nav class="container nav" aria-label="Навігація сторінкою"><a href="remont-elektrosamokativ-kharkiv.html">Самокати</a><a href="remont-kontrolera-elektrosamokata-kharkiv.html">Контролер</a><a href="elektrosamokat-ne-vmykayetsya-kharkiv.html">Не вмикається</a><a href="#symptoms">Симптоми</a><a href="#diagnostics">Діагностика</a><a href="#prices">Ціни</a><a href="#faq">FAQ</a><a href="#contact">Заявка</a></nav>
+  <main class="container">
+    <div class="breadcrumbs"><a href="../index.html">Головна</a> / <a href="electric-transport.html">Електротранспорт</a> / <a href="remont-elektrosamokativ-kharkiv.html">Ремонт електросамокатів</a> / Мотор-колесо</div>
+    <section class="hero"><div class="hero-card"><div class="hero-grid"><div class="hero-copy"><span class="eyebrow">Сторінка вузла</span><h1>Ремонт мотор-колеса електросамоката у Харкові</h1><p class="lead">Діагностуємо мотор-колесо, датчики Холла, підшипники, обмотку, проводку, роз'єми і зв'язок із контролером. Пояснюємо, чи можливий ремонт, чи потрібна заміна вузла.</p><div class="chips"><span class="chip">Діагностика від 100 грн</span><span class="chip">Ривки, шум, перегрів, немає тяги</span><span class="chip">Харків, Дерев'янка 58</span></div><div class="btns"><a class="btn btn-main" href="#contact">Отримати консультацію</a><a class="btn btn-ghost" href="tel:+380676526004">Подзвонити</a></div></div><div class="hero-visual"><div class="scooter-card"><div class="scooter-photo"><img src="https://inservic.com.ua/wp-content/uploads/2017/08/el.png" alt="Ремонт мотор-колеса електросамоката" /></div><div class="hero-stats"><div class="hero-stat"><b>HALL</b><span>датчики Холла</span></div><div class="hero-stat"><b>BEAR</b><span>підшипники</span></div><div class="hero-stat"><b>WIRE</b><span>проводка</span></div><div class="hero-stat"><b>від 100 грн</b><span>діагностика</span></div></div></div></div></div></div></section>
+    <section id="symptoms" class="section panel"><div class="section-head"><div><span class="eyebrow">Симптоми</span><h2>Коли проблема може бути в мотор-колесі</h2></div><p>Мотор-колесо потрібно перевіряти, якщо самокат не їде, смикається, гуде, перегрівається або втрачає тягу.</p></div><div class="grid-3"><div class="mini-card"><span class="icon">GO</span><h3>Не їде</h3><p>Дисплей працює, батарея заряджена, але колесо не реагує на газ.</p></div><div class="mini-card"><span class="icon">RRR</span><h3>Смикається</h3><p>Ривки при старті можуть бути пов'язані з датчиками, фазами або контролером.</p></div><div class="mini-card"><span class="icon">HOT</span><h3>Гріється чи шумить</h3><p>Перегрів, гул або люфт часто вказують на механіку чи обмотку.</p></div></div></section>
+    <section id="diagnostics" class="section panel"><div class="section-head"><div><span class="eyebrow">Діагностика</span><h2>Що перевіряє майстер</h2></div><p>Симптоми мотор-колеса перетинаються з контролером і акумулятором, тому перевіряємо весь ланцюг.</p></div><div class="symptom-table"><div class="symptom-row"><strong>Електрика</strong><span>Фази, датчики Холла, роз'єми, проводка до контролера.</span><em>Показує обрив або помилку сигналу</em></div><div class="symptom-row"><strong>Механіка</strong><span>Підшипники, люфт, шум, вільне обертання колеса.</span><em>Відсікає механічну причину</em></div><div class="symptom-row"><strong>Навантаження</strong><span>Тяга, перегрів, поведінка при старті та русі.</span><em>Допомагає оцінити ремонт чи заміну</em></div></div></section>
+    <section id="prices" class="section panel"><div class="section-head"><div><span class="eyebrow">Ціни</span><h2>Орієнтовна вартість</h2></div><p>Фінальна сума залежить від моделі, доступності деталей і того, чи потрібен ремонт, чи заміна мотор-колеса.</p></div><table class="price-table"><thead><tr><th>Послуга</th><th>Ціна</th><th>Коментар</th></tr></thead><tbody><tr><td>Діагностика мотор-колеса</td><td>від 100 грн</td><td>Механіка, датчики, проводка, фази</td></tr><tr><td>Відновлення проводки</td><td>від 300 грн</td><td>Обриви, контакти, роз'єми</td></tr><tr><td>Заміна підшипників</td><td>після огляду</td><td>Залежить від моделі</td></tr><tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд роз'ємів, датчиків, корозії</td></tr><tr><td>Заміна мотор-колеса</td><td>після підбору</td><td>Потрібна сумісність з контролером</td></tr></tbody></table></section>
+    <section id="seo-text" class="section panel"><div class="section-head"><div><span class="eyebrow">SEO-текст</span><h2>Повний текст сторінки</h2></div><p>Текст написаний для користувача: симптоми, причини, діагностика, ціни, бренди та FAQ.</p></div><div class="long-copy"><h2>Ремонт мотор-колеса електросамоката у Харкові</h2>
+<p>Мотор-колесо електросамоката поєднує колесо і електродвигун, тому несправність може проявлятися як електронна або механічна проблема. Самокат може не їхати, смикатися при старті, втрачати тягу, гудіти, перегріватися, показувати помилку або важко обертати колесо. У InService у Харкові майстер перевіряє не тільки мотор, а весь ланцюг: контролер, датчики Холла, проводку, роз'єми, підшипники, обмотку і стан колеса.</p>
+<p>Такий підхід важливий, бо симптоми мотор-колеса часто схожі на несправність контролера чи акумулятора. Якщо одразу міняти дорогий вузол без діагностики, можна не вирішити проблему. Спочатку потрібно зрозуміти, чи пошкоджений сам двигун, чи причина в живленні, сигналах, датчиках або механіці.</p>
+
+<h2>Коли потрібна діагностика мотор-колеса</h2>
+<p>Звернутися в сервіс варто не лише тоді, коли електросамокат повністю перестав їхати. Ранні ознаки часто допомагають уникнути складнішого ремонту: перегрів, шум, вібрація, ривки під навантаженням або слабка тяга можуть вказувати на проблему всередині мотор-колеса.</p>
+<ul>
+  <li>Самокат не їде, хоча дисплей працює і батарея заряджена;</li>
+  <li>Колесо смикається при натисканні на газ;</li>
+  <li>Під час руху чути гул, скрегіт або сторонній шум;</li>
+  <li>Мотор-колесо сильно гріється після короткої поїздки;</li>
+  <li>Самокат втратив тягу на підйомах;</li>
+  <li>Після води або удару з'явилась помилка чи ривки.</li>
+</ul>
+
+<h2>Що може зламатися в мотор-колесі</h2>
+<p>У мотор-колесі є електрична та механічна частина. Тому діагностика має перевіряти обидва напрямки, а не тільки заміну мотору в зборі.</p>
+<table>
+  <thead><tr><th>Вузол</th><th>Симптом</th><th>Що перевіряємо</th></tr></thead>
+  <tbody>
+    <tr><td>Датчики Холла</td><td>Ривки, троїння, помилка, мотор не стартує</td><td>Сигнали датчиків, роз'єми, проводку до контролера</td></tr>
+    <tr><td>Обмотка двигуна</td><td>Перегрів, слабка тяга, коротке замикання</td><td>Опір фаз, стан ізоляції, сліди перегріву</td></tr>
+    <tr><td>Підшипники</td><td>Гул, люфт, важке обертання колеса</td><td>Механічний стан, люфт, шум під навантаженням</td></tr>
+    <tr><td>Магніти ротора</td><td>Стук, нерівномірне обертання, вібрація</td><td>Кріплення магнітів, внутрішні пошкодження</td></tr>
+    <tr><td>Проводка</td><td>Проблема після удару або ремонту колеса</td><td>Обриви, перетирання, контакти, герметичність</td></tr>
+  </tbody>
+</table>
+
+<h2>Як проходить діагностика</h2>
+<p>Майстер уточнює модель електросамоката, коли з'явилась проблема, чи був дощ, падіння, перегрів, прокол або попередній ремонт. Далі перевіряється обертання колеса, люфт, шум, стан кабелю, роз'єми, сигнали датчиків Холла, фази мотору та зв'язок із контролером.</p>
+<p>Якщо самокат не їде, причина може бути не в мотор-колесі, а в контролері, ручці газу, гальмівному датчику, акумуляторі або проводці. Тому коректна діагностика допомагає не замінювати справні деталі і погодити з клієнтом реальний обсяг робіт.</p>
+
+<h2>Ремонт чи заміна мотор-колеса</h2>
+<p>Не кожне мотор-колесо потрібно міняти повністю. У частині випадків можна відновити проводку, замінити підшипники, перевірити датчики Холла, усунути наслідки води або відремонтувати контакт. Якщо пошкодження серйозне, наприклад є сильний перегрів обмотки чи механічна деформація, майстер може рекомендувати заміну вузла.</p>
+<p>Рішення залежить від моделі, потужності самоката, доступності деталей і вартості робіт. Для клієнта важливо отримати зрозуміле пояснення: що саме несправне, чи безпечно їздити після ремонту і чи має сенс вкладатися у відновлення.</p>
+
+<h2>Орієнтовні ціни</h2>
+<p>Ціна залежить від типу мотор-колеса, доступу до деталей і причини поломки. На сторінці краще використовувати формат “від” і не обіцяти точну суму до діагностики.</p>
+<table>
+  <thead><tr><th>Послуга</th><th>Ціна від</th><th>Коментар</th></tr></thead>
+  <tbody>
+    <tr><td>Діагностика мотор-колеса</td><td>від 100 грн</td><td>Перевірка механіки, фаз, датчиків і проводки</td></tr>
+    <tr><td>Заміна підшипників</td><td>після огляду</td><td>Залежить від моделі і стану посадкових місць</td></tr>
+    <tr><td>Відновлення проводки</td><td>від 300 грн</td><td>Обриви, перетирання, контакти, роз'єми</td></tr>
+    <tr><td>Ремонт після води</td><td>від 400 грн</td><td>Огляд, чистка, перевірка роз'ємів і датчиків</td></tr>
+    <tr><td>Заміна мотор-колеса</td><td>після підбору</td><td>Потрібна сумісність із контролером і моделлю самоката</td></tr>
+  </tbody>
+</table>
+
+<h2>Бренди і моделі</h2>
+<p>InService приймає електросамокати Xiaomi, Ninebot, Kugoo, Crosser, Giant, Proove, Koko City та інші моделі. Для Xiaomi і Ninebot важливо перевірити датчики, кабель, роз'єми і зв'язок із контролером. Для потужніших моделей Kugoo, Crosser та Proove більше уваги приділяється навантаженню, перегріву, фазним дротам, підшипникам і сумісності мотор-колеса з контролером.</p>
+
+<h2>Що взяти з собою</h2>
+<p>На діагностику бажано привезти сам електросамокат і зарядний пристрій, якщо проблема супроводжується помилками живлення. Якщо є відео, де колесо смикається, шумить або не стартує, покажіть його майстру. Адреса сервісу для ремонту електротранспорту: Харків, вул. Дерев'янка, 58. Графік роботи: Пн-Сб з 10:00 до 18:00, неділя — вихідний.</p>
+
+<h2 id="faq">FAQ</h2>
+<h3>Чому електросамокат смикається при старті?</h3>
+<p>Причина може бути в датчиках Холла, контролері, мотор-колесі, ручці газу або проводці. Потрібна перевірка всього ланцюга.</p>
+<h3>Чи можна їздити, якщо мотор-колесо гуде?</h3>
+<p>Краще пройти діагностику. Гул може бути пов'язаний із підшипниками, механічним пошкодженням або внутрішніми проблемами мотору.</p>
+<h3>Чи завжди потрібна заміна мотор-колеса?</h3>
+<p>Ні. Часто можна відновити проводку, контакти, підшипники або окремі елементи. Заміна потрібна не в кожному випадку.</p>
+<h3>Скільки триває ремонт?</h3>
+<p>Прості роботи після діагностики можуть виконуватися швидше, складні випадки з водою, обмоткою або підбором мотор-колеса потребують більше часу.</p></div></section>
+    <section class="section panel"><div class="section-head"><div><span class="eyebrow">Перелінковка</span><h2>Пов'язані сторінки</h2></div></div><div class="grid-4"><a class="issue-card" href="remont-elektrosamokativ-kharkiv.html"><h3>Ремонт електросамокатів</h3><p>Основна сторінка послуги.</p><em>Перейти</em></a><a class="issue-card" href="remont-kontrolera-elektrosamokata-kharkiv.html"><h3>Ремонт контролера</h3><p>Коли мотор не реагує або смикається.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-ne-vmykayetsya-kharkiv.html"><h3>Не вмикається</h3><p>Живлення, BMS, кнопка, контролер.</p><em>Перейти</em></a><a class="issue-card" href="remont-akumulyatora-elektrosamokata-kharkiv.html"><h3>Ремонт акумулятора</h3><p>Якщо не вистачає тяги або є просідання.</p><em>Перейти</em></a><a class="issue-card" href="elektrosamokat-pislya-vody-kharkiv.html"><h3>Після води</h3><p>Дощ, залиття, корозія, контролер, АКБ/BMS.</p><em>Перейти</em></a></div></section>
+    <section id="contact" class="section panel"><div class="section-head"><div><span class="eyebrow">Заявка</span><h2>Залишити заявку на діагностику мотор-колеса</h2></div><p>Опишіть симптом: не їде, смикається, шумить, гріється, був удар, вода або попередній ремонт.</p></div><div class="grid-2"><div class="form-box"><h3>Що повідомити майстру</h3><div class="form-grid"><div class="field">Ім'я</div><div class="field">Телефон</div><div class="field">Бренд і модель</div><div class="field">Що з колесом</div><div class="field wide">Коментар: не їде, ривки, шум, перегрів, після води, після удару, помилка на дисплеї.</div></div><div class="btns" style="margin-top:16px;"><a class="btn btn-main" href="tel:+380676526004">Подзвонити</a></div></div><div class="mini-card"><h3>Адреса сервісу</h3><p><strong>Харків:</strong> вул. Дерев'янка, 58</p><p><strong>Телефони:</strong> <a href="tel:+380676526004">+38 (067) 652-60-04</a>, <a href="tel:+380631492439">+38 (063) 149-24-39</a>, <a href="tel:+380665474037">+38 (066) 547-40-37</a></p><p><strong>Графік:</strong> Пн-Сб: 10:00-18:00 · Неділя — вихідний</p><p>Якщо є відео ривків, шуму або помилки, покажіть його майстру.</p></div></div></section>
+    <div class="footer-note">Прототип сторінки вузла для InService: ремонт мотор-колеса електросамоката у Харкові.</div>
+  </main>
+</body>
+</html>

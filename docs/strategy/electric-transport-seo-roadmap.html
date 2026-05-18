@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEO-roadmap — ремонт электротранспорта InService</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --text: #17324d;
+      --muted: #607184;
+      --line: #dbe4ed;
+      --orange: #ff9d2f;
+      --orange-dark: #f26522;
+      --orange-soft: #fff2e7;
+      --blue: #0c63ce;
+      --green: #178a4f;
+      --shadow: 0 18px 44px rgba(20, 42, 61, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 340px at 0% -8%, rgba(12,99,206,.13), transparent 60%),
+        radial-gradient(760px 300px at 100% -8%, rgba(255,157,47,.24), transparent 58%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
+      line-height: 1.55;
+    }
+    .wrap { width: min(1240px, calc(100% - 38px)); margin: 0 auto; padding: 34px 0 70px; }
+    .hero {
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,157,47,.34);
+      background: linear-gradient(135deg, #fff7ef 0%, #fff 48%, #f4f9ff 100%);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; }
+    .hero-main { padding: 34px; }
+    .hero-side { padding: 34px; border-left: 1px solid var(--line); background: rgba(255,255,255,.58); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #ffd9bd;
+      color: #a94714;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(32px, 4vw, 50px); line-height: 1.06; }
+    h2 { margin: 0 0 12px; font-size: 28px; line-height: 1.15; }
+    h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.2; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .lead { font-size: 18px; max-width: 860px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+    .chip { padding: 7px 10px; border-radius: 999px; background: var(--orange-soft); color: #9c4315; border: 1px solid #ffd8bd; font-size: 12px; font-weight: 700; }
+    .stats { display: grid; gap: 10px; }
+    .stat { padding: 14px; border-radius: 18px; background: #fff; border: 1px solid var(--line); }
+    .stat strong { display:block; font-size: 24px; color: var(--orange-dark); }
+    .section { margin-top: 18px; }
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card { border: 1px solid var(--line); border-radius: 20px; padding: 18px; background: linear-gradient(180deg, #fff, #fbfdff); }
+    .card.orange { border-color: #ffd1b5; background: linear-gradient(180deg, #fff6ee, #fff); }
+    .tag { display:inline-flex; margin-bottom: 10px; padding: 5px 9px; border-radius: 999px; background:#eef6ff; color:#255b92; font-size:12px; font-weight:800; }
+    .tag.hot { background: var(--orange-soft); color:#a94714; }
+    .tag.ok { background:#ecf8f1; color:#176b42; }
+    ul { margin: 0; padding-left: 19px; color: var(--muted); }
+    li { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 18px; background: #fff; }
+    th, td { padding: 12px 11px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: #17324d; color: #fff; font-size: 13px; }
+    td { color: #31445a; font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .priority-high { color: #b34212; font-weight: 800; }
+    .priority-mid { color: #176b42; font-weight: 800; }
+    .flow { display:grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .flow .step { position: relative; padding: 14px; border:1px solid var(--line); border-radius:18px; background:#fff; min-height: 104px; }
+    .flow .num { display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:999px; background:var(--orange); color:#fff; font-weight:800; margin-bottom:8px; }
+    .note { border-left: 4px solid var(--orange); padding: 14px 16px; border-radius: 16px; background: #fff8f1; color: #70411f; }
+    .url { font-family: Consolas, monospace; font-size: 13px; color: #0b579e; }
+    .footer { margin-top: 24px; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .grid-3, .flow { grid-template-columns: 1fr; }
+      .hero-side { border-left: 0; border-top: 1px solid var(--line); }
+      .panel { padding: 20px; }
+      th, td { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">InService SEO roadmap</div>
+          <h1>Ремонт електротранспорту: структура страниц без каши</h1>
+          <p class="lead">Рабочий план для запуска SEO-страниц по Харькову и Киеву. Сначала делаем понятный хаб и несколько сильных money-страниц, а бренды и поломки держим внутри страниц до проверки спроса.</p>
+          <div class="chips">
+            <span class="chip">Хаб → тип устройства → город</span>
+            <span class="chip">Бренды внутри страницы</span>
+            <span class="chip">Поломки внутри страницы</span>
+            <span class="chip">Отдельные URL только по спросу</span>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="stats">
+            <div class="stat"><strong>1</strong><span>хаб-страница для электротранспорта</span></div>
+            <div class="stat"><strong>5-6</strong><span>страниц первого запуска вместо 30-40</span></div>
+            <div class="stat"><strong>1</strong><span>эталонный шаблон страницы для масштабирования</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Главное решение</h2>
+      <div class="note">Не создаем сразу десятки страниц под каждый бренд и каждую поломку. На первом этапе делаем сильные страницы по типам устройств и городам. Бренды, поломки, цены и FAQ размещаем внутри этих страниц как SEO-блоки. Отдельные брендовые или проблемные URL добавляем только после проверки семантики.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Иерархия раздела</h2>
+      <div class="grid-3">
+        <div class="card orange">
+          <span class="tag hot">Уровень 1</span>
+          <h3>Хаб</h3>
+          <p><strong>Ремонт електротранспорту у Харкові та Києві</strong></p>
+          <ul>
+            <li>общая входная страница;</li>
+            <li>карточки всех типов устройств;</li>
+            <li>перелинковка на города и направления.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Уровень 2</span>
+          <h3>Money-страницы</h3>
+          <ul>
+            <li>електросамокати Харків;</li>
+            <li>електросамокати Київ;</li>
+            <li>електроскутери Харків;</li>
+            <li>електроскутери Київ;</li>
+            <li>електротранспорт Харків / Київ.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag ok">Уровень 3</span>
+          <h3>Расширение</h3>
+          <ul>
+            <li>бренды Xiaomi, Ninebot, Kugoo;</li>
+            <li>ремонт батареи, контроллера, мотор-колеса;</li>
+            <li>отдельные страницы только при спросе.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Карта страниц по этапам</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Этап</th>
+            <th>URL</th>
+            <th>Страница</th>
+            <th>Основной кластер</th>
+            <th>Интент</th>
+            <th>Блоки</th>
+            <th>Приоритет</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="url">/remont-elektrotransportu/</td>
+            <td>Ремонт електротранспорту у Харкові та Києві</td>
+            <td>ремонт электротранспорта, ремонт електротранспорту</td>
+            <td>выбрать тип устройства и город</td>
+            <td>категории, города, цены от, преимущества, FAQ</td>
+            <td class="priority-high">Высокий</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="url">/remont-elektrosamokativ-kharkiv/</td>
+            <td>Ремонт електросамокатів у Харкові</td>
+            <td>ремонт электросамокатов Харьков</td>
+            <td>найти сервис, цену, адрес и срок</td>
+            <td>hero, цены, поломки, бренды, процесс, FAQ, контакты</td>
+            <td class="priority-high">Высокий</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="url">/remont-elektrosamokativ-kyiv/</td>
+            <td>Ремонт електросамокатів у Києві</td>
+            <td>ремонт электросамокатов Киев</td>
+            <td>найти сервис в Киеве</td>
+            <td>как в эталоне, но с киевским адресом и локальными формулировками</td>
+            <td class="priority-high">Высокий</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="url">/remont-elektroskuteriv-kharkiv/</td>
+            <td>Ремонт електроскутерів у Харкові</td>
+            <td>ремонт электроскутеров Харьков</td>
+            <td>ремонт более крупного электротранспорта</td>
+            <td>батарея, контроллер, проводка, силовая часть, цены, FAQ</td>
+            <td class="priority-high">Высокий</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="url">/remont-elektroskuteriv-kyiv/</td>
+            <td>Ремонт електроскутерів у Києві</td>
+            <td>ремонт электроскутеров Киев</td>
+            <td>найти сервис по электроскутерам в Киеве</td>
+            <td>как Харьков, но под Киев</td>
+            <td class="priority-high">Высокий</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="url">/remont-hiroskuteriv/</td>
+            <td>Ремонт гіроскутерів</td>
+            <td>ремонт гироскутеров</td>
+            <td>сервис устройства без сильной городской привязки</td>
+            <td>поломки, цены, бренды, FAQ, ссылки на города</td>
+            <td class="priority-mid">Средний</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="url">/remont-himobordiv/</td>
+            <td>Ремонт гіробордів</td>
+            <td>ремонт гиробордов</td>
+            <td>ремонт похожего устройства, связанный кластер</td>
+            <td>платы, батареи, корпус, зарядка, FAQ</td>
+            <td class="priority-mid">Средний</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="url">/remont-monokolis/</td>
+            <td>Ремонт моноколіс</td>
+            <td>ремонт моноколес</td>
+            <td>узкий, но полезный кластер</td>
+            <td>батареи, контроллеры, мотор, корпус, безопасность</td>
+            <td class="priority-mid">Средний</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="url">/remont-elektrovelosypediv/</td>
+            <td>Ремонт електровелосипедів</td>
+            <td>ремонт электровелосипедов</td>
+            <td>дополнительный охват электротранспорта</td>
+            <td>мотор, батарея, дисплей, проводка, контроллер</td>
+            <td class="priority-mid">Средний</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="url">/remont-elektrosamokativ-xiaomi/</td>
+            <td>Ремонт електросамокатів Xiaomi</td>
+            <td>брендовые запросы</td>
+            <td>человек ищет ремонт конкретного бренда</td>
+            <td>модели, типовые поломки Xiaomi, цены, FAQ</td>
+            <td>После проверки спроса</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="url">/remont-akumuliatora-elektrosamokata/</td>
+            <td>Ремонт акумулятора електросамоката</td>
+            <td>запрос по поломке</td>
+            <td>у пользователя конкретная проблема</td>
+            <td>симптомы, диагностика, цена, сроки, безопасность</td>
+            <td>После проверки спроса</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Эталонная страница: Ремонт електросамокатів у Харкові</h2>
+      <div class="flow">
+        <div class="step"><span class="num">1</span><h3>Hero</h3><p>H1, УТП, цена от, срок диагностики, адрес, кнопки звонка и заявки.</p></div>
+        <div class="step"><span class="num">2</span><h3>Поломки</h3><p>АКБ, контроллер, мотор-колесо, дисплей, тормоза, зарядка, проводка, камера.</p></div>
+        <div class="step"><span class="num">3</span><h3>Бренды</h3><p>Xiaomi, Ninebot, Kugoo, Crosser, Giant, Proove, Koko City, другие.</p></div>
+        <div class="step"><span class="num">4</span><h3>Цены</h3><p>Диагностика, замена камеры, ремонт АКБ, контроллера, дисплея, тормозов.</p></div>
+        <div class="step"><span class="num">5</span><h3>Доверие</h3><p>Процесс, гарантия, адрес, FAQ, SEO-низ, перелинковка.</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Какие запросы кладем на страницу электросамокатов</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="tag hot">Основные</span>
+          <ul>
+            <li>ремонт электросамокатов Харьков</li>
+            <li>ремонт електросамокатів Харків</li>
+            <li>сервис электросамокатов Харьков</li>
+            <li>ремонт электросамоката цена</li>
+            <li>мастерская электросамокатов Харьков</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Дополнительные</span>
+          <ul>
+            <li>ремонт батареи электросамоката</li>
+            <li>ремонт контроллера электросамоката</li>
+            <li>замена камеры электросамоката</li>
+            <li>ремонт мотор колеса электросамоката</li>
+            <li>ремонт электросамоката Xiaomi / Ninebot / Kugoo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Правило для брендов и поломок</h2>
+      <div class="grid-2">
+        <div class="card orange">
+          <h3>На первом этапе</h3>
+          <ul>
+            <li>бренды делаем карточками внутри money-страницы;</li>
+            <li>поломки делаем карточками внутри money-страницы;</li>
+            <li>ссылки могут вести на будущие заготовки или быть обычными блоками;</li>
+            <li>задача — усилить основную страницу, а не раздробить вес.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Когда делать отдельный URL</h3>
+          <ul>
+            <li>есть частотность или видимый спрос;</li>
+            <li>интент отличается от общей страницы;</li>
+            <li>можно написать полезный контент, а не 500 символов воды;</li>
+            <li>есть цены, FAQ, симптомы и внутренняя перелинковка.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Порядок работы</h2>
+      <table>
+        <thead>
+          <tr><th>Шаг</th><th>Что делаем</th><th>Результат</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Утверждаем карту URL и приоритеты</td><td>Понятно, какие страницы нужны первыми</td></tr>
+          <tr><td>2</td><td>Делаем эталонный прототип страницы электросамокатов Харьков</td><td>Один сильный шаблон, который можно показать заказчику</td></tr>
+          <tr><td>3</td><td>Пишем SEO-тексты и блоки под этот шаблон</td><td>Готовая структура для верстальщика и WordPress</td></tr>
+          <tr><td>4</td><td>Переносим шаблон на Киев и электроскутеры</td><td>Быстро масштабируем без повторного проектирования</td></tr>
+          <tr><td>5</td><td>Проверяем бренды/поломки по семантике</td><td>Решаем, какие отдельные страницы создавать вторым этапом</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Что показать заказчику</h2>
+      <div class="grid-3">
+        <div class="card"><h3>1. Почему не 40 страниц</h3><p>Чтобы не получить тонкие страницы и не распылить внутренний вес. Сначала усиливаем основные коммерческие страницы.</p></div>
+        <div class="card"><h3>2. Что делаем первым</h3><p>Хаб электротранспорта и 4 money-страницы: электросамокаты/электроскутеры для Харькова и Киева.</p></div>
+        <div class="card"><h3>3. Как масштабируем</h3><p>После утверждения эталона переносим структуру на остальные устройства, бренды и поломки по спросу.</p></div>
+      </div>
+    </section>
+
+    <div class="footer">Файл создан для проекта InService. Рабочая логика: меньше хаоса, больше сильных страниц.</div>
+  </main>
+</body>
+</html>
