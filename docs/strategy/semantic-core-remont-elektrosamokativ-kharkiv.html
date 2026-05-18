@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Семантическое ядро — Ремонт электросамокатов InService</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1b2431;
+      --muted: #627285;
+      --line: #d8e1ed;
+      --brand: #f26522;
+      --brand-soft: #fff3eb;
+      --accent: #0b63d3;
+      --high: #edf9ef;
+      --medium: #fff7ea;
+      --low: #f6f8fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(860px 320px at 0% -10%, #deebff 0%, transparent 60%),
+        radial-gradient(620px 240px at 100% -10%, #ffe7da 0%, transparent 60%),
+        var(--bg);
+      line-height: 1.55;
+    }
+    .container {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar {
+      background: #152132;
+      color: #eef3fb;
+      font-size: 13px;
+    }
+    .topbar .inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+    .hero, .panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      box-shadow: 0 20px 46px rgba(18,34,58,0.07);
+    }
+    .hero {
+      margin: 28px 0 16px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+    .hero-copy, .hero-side, .panel { padding: 30px; }
+    .hero-side {
+      border-left: 1px solid var(--line);
+      background:
+        radial-gradient(250px 180px at 100% 0%, rgba(242,101,34,0.16), transparent 70%),
+        linear-gradient(180deg, #f9fbff 0%, #f2f6fd 100%);
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #ffd7c4;
+      background: var(--brand-soft);
+      color: #9d4416;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.15;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 18px;
+    }
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #d5e1f4;
+      background: #f3f8ff;
+      color: #284b77;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .section { margin: 16px 0; }
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 14px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      padding: 16px;
+    }
+    .mini b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .note {
+      border-radius: 18px;
+      padding: 16px 18px;
+      border: 1px solid #ffd8c4;
+      background: linear-gradient(180deg, #fffaf7 0%, #fff2ea 100%);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #f6f9fd;
+      color: #516378;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #435469;
+      white-space: nowrap;
+    }
+    .high { background: var(--high); border-color: #cae6d2; color: #245c35; }
+    .medium { background: var(--medium); border-color: #efdba8; color: #7a5b11; }
+    .low { background: var(--low); border-color: #dde4ef; color: #5b6878; }
+    .footer {
+      padding: 10px 0 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .hero-side { border-left: 0; border-top: 1px solid var(--line); }
+      h1 { font-size: 31px; }
+      h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div>InService · Семантическое ядро · Электросамокаты · Харьков</div>
+      <div>Основано на SERP-сигналах и текущем поисковом интенте · 13 мая 2026</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Рабочий документ</div>
+          <h1>Семантическое ядро<br />по ремонту электросамокатов</h1>
+          <p>Это не просто список ключей, а рабочая семантика под структуру сайта. Здесь запросы разбиты по интенту, приоритету и типу страницы. Так заказчику будет проще решить, какие направления брать в работу в первую очередь.</p>
+          <div class="chips">
+            <span class="chip">Главный коммерческий кластер</span>
+            <span class="chip">Бренды</span>
+            <span class="chip">Поломки</span>
+            <span class="chip">RU + UA логика</span>
+            <span class="chip">Под страницы, а не под свалку ключей</span>
+          </div>
+          <div class="note">
+            <strong>Важно:</strong> здесь указана <strong>относительная сила спроса</strong> по данным выдачи и коммерческой конкуренции. Для точных месячных частот нужны <strong>Google Search Console</strong>, <strong>Google Ads Keyword Planner</strong> или Serpstat/Ahrefs.
+          </div>
+        </div>
+        <div class="hero-side">
+          <h3>Как читать этот документ</h3>
+          <div class="grid-2">
+            <div class="mini">
+              <b>Высокий приоритет</b>
+              Главные коммерческие и явно “денежные” запросы.
+            </div>
+            <div class="mini">
+              <b>Средний приоритет</b>
+              Полезные страницы, но не обязательные в первом релизе.
+            </div>
+            <div class="mini">
+              <b>Высокий спрос</b>
+              По SERP видно отдельные коммерческие посадочные и сильную конкуренцию.
+            </div>
+            <div class="mini">
+              <b>Низкий спрос</b>
+              Нишевые или спорные запросы, которые лучше брать позже.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>1. Главные выводы по выдаче</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <b>1. Главный кластер точно есть</b>
+          Запросы про ремонт электросамокатов в Харькове имеют явный коммерческий интент и отдельные сервисные страницы в SERP.
+        </div>
+        <div class="mini">
+          <b>2. Бренды тоже имеют смысл</b>
+          Xiaomi, Ninebot и Kugoo логично выносить в отдельные страницы уже на старте.
+        </div>
+        <div class="mini">
+          <b>3. Поломки дают теплый трафик</b>
+          “Не заряжается”, “не включается”, “контроллер”, “аккумулятор” — это хорошие страницы под проблему и заявку.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>2. Ядро: главная страница услуги</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Запрос</th>
+            <th>Интент</th>
+            <th>Сила спроса</th>
+            <th>Приоритет</th>
+            <th>Нужна ли отдельная страница</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ремонт электросамокатов Харьков</td>
+            <td>Коммерческий, сервисный</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Критический</span></td>
+            <td>Да, это главная money-page</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамоката Харьков</td>
+            <td>Коммерческий</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Критический</span></td>
+            <td>Нет, это вариация главного запроса</td>
+          </tr>
+          <tr>
+            <td>ремонт електросамокатів Харків</td>
+            <td>Коммерческий, локальный</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Критический</span></td>
+            <td>Да, как UA-зеркало основной страницы</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Харьков цены</td>
+            <td>Коммерческий + ценовой</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Нет, закрываем блоком прайса на главной</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>3. Ядро: брендовые запросы</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Запрос</th>
+            <th>Интент</th>
+            <th>Сила спроса</th>
+            <th>Приоритет</th>
+            <th>Решение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ремонт электросамокатов Xiaomi Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу бренда</td>
+          </tr>
+          <tr>
+            <td>ремонт електросамокатів Xiaomi Харків</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем UA-зеркало после RU</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Ninebot Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу бренда</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Kugoo Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу бренда</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Crosser Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag medium">Средний</span></td>
+            <td>Берем второй волной</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Giant Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag low">Низкий</span></td>
+            <td><span class="tag medium">Средний</span></td>
+            <td>Только если бренд реально часто у вас в работе</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Prove Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag low">Низкий</span></td>
+            <td><span class="tag medium">Средний</span></td>
+            <td>Вторая волна, не старт</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамокатов Кока Сити Харьков</td>
+            <td>Коммерческий, брендовый</td>
+            <td><span class="tag low">Низкий</span></td>
+            <td><span class="tag low">Низкий</span></td>
+            <td>Только если есть реальный спрос у клиентов</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>4. Ядро: поломки и ремонтные работы</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Запрос</th>
+            <th>Интент</th>
+            <th>Сила спроса</th>
+            <th>Приоритет</th>
+            <th>Решение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>электросамокат не заряжается</td>
+            <td>Проблемный, теплый, предкоммерческий</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу поломки</td>
+          </tr>
+          <tr>
+            <td>електросамокат не заряджається</td>
+            <td>Проблемный, теплый</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>UA-зеркало после RU</td>
+          </tr>
+          <tr>
+            <td>электросамокат не включается</td>
+            <td>Проблемный, теплый</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу поломки</td>
+          </tr>
+          <tr>
+            <td>ремонт контроллера электросамоката Харьков</td>
+            <td>Коммерческий + технический</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу поломки / услуги</td>
+          </tr>
+          <tr>
+            <td>замена аккумулятора электросамоката Харьков</td>
+            <td>Коммерческий, запчасти / ремонт</td>
+            <td><span class="tag high">Высокий</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>Делаем отдельную страницу поломки / работы</td>
+          </tr>
+          <tr>
+            <td>заміна акумулятора електросамоката Харків</td>
+            <td>Коммерческий, сервисный</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag high">Высокий</span></td>
+            <td>UA-зеркало после RU</td>
+          </tr>
+          <tr>
+            <td>электросамокат быстро разряжается</td>
+            <td>Проблемный</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag medium">Средний</span></td>
+            <td>Можно объединить со страницей про аккумулятор</td>
+          </tr>
+          <tr>
+            <td>ремонт электросамоката после воды Харьков</td>
+            <td>Проблемный, коммерческий</td>
+            <td><span class="tag medium">Средний</span></td>
+            <td><span class="tag medium">Средний</span></td>
+            <td>Делаем второй волной</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>5. Что не стоит выносить в отдельные страницы сразу</h2>
+      <div class="grid-3">
+        <div class="mini">
+          <b>ремонт электротранспорта Харьков</b>
+          Слишком широкая тема. Она размывает самокатный кластер.
+        </div>
+        <div class="mini">
+          <b>Очень редкие бренды</b>
+          Если бренд не дает отдельного спроса, лучше не плодить слабые страницы на старте.
+        </div>
+        <div class="mini">
+          <b>Микро-синонимы</b>
+          Например, 5 страниц под один и тот же смысл “починка / ремонт / сервис / обслуживание”.
+        </div>
+      </div>
+    </section>
+
+    <section class="panel section">
+      <h2>6. Рекомендуемая очередность запуска</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Волна</th>
+            <th>Что делаем</th>
+            <th>Почему</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Волна 1</td>
+            <td>Главная страница: ремонт электросамокатов Харьков</td>
+            <td>Это центр всей темы и главный коммерческий интент</td>
+          </tr>
+          <tr>
+            <td>Волна 1</td>
+            <td>Xiaomi, Ninebot, Kugoo</td>
+            <td>Это самые логичные брендовые страницы на старте</td>
+          </tr>
+          <tr>
+            <td>Волна 1</td>
+            <td>Не заряжается, не включается, контроллер, аккумулятор</td>
+            <td>Это сильные страницы под симптом и теплый трафик</td>
+          </tr>
+          <tr>
+            <td>Волна 2</td>
+            <td>Crosser, Giant, Prove, Кока Сити</td>
+            <td>Расширение структуры после ядра</td>
+          </tr>
+          <tr>
+            <td>Волна 2</td>
+            <td>После воды / удара</td>
+            <td>Хорошая узкая страница, но не самая первая</td>
+          </tr>
+          <tr>
+            <td>Волна 3</td>
+            <td>UA-зеркала всех ключевых страниц</td>
+            <td>Расширяем охват и усиливаем языковую структуру</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel section">
+      <h2>7. Итог для заказчика</h2>
+      <div class="note">
+        <strong>Если выбирать только то, что действительно нужно делать сейчас, то стартовый набор такой:</strong><br /><br />
+        1. Ремонт электросамокатов Харьков<br />
+        2. Ремонт электросамокатов Xiaomi Харьков<br />
+        3. Ремонт электросамокатов Ninebot Харьков<br />
+        4. Ремонт электросамокатов Kugoo Харьков<br />
+        5. Электросамокат не заряжается<br />
+        6. Электросамокат не включается<br />
+        7. Ремонт контроллера электросамоката<br />
+        8. Замена аккумулятора электросамоката
+      </div>
+      <p style="margin-top:12px;">Все остальное — вторая волна, а не старт.</p>
+    </section>
+  </main>
+
+  <div class="container footer">
+    Семантическое ядро · InService · подготовлено под структуру страниц, а не просто под список ключей
+  </div>
+</body>
+</html>
