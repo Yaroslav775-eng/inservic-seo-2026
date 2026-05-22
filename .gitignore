@@ -4,3 +4,9 @@ Thumbs.db
 *.tmp
 *.bak
 *.orig
+
+# Local secrets and GSC exports
+.env
+.env.*
+!.env.example
+data/gsc/*.csv
