@@ -189,23 +189,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .inservic-group-heading { display:flex; align-items:center; gap:12px; margin:0 0 17px; color:var(--is-blue); font-size:22px; line-height:1.2; font-weight:700; }
   .inservic-group-heading:after { content:""; height:1px; flex:1; background:linear-gradient(90deg,var(--is-orange),transparent); }
   .inservic-group-caption { margin:-9px 0 18px; color:#6c7d89; font-size:14px; }
-  .inservic-group-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; align-items:stretch; }
+  .inservic-group-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; align-items:stretch; }
   #post-grid-2794 .inservic-group-grid .item, #post-grid-2790 .inservic-group-grid .item { position:relative !important; inset:auto !important; left:auto !important; top:auto !important; width:auto !important; min-height:100%; margin:0 !important; float:none !important; transform:none !important; background:#fff; border:1px solid var(--is-line); box-shadow:0 8px 22px rgba(18,50,74,.07); transition:transform .2s ease,box-shadow .2s ease; }
   #post-grid-2794 .inservic-group-grid .item:hover, #post-grid-2790 .inservic-group-grid .item:hover { transform:translateY(-4px) !important; box-shadow:0 14px 30px rgba(18,50,74,.14); }
-  #post-grid-2794 .inservic-group-grid .layer-content, #post-grid-2790 .inservic-group-grid .layer-content { height:100%; min-height:400px; display:flex; flex-direction:column; padding-bottom:18px !important; }
+  #post-grid-2794 .inservic-group-grid .layer-content, #post-grid-2790 .inservic-group-grid .layer-content { height:100%; min-height:470px; display:flex; flex-direction:column; padding-bottom:18px !important; }
   #post-grid-2794 .inservic-group-grid .element-media, #post-grid-2790 .inservic-group-grid .element-media { height:180px !important; padding:12px !important; display:flex !important; align-items:center; justify-content:center; background:#fff; overflow:hidden; }
   #post-grid-2794 .inservic-group-grid .element-media img, #post-grid-2790 .inservic-group-grid .element-media img { width:100% !important; height:100% !important; max-height:156px !important; object-fit:contain !important; object-position:center !important; }
   #post-grid-2794 .inservic-group-grid .element_1, #post-grid-2790 .inservic-group-grid .element_1 { min-height:76px; margin-top:4px; }
   #post-grid-2794 .inservic-group-grid .element_1 a, #post-grid-2790 .inservic-group-grid .element_1 a { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; font-size:21px !important; line-height:1.2 !important; color:var(--is-blue) !important; }
-  #post-grid-2794 .inservic-group-grid .element_2, #post-grid-2790 .inservic-group-grid .element_2 { display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; min-height:88px; color:#455d6c; }
+  #post-grid-2794 .inservic-group-grid .element_2, #post-grid-2790 .inservic-group-grid .element_2 { display:block; min-height:50px; color:#455d6c; }
   #post-grid-2794 .inservic-group-grid .read_more, #post-grid-2790 .inservic-group-grid .read_more { margin-top:auto !important; }
   .inservic-hub-card { border-bottom:4px solid var(--is-orange) !important; }
-  .inservic-hub-card:after { content:"Всередині — вибір типу техніки"; position:absolute; top:12px; right:12px; max-width:130px; padding:5px 8px; border-radius:999px; background:var(--is-orange); color:#fff; font-size:10px; line-height:1.2; font-weight:700; text-align:center; }
+  .inservic-hub-card:after { content:"Розділ"; position:absolute; top:12px; right:12px; padding:5px 9px; border-radius:999px; background:var(--is-orange); color:#fff; font-size:10px; line-height:1.2; font-weight:700; text-align:center; }
+  .inservic-child-list { margin:14px 20px 8px; padding:14px 16px; border-radius:10px; background:#f5f7f8; color:#355162; font-size:13px; line-height:1.65; }
+  .inservic-child-list strong { display:block; margin-bottom:4px; color:var(--is-blue); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+  .inservic-future-card .element-media { position:relative; }
+  .inservic-future-card .element-media:after { content:"⚡"; display:grid; place-items:center; position:absolute; inset:20px; border-radius:16px; background:linear-gradient(145deg,#fff3e8,#edf5fb); color:var(--is-orange); font-size:70px; }
+  .inservic-future-card .element-media img { opacity:0 !important; }
   .wdc-testimonial-slider, .wdc-testimonial-slider .owl-wrapper-outer { height:auto !important; min-height:280px !important; }
   .wdc-testimonial-slider .testimonial-container { min-height:235px; height:100%; padding-bottom:20px; }
   .wdc-testimonial-slider .testimonial-content { min-height:130px; }
   @media(max-width:991px){ .inservic-group-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
-  @media(max-width:600px){ .inservic-group-grid{grid-template-columns:1fr;gap:15px}.inservic-group-heading{font-size:20px}.inservic-group-heading:after{display:none}#post-grid-2794 .inservic-group-grid .layer-content,#post-grid-2790 .inservic-group-grid .layer-content{min-height:370px}.inservic-prototype-note{position:relative} }
+  @media(max-width:600px){ .inservic-group-grid{grid-template-columns:1fr;gap:15px}.inservic-group-heading{font-size:20px}.inservic-group-heading:after{display:none}#post-grid-2794 .inservic-group-grid .layer-content,#post-grid-2790 .inservic-group-grid .layer-content{min-height:440px}.inservic-prototype-note{position:relative} }
 </style>
 </head><body class="home wp-singular page-template-default page page-id-81 wp-theme-ostrya layout-wide header-style-v1 header-sticky wpb-js-composer js-comp-ver-6.0.5 vc_responsive">
 
@@ -893,16 +898,29 @@ document.addEventListener('DOMContentLoaded', function () {
   document.body.insertBefore(note, document.body.firstChild);
 
   var groupData = {
-    'post-grid-2794': [
-      {title:'Цифрова техніка', caption:'Комп’ютери, ноутбуки, мобільні пристрої та телевізори', items:['item-52','item-48','item-51','item-50']},
-      {title:'Побутова техніка', caption:'Основні напрямки ремонту домашньої техніки', items:['item-47','item-2141','item-2167','item-2178','item-45']},
-      {title:'Окремі сервісні напрямки', caption:'Одна загальна картка веде до вибору конкретного типу техніки', items:['item-49','item-46'], hubs:['item-49','item-46']}
-    ],
-    'post-grid-2790': [
-      {title:'Цифрова техніка', caption:'Комп’ютери, ноутбуки, мобільні пристрої та телевізори', items:['item-2579','item-2575','item-2578','item-2577']},
-      {title:'Побутова техніка', caption:'Основні напрямки ремонту домашньої техніки', items:['item-2574','item-2585','item-2586','item-2587','item-2572']},
-      {title:'Окремі сервісні напрямки', caption:'Одна загальна картка веде до вибору конкретного типу техніки', items:['item-2576','item-2573'], hubs:['item-2576','item-2573']}
-    ]
+    'post-grid-2794': {
+      title:'Оберіть розділ техніки у Харкові',
+      caption:'На головній показані лише основні рубрики. Конкретний тип техніки обирається після переходу.',
+      cards:[
+        {source:'item-52', title:'Комп’ютерна техніка', description:'Ремонт і обслуговування комп’ютерної техніки у Харкові.', children:'Комп’ютери · Ноутбуки · Виїзний майстер'},
+        {source:'item-51', title:'Мобільні пристрої', description:'Діагностика та ремонт персональних мобільних пристроїв.', children:'Телефони · Смартфони · Планшети'},
+        {source:'item-47', title:'Побутова техніка', description:'Один розділ для вибору потрібного виду домашньої техніки.', children:'Пральні машини · Холодильники · Бойлери · Кондиціонери · Кавомашини · Мікрохвильовки'},
+        {source:'item-49', title:'Генератори', description:'Окремий напрямок ремонту та технічного обслуговування генераторів.', children:'Бензинові · Дизельні · Інверторні'},
+        {source:'item-46', title:'Електротранспорт', description:'Окремий сервісний розділ для персонального електротранспорту.', children:'Електросамокати · Електроскутери · Електровелосипеди · Гіроскутери · Гіроборди · Моноколеса'},
+        {source:'item-49', title:'Зарядні станції', description:'Діагностика та ремонт портативних зарядних станцій і систем живлення.', children:'Портативні станції · Інвертори · Зарядні пристрої', href:'#future-charging-stations', future:true}
+      ]
+    },
+    'post-grid-2790': {
+      title:'Оберіть розділ техніки у Києві',
+      caption:'Структура така сама, але показуємо лише напрямки, які реально приймає київський сервіс.',
+      cards:[
+        {source:'item-2579', title:'Комп’ютерна техніка', description:'Ремонт і обслуговування комп’ютерної техніки у Києві.', children:'Комп’ютери · Ноутбуки · Виїзний майстер'},
+        {source:'item-2578', title:'Мобільні пристрої', description:'Діагностика та ремонт персональних мобільних пристроїв.', children:'Телефони · Смартфони · Планшети'},
+        {source:'item-2574', title:'Побутова техніка', description:'Один розділ для вибору потрібного виду домашньої техніки.', children:'Пральні машини · Холодильники · Бойлери · Кондиціонери · Кавомашини · Мікрохвильовки'},
+        {source:'item-2576', title:'Генератори', description:'Окремий напрямок ремонту та технічного обслуговування генераторів.', children:'Бензинові · Дизельні · Інверторні'},
+        {source:'item-2573', title:'Електротранспорт', description:'Окремий сервісний розділ для персонального електротранспорту.', children:'Електросамокати · Електроскутери · Електровелосипеди · Інші види'}
+      ]
+    }
   };
 
   Object.keys(groupData).forEach(function (gridId) {
@@ -915,21 +933,33 @@ document.addEventListener('DOMContentLoaded', function () {
       item.className.split(/\s+/).forEach(function (cls) { if (/^item-\d+$/.test(cls)) source[cls] = item; });
     });
     itemsRoot.innerHTML = '';
-    groupData[gridId].forEach(function (group) {
-      var section = document.createElement('section');
-      section.className = 'inservic-service-group';
-      var heading = document.createElement('h3'); heading.className = 'inservic-group-heading'; heading.textContent = group.title;
-      var caption = document.createElement('p'); caption.className = 'inservic-group-caption'; caption.textContent = group.caption;
-      var groupGrid = document.createElement('div'); groupGrid.className = 'inservic-group-grid';
-      group.items.forEach(function (key) {
-        if (!source[key]) return;
-        var clone = source[key].cloneNode(true);
-        clone.removeAttribute('style');
-        if (group.hubs && group.hubs.indexOf(key) !== -1) clone.classList.add('inservic-hub-card');
-        groupGrid.appendChild(clone);
-      });
-      section.appendChild(heading); section.appendChild(caption); section.appendChild(groupGrid); itemsRoot.appendChild(section);
+    var group = groupData[gridId];
+    var section = document.createElement('section');
+    section.className = 'inservic-service-group';
+    var heading = document.createElement('h3'); heading.className = 'inservic-group-heading'; heading.textContent = group.title;
+    var caption = document.createElement('p'); caption.className = 'inservic-group-caption'; caption.textContent = group.caption;
+    var groupGrid = document.createElement('div'); groupGrid.className = 'inservic-group-grid';
+    group.cards.forEach(function (card) {
+      if (!source[card.source]) return;
+      var clone = source[card.source].cloneNode(true);
+      clone.removeAttribute('style');
+      clone.classList.add('inservic-hub-card');
+      if (card.future) clone.classList.add('inservic-future-card');
+      var titleLink = clone.querySelector('.element_1 a');
+      var links = clone.querySelectorAll('a');
+      Array.prototype.forEach.call(links, function (link) { if (card.href) link.setAttribute('href', card.href); });
+      if (titleLink) titleLink.textContent = card.title;
+      var description = clone.querySelector('.element_2');
+      if (description) description.textContent = card.description;
+      var childList = document.createElement('div');
+      childList.className = 'inservic-child-list';
+      childList.innerHTML = '<strong>Всередині розділу</strong>' + card.children;
+      var layerContent = clone.querySelector('.layer-content');
+      var readMore = clone.querySelector('.read_more');
+      if (layerContent) layerContent.insertBefore(childList, readMore || null);
+      groupGrid.appendChild(clone);
     });
+    section.appendChild(heading); section.appendChild(caption); section.appendChild(groupGrid); itemsRoot.appendChild(section);
   });
 
   var reviewSlider = document.querySelector('.wdc-testimonial-slider');
