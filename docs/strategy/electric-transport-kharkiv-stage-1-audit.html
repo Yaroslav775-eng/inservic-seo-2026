@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Этап 1 — аудит страницы ремонта электротранспорта InService</title>
+  <style>
+    :root{--orange:#f26522;--blue:#12324a;--muted:#607487;--line:#dce5ed;--bg:#f4f7fa;--green:#178a4f;--red:#b23a2b}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--blue);font:15px/1.6 Arial,sans-serif}
+    main{width:min(1160px,calc(100% - 30px));margin:0 auto;padding:34px 0 60px}
+    h1{font-size:34px;line-height:1.2;margin:0 0 10px}h2{margin:32px 0 12px}h3{margin:0 0 8px}
+    p{margin:0 0 14px}.lead{font-size:18px;color:var(--muted)}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:20px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+    .good{border-left:5px solid var(--green)}.warn{border-left:5px solid var(--orange)}.bad{border-left:5px solid var(--red)}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+    th{background:var(--blue);color:#fff}.tag{display:inline-block;background:#fff1e8;color:#9b3e0d;border:1px solid #ffd0b5;border-radius:999px;padding:3px 9px;font-weight:bold;font-size:12px}
+    code{background:#eef3f7;padding:2px 6px;border-radius:5px}a{color:var(--orange)}li{margin-bottom:6px}
+    @media(max-width:800px){.grid{grid-template-columns:1fr}h1{font-size:27px}}
+  </style>
+</head>
+<body>
+<main>
+  <span class="tag">Этап 1 · решение по странице</span>
+  <h1>Ремонт электротранспорта в Харькове</h1>
+  <p class="lead">Аудит существующей страницы, поисковой выдачи и роли будущего хаба. Задача этапа: понять, какую страницу обновлять, какие запросы ей отдать и как она должна вести на дочерние направления.</p>
+
+  <section class="panel">
+    <h2>Главное решение</h2>
+    <div class="grid">
+      <article class="card good"><h3>Не создаем новый URL</h3><p>На сайте уже есть украинская и русская страницы. Новый URL создаст риск дубля и каннибализации.</p></article>
+      <article class="card warn"><h3>Обновляем существующую страницу</h3><p>Страница должна стать хабом по типам персонального электротранспорта и вести на сильные дочерние страницы.</p></article>
+      <article class="card bad"><h3>Текущий контент слабый</h3><p>Сейчас он почти не раскрывает виды устройств, типовые поломки, процесс ремонта, бренды и внутренние ссылки.</p></article>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Существующие страницы сайта</h2>
+    <table>
+      <thead><tr><th>Язык</th><th>Текущий URL</th><th>Решение</th></tr></thead>
+      <tbody>
+        <tr><td>UA</td><td><a href="https://inservic.com.ua/service/rem-el/">https://inservic.com.ua/service/rem-el/</a></td><td>Основная страница для переработки. Сохраняем URL и усиливаем контент.</td></tr>
+        <tr><td>RU</td><td><a href="https://inservic.com.ua/ru/service/remont-y-obsluzhyvanye-jelektrosamoka/">https://inservic.com.ua/ru/service/remont-y-obsluzhyvanye-jelektrosamoka/</a></td><td>Русская версия через Polylang. Переписывается после утверждения украинской.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Роль страницы</h2>
+    <p>Это не страница только про электросамокаты и не длинный SEO-текст обо всем. Это коммерческий хаб, который подтверждает, что InService ремонтирует разные виды персонального электротранспорта, и помогает человеку выбрать нужное направление.</p>
+    <ul>
+      <li>Собирает общий спрос: ремонт электротранспорта, сервис электротранспорта, ремонт персонального электротранспорта;</li>
+      <li>Ведет на электросамокаты, электроскутеры, электровелосипеды, гироскутеры, гироборды и моноколеса;</li>
+      <li>Показывает общие узлы ремонта: аккумуляторы, BMS, контроллеры, мотор-колеса, зарядные порты, проводка, механика;</li>
+      <li>Не конкурирует с отдельными страницами устройств по их главным запросам.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>Основные запросы страницы</h2>
+    <table>
+      <thead><tr><th>Группа</th><th>Запросы</th><th>Как использовать</th></tr></thead>
+      <tbody>
+        <tr><td>Основной</td><td>ремонт электротранспорта Харьков; ремонт електротранспорту Харків</td><td>Title, H1, первый экран, основной текст.</td></tr>
+        <tr><td>Дополнительный</td><td>сервис электротранспорта; ремонт персонального электротранспорта; обслуживание электротранспорта</td><td>Естественно в описании услуг и SEO-тексте.</td></tr>
+        <tr><td>Навигационный</td><td>ремонт электросамокатов; электроскутеров; электровелосипедов; гироскутеров; гиробордов; моноколес</td><td>Карточки со ссылками на отдельные страницы, а не попытка ранжировать хаб по всем запросам.</td></tr>
+        <tr><td>Узлы</td><td>ремонт аккумулятора; контроллера; мотор-колеса; зарядки; проводки</td><td>Общий блок “Что ремонтируем” с внутренними ссылками.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Предлагаемый SEO-паспорт UA</h2>
+    <table>
+      <tbody>
+        <tr><th>URL</th><td><code>/service/rem-el/</code> — сохраняем текущий URL</td></tr>
+        <tr><th>H1</th><td>Ремонт електротранспорту у Харкові</td></tr>
+        <tr><th>Title</th><td>Ремонт електротранспорту у Харкові — ціни та діагностика | InService</td></tr>
+        <tr><th>Description</th><td>Ремонт електротранспорту у Харкові в InService: електросамокати, електроскутери, електровелосипеди, гіроскутери, гіроборди та моноколеса. Діагностика, ціни й запис у сервіс.</td></tr>
+        <tr><th>Интент</th><td>Пользователь ищет сервис и хочет понять, ремонтируют ли его тип устройства, какие поломки устраняют, сколько это стоит и куда привезти технику.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <h2>Структура будущей страницы</h2>
+    <ol>
+      <li><strong>Первый экран:</strong> H1, короткое УТП, диагностика/цена от, адрес Деревянка 58, кнопки звонка и записи;</li>
+      <li><strong>Выберите тип устройства:</strong> шесть кликабельных карточек направлений;</li>
+      <li><strong>Что ремонтируем:</strong> батареи, BMS, контроллеры, мотор-колеса, зарядка, проводка, тормоза и механика;</li>
+      <li><strong>Типовые симптомы:</strong> не включается, не заряжается, быстро разряжается, не едет, ошибка, последствия воды;</li>
+      <li><strong>Цены:</strong> общие ориентиры по диагностике и базовым работам;</li>
+      <li><strong>Как проходит ремонт:</strong> прием, диагностика, согласование, ремонт, тестирование;</li>
+      <li><strong>Бренды:</strong> общим блоком без отдельных ссылок на нерелевантные страницы;</li>
+      <li><strong>Почему InService:</strong> адрес, опыт, ремонт электроники и механики, понятное согласование;</li>
+      <li><strong>FAQ:</strong> стоимость, сроки, батареи, запчасти, гарантия, запись;</li>
+      <li><strong>SEO-текст и перелинковка:</strong> краткий полезный текст с переходами на дочерние направления.</li>
+    </ol>
+  </section>
+
+  <section class="panel">
+    <h2>Что не нужно делать</h2>
+    <ul>
+      <li>Не создавать еще одну страницу с новым URL под тот же запрос;</li>
+      <li>Не смешивать Харьков и Киев в одном H1 и основном тексте;</li>
+      <li>Не пытаться ранжировать хаб вместо дочерних страниц по всем типам устройств;</li>
+      <li>Не использовать внутренние формулировки вроде “хаб”, “семантика”, “будущая страница” в публичном тексте;</li>
+      <li>Не обещать бесплатную диагностику, гарантию и конкретные сроки без подтверждения владельца.</li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2>Следующий шаг</h2>
+    <p><strong>Этап 2:</strong> подготовить полное ТЗ и написать украинский текст для страницы, после чего пересобрать текущий HTML-прототип как готовую страницу для передачи разработчику.</p>
+  </section>
+</main>
+</body>
+</html>
