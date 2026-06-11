@@ -1169,6 +1169,14 @@ document.addEventListener('DOMContentLoaded',function(){
     var grid=section.querySelector('.services-grid');
     if(!grid||grid.dataset.grouped)return;
     var cards=Array.from(grid.querySelectorAll(':scope > .service-card'));
+    var isKharkiv=(section.querySelector('.services-grid-badge')||{}).textContent.indexOf('Харкові')>-1;
+    if(!isKharkiv){
+      var chargingCard=document.createElement('a');
+      chargingCard.href='/service/remont-heneratoriv-y-kievi/';
+      chargingCard.className='service-card service-card-icon';
+      chargingCard.innerHTML='<div class="service-icon-unified" aria-hidden="true"><span class="service-icon-ring service-svg-icon"><svg viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="36" rx="6"/><path d="M19 50v5M45 50v5M17 25h12M17 32h8M39 23h8v9h-8z"/><path class="accent-fill" d="M34 22 26 35h7l-3 9 10-13h-7z"/></svg></span></div><div class="service-card-body"><h3>Ремонт Зарядних Станцій</h3><p>Діагностика та ремонт EcoFlow, BLUETTI, Jackery та інших портативних станцій.</p><span class="service-link">Детальніше →</span></div>';
+      cards.push(chargingCard);
+    }
     categories.forEach(function(category){
       var matches=cards.filter(function(card){var title=(card.querySelector('h3')||{}).textContent||'';return category.match.some(function(term){return title.indexOf(term)>-1})});
       if(!matches.length)return;
@@ -1177,7 +1185,6 @@ document.addEventListener('DOMContentLoaded',function(){
       var categoryGrid=group.querySelector('.service-category-grid');matches.forEach(function(card){categoryGrid.appendChild(card)});grid.appendChild(group);
       if(category.name==='Електротранспорт'){
         group.classList.add('service-category-electric');
-        var isKharkiv=(section.querySelector('.services-grid-badge')||{}).textContent.indexOf('Харкові')>-1;
         var mainCard=categoryGrid.querySelector('.service-card');
         var mainHref=mainCard?mainCard.getAttribute('href'):'#';
         categoryGrid.innerHTML='';
