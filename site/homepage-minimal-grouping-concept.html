@@ -1186,10 +1186,10 @@ document.addEventListener('DOMContentLoaded',function(){
         var mainHref=mainCard?mainCard.getAttribute('href'):'#';
         categoryGrid.innerHTML='';
         var readyDirections=isKharkiv?[
-          {name:'Ремонт Електротранспорту',description:'Ремонт електроскутерів, електровелосипедів, гіроскутерів, гіробордів, моноколіс та іншого електротранспорту.',href:'/service/rem-el/',svg:electricTransportSvg},
-          {name:'Ремонт Електросамокатів',description:'Діагностика, ремонт електроніки, акумуляторів, мотор-коліс, гальм та механіки.',href:'/service/remont-elektrosamokativ-kharkiv/',svg:scooterSvg}
+          {name:'Ремонт Електротранспорту',description:'Ремонт електроскутерів, електровелосипедів, гіроскутерів, гіробордів, моноколіс та іншого електротранспорту.',href:'https://inservic.com.ua/service/rem-el/',svg:electricTransportSvg},
+          {name:'Ремонт Електросамокатів',description:'Діагностика, ремонт електроніки, акумуляторів, мотор-коліс, гальм та механіки.',href:'https://inservic.com.ua/service/remont-elektrosamokativ-kharkiv/',svg:scooterSvg}
         ]:[
-          {name:'Ремонт Електротранспорту у Києві',description:'Ремонт електросамокатів, електроскутерів, електровелосипедів, гіроскутерів, гіробордів та моноколіс.',href:'/service/remont-elektrotransportu-y-kievi/',svg:electricTransportSvg}
+          {name:'Ремонт Електротранспорту у Києві',description:'Ремонт електросамокатів, електроскутерів, електровелосипедів, гіроскутерів, гіробордів та моноколіс.',href:'https://inservic.com.ua/service/remont-elektrotransportu-y-kievi/',svg:electricTransportSvg}
         ];
         if(readyDirections.length===1)categoryGrid.classList.add('is-single');
         readyDirections.forEach(function(item){
