@@ -1145,22 +1145,24 @@ var pum_popups = {"pum-2099":{"triggers":[],"cookies":[],"disable_on_mobile":fal
 .service-category-subtitle{margin:0;color:#6b7885;font-size:13px;line-height:1.45}
 .service-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .service-category-grid .service-card{min-height:100%;margin:0!important}
-.service-category-electric .service-category-body{display:grid;grid-template-columns:minmax(240px,.78fr) minmax(0,1.7fr);gap:18px;align-items:stretch}
-.service-category-electric .service-category-grid{grid-template-columns:1fr}
-.service-category-electric .service-category-grid .service-card{min-height:100%}
-.transport-directions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.transport-direction{display:flex;align-items:center;gap:12px;min-height:82px;padding:14px 15px;border:1px solid rgba(19,42,67,.09);border-radius:16px;background:#fff;color:#17324c;text-decoration:none!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.service-category-electric .service-category-head{display:none}
+.service-category-electric{background:linear-gradient(135deg,#fff 0%,#fffaf6 100%)}
+.transport-hub-intro{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid rgba(19,42,67,.09)}
+.transport-hub-copy{max-width:670px}
+.transport-hub-eyebrow{display:inline-block;margin-bottom:9px;color:#d95c20;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.transport-hub-intro h3{margin:0 0 7px;font-size:25px;line-height:1.2;color:#17324c}
+.transport-hub-intro p{margin:0;color:#657483;font-size:14px;line-height:1.55}
+.transport-hub-link{flex:0 0 auto;padding:12px 17px;border-radius:12px;background:#f26522;color:#fff!important;font-size:13px;font-weight:800;text-decoration:none!important;box-shadow:0 9px 22px rgba(242,101,34,.22)}
+.transport-choose-title{margin:0 0 13px;font-size:14px;font-weight:800;color:#17324c}
+.transport-directions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.transport-direction{display:flex;align-items:center;gap:12px;min-height:88px;padding:14px 15px;border:1px solid rgba(19,42,67,.09);border-radius:16px;background:#fff;color:#17324c;text-decoration:none!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
 .transport-direction:hover{transform:translateY(-2px);border-color:rgba(242,101,34,.35);box-shadow:0 9px 22px rgba(24,42,60,.08)}
 .transport-direction-icon{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:12px;background:#fff5ee;color:#d95c20;font-size:11px;font-weight:800;letter-spacing:.02em;border:1px solid rgba(242,101,34,.16)}
 .transport-direction strong{display:block;margin-bottom:3px;font-size:14px;line-height:1.25;color:#17324c}
 .transport-direction small{display:block;color:#8a5c45;font-size:11px;line-height:1.3}
-.transport-direction.is-planned{cursor:default;background:#fafbfc;color:#73808d}
-.transport-direction.is-planned:hover{transform:none;border-color:rgba(19,42,67,.09);box-shadow:none}
-.transport-direction.is-planned .transport-direction-icon{background:#f2f4f6;color:#7c8791;border-color:#e4e8eb}
-.transport-direction.is-planned small{color:#8a949c}
 .services-grid-head:after{content:'Ті самі сторінки та посилання — лише зрозуміле групування';display:inline-block;margin-top:16px;padding:8px 13px;border-radius:999px;background:#fff5ed;color:#b74d18;font-size:12px;font-weight:700}
-@media(max-width:1100px){.service-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-category-electric .service-category-body{grid-template-columns:1fr}}
-@media(max-width:640px){.service-category{padding:18px 14px 20px;border-radius:19px}.service-category-head{display:block}.service-category-grid,.transport-directions{grid-template-columns:1fr;gap:14px}}
+@media(max-width:1100px){.service-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.transport-directions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.service-category{padding:18px 14px 20px;border-radius:19px}.service-category-head{display:block}.service-category-electric .service-category-head{display:none}.service-category-grid,.transport-directions{grid-template-columns:1fr;gap:14px}.transport-hub-intro{display:block}.transport-hub-link{display:inline-block;margin-top:16px}}
 </style>
 <script id="inservice-minimal-grouping-script">
 document.addEventListener('DOMContentLoaded',function(){
@@ -1191,15 +1193,24 @@ document.addEventListener('DOMContentLoaded',function(){
       if(category.name==='Електротранспорт'){
         group.classList.add('service-category-electric');
         var isKharkiv=(section.querySelector('.services-grid-badge')||{}).textContent.indexOf('Харкові')>-1;
+        var mainCard=categoryGrid.querySelector('.service-card');
+        var mainHref=mainCard?mainCard.getAttribute('href'):'#';
+        categoryGrid.remove();
+        var body=group.querySelector('.service-category-body');
+        var intro=document.createElement('div');intro.className='transport-hub-intro';
+        intro.innerHTML='<div class="transport-hub-copy"><span class="transport-hub-eyebrow">Окремий напрям InService</span><h3>Ремонт електротранспорту</h3><p>Оберіть тип вашого транспорту або перейдіть до загальної сторінки напрямку.</p></div><a class="transport-hub-link" href="'+mainHref+'">Усі послуги напрямку →</a>';
+        body.appendChild(intro);
+        var chooseTitle=document.createElement('div');chooseTitle.className='transport-choose-title';chooseTitle.textContent='Оберіть вид електротранспорту';
+        body.appendChild(chooseTitle);
         var directions=document.createElement('div');directions.className='transport-directions';
         transportDirections.forEach(function(item){
-          var direction=document.createElement(isKharkiv?'a':'span');
-          direction.className='transport-direction'+(isKharkiv?'':' is-planned');
-          if(isKharkiv)direction.href=item.href;
-          direction.innerHTML='<span class="transport-direction-icon">'+item.icon+'</span><span><strong>Ремонт '+item.name.toLowerCase()+'</strong><small>'+(isKharkiv?'Переглянути прототип →':'Наступний етап')+'</small></span>';
+          var direction=document.createElement('a');
+          direction.className='transport-direction';
+          direction.href=isKharkiv?item.href:mainHref;
+          direction.innerHTML='<span class="transport-direction-icon">'+item.icon+'</span><span><strong>Ремонт '+item.name.toLowerCase()+'</strong><small>Переглянути напрямок →</small></span>';
           directions.appendChild(direction);
         });
-        group.querySelector('.service-category-body').appendChild(directions);
+        body.appendChild(directions);
       }
     });
     grid.dataset.grouped='true';
