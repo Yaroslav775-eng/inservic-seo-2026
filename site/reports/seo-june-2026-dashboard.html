@@ -3,216 +3,141 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>InService SEO отчет за июнь 2026</title>
-  <meta name="description" content="Краткий SEO-отчет InService за 1-26 июня 2026: клики, показы, CTR, позиции, выполненные работы и план.">
+  <title>Итог SEO-работ InService за июнь 2026</title>
+  <meta name="description" content="Итог по результатам SEO-работ InService за 1-26 июня 2026: органический трафик, рост страниц, запросы, выполненные работы и план.">
   <style>
-    :root {
-      --ink:#10253f;
-      --muted:#607086;
-      --line:#dce5ef;
-      --soft:#f5f8fb;
-      --panel:#ffffff;
-      --orange:#ff6b23;
-      --orange-soft:#fff1e9;
-      --blue:#0d3765;
-      --green:#15966b;
-      --red:#c04444;
-      --shadow:0 24px 70px rgba(16,37,63,.10);
-      --radius:26px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(135deg,#f6f9fc 0%,#ffffff 44%,#fff4ec 100%);color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55}
-    a{color:var(--blue);text-decoration:none}
-    a:hover{color:var(--orange)}
-    .topbar{background:#0e2035;color:#fff;padding:12px 22px;font-size:14px}
-    .topbar-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .wrap{max-width:1180px;margin:0 auto;padding:34px 20px 70px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;margin-bottom:24px}
-    .hero-card,.panel,.kpi{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero-card{padding:38px;position:relative;overflow:hidden}
-    .hero-card:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#ffb384 0%,rgba(255,107,35,0) 68%)}
-    .logo{display:flex;align-items:center;gap:14px;margin-bottom:28px}
-    .mark{width:48px;height:48px;border-radius:14px;background:var(--orange);display:grid;place-items:center;color:#fff;font-weight:900;font-size:24px;box-shadow:0 12px 28px rgba(255,107,35,.28)}
-    .brand{font-size:24px;font-weight:800;letter-spacing:-.03em}
-    h1{font-size:46px;line-height:1.05;margin:0 0 18px;letter-spacing:-.045em}
-    .lead{font-size:18px;color:var(--muted);max-width:720px;margin:0}
-    .hero-side{padding:28px;display:flex;flex-direction:column;gap:14px;justify-content:center}
-    .status{padding:16px 18px;border-radius:20px;background:var(--orange-soft);border:1px solid #ffd4bd}
-    .status b{display:block;font-size:15px;color:#9a3b10;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
-    .status span{font-size:18px;font-weight:800}
-    .meta{font-size:14px;color:var(--muted)}
-    .grid-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}
-    .kpi{padding:22px}
-    .kpi .label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
-    .kpi .value{font-size:34px;font-weight:900;letter-spacing:-.04em;margin:8px 0 4px}
-    .delta{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;padding:5px 10px;border-radius:99px;background:#eefaf5;color:var(--green)}
-    .delta.bad{background:#fff0f0;color:var(--red)}
-    .sections{display:grid;grid-template-columns:1fr;gap:18px}
-    .panel{padding:28px;margin-top:18px}
-    .panel h2{font-size:28px;line-height:1.15;margin:0 0 10px;letter-spacing:-.035em}
-    .panel p{color:var(--muted);margin:0 0 18px}
-    table{width:100%;min-width:620px;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
-    th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #edf2f7;vertical-align:top;font-size:14px}
-    th{background:#f3f7fb;color:#45566b;text-transform:uppercase;font-size:12px;letter-spacing:.06em}
-    tr:last-child td{border-bottom:0}
-    .table-scroll{overflow-x:auto;max-width:100%;min-width:0;border-radius:18px;-webkit-overflow-scrolling:touch}
-    .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.summary-grid>*{min-width:0}
-    .note{background:#f8fbff;border:1px solid var(--line);border-radius:20px;padding:18px}
-    .note strong{color:var(--ink)}
-    .week-row{display:grid;grid-template-columns:95px 1fr 90px 1fr 115px;gap:12px;align-items:center;margin:11px 0}
-    .week-label,.week-num{font-size:13px;color:var(--muted);font-weight:700}
-    .bar-wrap{height:14px;background:#edf2f7;border-radius:999px;overflow:hidden}
-    .bar-wrap span{display:block;height:100%;background:linear-gradient(90deg,var(--orange),#ff9a5e);border-radius:999px}
-    .bar-wrap.muted span{background:linear-gradient(90deg,#17466f,#78a8d7)}
-    .plus{color:var(--green);font-weight:900}
-    .work-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
-    .work-item{padding:15px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start}
-    .check{width:24px;height:24px;flex:0 0 24px;border-radius:8px;background:#eaf8f2;color:var(--green);display:grid;place-items:center;font-weight:900}
-    .plan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
-    .plan-card{background:linear-gradient(180deg,#fff,#fff8f4);border:1px solid #ffd8c3;border-radius:20px;padding:18px}
-    .plan-card b{display:block;font-size:16px;margin-bottom:8px}
-    .plan-card span{color:var(--muted);font-size:14px}
-    .footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
-    @media (max-width:900px){.hero,.summary-grid{grid-template-columns:1fr}.grid-kpi{grid-template-columns:repeat(2,1fr)}.plan,.work-list{grid-template-columns:1fr}.week-row{grid-template-columns:80px 1fr 78px}.week-row .bar-wrap.muted,.week-row .bar-wrap.muted+.week-num{display:none}h1{font-size:36px}}
+    :root { --ink:#10253f; --muted:#607086; --line:#dce5ef; --soft:#f5f8fb; --panel:#fff; --orange:#ff6b23; --orange-soft:#fff1e9; --blue:#0d3765; --green:#15966b; --red:#c04444; --shadow:0 24px 70px rgba(16,37,63,.10); --radius:26px; }
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#f6f9fc 0%,#fff 44%,#fff4ec 100%);color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55} a{color:var(--blue);text-decoration:none} a:hover{color:var(--orange)}
+    .topbar{background:#0e2035;color:#fff;padding:12px 22px;font-size:14px} .topbar-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .wrap{max-width:1180px;margin:0 auto;padding:34px 20px 70px} .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;margin-bottom:24px}
+    .hero-card,.panel,.kpi{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)} .hero-card{padding:38px;position:relative;overflow:hidden} .hero-card:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#ffb384 0%,rgba(255,107,35,0) 68%)}
+    .logo{display:flex;align-items:center;gap:14px;margin-bottom:28px} .mark{width:48px;height:48px;border-radius:14px;background:var(--orange);display:grid;place-items:center;color:#fff;font-weight:900;font-size:24px;box-shadow:0 12px 28px rgba(255,107,35,.28)} .brand{font-size:24px;font-weight:800;letter-spacing:-.03em}
+    h1{font-size:46px;line-height:1.05;margin:0 0 18px;letter-spacing:-.045em} h2{font-size:28px;line-height:1.15;margin:0 0 10px;letter-spacing:-.035em} h3{margin:8px 0 12px;font-size:18px}
+    .lead{font-size:18px;color:var(--muted);max-width:760px;margin:0} .hero-side{padding:28px;display:flex;flex-direction:column;gap:14px;justify-content:center} .status{padding:16px 18px;border-radius:20px;background:var(--orange-soft);border:1px solid #ffd4bd} .status b{display:block;font-size:15px;color:#9a3b10;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px} .status span{font-size:18px;font-weight:800} .meta{font-size:14px;color:var(--muted)}
+    .grid-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0} .kpi{padding:22px} .kpi .label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700} .kpi .value{font-size:34px;font-weight:900;letter-spacing:-.04em;margin:8px 0 4px} .delta{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;padding:5px 10px;border-radius:99px;background:#eefaf5;color:var(--green)} .delta.bad{background:#fff0f0;color:var(--red)}
+    .panel{padding:28px;margin-top:18px} .panel p{color:var(--muted);margin:0 0 18px} .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .summary-grid>*{min-width:0} .note{background:#f8fbff;border:1px solid var(--line);border-radius:20px;padding:18px} .note strong{color:var(--ink)}
+    table{width:100%;min-width:640px;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)} th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #edf2f7;vertical-align:top;font-size:14px} th{background:#f3f7fb;color:#45566b;text-transform:uppercase;font-size:12px;letter-spacing:.06em} tr:last-child td{border-bottom:0} .table-scroll{overflow-x:auto;max-width:100%;min-width:0;border-radius:18px;-webkit-overflow-scrolling:touch} td small{display:block;color:var(--muted);font-size:12px;margin-top:3px;word-break:break-all} .plus{color:var(--green);font-weight:900} .bad{color:var(--red);font-weight:900}
+    .work-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px} .work-item{padding:15px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start} .check{width:24px;height:24px;flex:0 0 24px;border-radius:8px;background:#eaf8f2;color:var(--green);display:grid;place-items:center;font-weight:900}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px} .fact{background:linear-gradient(180deg,#fff,#fff8f4);border:1px solid #ffd8c3;border-radius:20px;padding:18px} .fact b{display:block;font-size:28px;line-height:1;margin-bottom:9px} .fact span{display:block;color:var(--muted);font-size:14px}
+    .plan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px} .plan-card{background:linear-gradient(180deg,#fff,#fff8f4);border:1px solid #ffd8c3;border-radius:20px;padding:18px} .plan-card b{display:block;font-size:16px;margin-bottom:8px} .plan-card span{color:var(--muted);font-size:14px} .footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){.hero,.summary-grid{grid-template-columns:1fr}.grid-kpi{grid-template-columns:repeat(2,1fr)}.plan,.work-list,.facts{grid-template-columns:1fr}h1{font-size:36px}}
     @media (max-width:560px){.wrap{padding:20px 12px 48px}.hero-card,.panel{padding:22px}.grid-kpi{grid-template-columns:1fr}h1{font-size:31px}}
   </style>
 </head>
 <body>
-  <div class="topbar"><div class="topbar-inner"><span>InService SEO Dashboard</span><span>Отчет подготовлен: 26.06.2026</span></div></div>
+  <div class="topbar"><div class="topbar-inner"><span>InService: итог по SEO-работам</span><span>Подготовлено: 26.06.2026</span></div></div>
   <main class="wrap">
     <section class="hero">
       <div class="hero-card">
-        <div class="logo"><div class="mark">in</div><div><div class="brand">InService</div><div class="meta">SEO-отчет по органике и структуре сайта</div></div></div>
-        <h1>Органика выросла, но сниппеты нужно дожимать</h1>
-        <p class="lead">За июнь сайт стал чаще показываться в Google и получил больше переходов. Следующий фокус — повысить CTR, доработать посадочные страницы и аккуратно внедрить понятную структуру услуг.</p>
+        <div class="logo"><div class="mark">in</div><div><div class="brand">InService</div><div class="meta">Итог по результатам работы с органическим трафиком</div></div></div>
+        <h1>В июне сайт получил больше видимости и переходов</h1>
+        <p class="lead">Работа была направлена на то, чтобы Google лучше понимал структуру услуг InService, а пользователи быстрее находили нужные направления ремонта. Результат уже виден: выросли клики, показы и количество страниц, которые участвуют в поиске.</p>
       </div>
       <aside class="hero-card hero-side">
-        <div class="status"><b>Период</b><span>1-26 июня 2026</span><div class="meta">GSC фактически доступен до 23 июня</div></div>
-        <div class="status"><b>Главный вывод</b><span>Видимость +48%</span><div class="meta">Показы растут быстрее кликов — есть потенциал для CTR</div></div>
+        <div class="status"><b>Период отчета</b><span>1-26 июня 2026</span><div class="meta">Данные Google доступны до 23 июня из-за задержки Search Console.</div></div>
+        <div class="status"><b>Ключевой результат</b><span>+48% показов в Google</span><div class="meta">Сайт стал чаще появляться в поиске по сервисным запросам.</div></div>
       </aside>
     </section>
 
     <section class="grid-kpi">
-      <div class="kpi"><div class="label">Клики</div><div class="value">444</div><span class="delta">+24,4%</span></div>
-      <div class="kpi"><div class="label">Показы</div><div class="value">39 664</div><span class="delta">+48,3%</span></div>
-      <div class="kpi"><div class="label">CTR</div><div class="value">1,12%</div><span class="delta bad">-16,1%</span></div>
+      <div class="kpi"><div class="label">Клики из Google</div><div class="value">444</div><span class="delta">+24,4%</span></div>
+      <div class="kpi"><div class="label">Показы в Google</div><div class="value">39 664</div><span class="delta">+48,3%</span></div>
+      <div class="kpi"><div class="label">CTR</div><div class="value">1,12%</div><span class="delta bad">нужно улучшать</span></div>
       <div class="kpi"><div class="label">Средняя позиция</div><div class="value">17,51</div><span class="delta">лучше на 2,76</span></div>
     </section>
 
     <section class="panel">
-      <h2>Что произошло в SEO</h2>
+      <h2>Что это значит простыми словами</h2>
       <div class="summary-grid">
-        <div class="note"><strong>Стало лучше:</strong> сайт получил больше кликов и почти на половину больше показов. Google чаще показывает InService по сервисным запросам, особенно по электросамокатам, зарядным станциям, генераторам и части бытовых/компьютерных услуг.</div>
-        <div class="note"><strong>Над чем работаем:</strong> CTR снизился, потому что охват расширился, но не все страницы и сниппеты достаточно убедительны. Нужно переписать title/description, убрать дубли H1 и усилить страницы с большим спросом.</div>
+        <div class="note"><strong>Стало лучше:</strong> сайт получил больше переходов из Google, почти на половину выросли показы, а средняя позиция улучшилась. Это значит, что поисковик чаще видит и показывает страницы InService.</div>
+        <div class="note"><strong>Над чем работаем дальше:</strong> часть страниц уже показывается, но кликают по ним не всегда. Следующий этап — улучшить заголовки и описания в Google, усилить тексты, убрать технические недочеты и сделать структуру услуг понятнее.</div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Динамика внутри июня</h2>
-      <p>Клики и показы держатся стабильно, без провала после изменений. Данные GSC доступны до 23 июня.</p>
-      
-      <div class="week-row">
-        <div class="week-label">1-8 июня</div>
-        <div class="bar-wrap"><span style="width:100.0%"></span></div>
-        <div class="week-num">154 кликов</div>
-        <div class="bar-wrap muted"><span style="width:100.0%"></span></div>
-        <div class="week-num">12 845 показов</div>
+      <h2>Объем выполненной работы</h2>
+      <p>Чтобы рост был не случайным, в проекте приводили в порядок структуру, страницы, тексты и визуальную подачу услуг.</p>
+      <div class="facts">
+        <div class="fact"><b>185 → 215</b><span>страниц/URL с показами в Google. Это на 30 больше, чем в мае.</span></div>
+        <div class="fact"><b>56</b><span>URL появились в июньской выборке Google, которых не было в майской.</span></div>
+        <div class="fact"><b>1 915</b><span>показов получили эти новые для выборки URL.</span></div>
+        <div class="fact"><b>53</b><span>клика пришло по URL, которых не было в майской выборке.</span></div>
       </div>
-    
-      <div class="week-row">
-        <div class="week-label">9-15 июня</div>
-        <div class="bar-wrap"><span style="width:90.9%"></span></div>
-        <div class="week-num">140 кликов</div>
-        <div class="bar-wrap muted"><span style="width:99.6%"></span></div>
-        <div class="week-num">12 798 показов</div>
+      <div class="work-list">
+        <div class="work-item"><span class="check">✓</span><span>Проработана структура главной страницы и рубрикатора услуг.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Подготовлены прототипы обновленной главной и более понятной группировки услуг.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Дорабатывались посадочные страницы: структура, тексты, title, description, H1 и внутренняя логика.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Отдельно прорабатывались направления электротранспорта, электросамокатов, брендов и поломок.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Добавлялась визуальная часть: карточки, иконки, фото, логика блоков и прототипы для разработчика.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Собрана аналитика Search Console и выделены направления, где уже есть спрос.</span></div>
       </div>
-    
-      <div class="week-row">
-        <div class="week-label">16-22 июня</div>
-        <div class="bar-wrap"><span style="width:81.2%"></span></div>
-        <div class="week-num">125 кликов</div>
-        <div class="bar-wrap muted"><span style="width:91.7%"></span></div>
-        <div class="week-num">11 776 показов</div>
-      </div>
-    
-      <div class="week-row">
-        <div class="week-label">23 июня</div>
-        <div class="bar-wrap"><span style="width:16.2%"></span></div>
-        <div class="week-num">25 кликов</div>
-        <div class="bar-wrap muted"><span style="width:17.5%"></span></div>
-        <div class="week-num">2 245 показов</div>
-      </div>
-    
     </section>
 
     <section class="panel">
-      <h2>Сравнение май / июнь</h2>
+      <h2>Сравнение с маем</h2>
       <div class="table-scroll"><table>
         <thead><tr><th>Метрика</th><th>Май</th><th>Июнь</th><th>Изменение</th><th>Комментарий</th></tr></thead>
         <tbody>
-          <tr><td>Клики</td><td>357</td><td>444</td><td class="plus">+87 / +24,4%</td><td>Больше переходов из поиска</td></tr>
-          <tr><td>Показы</td><td>26 751</td><td>39 664</td><td class="plus">+12 913 / +48,3%</td><td>Google чаще показывает сайт</td></tr>
-          <tr><td>CTR</td><td>1,33%</td><td>1,12%</td><td class="bad">-16,1%</td><td>Нужно улучшать сниппеты</td></tr>
-          <tr><td>Средняя позиция</td><td>20,26</td><td>17,51</td><td class="plus">лучше на 2,76</td><td>Средняя видимость улучшилась</td></tr>
+          <tr><td>Клики из Google</td><td>357</td><td>444</td><td class="plus">+87 / +24,4%</td><td>Больше людей перешло на сайт из поиска.</td></tr>
+          <tr><td>Показы в Google</td><td>26 751</td><td>39 664</td><td class="plus">+12 913 / +48,3%</td><td>Сайт чаще появлялся в выдаче.</td></tr>
+          <tr><td>CTR</td><td>1,33%</td><td>1,12%</td><td class="bad">ниже</td><td>Охват вырос быстрее кликов. Нужно улучшать заголовки и описания в Google.</td></tr>
+          <tr><td>Средняя позиция</td><td>20,26</td><td>17,51</td><td class="plus">лучше на 2,76</td><td>В среднем сайт стал выше в поиске.</td></tr>
+          <tr><td>Страниц с показами</td><td>185</td><td>215</td><td class="plus">+30</td><td>Больше страниц участвует в поиске.</td></tr>
         </tbody>
       </table></div>
     </section>
 
     <section class="panel">
+      <h2>Динамика внутри месяца</h2>
+      <p>Сравнение по неделям показывает, что июнь держится выше мая по видимости. Это не один случайный всплеск, а более широкий рост показов.</p>
+      <div class="table-scroll"><table><thead><tr><th>Период</th><th>Клики: май → июнь</th><th>Показы: май → июнь</th><th>CTR: май → июнь</th><th>Позиция: май → июнь</th></tr></thead><tbody><tr><td>1-8 число</td><td>127 → 154</td><td>8 848 → 12 845</td><td>1,44% → 1,20%</td><td>20,30 → 17,25</td></tr><tr><td>9-15 число</td><td>102 → 140</td><td>7 704 → 12 798</td><td>1,32% → 1,09%</td><td>20,00 → 17,77</td></tr><tr><td>16-22 число</td><td>100 → 125</td><td>7 575 → 11 776</td><td>1,32% → 1,06%</td><td>18,98 → 16,84</td></tr><tr><td>23-24 число</td><td>28 → 25</td><td>2 624 → 2 245</td><td>1,07% → 1,11%</td><td>24,62 → 21,00</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
       <h2>Топ запросов июня</h2>
-      <p>Запросы, которые уже дают клики и помогают понять приоритеты работ.</p>
+      <p>Запросы, которые уже дают переходы и показывают, где есть реальный спрос.</p>
       <div class="table-scroll"><table><thead><tr><th>Запрос</th><th>Клики</th><th>Показы</th><th>CTR</th><th>Позиция</th></tr></thead><tbody><tr><td>ремонт электросамокатов харьков</td><td>12</td><td>163</td><td>7,36%</td><td>5,93</td></tr><tr><td>inservice</td><td>9</td><td>57</td><td>15,79%</td><td>1,95</td></tr><tr><td>ремонт електросамокатів харків</td><td>8</td><td>32</td><td>25,00%</td><td>5,53</td></tr><tr><td>ремонт кавомашин харків</td><td>6</td><td>92</td><td>6,52%</td><td>4,07</td></tr><tr><td>ремонт зарядних станцій</td><td>5</td><td>95</td><td>5,26%</td><td>11,48</td></tr><tr><td>ремонт самокатов харьков</td><td>5</td><td>70</td><td>7,14%</td><td>6,30</td></tr><tr><td>ремонт компьютеров харьков на дому</td><td>5</td><td>58</td><td>8,62%</td><td>4,41</td></tr><tr><td>in service</td><td>5</td><td>17</td><td>29,41%</td><td>1,00</td></tr><tr><td>проспект науки 17</td><td>4</td><td>88</td><td>4,55%</td><td>6,28</td></tr><tr><td>ремонт дизельных генераторов харьков</td><td>4</td><td>79</td><td>5,06%</td><td>2,13</td></tr><tr><td>ремонт электроскутеров харьков</td><td>4</td><td>47</td><td>8,51%</td><td>8,77</td></tr><tr><td>ремонт повербанков харьков</td><td>4</td><td>12</td><td>33,33%</td><td>7,58</td></tr></tbody></table></div>
     </section>
 
     <section class="panel">
       <h2>Топ страниц июня</h2>
-      <p>Страницы, которые сейчас чаще всего получают органические переходы.</p>
-      <div class="table-scroll"><table><thead><tr><th>Страница</th><th>Клики</th><th>Показы</th><th>CTR</th><th>Позиция</th></tr></thead><tbody><tr><td><a href="https://inservic.com.ua/ru/remont-jelektrosamokatov-kharkov/" target="_blank">/ru/remont-jelektrosamokatov-kharkov/</a></td><td>34</td><td>964</td><td>3,53%</td><td>10,69</td></tr><tr><td><a href="https://inservic.com.ua/ru/" target="_blank">/ru/</a></td><td>32</td><td>346</td><td>9,25%</td><td>8,71</td></tr><tr><td><a href="https://inservic.com.ua/" target="_blank">/</a></td><td>31</td><td>1 313</td><td>2,36%</td><td>7,67</td></tr><tr><td><a href="https://inservic.com.ua/ru/vyzov-kompiuternoho-mastera/" target="_blank">/ru/vyzov-kompiuternoho-mastera/</a></td><td>22</td><td>1 103</td><td>1,99%</td><td>8,12</td></tr><tr><td><a href="https://inservic.com.ua/ru/o-nas/" target="_blank">/ru/o-nas/</a></td><td>22</td><td>756</td><td>2,91%</td><td>9,20</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-2/" target="_blank">/ru/remont-2/</a></td><td>21</td><td>3 815</td><td>0,55%</td><td>22,02</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-jelektrosamokatov-v-kharkove/" target="_blank">/ru/service/remont-jelektrosamokatov-v-kharkove/</a></td><td>19</td><td>343</td><td>5,54%</td><td>7,86</td></tr><tr><td><a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/" target="_blank">/remont-portatyvnykh-zariadnykh-stantsyj/</a></td><td>17</td><td>5 252</td><td>0,32%</td><td>23,15</td></tr><tr><td><a href="https://inservic.com.ua/ru/kontakty/" target="_blank">/ru/kontakty/</a></td><td>17</td><td>608</td><td>2,80%</td><td>9,34</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-dyzelnykh-heneratorov-kharko/" target="_blank">/ru/service/remont-dyzelnykh-heneratorov-kharko/</a></td><td>12</td><td>2 584</td><td>0,46%</td><td>16,51</td></tr><tr><td><a href="https://inservic.com.ua/remont-elektrosamokativ/" target="_blank">/remont-elektrosamokativ/</a></td><td>11</td><td>522</td><td>2,11%</td><td>10,35</td></tr><tr><td><a href="https://inservic.com.ua/about-us/" target="_blank">/about-us/</a></td><td>11</td><td>448</td><td>2,46%</td><td>8,47</td></tr></tbody></table></div>
+      <p>Теперь указано не только URL, но и что это за страница.</p>
+      <div class="table-scroll"><table><thead><tr><th>Страница</th><th>Клики</th><th>Показы</th><th>CTR</th><th>Позиция</th></tr></thead><tbody><tr><td><a href="https://inservic.com.ua/ru/remont-jelektrosamokatov-kharkov/" target="_blank"><strong>Ремонт электросамокатов в Харькове (RU)</strong><small>/ru/remont-jelektrosamokatov-kharkov/</small></a></td><td>34</td><td>964</td><td>3,53%</td><td>10,69</td></tr><tr><td><a href="https://inservic.com.ua/ru/" target="_blank"><strong>Главная страница (RU)</strong><small>/ru/</small></a></td><td>32</td><td>346</td><td>9,25%</td><td>8,71</td></tr><tr><td><a href="https://inservic.com.ua/" target="_blank"><strong>Главная страница</strong><small>/</small></a></td><td>31</td><td>1 313</td><td>2,36%</td><td>7,67</td></tr><tr><td><a href="https://inservic.com.ua/ru/vyzov-kompiuternoho-mastera/" target="_blank"><strong>Выезд компьютерного мастера (RU)</strong><small>/ru/vyzov-kompiuternoho-mastera/</small></a></td><td>22</td><td>1 103</td><td>1,99%</td><td>8,12</td></tr><tr><td><a href="https://inservic.com.ua/ru/o-nas/" target="_blank"><strong>О нас (RU)</strong><small>/ru/o-nas/</small></a></td><td>22</td><td>756</td><td>2,91%</td><td>9,20</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-2/" target="_blank"><strong>Ремонт техники (RU)</strong><small>/ru/remont-2/</small></a></td><td>21</td><td>3 815</td><td>0,55%</td><td>22,02</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-jelektrosamokatov-v-kharkove/" target="_blank"><strong>Ремонт электросамокатов в Харькове (RU, услуга)</strong><small>/ru/service/remont-jelektrosamokatov-v-kharkove/</small></a></td><td>19</td><td>343</td><td>5,54%</td><td>7,86</td></tr><tr><td><a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/" target="_blank"><strong>Ремонт портативных зарядных станций</strong><small>/remont-portatyvnykh-zariadnykh-stantsyj/</small></a></td><td>17</td><td>5 252</td><td>0,32%</td><td>23,15</td></tr><tr><td><a href="https://inservic.com.ua/ru/kontakty/" target="_blank"><strong>Контакты (RU)</strong><small>/ru/kontakty/</small></a></td><td>17</td><td>608</td><td>2,80%</td><td>9,34</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-dyzelnykh-heneratorov-kharko/" target="_blank"><strong>Ремонт дизельных генераторов в Харькове (RU)</strong><small>/ru/service/remont-dyzelnykh-heneratorov-kharko/</small></a></td><td>12</td><td>2 584</td><td>0,46%</td><td>16,51</td></tr><tr><td><a href="https://inservic.com.ua/remont-elektrosamokativ/" target="_blank"><strong>Ремонт електросамокатів (UA)</strong><small>/remont-elektrosamokativ/</small></a></td><td>11</td><td>522</td><td>2,11%</td><td>10,35</td></tr><tr><td><a href="https://inservic.com.ua/about-us/" target="_blank"><strong>Про нас</strong><small>/about-us/</small></a></td><td>11</td><td>448</td><td>2,46%</td><td>8,47</td></tr></tbody></table></div>
     </section>
 
     <section class="panel">
-      <h2>Где появился рост</h2>
+      <h2>Где появился рост по кликам</h2>
       <div class="summary-grid">
-        <div>
-          <h3>Страницы с приростом кликов</h3>
-          <div class="table-scroll"><table><thead><tr><th>Страница</th><th>Прирост</th><th>Клики</th><th>Показы</th></tr></thead><tbody><tr><td><a href="https://inservic.com.ua/ru/service/remont-jelektrosamokatov-v-kharkove/" target="_blank">/ru/service/remont-jelektrosamokatov-v-kharkove/</a></td><td class="plus">+19</td><td>0 → 19</td><td>0 → 343</td></tr><tr><td><a href="https://inservic.com.ua/ru/o-nas/" target="_blank">/ru/o-nas/</a></td><td class="plus">+14</td><td>8 → 22</td><td>625 → 756</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-jelektrosamokatov-kugoo-v-kharkove/" target="_blank">/ru/remont-jelektrosamokatov-kugoo-v-kharkove/</a></td><td class="plus">+10</td><td>0 → 10</td><td>0 → 186</td></tr><tr><td><a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/" target="_blank">/remont-portatyvnykh-zariadnykh-stantsyj/</a></td><td class="plus">+9</td><td>8 → 17</td><td>998 → 5 252</td></tr><tr><td><a href="https://inservic.com.ua/ru/" target="_blank">/ru/</a></td><td class="plus">+9</td><td>23 → 32</td><td>367 → 346</td></tr><tr><td><a href="https://inservic.com.ua/service/rem-kof/" target="_blank">/service/rem-kof/</a></td><td class="plus">+7</td><td>3 → 10</td><td>440 → 569</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-kond/" target="_blank">/ru/service/remont-kond/</a></td><td class="plus">+7</td><td>1 → 8</td><td>224 → 342</td></tr><tr><td><a href="https://inservic.com.ua/ru/vyzov-kompiuternoho-mastera/" target="_blank">/ru/vyzov-kompiuternoho-mastera/</a></td><td class="plus">+6</td><td>16 → 22</td><td>1 115 → 1 103</td></tr></tbody></table></div>
-        </div>
-        <div>
-          <h3>Запросы с приростом кликов</h3>
-          <div class="table-scroll"><table><thead><tr><th>Запрос</th><th>Прирост</th><th>Клики</th><th>Показы</th></tr></thead><tbody><tr><td>ремонт зарядних станцій</td><td class="plus">+5</td><td>0 → 5</td><td>79 → 95</td></tr><tr><td>ремонт електросамокатів харків</td><td class="plus">+5</td><td>3 → 8</td><td>29 → 32</td></tr><tr><td>ремонт кавомашин харків</td><td class="plus">+4</td><td>2 → 6</td><td>60 → 92</td></tr><tr><td>ремонт компьютеров харьков на дому</td><td class="plus">+4</td><td>1 → 5</td><td>56 → 58</td></tr><tr><td>ремонт повербанков харьков</td><td class="plus">+4</td><td>0 → 4</td><td>12 → 12</td></tr><tr><td>ремонт кондиціонерів харків</td><td class="plus">+3</td><td>0 → 3</td><td>21 → 38</td></tr><tr><td>ин сервис</td><td class="plus">+3</td><td>0 → 3</td><td>0 → 9</td></tr><tr><td>проспект науки 17</td><td class="plus">+3</td><td>1 → 4</td><td>80 → 88</td></tr></tbody></table></div>
-        </div>
+        <div><h3>Страницы</h3><div class="table-scroll"><table><thead><tr><th>Страница</th><th>Прирост</th><th>Было → стало</th><th>Метрика</th></tr></thead><tbody><tr><td><a href="https://inservic.com.ua/ru/service/remont-jelektrosamokatov-v-kharkove/" target="_blank"><strong>Ремонт электросамокатов в Харькове (RU, услуга)</strong><small>/ru/service/remont-jelektrosamokatov-v-kharkove/</small></a></td><td class='plus'>+19</td><td>0 → 19</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/ru/o-nas/" target="_blank"><strong>О нас (RU)</strong><small>/ru/o-nas/</small></a></td><td class='plus'>+14</td><td>8 → 22</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-jelektrosamokatov-kugoo-v-kharkove/" target="_blank"><strong>Ремонт электросамокатов Kugoo</strong><small>/ru/remont-jelektrosamokatov-kugoo-v-kharkove/</small></a></td><td class='plus'>+10</td><td>0 → 10</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/" target="_blank"><strong>Ремонт портативных зарядных станций</strong><small>/remont-portatyvnykh-zariadnykh-stantsyj/</small></a></td><td class='plus'>+9</td><td>8 → 17</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/ru/" target="_blank"><strong>Главная страница (RU)</strong><small>/ru/</small></a></td><td class='plus'>+9</td><td>23 → 32</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/service/rem-kof/" target="_blank"><strong>Ремонт кофемашин</strong><small>/service/rem-kof/</small></a></td><td class='plus'>+7</td><td>3 → 10</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-kond/" target="_blank"><strong>Ремонт кондиционеров</strong><small>/ru/service/remont-kond/</small></a></td><td class='plus'>+7</td><td>1 → 8</td><td>кликов</td></tr><tr><td><a href="https://inservic.com.ua/ru/vyzov-kompiuternoho-mastera/" target="_blank"><strong>Выезд компьютерного мастера (RU)</strong><small>/ru/vyzov-kompiuternoho-mastera/</small></a></td><td class='plus'>+6</td><td>16 → 22</td><td>кликов</td></tr></tbody></table></div></div>
+        <div><h3>Запросы</h3><div class="table-scroll"><table><thead><tr><th>Запрос</th><th>Прирост</th><th>Было → стало</th><th>Метрика</th></tr></thead><tbody><tr><td>ремонт зарядних станцій</td><td class='plus'>+5</td><td>0 → 5</td><td>кликов</td></tr><tr><td>ремонт електросамокатів харків</td><td class='plus'>+5</td><td>3 → 8</td><td>кликов</td></tr><tr><td>ремонт кавомашин харків</td><td class='plus'>+4</td><td>2 → 6</td><td>кликов</td></tr><tr><td>ремонт компьютеров харьков на дому</td><td class='plus'>+4</td><td>1 → 5</td><td>кликов</td></tr><tr><td>ремонт повербанков харьков</td><td class='plus'>+4</td><td>0 → 4</td><td>кликов</td></tr><tr><td>ремонт кондиціонерів харків</td><td class='plus'>+3</td><td>0 → 3</td><td>кликов</td></tr><tr><td>ин сервис</td><td class='plus'>+3</td><td>0 → 3</td><td>кликов</td></tr><tr><td>проспект науки 17</td><td class='plus'>+3</td><td>1 → 4</td><td>кликов</td></tr></tbody></table></div></div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Что сделали в июне</h2>
-      <div class="work-list">
-        <div class="work-item"><span class="check">✓</span><span>Разобрали структуру главной страницы и рубрикатор услуг.</span></div>
-        <div class="work-item"><span class="check">✓</span><span>Подготовили прототипы обновленной главной и безопасную версию группировки.</span></div>
-        <div class="work-item"><span class="check">✓</span><span>Сгруппировали услуги логичнее: цифровая техника, бытовая техника, генераторы, электротранспорт.</span></div>
-        <div class="work-item"><span class="check">✓</span><span>Для электротранспорта оставили ссылки только на опубликованные страницы.</span></div>
-        <div class="work-item"><span class="check">✓</span><span>Добавили в концепт направление ремонта зарядных станций.</span></div>
-        <div class="work-item"><span class="check">✓</span><span>Проверили живые страницы и нашли SEO-точки для исправлений.</span></div>
+      <h2>Где выросли показы</h2>
+      <p>Показы важны: они показывают, где Google начал чаще выводить сайт, даже если клики еще нужно добирать.</p>
+      <div class="summary-grid">
+        <div><h3>Страницы</h3><div class="table-scroll"><table><thead><tr><th>Страница</th><th>Прирост</th><th>Было → стало</th><th>Метрика</th></tr></thead><tbody><tr><td><a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/" target="_blank"><strong>Ремонт портативных зарядных станций</strong><small>/remont-portatyvnykh-zariadnykh-stantsyj/</small></a></td><td class='plus'>+4 254</td><td>998 → 5 252</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-2/" target="_blank"><strong>Ремонт техники (RU)</strong><small>/ru/remont-2/</small></a></td><td class='plus'>+2 016</td><td>1 799 → 3 815</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/servysnyj-tsentr-po-remontu-y-obsluzhyv/" target="_blank"><strong>Servysnyj tsentr po remontu y obsluzhyv</strong><small>/ru/service/servysnyj-tsentr-po-remontu-y-obsluzhyv/</small></a></td><td class='plus'>+771</td><td>953 → 1 724</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/chystka-noutbuka-y-zamena-termopasty/" target="_blank"><strong>Chystka noutbuka y zamena termopasty</strong><small>/ru/chystka-noutbuka-y-zamena-termopasty/</small></a></td><td class='plus'>+752</td><td>458 → 1 210</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-i-obsluzhivanie-telefonov/" target="_blank"><strong>Remont i obsluzhivanie telefonov</strong><small>/ru/service/remont-i-obsluzhivanie-telefonov/</small></a></td><td class='plus'>+527</td><td>351 → 878</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/remont-jelektrosamokatov-ninebot-v-kharkove/" target="_blank"><strong>Ремонт электросамокатов Ninebot</strong><small>/ru/remont-jelektrosamokatov-ninebot-v-kharkove/</small></a></td><td class='plus'>+357</td><td>0 → 357</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-jelektrosamokatov-v-kharkove/" target="_blank"><strong>Ремонт электросамокатов в Харькове (RU, услуга)</strong><small>/ru/service/remont-jelektrosamokatov-v-kharkove/</small></a></td><td class='plus'>+343</td><td>0 → 343</td><td>показов</td></tr><tr><td><a href="https://inservic.com.ua/ru/service/remont-planshetov-v-kyeve/" target="_blank"><strong>Remont planshetov v kyeve</strong><small>/ru/service/remont-planshetov-v-kyeve/</small></a></td><td class='plus'>+306</td><td>54 → 360</td><td>показов</td></tr></tbody></table></div></div>
+        <div><h3>Запросы</h3><div class="table-scroll"><table><thead><tr><th>Запрос</th><th>Прирост</th><th>Было → стало</th><th>Метрика</th></tr></thead><tbody><tr><td>ремонт телефонів київ</td><td class='plus'>+153</td><td>14 → 167</td><td>показов</td></tr><tr><td>ремонт ноутбуков харьков</td><td class='plus'>+100</td><td>66 → 166</td><td>показов</td></tr><tr><td>стоимость чистки ноутбука и замены термопасты</td><td class='plus'>+82</td><td>3 → 85</td><td>показов</td></tr><tr><td>ремонт принтеров харьков</td><td class='plus'>+61</td><td>58 → 119</td><td>показов</td></tr><tr><td>чистка ноутбука и замена термопасты цена</td><td class='plus'>+59</td><td>12 → 71</td><td>показов</td></tr><tr><td>ремонт кофемашин</td><td class='plus'>+57</td><td>51 → 108</td><td>показов</td></tr><tr><td>ремонт кондиционеров харьков</td><td class='plus'>+51</td><td>11 → 62</td><td>показов</td></tr><tr><td>ремонт jackery львов</td><td class='plus'>+50</td><td>0 → 50</td><td>показов</td></tr><tr><td>ремонт электросамокатов kugoo</td><td class='plus'>+50</td><td>2 → 52</td><td>показов</td></tr><tr><td>чистка ноутбука с заменой термопасты</td><td class='plus'>+50</td><td>3 → 53</td><td>показов</td></tr></tbody></table></div></div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Что доработать дальше</h2>
+      <h2>Что будем делать дальше</h2>
       <div class="plan">
-        <div class="plan-card"><b>1. Главная</b><span>Утвердить понятный рубрикатор и внедрить без ссылок на неготовые страницы.</span></div>
-        <div class="plan-card"><b>2. Электротранспорт</b><span>Доработать хаб и страницу электросамокатов: H1, title, description, перелинковка.</span></div>
-        <div class="plan-card"><b>3. Новые приоритеты</b><span>Подготовить электроскутеры, зарядные станции и дизельные генераторы.</span></div>
-        <div class="plan-card"><b>4. CTR</b><span>Переписать сниппеты страниц, где много показов, но мало кликов.</span></div>
+        <div class="plan-card"><b>1. Главная</b><span>Утвердить понятный рубрикатор услуг и внедрить без ссылок на неготовые страницы.</span></div>
+        <div class="plan-card"><b>2. Важные страницы</b><span>Доработать страницы с большим спросом: заголовки, описания, тексты, H1, перелинковка.</span></div>
+        <div class="plan-card"><b>3. Новые направления</b><span>Приоритет: электроскутеры, зарядные станции, дизельные генераторы и бренды электросамокатов.</span></div>
+        <div class="plan-card"><b>4. Аналитика</b><span>В конце следующего месяца сравнить рост кликов, показов, CTR и позиций после внедрения.</span></div>
       </div>
     </section>
 
     <section class="panel">
-      <h2>Итог для заказчика</h2>
-      <p>Динамика положительная: органический трафик растет, Google чаще показывает сайт, а средняя позиция стала лучше. Сейчас проект находится на этапе наведения структуры и усиления страниц. Следующий шаг — не просто добавлять новые URL, а дожимать направления, где уже есть спрос: электросамокаты, электроскутеры, зарядные станции и дизельные генераторы.</p>
+      <h2>Итог</h2>
+      <p>За месяц была сделана большая подготовительная и практическая работа: структура, страницы, тексты, мета-данные, визуальные прототипы и аналитика. Это уже дало рост видимости и кликов. Следующий этап — превратить выросшие показы в большее количество заявок: усилить страницы, улучшить заголовки и описания в Google, аккуратно внедрить обновленную структуру на сайт.</p>
     </section>
 
-    <div class="footer">Источник данных: Google Search Console через Maton Gateway. Сравнение: 01.05-24.05 vs 01.06-23.06/24.06 по доступной выгрузке.</div>
+    <div class="footer">Источник данных: Google Search Console через Maton Gateway. Сравнение: 01.05-24.05 и 01.06-23.06/24.06 по доступной выгрузке.</div>
   </main>
 </body>
 </html>
-
