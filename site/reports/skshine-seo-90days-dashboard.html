@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SK SHINE: SEO-огляд за 90 днів</title>
+  <meta name="description" content="Порівняння Search Console для SK SHINE: останні 90 днів проти попередніх 90 днів.">
+  <style>
+    :root { --ink:#10253f; --muted:#607086; --line:#dce5ef; --soft:#f5f8fb; --panel:#fff; --gold:#d5a12b; --gold-soft:#fff6df; --blue:#0d3765; --green:#15966b; --red:#c04444; --shadow:0 24px 70px rgba(16,37,63,.10); --radius:26px; }
+    *{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#f6f9fc 0%,#fff 44%,#fff8e9 100%);color:var(--ink);font-family:Segoe UI,Arial,sans-serif;line-height:1.55} a{color:var(--blue);text-decoration:none} a:hover{color:var(--gold)}
+    .topbar{background:#0e2035;color:#fff;padding:12px 22px;font-size:14px} .topbar-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .wrap{max-width:1180px;margin:0 auto;padding:34px 20px 70px} .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;margin-bottom:24px}
+    .hero-card,.panel,.kpi{background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)} .hero-card{padding:38px;position:relative;overflow:hidden} .hero-card:after{content:"";position:absolute;right:-90px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#f0cf72 0%,rgba(213,161,43,0) 68%)}
+    .logo{display:flex;align-items:center;gap:14px;margin-bottom:28px} .mark{width:48px;height:48px;border-radius:14px;background:var(--gold);display:grid;place-items:center;color:#fff;font-weight:900;font-size:24px;box-shadow:0 12px 28px rgba(213,161,43,.28)} .brand{font-size:24px;font-weight:800;letter-spacing:-.03em}
+    h1{font-size:46px;line-height:1.05;margin:0 0 18px;letter-spacing:-.045em} h2{font-size:28px;line-height:1.15;margin:0 0 10px;letter-spacing:-.035em} h3{margin:8px 0 12px;font-size:18px}
+    .lead{font-size:18px;color:var(--muted);max-width:760px;margin:0} .hero-side{padding:28px;display:flex;flex-direction:column;gap:14px;justify-content:center} .status{padding:16px 18px;border-radius:20px;background:var(--gold-soft);border:1px solid #ecd493} .status b{display:block;font-size:15px;color:#7b590c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px} .status span{font-size:18px;font-weight:800} .meta{font-size:14px;color:var(--muted)}
+    .grid-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0} .kpi{padding:22px} .kpi .label{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700} .kpi .value{font-size:34px;font-weight:900;letter-spacing:-.04em;margin:8px 0 4px} .delta{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:14px;padding:5px 10px;border-radius:99px;background:#eefaf5;color:var(--green)} .delta.bad{background:#fff0f0;color:var(--red)}
+    .panel{padding:28px;margin-top:18px} .panel p{color:var(--muted);margin:0 0 18px} .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px} .summary-grid>*{min-width:0} .note{background:#f8fbff;border:1px solid var(--line);border-radius:20px;padding:18px} .note strong{color:var(--ink)}
+    table{width:100%;min-width:640px;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line)} th,td{padding:13px 14px;text-align:left;border-bottom:1px solid #edf2f7;vertical-align:top;font-size:14px} th{background:#f3f7fb;color:#45566b;text-transform:uppercase;font-size:12px;letter-spacing:.06em} tr:last-child td{border-bottom:0} .table-scroll{overflow-x:auto;max-width:100%;min-width:0;border-radius:18px;-webkit-overflow-scrolling:touch} td small{display:block;color:var(--muted);font-size:12px;margin-top:3px;word-break:break-all} .plus{color:var(--green);font-weight:900} .bad{color:var(--red);font-weight:900}
+    .work-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px} .work-item{padding:15px 16px;border-radius:18px;background:#fff;border:1px solid var(--line);display:flex;gap:12px;align-items:flex-start} .check{width:24px;height:24px;flex:0 0 24px;border-radius:8px;background:#eaf8f2;color:var(--green);display:grid;place-items:center;font-weight:900}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px} .fact{background:linear-gradient(180deg,#fff,#fffaf0);border:1px solid #ecd493;border-radius:20px;padding:18px} .fact b{display:block;font-size:28px;line-height:1;margin-bottom:9px} .fact span{display:block;color:var(--muted);font-size:14px}
+    .plan{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px} .plan-card{background:linear-gradient(180deg,#fff,#fffaf0);border:1px solid #ecd493;border-radius:20px;padding:18px} .plan-card b{display:block;font-size:16px;margin-bottom:8px} .plan-card span{color:var(--muted);font-size:14px} .footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){.hero,.summary-grid{grid-template-columns:1fr}.grid-kpi{grid-template-columns:repeat(2,1fr)}.plan,.work-list,.facts{grid-template-columns:1fr}h1{font-size:36px}}
+    @media (max-width:560px){.wrap{padding:20px 12px 48px}.hero-card,.panel{padding:22px}.grid-kpi{grid-template-columns:1fr}h1{font-size:31px}}
+
+    html{scroll-behavior:smooth}.web-nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.web-nav-inner{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}.web-nav strong{font-size:14px}.nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav-links a,.hero-actions a{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:9px 12px;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:13px;font-weight:800}.nav-links a:hover,.hero-actions a:hover{border-color:#d5a12b;color:#8a650b;background:#fffaf0}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-actions a.primary{background:var(--ink);border-color:var(--ink);color:#fff}.client-summary{background:linear-gradient(135deg,#0f253f,#183d63);color:#fff;border:0;position:relative;overflow:hidden}.client-summary:after{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(213,161,43,.42),rgba(213,161,43,0) 68%)}.client-summary h2,.client-summary p,.client-summary strong{color:#fff}.client-summary p{color:#dbe6f2}.summary-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;position:relative;z-index:1}.summary-point{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:18px}.summary-point b{display:block;font-size:22px;margin-bottom:6px}.section-tag{display:inline-block;margin-bottom:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:#8a650b;background:#fff6df;border:1px solid #ecd493;border-radius:999px;padding:6px 10px}.client-message-box{white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;color:var(--ink);font-size:15px}.copy-hint{font-size:13px;color:var(--muted);margin-top:10px}.panel[id]{scroll-margin-top:78px}@media(max-width:900px){.web-nav-inner{align-items:flex-start;flex-direction:column}.nav-links{justify-content:flex-start}.summary-points{grid-template-columns:1fr}.hero-actions a{width:100%}}@media print{.web-nav,.hero-actions{display:none}body{background:#fff}.panel,.hero-card,.kpi{box-shadow:none}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="topbar-inner"><span>SK SHINE: SEO-огляд Search Console</span><span>Підготовлено: 29.06.2026</span></div></div>
+
+  <nav class="web-nav">
+    <div class="web-nav-inner">
+      <strong>SK SHINE · SEO звіт 90 днів</strong>
+      <div class="nav-links">
+        <a href="#summary">Головне</a>
+        <a href="#site-changes">Зміни на сайті</a>
+        
+        <a href="#conversions">Заявки</a>
+        <a href="#indexing">Індексація</a>
+        <a href="#plan">План</a>
+      </div>
+    </div>
+  </nav>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="logo"><div class="mark">SK</div><div><div class="brand">SK SHINE</div><div class="meta">Огляд органічної видимості Google</div></div></div>
+        <h1>За останні 90 днів сайт отримав більше видимості в Google, а на сайті з’явилася нова SEO-основа</h1>
+        <p class="lead">Порівнюємо рівні періоди: останні 90 днів проти попередніх 90 днів. У звіті об’єднані Search Console, GA4 та зміни на сайті: видимість у Google, поведінка користувачів, контактні дії, нові матеріали та технічні висновки.</p>
+        <div class="hero-actions"><a class="primary" href="#summary">Перейти до висновків</a><a href="#plan">Подивитися план робіт</a></div>
+      </div>
+      <aside class="hero-card hero-side">
+        <div class="status"><b>Поточний період</b><span>2026-03-30 — 2026-06-27</span><div class="meta">Остання доступна дата у GSC: 2026-06-27.</div></div>
+        <div class="status"><b>Ключовий результат</b><span>+57,1% кліків</span><div class="meta">Кліки зросли з 28 до 44.</div></div>
+      </aside>
+    </section>
+
+
+    <section class="panel client-summary" id="summary">
+      <span class="section-tag">Головне</span>
+      <h2>Звіт показує не тільки цифри, а й реальні зміни на сайті</h2>
+      <p>У цьому огляді зібрані дані за останні 90 днів у порівнянні з попередніми 90 днями: видимість у Google, поведінка користувачів у GA4, контактні дії, нові сторінки, індексація та технічні точки росту.</p>
+      <div class="summary-points">
+        <div class="summary-point"><b>SEO-видимість зросла</b><span>Кліки з Google: 28 → 44, покази: 1 313 → 1 630, середня позиція стала кращою.</span></div>
+        <div class="summary-point"><b>Сайт отримав SEO-основу</b><span>Опубліковано нові матеріали, 15 нових URL уже з’явилися в Search Console.</span></div>
+        <div class="summary-point"><b>Є чіткий план</b><span>Наступний фокус: технічна чистка URL, посилення сніпетів, перелінковка і доробка сторінок.</span></div>
+      </div>
+    </section>
+
+    <section class="grid-kpi">
+      <div class="kpi"><div class="label">Кліки з Google</div><div class="value">44</div><span class="delta ">+57,1%</span></div>
+      <div class="kpi"><div class="label">Покази в Google</div><div class="value">1 630</div><span class="delta ">+24,1%</span></div>
+      <div class="kpi"><div class="label">CTR</div><div class="value">2,70%</div><span class="delta ">+0,57 п.п.</span></div>
+      <div class="kpi"><div class="label">Середня позиція</div><div class="value">16,03</div><span class="delta ">краще на 6,17</span></div>
+    </section>
+
+    <section class="panel">
+      <h2>Що це означає простими словами</h2>
+      <div class="summary-grid">
+        <div class="note"><strong>SEO-динаміка за 90 днів позитивна:</strong> сайт отримав більше кліків, більше показів, кращий CTR і кращу середню позицію. Це означає, що органічна присутність у Google стала сильнішою порівняно з попереднім 90-денним періодом.</div>
+        <div class="note"><strong>Але потенціал ще не вичерпано:</strong> частина сторінок уже показується в Google, але не дає кліків. Наступний етап — посилити снипети, прибрати старі URL з /index.php/ і підтягнути сторінки, які вже мають покази.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Накопичувальний результат за 90 днів</h2>
+      <p>Це сумарні дані за весь поточний 90-денний період, а не окремий місяць.</p>
+      <div class="facts">
+        <div class="fact"><b>44</b><span>кліків з органічної видачі Google за останні 90 днів.</span></div>
+        <div class="fact"><b>1 630</b><span>показів у Google за останні 90 днів.</span></div>
+        <div class="fact"><b>48 → 62</b><span>запитів у вибірці Search Console.</span></div>
+        <div class="fact"><b>11 → 26</b><span>сторінок отримували покази в Google.</span></div>
+      </div>
+    </section>
+
+
+    <section class="panel" id="data-note">
+      <span class="section-tag">Важливе пояснення по цифрах</span>
+      <h2>Чому цифри у звіті можуть відрізнятися від GA4 → Search Console → “Запити”</h2>
+      <p>У звіті є два різні рівні даних Search Console. Верхні KPI показують <strong>загальний підсумок по сайту</strong>. А звіт GA4 “Запити” показує тільки ті кліки й покази, які Google може прив’язати до конкретного пошукового запиту. Частину запитів Google приховує або анонімізує, тому в таблиці “Запити” цифри нижчі.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Рівень даних</th><th>Попередні 90 днів</th><th>Останні 90 днів</th><th>Що означає</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Загальний підсумок по сайту</strong><small>Search Console API без розбивки по запиту</small></td><td>28 кліків / 1 313 показів</td><td>44 кліки / 1 630 показів</td><td>Основна цифра для оцінки SEO-динаміки сайту.</td></tr>
+          <tr><td><strong>Тільки розкриті пошукові запити</strong><small>GA4/Search Console звіт “Запити” або API з dimension=query</small></td><td>приблизно 6 кліків / 399-409 показів</td><td>приблизно 13-14 кліків / 735-753 покази</td><td>Показує динаміку по відомих запитах, але не включає приховані/анонімізовані запити.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="copy-hint">Тому обидві цифри правильні, просто відповідають на різні питання. Для загального SEO-результату беремо підсумок по сайту, а для аналізу семантики дивимося таблицю запитів.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Порівняння 90 днів проти 90 днів</h2>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Метрика</th><th>Попередні 90 днів</th><th>Останні 90 днів</th><th>Зміна</th><th>Коментар</th></tr></thead>
+        <tbody>
+          <tr><td>Кліки з Google</td><td>28</td><td>44</td><td><span class="delta ">+57,1%</span></td><td>Більше людей перейшло на сайт з органічної видачі.</td></tr>
+          <tr><td>Покази в Google</td><td>1 313</td><td>1 630</td><td><span class="delta ">+24,1%</span></td><td>Сайт частіше з’являвся у результатах пошуку.</td></tr>
+          <tr><td>CTR</td><td>2,13%</td><td>2,70%</td><td><span class="delta ">+0,57 п.п.</span></td><td>Сніпети стали ефективніше перетворювати покази на кліки.</td></tr>
+          <tr><td>Середня позиція</td><td>22,19</td><td>16,03</td><td><span class="delta ">краще на 6,17</span></td><td>Середня позиція стала кращою: нижче число означає вище місце у видачі.</td></tr>
+          <tr><td>Запити у вибірці</td><td>48</td><td>62</td><td><span class="delta ">+29,2%</span></td><td>Сайт почав охоплювати більше пошукових формулювань.</td></tr>
+          <tr><td>Сторінки з показами</td><td>11</td><td>26</td><td><span class="delta ">+136,4%</span></td><td>Більше URL беруть участь у пошуку.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="panel">
+      <h2>Динаміка всередині 90 днів</h2>
+      <p>Щоб побачити не тільки суму, а й темп, розбиваємо обидва періоди на три рівні блоки по 30 днів.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Блок</th><th>Періоди</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th></tr></thead>
+        <tbody>
+          <tr><td>1-30 день</td><td><small>2025-12-30 — 2026-01-28</small><small>2026-03-30 — 2026-04-28</small></td><td>6 → 14</td><td>636 → 504</td><td>0,94% → 2,78%</td><td>30,66 → 10,60</td></tr><tr><td>31-60 день</td><td><small>2026-01-29 — 2026-02-27</small><small>2026-04-29 — 2026-05-28</small></td><td>6 → 15</td><td>307 → 630</td><td>1,95% → 2,38%</td><td>20,98 → 15,36</td></tr><tr><td>61-90 день</td><td><small>2026-02-28 — 2026-03-29</small><small>2026-05-29 — 2026-06-27</small></td><td>16 → 15</td><td>370 → 496</td><td>4,32% → 3,02%</td><td>8,65 → 22,39</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+
+    <section class="panel" id="site-changes">
+      <h2>Що змінилося на сайті за період</h2>
+      <p>Окрім аналітики, важливо показати , що саме було зроблено на сайті й чому Search Console почала бачити більше сторінок.</p>
+      <div class="facts">
+        <div class="fact"><b>19</b><span>нових опублікованих матеріалів/сторінок у поточному 90-денному періоді за даними WordPress API.</span></div>
+        <div class="fact"><b>4</b><span>матеріали зараз явно належать до рубрики “Поради з прибирання”.</span></div>
+        <div class="fact"><b>15</b><span>нових для порівняння URL вже з’явилися у Search Console з показами.</span></div>
+        <div class="fact"><b>15</b><span>матеріалів поки у “Uncategorized” — це варто впорядкувати.</span></div>
+      </div>
+      <div class="work-list">
+        <div class="work-item"><span class="check">✓</span><span>Запущено та наповнено контентний напрямок під локальні запити: клінінг, прибирання квартир, офісів, після ремонту, комерційні приміщення.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Підготовлено SEO-структуру для розділу “Поради”: title/H1, тематичні URL, матеріали під Хмельницький і комерційний намір.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Опрацьовано візуальну частину статей: featured images, відповідність темі, коректніше відображення карток у блозі.</span></div>
+        <div class="work-item"><span class="check">✓</span><span>Виявлено технічну історію зі старими /index.php/ URL, які ще присутні у видачі та потребують 301-редиректів/canonical.</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Опубліковані матеріали</h2>
+      <p>Це частина нових сторінок, які створюють основу для майбутнього росту органіки.</p>
+      <div class="table-scroll"><table><thead><tr><th>Матеріал</th><th>Дата</th><th>Рубрика</th></tr></thead><tbody><tr><td><a href="https://skshine.com.ua/prybyrannia-restoraniv-khmelnytskyi/" target="_blank"><strong>Прибирання ресторанів у Хмельницькому</strong><small>/prybyrannia-restoraniv-khmelnytskyi/</small></a></td><td>2026-06-27</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/yak-prybraty-slidy-kleyu/" target="_blank"><strong>Як прибрати сліди клею без шкоди поверхні</strong><small>/yak-prybraty-slidy-kleyu/</small></a></td><td>2026-06-26</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-hoteliv-khmelnytskyi/" target="_blank"><strong>Прибирання готелів у Хмельницькому без зайвих клопотів</strong><small>/prybyrannia-hoteliv-khmelnytskyi/</small></a></td><td>2026-06-25</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-torhovykh-tsentriv-khmelnytskyi/" target="_blank"><strong>Прибирання торгових центрів у Хмельницькому</strong><small>/prybyrannia-torhovykh-tsentriv-khmelnytskyi/</small></a></td><td>2026-06-24</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/skilky-koshtuye-prybyrannya-kvartyry/" target="_blank"><strong>Скільки коштує прибирання квартири у 2026</strong><small>/skilky-koshtuye-prybyrannya-kvartyry/</small></a></td><td>2026-06-23</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/myttia-pidlohy-profesiinoiu-tekhnikoiu/" target="_blank"><strong>Миття підлоги професійною технікою: коли варто</strong><small>/myttia-pidlohy-profesiinoiu-tekhnikoiu/</small></a></td><td>2026-06-22</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-mahazyniv-khmelnytskyi/" target="_blank"><strong>Прибирання магазинів у Хмельницькому</strong><small>/prybyrannia-mahazyniv-khmelnytskyi/</small></a></td><td>2026-06-21</td><td>Uncategorized</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-prybudynkovoi-terytorii-khmelnytskyi/" target="_blank"><strong>Прибирання прибудинкової території у Хмельницькому</strong><small>/prybyrannia-prybudynkovoi-terytorii-khmelnytskyi/</small></a></td><td>2026-06-20</td><td>Uncategorized</td></tr></tbody></table></div>
+    </section>
+
+        <section class="panel">
+      <h2>GA4: органічний трафік і якість відвідувань</h2>
+      <p>У GA4 органіка за обсягом нижча, але якість взаємодії стала помітно кращою. Це важливий нюанс: Search Console фіксує більше кліків з пошуку, а GA4 бачить менше органічних користувачів/сесій через атрибуцію, consent, завантаження аналітики та відмінність методик підрахунку.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Метрика Organic Search</th><th>Попередні 90 днів</th><th>Останні 90 днів</th><th>Зміна</th><th>Коментар</th></tr></thead>
+        <tbody>
+          <tr><td>Активні користувачі</td><td>111</td><td>69</td><td><span class="bad">-37,8%</span></td><td>GA4 бачить менше органічних користувачів.</td></tr>
+          <tr><td>Сесії</td><td>128</td><td>99</td><td><span class="bad">-22,7%</span></td><td>Обсяг органічних сесій нижчий.</td></tr>
+          <tr><td>Engaged sessions</td><td>30</td><td>49</td><td><span class="plus">+63,3%</span></td><td>Залучених сесій стало більше, попри менший обсяг.</td></tr>
+          <tr><td>Engagement rate</td><td>23,44%</td><td>49,49%</td><td><span class="plus">+26,06 п.п.</span></td><td>Якість органічних відвідувань стала значно кращою.</td></tr>
+          <tr><td>Середня тривалість сесії</td><td>39 с</td><td>185 с</td><td><span class="plus">+377,7%</span></td><td>Органічні користувачі проводять на сайті більше часу.</td></tr>
+          <tr><td>Organic key events</td><td>9</td><td>10</td><td><span class="plus">+11,1%</span></td><td>Органічні конверсійні події трохи зросли, але база ще мала.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="panel" id="conversions">
+      <h2>Органічні заявки, дзвінки та контактні дії</h2>
+      <p>Цей блок тепер показує тільки канал <strong>Organic Search</strong> у GA4. Тобто тут не змішані реклама, Direct, соцмережі та інші джерела. Загальна картина по всьому сайту залишена вище в GA4-блоці як контекст.</p>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Подія</th><th>Було, Organic Search</th><th>Стало, Organic Search</th><th>Зміна</th><th>Коментар</th></tr></thead>
+        <tbody><tr><td>Кліки по телефону<small>click_tel</small></td><td>4</td><td>6</td><td><span class="plus">+50,0%</span></td><td>Органіка дала більше дзвінків: це хороший сигнал якості SEO-трафіку.</td></tr><tr><td>Відправка форми<small>send_form</small></td><td>4</td><td>2</td><td><span class="bad">-50,0%</span></td><td>Форм стало менше, тому на сторінках входу варто посилити CTA і довіру.</td></tr><tr><td>Telegram<small>click_telegram</small></td><td>1</td><td>1</td><td><span class="plus">+0,0%</span></td><td>Рівень зберігся; канал є, але база поки невелика.</td></tr><tr><td>Viber<small>click_viber</small></td><td>0</td><td>0</td><td><span class="plus">0</span></td><td>З органіки подій не було; можна не робити на цьому акцент.</td></tr><tr><td>Email<small>click_email</small></td><td>0</td><td>1</td><td><span class="plus">нове</span></td><td>З’явилася контактна дія через email.</td></tr></tbody>
+      </table></div>
+      <p class="copy-hint">Висновок: за органікою key events трохи зросли: 9 → 10. Особливо важливо, що дзвінки з органіки зросли 4 → 6, хоча база поки невелика.</p>
+    </section>
+
+    <section class="panel" id="indexing">
+      <h2>Індексація та поява нових сторінок у Google</h2>
+      <p>Факт появи URL у Search Console означає, що Google уже бачить сторінки та почав тестувати їх у видачі. Частина сторінок поки має покази без кліків — це нормальний перший етап, далі треба посилювати снипети й внутрішню перелінковку.</p>
+      <div class="table-scroll"><table><thead><tr><th>Новий URL у поточній 90-денній вибірці</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th></tr></thead><tbody><tr><td><a href="https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/" target="_blank"><strong>/myttia-vikon-vitrun-fasadiv/</strong><small>https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/</small></a></td><td>0</td><td>108</td><td>0,00%</td><td>37,9</td></tr><tr><td><a href="https://skshine.com.ua/prubudunkove-pruburanna/" target="_blank"><strong>/prubudunkove-pruburanna/</strong><small>https://skshine.com.ua/prubudunkove-pruburanna/</small></a></td><td>0</td><td>60</td><td>0,00%</td><td>6,8</td></tr><tr><td><a href="https://skshine.com.ua/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/" target="_blank"><strong>/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/</strong><small>https://skshine.com.ua/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/</small></a></td><td>0</td><td>25</td><td>0,00%</td><td>12,0</td></tr><tr><td><a href="https://skshine.com.ua/category/management/" target="_blank"><strong>/category/management/</strong><small>https://skshine.com.ua/category/management/</small></a></td><td>0</td><td>18</td><td>0,00%</td><td>4,7</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-pislia-remontu-khmelnytskyi/" target="_blank"><strong>/prybyrannia-pislia-remontu-khmelnytskyi/</strong><small>https://skshine.com.ua/prybyrannia-pislia-remontu-khmelnytskyi/</small></a></td><td>0</td><td>9</td><td>0,00%</td><td>6,4</td></tr><tr><td><a href="https://skshine.com.ua/chusta-vanna/" target="_blank"><strong>/chusta-vanna/</strong><small>https://skshine.com.ua/chusta-vanna/</small></a></td><td>0</td><td>8</td><td>0,00%</td><td>3,9</td></tr><tr><td><a href="https://skshine.com.ua/chusta-kuhna/" target="_blank"><strong>/chusta-kuhna/</strong><small>https://skshine.com.ua/chusta-kuhna/</small></a></td><td>0</td><td>7</td><td>0,00%</td><td>6,4</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-ofisiv-khmelnytskyi-bez-klopotu/" target="_blank"><strong>/prybyrannia-ofisiv-khmelnytskyi-bez-klopotu/</strong><small>https://skshine.com.ua/prybyrannia-ofisiv-khmelnytskyi-bez-klopotu/</small></a></td><td>0</td><td>7</td><td>0,00%</td><td>10,4</td></tr><tr><td><a href="https://skshine.com.ua/generalne-prybyrannia-kvartyry-khmelnytskyi/" target="_blank"><strong>/generalne-prybyrannia-kvartyry-khmelnytskyi/</strong><small>https://skshine.com.ua/generalne-prybyrannia-kvartyry-khmelnytskyi/</small></a></td><td>0</td><td>6</td><td>0,00%</td><td>9,0</td></tr><tr><td><a href="https://skshine.com.ua/mytia-pidlogy-profesiinoiu-tekhnikoiu/" target="_blank"><strong>/mytia-pidlogy-profesiinoiu-tekhnikoiu/</strong><small>https://skshine.com.ua/mytia-pidlogy-profesiinoiu-tekhnikoiu/</small></a></td><td>0</td><td>6</td><td>0,00%</td><td>6,7</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <h2>Де з’явився приріст</h2>
+      <div class="summary-grid">
+        <div><h3>Сторінки: приріст кліків</h3><div class="table-scroll"><table><thead><tr><th>Сторінка</th><th>Приріст</th><th>Було → стало</th><th>Метрика</th></tr></thead><tbody><tr><td><a href="https://skshine.com.ua/" target="_blank"><strong>/</strong><small>https://skshine.com.ua/</small></a></td><td class="plus">+10</td><td>22 → 32</td><td>кліків</td></tr><tr><td><a href="https://skshine.com.ua/index.php/myttia-vikon-vitrun-fasadiv/" target="_blank"><strong>/index.php/myttia-vikon-vitrun-fasadiv/</strong><small>https://skshine.com.ua/index.php/myttia-vikon-vitrun-fasadiv/</small></a></td><td class="plus">+2</td><td>1 → 3</td><td>кліків</td></tr><tr><td><a href="https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/" target="_blank"><strong>/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</strong><small>https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</small></a></td><td class="plus">+2</td><td>0 → 2</td><td>кліків</td></tr><tr><td><a href="https://skshine.com.ua/index.php/dodatkovi-poslugu/" target="_blank"><strong>/index.php/dodatkovi-poslugu/</strong><small>https://skshine.com.ua/index.php/dodatkovi-poslugu/</small></a></td><td class="plus">+1</td><td>0 → 1</td><td>кліків</td></tr><tr><td><a href="https://skshine.com.ua/index.php/spets-prybyrannia/" target="_blank"><strong>/index.php/spets-prybyrannia/</strong><small>https://skshine.com.ua/index.php/spets-prybyrannia/</small></a></td><td class="plus">+1</td><td>0 → 1</td><td>кліків</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-pislya-remonty/" target="_blank"><strong>/prybyrannia-pislya-remonty/</strong><small>https://skshine.com.ua/prybyrannia-pislya-remonty/</small></a></td><td class="plus">+1</td><td>0 → 1</td><td>кліків</td></tr></tbody></table></div></div>
+        <div><h3>Запити: приріст кліків</h3><div class="table-scroll"><table><thead><tr><th>Запит</th><th>Приріст</th><th>Було → стало</th><th>Метрика</th></tr></thead><tbody><tr><td>клінінг хмельницький</td><td class="plus">+2</td><td>3 → 5</td><td>кліків</td></tr><tr><td>sk shine</td><td class="plus">+2</td><td>2 → 4</td><td>кліків</td></tr><tr><td>прибирання квартир хмельницький</td><td class="plus">+2</td><td>0 → 2</td><td>кліків</td></tr><tr><td>прання килимів хмельницький</td><td class="plus">+1</td><td>0 → 1</td><td>кліків</td></tr><tr><td>прибирання подвір&#39;я</td><td class="plus">+1</td><td>0 → 1</td><td>кліків</td></tr></tbody></table></div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Де виросли покази</h2>
+      <p>Покази важливі: вони показують, де Google вже почав частіше виводити сайт, навіть якщо кліки ще потрібно добирати.</p>
+      <div class="summary-grid">
+        <div><h3>Сторінки</h3><div class="table-scroll"><table><thead><tr><th>Сторінка</th><th>Приріст</th><th>Було → стало</th><th>Метрика</th></tr></thead><tbody><tr><td><a href="https://skshine.com.ua/" target="_blank"><strong>/</strong><small>https://skshine.com.ua/</small></a></td><td class="plus">+516</td><td>661 → 1 177</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/" target="_blank"><strong>/myttia-vikon-vitrun-fasadiv/</strong><small>https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/</small></a></td><td class="plus">+108</td><td>0 → 108</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/dodatkovi-poslugu/" target="_blank"><strong>/index.php/dodatkovi-poslugu/</strong><small>https://skshine.com.ua/index.php/dodatkovi-poslugu/</small></a></td><td class="plus">+74</td><td>91 → 165</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/prubudunkove-pruburanna/" target="_blank"><strong>/prubudunkove-pruburanna/</strong><small>https://skshine.com.ua/prubudunkove-pruburanna/</small></a></td><td class="plus">+60</td><td>0 → 60</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/kosmetuchnuy-remont/" target="_blank"><strong>/index.php/kosmetuchnuy-remont/</strong><small>https://skshine.com.ua/index.php/kosmetuchnuy-remont/</small></a></td><td class="plus">+48</td><td>24 → 72</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/spets-prybyrannia/" target="_blank"><strong>/index.php/spets-prybyrannia/</strong><small>https://skshine.com.ua/index.php/spets-prybyrannia/</small></a></td><td class="plus">+38</td><td>30 → 68</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/" target="_blank"><strong>/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</strong><small>https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</small></a></td><td class="plus">+36</td><td>18 → 54</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/prybyrannia-generalne/" target="_blank"><strong>/index.php/prybyrannia-generalne/</strong><small>https://skshine.com.ua/index.php/prybyrannia-generalne/</small></a></td><td class="plus">+27</td><td>64 → 91</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/" target="_blank"><strong>/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/</strong><small>https://skshine.com.ua/kliningovi-poslugy-khmelnytskyi-shcho-zamovyty/</small></a></td><td class="plus">+25</td><td>0 → 25</td><td>показів</td></tr><tr><td><a href="https://skshine.com.ua/index.php/biznes-poslugu/" target="_blank"><strong>/index.php/biznes-poslugu/</strong><small>https://skshine.com.ua/index.php/biznes-poslugu/</small></a></td><td class="plus">+24</td><td>35 → 59</td><td>показів</td></tr></tbody></table></div></div>
+        <div><h3>Запити</h3><div class="table-scroll"><table><thead><tr><th>Запит</th><th>Приріст</th><th>Було → стало</th><th>Метрика</th></tr></thead><tbody><tr><td>миття фасадів</td><td class="plus">+102</td><td>1 → 103</td><td>показів</td></tr><tr><td>bathroom renovation</td><td class="plus">+56</td><td>35 → 91</td><td>показів</td></tr><tr><td>клінінг</td><td class="plus">+43</td><td>7 → 50</td><td>показів</td></tr><tr><td>прибирання квартир хмельницький</td><td class="plus">+42</td><td>7 → 49</td><td>показів</td></tr><tr><td>прибирання хмельницький</td><td class="plus">+35</td><td>21 → 56</td><td>показів</td></tr><tr><td>клининг хмельницкий</td><td class="plus">+33</td><td>9 → 42</td><td>показів</td></tr><tr><td>клінінг хмельницький</td><td class="plus">+30</td><td>159 → 189</td><td>показів</td></tr><tr><td>wfp система для миття вікон</td><td class="plus">+11</td><td>0 → 11</td><td>показів</td></tr><tr><td>bathroom cleaning</td><td class="plus">+7</td><td>0 → 7</td><td>показів</td></tr><tr><td>house cleaning service</td><td class="plus">+7</td><td>0 → 7</td><td>показів</td></tr></tbody></table></div></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Топ запитів за останні 90 днів</h2>
+      <div class="table-scroll"><table><thead><tr><th>Запит</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th></tr></thead><tbody><tr><td>клінінг хмельницький</td><td>5</td><td>189</td><td>2,65%</td><td>8,33</td></tr><tr><td>sk shine</td><td>4</td><td>14</td><td>28,57%</td><td>1,64</td></tr><tr><td>прибирання квартир хмельницький</td><td>2</td><td>49</td><td>4,08%</td><td>11,55</td></tr><tr><td>прибирання хмельницький</td><td>1</td><td>56</td><td>1,79%</td><td>10,25</td></tr><tr><td>прибирання подвір&#39;я</td><td>1</td><td>5</td><td>20,00%</td><td>7,80</td></tr><tr><td>прання килимів хмельницький</td><td>1</td><td>1</td><td>100,00%</td><td>1,00</td></tr><tr><td>миття фасадів</td><td>0</td><td>103</td><td>0,00%</td><td>53,34</td></tr><tr><td>bathroom renovation</td><td>0</td><td>91</td><td>0,00%</td><td>10,85</td></tr><tr><td>клінінг</td><td>0</td><td>50</td><td>0,00%</td><td>47,00</td></tr><tr><td>клининг хмельницкий</td><td>0</td><td>42</td><td>0,00%</td><td>8,81</td></tr><tr><td>уборка хмельницкий</td><td>0</td><td>23</td><td>0,00%</td><td>16,74</td></tr><tr><td>wfp система для миття вікон</td><td>0</td><td>11</td><td>0,00%</td><td>2,91</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <h2>Топ сторінок за останні 90 днів</h2>
+      <div class="table-scroll"><table><thead><tr><th>Сторінка</th><th>Кліки</th><th>Покази</th><th>CTR</th><th>Позиція</th></tr></thead><tbody><tr><td><a href="https://skshine.com.ua/" target="_blank"><strong>/</strong><small>https://skshine.com.ua/</small></a></td><td>32</td><td>1 177</td><td>2,72%</td><td>12,61</td></tr><tr><td><a href="https://skshine.com.ua/index.php/prubudunkove-pruburanna/" target="_blank"><strong>/index.php/prubudunkove-pruburanna/</strong><small>https://skshine.com.ua/index.php/prubudunkove-pruburanna/</small></a></td><td>4</td><td>108</td><td>3,70%</td><td>6,00</td></tr><tr><td><a href="https://skshine.com.ua/index.php/myttia-vikon-vitrun-fasadiv/" target="_blank"><strong>/index.php/myttia-vikon-vitrun-fasadiv/</strong><small>https://skshine.com.ua/index.php/myttia-vikon-vitrun-fasadiv/</small></a></td><td>3</td><td>253</td><td>1,19%</td><td>25,38</td></tr><tr><td><a href="https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/" target="_blank"><strong>/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</strong><small>https://skshine.com.ua/index.php/mytia-pidlogy-profesiinoiu-tekhnikoiu/</small></a></td><td>2</td><td>54</td><td>3,70%</td><td>8,72</td></tr><tr><td><a href="https://skshine.com.ua/index.php/dodatkovi-poslugu/" target="_blank"><strong>/index.php/dodatkovi-poslugu/</strong><small>https://skshine.com.ua/index.php/dodatkovi-poslugu/</small></a></td><td>1</td><td>165</td><td>0,61%</td><td>5,70</td></tr><tr><td><a href="https://skshine.com.ua/index.php/spets-prybyrannia/" target="_blank"><strong>/index.php/spets-prybyrannia/</strong><small>https://skshine.com.ua/index.php/spets-prybyrannia/</small></a></td><td>1</td><td>68</td><td>1,47%</td><td>4,68</td></tr><tr><td><a href="https://skshine.com.ua/prybyrannia-pislya-remonty/" target="_blank"><strong>/prybyrannia-pislya-remonty/</strong><small>https://skshine.com.ua/prybyrannia-pislya-remonty/</small></a></td><td>1</td><td>2</td><td>50,00%</td><td>10,00</td></tr><tr><td><a href="https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/" target="_blank"><strong>/myttia-vikon-vitrun-fasadiv/</strong><small>https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/</small></a></td><td>0</td><td>108</td><td>0,00%</td><td>37,93</td></tr><tr><td><a href="https://skshine.com.ua/index.php/prybyrannia-generalne/" target="_blank"><strong>/index.php/prybyrannia-generalne/</strong><small>https://skshine.com.ua/index.php/prybyrannia-generalne/</small></a></td><td>0</td><td>91</td><td>0,00%</td><td>7,30</td></tr><tr><td><a href="https://skshine.com.ua/index.php/kosmetuchnuy-remont/" target="_blank"><strong>/index.php/kosmetuchnuy-remont/</strong><small>https://skshine.com.ua/index.php/kosmetuchnuy-remont/</small></a></td><td>0</td><td>72</td><td>0,00%</td><td>6,74</td></tr><tr><td><a href="https://skshine.com.ua/index.php/himchystka-mebliv-kukumiv/" target="_blank"><strong>/index.php/himchystka-mebliv-kukumiv/</strong><small>https://skshine.com.ua/index.php/himchystka-mebliv-kukumiv/</small></a></td><td>0</td><td>67</td><td>0,00%</td><td>7,00</td></tr><tr><td><a href="https://skshine.com.ua/prubudunkove-pruburanna/" target="_blank"><strong>/prubudunkove-pruburanna/</strong><small>https://skshine.com.ua/prubudunkove-pruburanna/</small></a></td><td>0</td><td>60</td><td>0,00%</td><td>6,77</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <h2>Що варто виправити далі</h2>
+      <div class="work-list">
+        <div class="work-item"><span class="check">1</span><span><strong>Прибрати старі URL з /index.php/.</strong><br>У поточній вибірці таких сторінок: 10. Вони можуть розмивати сигнали між старими й новими адресами.</span></div>
+        <div class="work-item"><span class="check">2</span><span><strong>Посилити сторінки з показами без кліків.</strong><br>Для них потрібні кращі title, description, H1, FAQ і комерційні блоки.</span></div>
+        <div class="work-item"><span class="check">3</span><span><strong>Підтягнути нові сторінки.</strong><br>Нових сторінок у поточній 90-денній вибірці: 15; вони вже почали отримувати покази.</span></div>
+        <div class="work-item"><span class="check">4</span><span><strong>Працювати з локальними запитами.</strong><br>Пріоритет: клінінг Хмельницький, прибирання квартир, прибирання офісів, прибирання після ремонту.</span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="plan">
+      <h2>План на наступний період</h2>
+      <div class="plan">
+        <div class="plan-card"><b>1. Технічна чистка</b><span>301-редиректи для /index.php/, canonical, sitemap, перевірка індексації.</span></div>
+        <div class="plan-card"><b>2. Сніпети</b><span>Оновити title/description для сторінок, де багато показів і низький CTR.</span></div>
+        <div class="plan-card"><b>3. Перелінковка</b><span>Зв’язати головну, послуги й поради так, щоб Google краще бачив пріоритетні сторінки.</span></div>
+        <div class="plan-card"><b>4. Контент</b><span>Доробити статті й посадкові сторінки під запити, які вже з’явилися у GSC.</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Підсумок</h2>
+      <p>За останні 90 днів SK SHINE має позитивну SEO-динаміку за Search Console: кліків більше, показів більше, CTR вищий, середня позиція краща. Це означає, що сайт став помітнішим у Google. Наступний крок — не просто додавати нові матеріали, а закріплювати вже отриману видимість: технічно очистити URL, посилити сніпети й довести сторінки з показами до стабільних кліків.</p>
+    </section>
+
+
+    <section class="panel" id="client-message">
+      <span class="section-tag">Текст для відправки</span>
+      <h2>Повідомлення до звіту</h2>
+      <div class="client-message-box">Добрий день! Підготували SEO-звіт по сайту SK SHINE за останні 90 днів у порівнянні з попередніми 90 днями.
+
+У звіті зібрані не лише позиції чи кліки, а повна картина по сайту:
+- як змінилася видимість у Google за даними Search Console;
+- що відбулося з трафіком і якістю відвідувань у GA4;
+- які були контактні дії: дзвінки, форми, Telegram, Viber, email;
+- які нові сторінки та матеріали з’явилися на сайті;
+- які URL уже почав бачити Google;
+- які технічні моменти варто виправити далі.
+
+Ключовий висновок: за останні 90 днів SEO-динаміка за Search Console позитивна. Кліки з Google зросли з 28 до 44, покази — з 1 313 до 1 630, CTR покращився, а середня позиція стала кращою. Також Google почав бачити більше сторінок сайту: кількість URL з показами зросла з 11 до 26.
+
+При цьому в GA4 видно, що загальний трафік залежить не тільки від SEO, а й від реклами та інших каналів. Тому окремо вивели органіку, контактні дії та технічні рекомендації.
+
+Наступний фокус робіт: прибрати старі /index.php/ URL, посилити сторінки з показами без кліків, покращити title/description, перелінкувати нові матеріали з основними послугами та привести рубрики блогу до порядку.</div>
+      <div class="copy-hint">Цей текст можна відправити разом із посиланням на звіт.</div>
+    </section>
+
+    <div class="footer">Джерело даних: Google Search Console через Maton Gateway. Порівняння: 2025-12-30 — 2026-03-29 проти 2026-03-30 — 2026-06-27. Search type: Web. Дані GSC можуть оновлюватися із затримкою.</div>
+  </main>
+</body>
+</html>
