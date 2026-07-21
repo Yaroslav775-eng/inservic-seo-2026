@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-label="Ремонт гіроскутера у сервісі InService">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset=".58" stop-color="#eef6ff"/><stop offset="1" stop-color="#fff1e8"/></linearGradient><linearGradient id="or" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#f05a1a"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#10243d" flood-opacity=".18"/></filter></defs>
+  <rect width="900" height="520" rx="36" fill="url(#bg)"/>
+  <g opacity=".55" stroke="#d9e7f6" stroke-width="2"><path d="M90 105h720M90 180h720M90 255h720M90 330h720M90 405h720"/><path d="M160 70v380M290 70v380M420 70v380M550 70v380M680 70v380"/></g>
+  <g transform="translate(135 285)" filter="url(#s)">
+    <ellipse cx="92" cy="90" rx="70" ry="58" fill="#10243d"/><ellipse cx="92" cy="90" rx="43" ry="35" fill="#fff"/><ellipse cx="92" cy="90" rx="19" ry="15" fill="url(#or)"/>
+    <ellipse cx="538" cy="90" rx="70" ry="58" fill="#10243d"/><ellipse cx="538" cy="90" rx="43" ry="35" fill="#fff"/><ellipse cx="538" cy="90" rx="19" ry="15" fill="url(#or)"/>
+    <path d="M102 52 C185 -24 448 -24 528 52 L500 82 C430 36 200 36 130 82 Z" fill="#10243d"/>
+    <path d="M205 40 H425 Q452 40 470 59 L498 88 H132 L160 59 Q178 40 205 40 Z" fill="#fff" stroke="#d8e5f4" stroke-width="4"/>
+    <path d="M258 45 H372 Q394 45 410 62 L435 88 H195 L220 62 Q236 45 258 45 Z" fill="url(#or)"/>
+    <circle cx="250" cy="66" r="7" fill="#10243d"/><circle cx="380" cy="66" r="7" fill="#10243d"/>
+  </g>
+  <rect x="585" y="92" width="190" height="58" rx="29" fill="#fff" stroke="#ffd3ba" stroke-width="2"/><text x="680" y="128" text-anchor="middle" font-family="Segoe UI,Arial" font-size="18" font-weight="800" fill="#f26522">GYRO SERVICE</text>
+  <rect x="92" y="88" width="230" height="86" rx="24" fill="#fff" opacity=".92" stroke="#dbe8f6"/><text x="116" y="126" font-family="Segoe UI,Arial" font-size="22" font-weight="800" fill="#10243d">АКБ · Баланс</text><text x="116" y="154" font-family="Segoe UI,Arial" font-size="16" fill="#5d6d80">контролер, датчики, колеса</text>
+</svg>
