@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SK SHINE: план усиления старых страниц</title>
+  <style>
+    :root {
+      --ink: #152942;
+      --muted: #64748b;
+      --paper: #fffdf7;
+      --card: #ffffff;
+      --line: #dce7ef;
+      --green: #1f8a65;
+      --green-soft: #e7f7ef;
+      --amber: #a76300;
+      --amber-soft: #fff2d4;
+      --blue: #2563eb;
+      --blue-soft: #eaf1ff;
+      --shadow: 0 24px 70px rgba(21, 41, 66, .10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(127, 200, 179, .28), transparent 34rem),
+        radial-gradient(circle at 100% 10%, rgba(245, 186, 91, .22), transparent 30rem),
+        linear-gradient(135deg, #f8fbf7 0%, var(--paper) 52%, #f5f8fb 100%);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 44px 18px 64px; }
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: rgba(31, 138, 101, .10);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(31, 138, 101, .25);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font: 700 12px/1.2 Verdana, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 18px 0 12px; font-size: clamp(34px, 5vw, 62px); line-height: .98; letter-spacing: -.05em; max-width: 900px; }
+    h2 { margin: 0 0 14px; font-size: clamp(24px, 3vw, 34px); line-height: 1.06; letter-spacing: -.03em; }
+    p { margin: 0 0 12px; font-size: 18px; color: #2c4057; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; align-items: stretch; margin-top: 28px; }
+    .next-card, .note-card, .card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      padding: 22px;
+      box-shadow: 0 12px 36px rgba(21, 41, 66, .06);
+    }
+    .next-card { background: linear-gradient(135deg, #ffffff, #f0fbf6); }
+    .next-label { color: var(--green); font: 700 12px Verdana, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+    .next-title { margin-top: 8px; font-size: 28px; font-weight: 800; letter-spacing: -.03em; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .pill { padding: 8px 10px; border-radius: 999px; background: #f4f7fb; color: #334155; font: 700 12px Verdana, sans-serif; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 22px 0; }
+    .step { border: 1px solid var(--line); border-radius: 20px; padding: 18px; background: rgba(255,255,255,.72); min-height: 132px; }
+    .step b { display: block; margin-bottom: 8px; font-size: 18px; }
+    .step span { color: var(--muted); font-size: 15px; }
+    .table-card { margin-top: 24px; border: 1px solid var(--line); border-radius: 26px; overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+    .table-head { display:flex; justify-content:space-between; gap: 16px; align-items:flex-end; padding: 24px; border-bottom: 1px solid var(--line); }
+    .table-head p { margin: 0; color: var(--muted); font-size: 16px; }
+    table { width: 100%; border-collapse: collapse; font-family: Verdana, sans-serif; font-size: 13px; }
+    th { text-align: left; padding: 14px 12px; color: #40516a; background: #f4f8fb; text-transform: uppercase; letter-spacing: .07em; font-size: 11px; }
+    td { padding: 14px 12px; border-top: 1px solid #edf2f7; vertical-align: top; }
+    tr:hover td { background: #fbfdfc; }
+    .num { font-weight: 800; color: var(--muted); width: 48px; }
+    .url { max-width: 210px; overflow-wrap: anywhere; }
+    a { color: #1c6fb8; text-decoration: none; border-bottom: 1px solid rgba(28,111,184,.25); }
+    .muted { color: var(--muted); }
+    .small { display: block; margin-top: 2px; font-size: 12px; }
+    .priority { display:inline-block; min-width: 34px; text-align:center; border-radius: 999px; padding: 5px 8px; background: #f2f6f7; font-weight: 800; color: #34495e; }
+    .badge { display:inline-block; white-space: nowrap; border-radius: 999px; padding: 7px 10px; font-weight: 800; font-size: 12px; }
+    .ready { background: var(--green-soft); color: var(--green); }
+    .planned { background: var(--blue-soft); color: var(--blue); }
+    .decision { background: var(--amber-soft); color: var(--amber); }
+    .neutral { background: #eef2f7; color: #475569; }
+    .mini-link { display:inline-block; border: 1px solid rgba(28,111,184,.2); border-radius: 999px; padding: 7px 10px; background: #f6fbff; font-weight: 800; }
+    .footer { color: var(--muted); font: 13px Verdana, sans-serif; margin-top: 18px; }
+    @media (max-width: 900px) {
+      .hero-grid, .steps { grid-template-columns: 1fr; }
+      .table-card { overflow-x: auto; }
+      table { min-width: 1040px; }
+      .hero { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">SK SHINE SEO process</span>
+      <h1>План мягкого усиления старых страниц</h1>
+      <p>Работаем без редизайна и без ломки текущего сайта: каждый будний день берем одну уже индексируемую страницу, сравниваем ее с выдачей по региону, усиливаем текст под SEO и AI-ответы, затем публикуем прототип для согласования.</p>
+      <div class="hero-grid">
+        <div class="next-card">
+          <div class="next-label">Следующая страница</div>
+          <div class="next-title">Генеральне прибирання</div>
+          <div class="meta">
+            <span class="pill">Дата: 2026-07-23</span>
+            <span class="pill">Приоритет: P0</span>
+            <span class="pill">Статус: Planned</span>
+          </div>
+        </div>
+        <div class="note-card">
+          <h2>Правило безопасности</h2>
+          <p>В WordPress не публикуем и в Google Search Console не отправляем без отдельного подтверждения. Сначала собственник видит согласовательную версию.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="step"><b>1. Текущая страница</b><span>Смотрим, что уже есть: оффер, цены, фото, структура, FAQ, внутренние ссылки.</span></div>
+      <div class="step"><b>2. Выдача и конкуренты</b><span>Сравниваем с региональными конкурентами по Хмельницкому и поисковым интентам.</span></div>
+      <div class="step"><b>3. Мягкая правка</b><span>Усиливаем тексты, H1/H2, выгоды, FAQ и AI-структуру без визуальной перестройки.</span></div>
+      <div class="step"><b>4. GitHub-прототип</b><span>Публикуем версию с аккуратной подсветкой изменений и обновляем статус.</span></div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-head">
+        <div>
+          <h2>Очередь страниц</h2>
+          <p>15 старых страниц плюс один буферный день на внедрение и проверку.</p>
+        </div>
+        <a class="mini-link" href="queue.csv">Скачать CSV</a>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Дата</th>
+            <th>Приоритет</th>
+            <th>Страница</th>
+            <th>URL</th>
+            <th>Статус</th>
+            <th>Что усиливаем</th>
+            <th>Согласование</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+  <td class="num">1</td>
+  <td><strong>2026-07-22</strong><span class="muted small">Wednesday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Миття вікон, вітрин і фасадів</strong><span class="muted small">Money page with subclusters</span></td>
+  <td class="url"><a href="https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/">https://skshine.com.ua/myttia-vikon-vitrun-fasadiv/</a></td>
+  <td><span class="badge ready">Approval Ready</span></td>
+  <td>Текстовая SEO/AI-правка без изменения дизайна; версия с подсветкой для согласования</td>
+  <td><a class="mini-link" href="https://yaroslav775-eng.github.io/inservic-seo-2026/site/skshine/myttia-vikon-vitryn-fasadiv/color-changes.html?v=c0c2947">прототип</a></td>
+</tr>
+<tr>
+  <td class="num">2</td>
+  <td><strong>2026-07-23</strong><span class="muted small">Thursday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Генеральне прибирання</strong><span class="muted small">Money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/prybyrannia-generalne/">https://skshine.com.ua/prybyrannia-generalne/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>H1+город; первый экран; что входит; отличие от поддерживающего/после ремонта; FAQ; нижний текст</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">3</td>
+  <td><strong>2026-07-24</strong><span class="muted small">Friday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Прибирання після ремонту</strong><span class="muted small">Money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/prybyrannia-pislya-remonty/">https://skshine.com.ua/prybyrannia-pislya-remonty/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Что входит/не входит; допработы; материалы; окна после ремонта; цена/факторы; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">4</td>
+  <td><strong>2026-07-27</strong><span class="muted small">Monday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Хімчистка меблів, дивану, килимів</strong><span class="muted small">Money page with subclusters</span></td>
+  <td class="url"><a href="https://skshine.com.ua/himchystka-mebliv-kukumiv/">https://skshine.com.ua/himchystka-mebliv-kukumiv/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Разделы по объектам; пятна/запахи; сушка; ограничения результата; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">5</td>
+  <td><strong>2026-07-28</strong><span class="muted small">Tuesday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Прибирання офісів і бізнес-приміщень</strong><span class="muted small">B2B hub</span></td>
+  <td class="url"><a href="https://skshine.com.ua/biznes-poslugu/">https://skshine.com.ua/biznes-poslugu/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Сегменты бизнеса; график; договор; контроль качества; регулярность; CTA для бизнеса</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">6</td>
+  <td><strong>2026-07-29</strong><span class="muted small">Wednesday</span></td>
+  <td><span class="priority">P0</span></td>
+  <td><strong>Клінінг Хмельницький / прибирання квартир і будинків</strong><span class="muted small">Homepage commercial hub</span></td>
+  <td class="url"><a href="https://skshine.com.ua/">https://skshine.com.ua/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>H1/оффер; популярные услуги; цены от; Google-отзывы; быстрые переходы; блок квартиры/будинки</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">7</td>
+  <td><strong>2026-07-30</strong><span class="muted small">Thursday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Прибудинкове прибирання / територія / ОСББ</strong><span class="muted small">Niche money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/prubudunkove-pruburanna/">https://skshine.com.ua/prubudunkove-pruburanna/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>ОСББ/ЖК/территории; регулярность; договор; сезонность; факторы цены</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">8</td>
+  <td><strong>2026-07-31</strong><span class="muted small">Friday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Підтримуюче / регулярне прибирання</strong><span class="muted small">Money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/prybyrannia-pidtrumuucse/">https://skshine.com.ua/prybyrannia-pidtrumuucse/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Графики 1/2/4 раза в месяц; что входит; что не входит; квартира/офис; цена/value</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">9</td>
+  <td><strong>2026-08-03</strong><span class="muted small">Monday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Спецприбирання</strong><span class="muted small">Niche money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/spets-prybyrannia/">https://skshine.com.ua/spets-prybyrannia/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Сценарии; процесс оценки; безопасность; запахи; мусор; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">10</td>
+  <td><strong>2026-08-04</strong><span class="muted small">Tuesday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Чиста кухня / прибирання кухні</strong><span class="muted small">Niche money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/chusta-kuhna/">https://skshine.com.ua/chusta-kuhna/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Standart/Premium; техника; жир; безопасность средств; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">11</td>
+  <td><strong>2026-08-05</strong><span class="muted small">Wednesday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Чиста ванна / прибирання ванної</strong><span class="muted small">Niche money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/chusta-vanna/">https://skshine.com.ua/chusta-vanna/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Standart/Premium; налет; швы; душкабина; сантехника; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">12</td>
+  <td><strong>2026-08-06</strong><span class="muted small">Thursday</span></td>
+  <td><span class="priority">P1</span></td>
+  <td><strong>Миття підлоги професійною технікою</strong><span class="muted small">B2B/support money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/mytia-pidlogy-profesiinoiu-tekhnikoiu/">https://skshine.com.ua/mytia-pidlogy-profesiinoiu-tekhnikoiu/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Типы покрытий; объекты; машинное мытье; цена; связь с B2B</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">13</td>
+  <td><strong>2026-08-07</strong><span class="muted small">Friday</span></td>
+  <td><span class="priority">P2</span></td>
+  <td><strong>Додаткові послуги до прибирання</strong><span class="muted small">Support/price page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/dodatkovi-poslugu/">https://skshine.com.ua/dodatkovi-poslugu/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Группировка по зонам; что отдельно/допом; цены; ссылки на основные услуги</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">14</td>
+  <td><strong>2026-08-10</strong><span class="muted small">Monday</span></td>
+  <td><span class="priority">P2</span></td>
+  <td><strong>Прибирання після квартирантів</strong><span class="muted small">Niche money page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/prybyrannia-pisla-kvarturantiv/">https://skshine.com.ua/prybyrannia-pisla-kvarturantiv/</a></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Запахи; кухня; санузел; мусор; мебель; срочная подготовка к показу; FAQ</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">15</td>
+  <td><strong>2026-08-11</strong><span class="muted small">Tuesday</span></td>
+  <td><span class="priority">P2</span></td>
+  <td><strong>Косметичний ремонт</strong><span class="muted small">Questionable non-cleaning page</span></td>
+  <td class="url"><a href="https://skshine.com.ua/kosmetuchnuy-remont/">https://skshine.com.ua/kosmetuchnuy-remont/</a></td>
+  <td><span class="badge decision">Decision Needed</span></td>
+  <td>Решение: оставить/усилить отдельно или законсервировать; не переливать клининговый вес без стратегии</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+<tr>
+  <td class="num">16</td>
+  <td><strong>2026-08-12</strong><span class="muted small">Wednesday</span></td>
+  <td><span class="priority">Ops</span></td>
+  <td><strong>Буфер внедрения и проверки</strong><span class="muted small">Process day</span></td>
+  <td class="url"><span class="muted">-</span></td>
+  <td><span class="badge planned">Planned</span></td>
+  <td>Перенос утвержденных текстов; GSC-переобход; обновление статусов; проверка ссылок</td>
+  <td><span class="muted">пока нет</span></td>
+</tr>
+        </tbody>
+      </table>
+    </section>
+    <div class="footer">Обновлено: 2026-07-22. Источник очереди: skshine-seo-project/13_daily_page_process/03_weekday_page_queue.csv.</div>
+  </main>
+</body>
+</html>
