@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карта змін SEO-тексту | SK SHINE</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#10243f;
+      --muted:#607087;
+      --line:#dbe6ef;
+      --soft:#f5f9fc;
+      --cream:#fff9ed;
+      --gold:#e7b645;
+      --green:#0f6f5c;
+      --green-dark:#123834;
+      --red:#bd3f3f;
+      --blue:#3466d6;
+      --white:#fff;
+      --shadow:0 20px 60px rgba(16,36,63,.12);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Manrope, system-ui, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(231,182,69,.18), transparent 28%),
+        radial-gradient(circle at 92% 0%, rgba(15,111,92,.12), transparent 24%),
+        linear-gradient(180deg,#f8fbfd 0%,#fffaf0 100%);
+      line-height:1.58;
+    }
+    a{color:inherit}
+    .wrap{max-width:1240px;margin:0 auto;padding:28px 22px 70px}
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+      gap:22px;
+      align-items:stretch;
+      padding:34px;
+      border:1px solid var(--line);
+      border-radius:34px;
+      background:rgba(255,255,255,.82);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+    }
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:7px 12px;
+      border:1px solid rgba(231,182,69,.6);
+      border-radius:999px;
+      background:#fff5d7;
+      color:#815c08;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    h1,h2,h3{margin:0;color:var(--ink);line-height:1.08}
+    h1{margin-top:18px;font-family:"Playfair Display", Georgia, serif;font-size:clamp(38px,5.2vw,72px);letter-spacing:-.04em}
+    h2{font-size:clamp(27px,3vw,42px);letter-spacing:-.035em}
+    h3{font-size:20px;letter-spacing:-.02em}
+    .lead{max-width:780px;margin:18px 0 0;color:#354967;font-size:18px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:13px 18px;border-radius:999px;border:1px solid transparent;
+      font-weight:800;text-decoration:none;transition:.2s ease;
+    }
+    .btn.primary{background:var(--green-dark);color:white;box-shadow:0 12px 28px rgba(18,56,52,.23)}
+    .btn.secondary{background:white;border-color:var(--line);color:var(--ink)}
+    .btn:hover{transform:translateY(-1px)}
+    .score-card{
+      display:grid;
+      gap:14px;
+      padding:22px;
+      border-radius:28px;
+      background:linear-gradient(160deg,#123834 0%,#0f6f5c 100%);
+      color:white;
+      overflow:hidden;
+      position:relative;
+    }
+    .score-card:after{
+      content:"";position:absolute;right:-55px;top:-55px;width:170px;height:170px;border-radius:50%;
+      background:rgba(255,255,255,.11);
+    }
+    .score-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px;border:1px solid rgba(255,255,255,.18);border-radius:20px;background:rgba(255,255,255,.08)}
+    .score-row b{font-size:14px}.score-row span{color:#cbe5dd;font-size:13px}.score-row strong{font-size:22px;color:#ffe08a}
+    .nav{
+      position:sticky;top:0;z-index:30;margin:18px 0 24px;padding:10px;
+      display:flex;gap:8px;overflow:auto;border:1px solid var(--line);border-radius:999px;
+      background:rgba(255,255,255,.9);box-shadow:0 10px 34px rgba(16,36,63,.08);backdrop-filter:blur(12px);
+    }
+    .nav a{white-space:nowrap;text-decoration:none;padding:10px 14px;border-radius:999px;color:#40546e;font-weight:800;font-size:13px}
+    .nav a:hover{background:var(--soft);color:var(--ink)}
+    section{margin-top:24px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.86);box-shadow:0 12px 40px rgba(16,36,63,.07)}
+    .section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:22px}
+    .section-head p{margin:8px 0 0;color:var(--muted);max-width:760px}
+    .pill{display:inline-flex;padding:7px 11px;border-radius:999px;background:#eff6f3;color:var(--green);font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .frames{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .frame-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:white}
+    .frame-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);background:#f7fafc}
+    .frame-head b{font-size:15px}.frame-head span{font-size:12px;color:var(--muted);font-weight:700}
+    iframe{display:block;width:100%;height:620px;border:0;background:white}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:20px;border:1px solid var(--line);border-radius:22px;background:white}
+    .card.good{border-color:rgba(15,111,92,.28);background:linear-gradient(180deg,#ffffff,#f3fbf8)}
+    .card.warn{border-color:rgba(231,182,69,.44);background:linear-gradient(180deg,#ffffff,#fff8e2)}
+    .card.bad{border-color:rgba(189,63,63,.25);background:linear-gradient(180deg,#ffffff,#fff4f4)}
+    .card p{margin:10px 0 0;color:var(--muted);font-size:14px}
+    .tag{display:inline-flex;margin-bottom:12px;padding:6px 9px;border-radius:999px;background:#edf4ff;color:#2954b7;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+    .tag.added{background:#eaf8f2;color:#087150}.tag.missing{background:#fff1d0;color:#8a5d00}.tag.changed{background:#edf4ff;color:#2954b7}
+    .changes{display:grid;gap:18px}
+    .change-item{border:1px solid var(--line);border-radius:24px;background:white;overflow:hidden}
+    .change-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;background:#f7fafc;border-bottom:1px solid var(--line)}
+    .change-top strong{font-size:18px}.impact{font-size:12px;font-weight:900;text-transform:uppercase;color:var(--green);letter-spacing:.07em}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .before,.after{padding:18px}.before{border-right:1px solid var(--line);background:#fff}.after{background:#fafffd}
+    .label{display:block;margin-bottom:9px;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .before .label{color:#a45757}.after .label{color:#087150}
+    .quote{margin:0;padding:14px;border-radius:16px;background:#f5f7fa;color:#243854;font-size:14px}
+    .after .quote{background:#eaf8f2}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px;background:white}
+    th,td{padding:15px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+    th{background:#edf3f8;color:#40506a;font-size:12px;text-transform:uppercase;letter-spacing:.07em}
+    tr:last-child td{border-bottom:0}
+    .ok{color:#087150;font-weight:900}.no{color:var(--red);font-weight:900}.mid{color:#9a6b00;font-weight:900}
+    .todo-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:item}
+    .todo{position:relative;padding:22px 20px 20px 62px;border-radius:22px;background:#10243f;color:white;min-height:168px;overflow:hidden}
+    .todo:before{counter-increment:item;content:counter(item);position:absolute;left:18px;top:20px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#ffe08a;color:#10243f;font-weight:900}
+    .todo h3{color:white}.todo p{color:#cbd7e6;margin:10px 0 0;font-size:14px}
+    .note{padding:16px 18px;border-radius:20px;background:#fff5d7;border:1px solid rgba(231,182,69,.45);color:#5c430e;font-weight:700}
+    .footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:980px){.hero,.frames,.grid,.todo-list,.compare{grid-template-columns:1fr}.before{border-right:0;border-bottom:1px solid var(--line)}iframe{height:520px}.section-head{display:block}.hero{padding:24px}section{padding:22px}.wrap{padding-inline:14px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">Карта змін</span>
+        <h1>Що саме змінилось у SEO-тексті сторінки</h1>
+        <p class="lead">Це службова сторінка для перевірки мʼякої правки: дизайн, ціни, форма і структура сайту майже не змінюються, але текст стає точнішим для Google, локальної видачі та AI-відповідей.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="index.html">Відкрити нову версію</a>
+          <a class="btn secondary" href="color-changes.html">Сторінка з кольоровими правками</a>
+          <a class="btn secondary" href="review-highlights.html">Підсвітка на сторінці</a>
+          <a class="btn secondary" href="source-live.html">Копія “було”</a>
+        </div>
+      </div>
+      <aside class="score-card" aria-label="Підсумок змін">
+        <div class="score-row"><div><b>Візуальна ломка</b><span>Основний макет збережений</span></div><strong>мінімум</strong></div>
+        <div class="score-row"><div><b>SEO-релевантність</b><span>Додано місто, послуги, WFP, FAQ</span></div><strong>вище</strong></div>
+        <div class="score-row"><div><b>AI-ready</b><span>Стало більше відповідей і фактів</span></div><strong>6/10</strong></div>
+        <div class="score-row"><div><b>Ще треба</b><span>Фасади, вітрини, ціна, FAQ</span></div><strong>3 блоки</strong></div>
+      </aside>
+    </header>
+
+    <nav class="nav" aria-label="Навігація по карті змін">
+      <a href="#visual">Візуально було/стало</a>
+      <a href="#map">Карта правок</a>
+      <a href="#semantic">Семантика</a>
+      <a href="#ai">AI-ревью</a>
+      <a href="#next">Що доробити</a>
+    </nav>
+
+    <section id="visual">
+      <div class="section-head">
+        <div>
+          <span class="pill">Split-screen</span>
+          <h2>Візуально: сторінка не перебудована</h2>
+          <p>Тут можна прокрутити дві версії поруч. Ліворуч стара копія, праворуч мʼяко оновлений текст у тому самому макеті.</p>
+        </div>
+      </div>
+      <div class="frames">
+        <article class="frame-card">
+          <div class="frame-head"><b>Було</b><span>поточна копія до SEO-правки</span></div>
+          <iframe src="source-live.html" title="Стара версія сторінки"></iframe>
+        </article>
+        <article class="frame-card">
+          <div class="frame-head"><b>Стало</b><span>та сама візуальна структура, новий текст</span></div>
+          <iframe src="index.html" title="Нова text-only версія"></iframe>
+        </article>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="section-head">
+        <div>
+          <span class="pill">Що змінено</span>
+          <h2>Карта правок по блоках</h2>
+          <p>Нижче видно конкретні текстові заміни: що було слабким, що стало сильніше і який ефект це має.</p>
+        </div>
+      </div>
+      <div class="changes">
+        <article class="change-item">
+          <div class="change-top"><strong>Перший екран / H1</strong><span class="impact">локальна релевантність</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Миття вікон, вітрин, фасадів<br>Професійне миття, яке забезпечує прозорість та чистоту вікон у ваших приміщеннях.</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">Миття вікон, вітрин і фасадів у Хмельницькому<br>Професійно миємо вікна, вітрини, вивіски та фасадні скляні поверхні у Хмельницькому й області.</p></div>
+          </div>
+        </article>
+        <article class="change-item">
+          <div class="change-top"><strong>Блок цін</strong><span class="impact">краще співпадіння з інтентом</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Миття вікон, вітрин, вивісок</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">Ціни на миття вікон, вітрин, вивісок і фасадів</p></div>
+          </div>
+        </article>
+        <article class="change-item">
+          <div class="change-top"><strong>WFP-блок</strong><span class="impact">більше конкретики для Google та AI</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Миття фасадних вікон здійснюється системою WFP. Вона працює на основі використання чистої, деіонізованої води.</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">WFP-система використовує очищену деіонізовану воду та телескопічне обладнання. Це дозволяє мити фасадні вікна на висоті до 8 м без риштувань або автовишки.</p></div>
+          </div>
+        </article>
+        <article class="change-item">
+          <div class="change-top"><strong>Процес роботи</strong><span class="impact">знято частину сумнівів клієнта</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Ви телефонуєте, або залишаєте онлайн заявку. Ми Вас консультуємо та оформлюємо замовлення.</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">Ви телефонуєте або залишаєте онлайн-заявку. Ми уточнюємо площу, висоту, доступ і тип забруднення.</p></div>
+          </div>
+        </article>
+        <article class="change-item">
+          <div class="change-top"><strong>FAQ</strong><span class="impact">під запити та заперечення</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Більш загальні питання, які частково вели сторінку в тему прибирання, а не миття вікон.</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">Питання про післяремонтне миття, вітрини, ціну фасаду, розводи, присутність на обʼєкті та роботу по області.</p></div>
+          </div>
+        </article>
+        <article class="change-item">
+          <div class="change-top"><strong>SEO meta</strong><span class="impact">кращий сніпет</span></div>
+          <div class="compare">
+            <div class="before"><span class="label">Було</span><p class="quote">Title і description були менш точними по місту, фасадах, WFP та цінах.</p></div>
+            <div class="after"><span class="label">Стало</span><p class="quote">Миття вікон, вітрин і фасадів у Хмельницькому | SK SHINE<br>Ціни від 140 грн/м², після ремонту, WFP до 8 м, швидкий розрахунок.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="semantic">
+      <div class="section-head">
+        <div>
+          <span class="pill">SEO-ревью</span>
+          <h2>Що стало краще і де ще провал</h2>
+          <p>Це не “набити ключі”, а закрити реальні пошукові наміри: вікна, фасади, вітрини, WFP, ціни, післяремонтне миття.</p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Кластер</th><th>Стан після правки</th><th>Оцінка</th><th>Що додати</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>миття вікон Хмельницький</b></td><td>H1, офер, ціни, процес і FAQ стали точнішими.</td><td class="ok">Добре</td><td>Не розширювати зайво, щоб не перевантажити сторінку.</td></tr>
+          <tr><td><b>WFP система для миття вікон</b></td><td>Пояснили систему, висоту до 8 м, очищену воду, відсутність розводів.</td><td class="ok">Добре</td><td>Додати фото/підпис WFP, якщо є реальне фото роботи.</td></tr>
+          <tr><td><b>миття фасадів</b></td><td>Є згадки, але немає окремого блоку з поясненням.</td><td class="no">Провал</td><td>Додати блок “Миття фасадів у Хмельницькому”.</td></tr>
+          <tr><td><b>миття вітрин</b></td><td>Є в H1 і цінах, але слабко розкрито для магазинів/салонів/кафе.</td><td class="mid">Середньо</td><td>Додати блок “Миття вітрин, вивісок і вхідних груп”.</td></tr>
+          <tr><td><b>ціна миття вікон / фасаду</b></td><td>Ціни видно, але не пояснені фактори розрахунку.</td><td class="mid">Середньо</td><td>Додати “Від чого залежить точна ціна”.</td></tr>
+          <tr><td><b>післябудівельне миття</b></td><td>Стало більше згадок, але можна чіткіше описати плівку, клей, фарбу, пил.</td><td class="mid">Середньо</td><td>Посилити 1 абзацом у FAQ або в нижньому тексті.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ai">
+      <div class="section-head">
+        <div>
+          <span class="pill">AI-ревью</span>
+          <h2>Чого не вистачає для AI-видачі</h2>
+          <p>AI-системам потрібні короткі, структуровані відповіді: що це, для кого, скільки коштує, що входить, які обмеження.</p>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card good"><span class="tag added">Вже краще</span><h3>Більше фактів у першому екрані</h3><p>Тепер одразу видно місто, типи обʼєктів і перелік послуг, а не просто загальна обіцянка чистоти.</p></article>
+        <article class="card good"><span class="tag added">Вже краще</span><h3>WFP пояснено людською мовою</h3><p>Є що це за система, чому без розводів, чому підходить для великих скляних площ.</p></article>
+        <article class="card warn"><span class="tag missing">Ще треба</span><h3>Короткий блок-відповідь</h3><p>Додати 4-5 рядків “Коротко про послугу”, щоб AI міг швидко витягнути суть.</p></article>
+        <article class="card warn"><span class="tag missing">Ще треба</span><h3>Окремий блок про фасади</h3><p>Без нього сторінка називається про фасади, але не дає достатньо відповіді по фасадному інтенту.</p></article>
+        <article class="card warn"><span class="tag missing">Ще треба</span><h3>Фактори ціни</h3><p>Ціни є, але потрібно пояснити, чому фінальна сума може відрізнятися.</p></article>
+        <article class="card bad"><span class="tag missing">Ризик</span><h3>Мало локального trust-блоку</h3><p>Для локального SEO краще підняти ближче до послуги Google-відгуки, місто, телефон, месенджери і реальні фото.</p></article>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="section-head">
+        <div>
+          <span class="pill">Мінімальний наступний крок</span>
+          <h2>Що додати, щоб сторінка стала помітно сильнішою</h2>
+          <p>Я б не робив повний редизайн. Достатньо трьох текстових вставок у поточний макет.</p>
+        </div>
+      </div>
+      <div class="todo-list">
+        <article class="todo"><h3>Після цін</h3><p>Додати блок “Коротко про послугу”: хто ми, що миємо, місто, ціни від, WFP, як отримати розрахунок.</p></article>
+        <article class="todo"><h3>Після WFP</h3><p>Додати блоки “Миття фасадів” і “Миття вітрин”, щоб закрити запити, які зараз просідають.</p></article>
+        <article class="todo"><h3>Перед FAQ</h3><p>Додати “Від чого залежить ціна”, щоб зняти сумніви клієнта і дати Google/AI чіткі фактори вартості.</p></article>
+      </div>
+      <p class="note" style="margin-top:18px">Висновок: поточна text-only правка вже корисна, але її треба добити структурно. Найбільший SEO-резерв зараз не в дизайні, а в окремому розкритті фасадів, вітрин і факторів ціни.</p>
+    </section>
+
+    <p class="footer">Службова сторінка для внутрішнього перегляду. Не публікувати на сайті.</p>
+  </main>
+</body>
+</html>
