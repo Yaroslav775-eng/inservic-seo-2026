@@ -198,132 +198,139 @@ svg.e-font-icon-svg{width:1em;height:1em;max-width:1em;max-height:1em;overflow:h
 				.lg-thumb-item.active {
 					opacity: 1;
 				}</style><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /><style id="codex-color-change-style">
-  :root{
-    --codex-seo:#0f8a63;
-    --codex-ai:#2f68d8;
-    --codex-price:#c88413;
-    --codex-faq:#8a55cf;
-    --codex-cta:#d8632b;
+  .codex-simple-highlight{
+    background:linear-gradient(180deg, transparent 56%, rgba(255, 220, 102, .62) 56%)!important;
+    border-radius:.16em!important;
+    box-decoration-break:clone!important;
+    -webkit-box-decoration-break:clone!important;
+    padding:0 .04em!important;
+    color:inherit!important;
+    font:inherit!important;
+    font-size:inherit!important;
+    font-family:inherit!important;
+    font-weight:inherit!important;
+    letter-spacing:inherit!important;
+    line-height:inherit!important;
   }
-  .codex-owner-change{
-    --codex-accent:#0f8a63;
-    --codex-bg:rgba(15,138,99,.09);
-    position:relative!important;
-    border-radius:12px!important;
-    background:linear-gradient(90deg,var(--codex-bg),rgba(255,255,255,.28) 86%)!important;
-    box-shadow:inset 4px 0 0 var(--codex-accent)!important;
-    padding:.28em .55em .28em .75em!important;
-    margin:.14em 0!important;
-    transition:background .2s ease, box-shadow .2s ease!important;
+  .codex-simple-highlight.codex-added{
+    background:linear-gradient(180deg, transparent 54%, rgba(134, 239, 172, .48) 54%)!important;
   }
-  .codex-owner-change:hover{
-    background:linear-gradient(90deg,color-mix(in srgb,var(--codex-accent) 15%,transparent),rgba(255,255,255,.35) 88%)!important;
-    box-shadow:inset 4px 0 0 var(--codex-accent),0 8px 22px rgba(16,36,63,.08)!important;
-  }
-  .codex-owner-seo{--codex-accent:var(--codex-seo);--codex-bg:rgba(15,138,99,.10)}
-  .codex-owner-ai{--codex-accent:var(--codex-ai);--codex-bg:rgba(47,104,216,.10)}
-  .codex-owner-price{--codex-accent:var(--codex-price);--codex-bg:rgba(200,132,19,.13)}
-  .codex-owner-faq{--codex-accent:var(--codex-faq);--codex-bg:rgba(138,85,207,.11)}
-  .codex-owner-cta{--codex-accent:var(--codex-cta);--codex-bg:rgba(216,99,43,.11)}
-  .codex-owner-change[data-codex-badge="1"]::after{
-    content:attr(data-codex-label);
-    position:absolute!important;
-    right:10px!important;
-    top:-13px!important;
-    z-index:5!important;
-    padding:4px 9px!important;
-    border-radius:999px!important;
-    background:#fff!important;
-    border:1px solid color-mix(in srgb,var(--codex-accent) 38%,#d9e2ec)!important;
-    color:var(--codex-accent)!important;
-    font:800 10px/1.1 Arial,sans-serif!important;
-    letter-spacing:.04em!important;
-    text-transform:uppercase!important;
-    box-shadow:0 6px 18px rgba(16,36,63,.10)!important;
-    pointer-events:none!important;
-  }
-  .codex-owner-change li,
-  li.codex-owner-change{padding-left:1.05em!important}
-  h1.codex-owner-change,
-  h2.codex-owner-change,
-  h3.codex-owner-change,
-  .elementor-heading-title.codex-owner-change{
-    display:inline-block!important;
-    padding:.12em .45em .18em .62em!important;
-  }
-  .codex-owner-panel{
+  .codex-simple-note{
     position:fixed!important;
     right:18px!important;
     bottom:18px!important;
     z-index:2147483647!important;
-    width:min(380px,calc(100vw - 28px))!important;
-    padding:16px 17px!important;
-    border-radius:22px!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+    max-width:min(430px,calc(100vw - 28px))!important;
+    padding:10px 12px!important;
+    border-radius:999px!important;
     background:rgba(255,255,255,.94)!important;
     color:#10243f!important;
     border:1px solid rgba(16,36,63,.12)!important;
-    font-family:Arial,sans-serif!important;
-    font-size:13px!important;
-    line-height:1.45!important;
-    box-shadow:0 18px 55px rgba(16,36,63,.20)!important;
-    backdrop-filter:blur(14px)!important;
+    box-shadow:0 14px 40px rgba(16,36,63,.16)!important;
+    backdrop-filter:blur(12px)!important;
+    font:700 12px/1.35 Arial,sans-serif!important;
   }
-  .codex-owner-panel b{display:block!important;margin:0 22px 7px 0!important;color:#10243f!important;font-size:15px!important}
-  .codex-owner-panel p{margin:0!important;color:#53657d!important}
-  .codex-owner-legend{display:grid!important;grid-template-columns:1fr 1fr!important;gap:7px 10px!important;margin-top:12px!important}
-  .codex-owner-legend span{display:flex!important;align-items:center!important;gap:7px!important;color:#344762!important;font-size:12px!important;font-weight:700!important}
-  .codex-owner-dot{width:14px!important;height:14px!important;border-radius:5px!important;display:inline-block!important;flex:0 0 14px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65)!important}
-  .codex-owner-dot.seo{background:rgba(15,138,99,.75)!important}.codex-owner-dot.ai{background:rgba(47,104,216,.74)!important}.codex-owner-dot.price{background:rgba(200,132,19,.75)!important}.codex-owner-dot.faq{background:rgba(138,85,207,.72)!important}.codex-owner-dot.cta{background:rgba(216,99,43,.72)!important}
-  .codex-owner-panel a{display:inline-flex!important;margin-top:12px!important;margin-right:7px!important;padding:8px 11px!important;border-radius:999px!important;background:#10243f!important;color:#fff!important;text-decoration:none!important;font-weight:800!important;font-size:12px!important}
-  .codex-owner-panel a.secondary{background:#f1f5f9!important;color:#10243f!important}
-  .codex-owner-close{position:absolute!important;right:11px!important;top:9px!important;background:#f1f5f9!important;border:0!important;border-radius:999px!important;width:24px!important;height:24px!important;color:#53657d!important;font-size:17px!important;line-height:1!important;cursor:pointer!important}
+  .codex-simple-note i{
+    width:22px!important;
+    height:12px!important;
+    border-radius:999px!important;
+    background:linear-gradient(180deg, transparent 45%, rgba(255, 220, 102, .82) 45%)!important;
+    flex:0 0 auto!important;
+  }
+  .codex-simple-note a{
+    color:#0f6f5c!important;
+    text-decoration:none!important;
+    font-weight:800!important;
+    white-space:nowrap!important;
+  }
+  .codex-simple-close{
+    border:0!important;
+    background:#eef3f7!important;
+    color:#617083!important;
+    width:22px!important;
+    height:22px!important;
+    border-radius:999px!important;
+    cursor:pointer!important;
+    font-size:16px!important;
+    line-height:1!important;
+    flex:0 0 auto!important;
+  }
   @media(max-width:720px){
-    .codex-owner-panel{left:12px!important;right:12px!important;bottom:12px!important;width:auto!important}
-    .codex-owner-legend{grid-template-columns:1fr!important}
-    .codex-owner-change[data-codex-badge="1"]::after{position:static!important;display:inline-flex!important;margin:0 0 .35em .45em!important;vertical-align:middle!important}
+    .codex-simple-note{left:12px!important;right:12px!important;bottom:12px!important;max-width:none!important;border-radius:18px!important;align-items:flex-start!important}
   }
 </style>
 <script id="codex-color-change-script">
 (function(){
-  const changes = [
-    {type:'seo', label:'Пошук', terms:[
-      'Миття вікон, вітрин і фасадів у','Хмельницькому','Хмельницькому й області','вікна, вітрини, вивіски та фасадні скляні поверхні','квартирами, будинками, офісами, магазинами, салонами, кафе та комерційними об\'єктами','Ціни на миття вікон, вітрин, вивісок і фасадів','фасадних вікон','фасадні вікна','фасадне скло','скляні поверхні','вітрин і комерційних об\'єктів','магазинів, салонів, кафе та офісів','Хмельницькій області'
-    ]},
-    {type:'ai', label:'Конкретика', terms:[
-      'WFP-система використовує очищену деіонізовану воду та телескопічне обладнання','на висоті до 8 м без риштувань або автовишки','Після висихання на склі не залишаються розводи','якщо є безпечний доступ до зони робіт','Очищена вода допомагає прибрати пил і забруднення без розводів','без агресивної хімії','тип забруднення','доступ до скла','Перевіряємо результат','стану поверхні та типу забруднення'
-    ]},
-    {type:'price', label:'Розрахунок', terms:[
-      'Залиште номер телефону, і ми уточнимо площу, кількість вікон, висоту, доступ до скла та зорієнтуємо за вартістю','площу, висоту, доступ і тип забруднення','Погоджуємо вартість, дату та виїзд мобільної бригади','На сторінці вказані орієнтовні ціни','Остаточний розрахунок залежить від площі, висоти, доступу до скла та складності забруднення','Вартість залежить від площі, висоти, доступу до поверхні, типу забруднення, необхідності спеціального обладнання та додаткових робіт'
-    ]},
-    {type:'cta', label:'Заявка', terms:[
-      'Бажаєте дізнатись вартість миття вікон або забронювати дату?','Залиште заявку або напишіть нам у месенджер','підкажемо орієнтовну вартість до початку робіт','Ви приймаєте роботу та насолоджуєтесь чистим склом','Зв\'яжіться з нами телефоном, у Viber чи Telegram'
-    ]},
-    {type:'faq', label:'FAQ', terms:[
-      'Чи миєте ви вікна після ремонту?','Чи можна замовити тільки миття вітрини магазину?','Від чого залежить ціна миття фасаду?','Чи залишаються розводи після миття?','Чи потрібно бути на об\'єкті під час робіт?','Чи працюєте ви по Хмельницькій області?','Чи входить миття вікон у генеральне прибирання?','післябудівельне миття скла, рам, підвіконь і скляних поверхонь','залишки плівки, клею, фарби або сильні забруднення'
-    ]}
+  const changedPhrases = [
+    'Миття вікон, вітрин і фасадів у',
+    'Хмельницькому',
+    'Професійно миємо вікна, вітрини, вивіски та фасадні скляні поверхні у Хмельницькому й області.',
+    'Працюємо з квартирами, будинками, офісами, магазинами, салонами, кафе та комерційними об\'єктами.',
+    'Залиште номер телефону, і ми уточнимо площу, кількість вікон, висоту, доступ до скла та зорієнтуємо за вартістю.',
+    'Ціни на миття вікон, вітрин, вивісок і фасадів',
+    'Миття фасадних вікон системою WFP',
+    'WFP-система використовує очищену деіонізовану воду та телескопічне обладнання.',
+    'Це дозволяє мити фасадні вікна на висоті до 8 м без риштувань або автовишки.',
+    'Після висихання на склі не залишаються розводи, а робота проходить швидше для великих скляних площ.',
+    'Миємо фасадні вікна та скляні поверхні на висоті до 8 м без риштувань і автовишки, якщо є безпечний доступ до зони робіт.',
+    'Очищена вода допомагає прибрати пил і забруднення без розводів після висихання.',
+    'Метод підходить для регулярного миття фасадного скла, вітрин і великих скляних площ без агресивної хімії.',
+    'Для фасадів, вітрин і комерційних об\'єктів WFP часто дозволяє виконати роботу швидше, ніж традиційне миття вручну.',
+    'Що входить у миття вікон',
+    'Знімаємо або очищаємо москітні сітки за потреби.',
+    'Очищаємо підвіконня, зливи, рами та гумові прокладки.',
+    'Миємо скло з внутрішньої та зовнішньої сторони.',
+    'Перевіряємо результат, щоб на склі не залишалося помітних слідів і розводів.',
+    'Бажаєте дізнатись вартість миття вікон або забронювати дату?',
+    'Залиште заявку або напишіть нам у месенджер.',
+    'Ми уточнимо площу, кількість вікон, тип забруднення та підкажемо орієнтовну вартість до початку робіт.',
+    'Ви телефонуєте або залишаєте онлайн-заявку',
+    'Ми уточнюємо площу, висоту, доступ і тип забруднення',
+    'Погоджуємо вартість, дату та виїзд мобільної бригади',
+    'Ви приймаєте роботу та насолоджуєтесь чистим склом',
+    'Чи миєте ви вікна після ремонту?',
+    'Чи можна замовити тільки миття вітрини магазину?',
+    'Від чого залежить ціна миття фасаду?',
+    'Чи залишаються розводи після миття?',
+    'Чи потрібно бути на об\'єкті під час робіт?',
+    'Чи працюєте ви по Хмельницькій області?',
+    'Чи входить миття вікон у генеральне прибирання?'
   ];
-  const flat = [];
-  changes.forEach(group => group.terms.forEach(term => flat.push({term, type:group.type, label:group.label})));
-  flat.sort((a,b)=>b.term.length-a.term.length);
-  const typeRank = {seo:1, ai:2, price:3, cta:4, faq:5};
-  function findHit(text){
-    return flat.find(item => text.includes(item.term));
-  }
-  function pickBlock(node){
-    const parent = node.parentElement;
-    if(!parent) return null;
-    return parent.closest('h1,h2,h3,h4,p,li,.elementor-heading-title,.elementor-widget-text-editor .elementor-widget-container,.elementor-icon-list-text') || parent;
-  }
-  function markBlock(block, hit){
-    if(!block || block.closest('.codex-owner-panel')) return;
-    const current = block.dataset.codexType;
-    if(current && typeRank[current] >= typeRank[hit.type]) return;
-    block.dataset.codexType = hit.type;
-    block.dataset.codexLabel = hit.label;
-    block.classList.remove('codex-owner-seo','codex-owner-ai','codex-owner-price','codex-owner-faq','codex-owner-cta');
-    block.classList.add('codex-owner-change','codex-owner-' + hit.type);
-    const txt = (block.textContent || '').trim();
-    if(!block.matches('li,.elementor-icon-list-text') && txt.length > 42) block.dataset.codexBadge = '1';
+  const addedPhrases = [
+    'Ціни на миття вікон, вітрин, вивісок і фасадів',
+    'Що входить у миття вікон',
+    'Чи миєте ви вікна після ремонту?',
+    'Чи можна замовити тільки миття вітрини магазину?',
+    'Від чого залежить ціна миття фасаду?',
+    'Чи залишаються розводи після миття?',
+    'Чи потрібно бути на об\'єкті під час робіт?',
+    'Чи працюєте ви по Хмельницькій області?',
+    'Чи входить миття вікон у генеральне прибирання?'
+  ];
+  const phrases = Array.from(new Set(changedPhrases)).sort((a,b)=>b.length-a.length);
+  const addedSet = new Set(addedPhrases);
+  function escapeRegExp(str){return str.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function markTextNode(node){
+    const text = node.nodeValue;
+    const hits = phrases.filter(phrase => text.includes(phrase));
+    if(!hits.length) return;
+    const pattern = new RegExp('(' + hits.map(escapeRegExp).join('|') + ')','g');
+    const frag = document.createDocumentFragment();
+    let last = 0;
+    text.replace(pattern, function(match, _m, offset){
+      if(offset > last) frag.appendChild(document.createTextNode(text.slice(last, offset)));
+      const mark = document.createElement('mark');
+      mark.className = 'codex-simple-highlight' + (addedSet.has(match) ? ' codex-added' : '');
+      mark.textContent = match;
+      frag.appendChild(mark);
+      last = offset + match.length;
+      return match;
+    });
+    if(last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
   }
   function highlight(){
     document.querySelectorAll('body *').forEach(el => {
@@ -334,25 +341,20 @@ svg.e-font-icon-svg{width:1em;height:1em;max-width:1em;max-height:1em;overflow:h
       acceptNode(node){
         const parent = node.parentElement;
         if(!parent) return NodeFilter.FILTER_REJECT;
-        if(['SCRIPT','STYLE','NOSCRIPT','TEXTAREA','INPUT'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-        if(parent.closest('.codex-owner-panel')) return NodeFilter.FILTER_REJECT;
-        const text = node.nodeValue;
-        if(!text || !text.trim()) return NodeFilter.FILTER_REJECT;
-        return findHit(text) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        if(['SCRIPT','STYLE','NOSCRIPT','TEXTAREA','INPUT','MARK'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        if(parent.closest('.codex-simple-note')) return NodeFilter.FILTER_REJECT;
+        const text = node.nodeValue || '';
+        return phrases.some(phrase => text.includes(phrase)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     });
     const nodes=[];
     while(walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(node => markBlock(pickBlock(node), findHit(node.nodeValue)));
-    const panel = document.createElement('div');
-    panel.className = 'codex-owner-panel';
-    panel.innerHTML = '<button class="codex-owner-close" type="button" aria-label="Закрити">×</button><b>Версія для погодження</b><p>Мʼяко позначені місця, де текст посилено без зміни дизайну сторінки, цін і структури.</p><div class="codex-owner-legend"><span><i class="codex-owner-dot seo"></i>пошуковий фокус</span><span><i class="codex-owner-dot ai"></i>більше конкретики</span><span><i class="codex-owner-dot price"></i>ціна / розрахунок</span><span><i class="codex-owner-dot faq"></i>питання клієнтів</span><span><i class="codex-owner-dot cta"></i>заявка</span></div><a href="index.html">Чиста версія</a><a class="secondary" href="source-live.html">Було</a>';
-    panel.querySelector('.codex-owner-close').addEventListener('click',()=>panel.remove());
-    document.body.appendChild(panel);
-    document.querySelectorAll('body *').forEach(el => {
-      const txt = (el.textContent || '').trim();
-      if (txt.includes('Text-only SEO/AI prototype')) el.remove();
-    });
+    nodes.forEach(markTextNode);
+    const note = document.createElement('div');
+    note.className = 'codex-simple-note';
+    note.innerHTML = '<i></i><span>Підсвічено оновлені фрагменти тексту</span><a href="index.html">чиста версія</a><button class="codex-simple-close" type="button" aria-label="Закрити">×</button>';
+    note.querySelector('.codex-simple-close').addEventListener('click',()=>note.remove());
+    document.body.appendChild(note);
   }
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', highlight); else highlight();
 })();
@@ -466,7 +468,4 @@ Page Caching using Disk: Enhanced
 
 Served from: skshine.com.ua @ 2026-07-22 08:39:16 by W3 Total Cache
 -->
-
-
-
 
