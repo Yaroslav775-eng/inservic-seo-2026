@@ -258,6 +258,69 @@ svg.e-font-icon-svg{width:1em;height:1em;max-width:1em;max-height:1em;overflow:h
     line-height:1!important;
     flex:0 0 auto!important;
   }
+  .codex-approval-intro{
+    max-width:1120px!important;
+    margin:22px auto 18px!important;
+    padding:20px 22px!important;
+    border-radius:24px!important;
+    background:rgba(255,255,255,.96)!important;
+    color:#10243f!important;
+    border:1px solid rgba(16,36,63,.12)!important;
+    box-shadow:0 16px 45px rgba(16,36,63,.12)!important;
+    font-family:Arial,sans-serif!important;
+    line-height:1.5!important;
+  }
+  .codex-approval-intro *{box-sizing:border-box!important}
+  .codex-approval-kicker{
+    display:inline-flex!important;
+    margin-bottom:9px!important;
+    padding:6px 10px!important;
+    border-radius:999px!important;
+    background:#fff4cf!important;
+    color:#8a5f00!important;
+    border:1px solid rgba(216,156,33,.28)!important;
+    font:800 11px/1 Arial,sans-serif!important;
+    letter-spacing:.06em!important;
+    text-transform:uppercase!important;
+  }
+  .codex-approval-intro h2{
+    margin:0 0 8px!important;
+    color:#10243f!important;
+    font:800 24px/1.18 Arial,sans-serif!important;
+    letter-spacing:-.02em!important;
+  }
+  .codex-approval-intro p{
+    margin:0!important;
+    max-width:920px!important;
+    color:#52657d!important;
+    font:500 15px/1.55 Arial,sans-serif!important;
+  }
+  .codex-approval-grid{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:10px!important;
+    margin-top:14px!important;
+  }
+  .codex-approval-item{
+    padding:11px 12px!important;
+    border-radius:16px!important;
+    background:#f7fafc!important;
+    border:1px solid rgba(16,36,63,.08)!important;
+    color:#344762!important;
+    font:700 13px/1.4 Arial,sans-serif!important;
+  }
+  .codex-approval-item b{display:block!important;margin-bottom:3px!important;color:#10243f!important;font-weight:800!important}
+  .codex-approval-actions{display:flex!important;gap:9px!important;flex-wrap:wrap!important;margin-top:15px!important}
+  .codex-approval-actions a{
+    display:inline-flex!important;
+    padding:9px 12px!important;
+    border-radius:999px!important;
+    text-decoration:none!important;
+    font:800 12px/1 Arial,sans-serif!important;
+    background:#10243f!important;
+    color:#fff!important;
+  }
+  .codex-approval-actions a.secondary{background:#eef3f7!important;color:#10243f!important}
   @media(max-width:720px){
     .codex-simple-note{left:12px!important;right:12px!important;bottom:12px!important;max-width:none!important;border-radius:18px!important;align-items:flex-start!important}
   }
@@ -333,7 +396,10 @@ svg.e-font-icon-svg{width:1em;height:1em;max-width:1em;max-height:1em;overflow:h
     node.parentNode.replaceChild(frag, node);
   }
   function highlight(){
-    document.querySelectorAll('body *').forEach(el => {
+    const intro = document.createElement('section');
+    intro.className = 'codex-approval-intro';
+    intro.innerHTML = '<span class="codex-approval-kicker">Для погодження</span><h2>Версія для узгодження тексту та подачі сторінки</h2><p>Це не редизайн сайту і не фінальна публікація. Ми залишили поточний вигляд сторінки, ціни, фото, кнопки та основну структуру. Підсвіткою позначені місця, де текст запропоновано оновити, щоб сторінка була зрозумілішою для клієнтів, Google та AI-видачі.</p><div class="codex-approval-grid"><div class="codex-approval-item"><b>Що дивимось</b>Чи підходить зміст, формулювання та тон комунікації.</div><div class="codex-approval-item"><b>Що не змінюємо</b>Дизайн, ціни, фото, форму заявки та структуру сайту.</div><div class="codex-approval-item"><b>Після погодження</b>Перенесемо затверджені тексти на реальну сторінку.</div></div><div class="codex-approval-actions"><a href="index.html">Подивитись чисту версію</a><a class="secondary" href="source-live.html">Порівняти з поточною</a></div>';
+    document.body.insertBefore(intro, document.body.firstChild);    document.querySelectorAll('body *').forEach(el => {
       const txt = (el.textContent || '').trim();
       if (txt.includes('Text-only SEO/AI prototype')) el.remove();
     });
@@ -352,7 +418,7 @@ svg.e-font-icon-svg{width:1em;height:1em;max-width:1em;max-height:1em;overflow:h
     nodes.forEach(markTextNode);
     const note = document.createElement('div');
     note.className = 'codex-simple-note';
-    note.innerHTML = '<i></i><span>Підсвічено оновлені фрагменти тексту</span><a href="index.html">чиста версія</a><button class="codex-simple-close" type="button" aria-label="Закрити">×</button>';
+    note.innerHTML = '<i></i><span>Підсвічено фрагменти, запропоновані до оновлення</span><a href="index.html">чиста версія</a><button class="codex-simple-close" type="button" aria-label="Закрити">×</button>';
     note.querySelector('.codex-simple-close').addEventListener('click',()=>note.remove());
     document.body.appendChild(note);
   }
@@ -468,4 +534,5 @@ Page Caching using Disk: Enhanced
 
 Served from: skshine.com.ua @ 2026-07-22 08:39:16 by W3 Total Cache
 -->
+
 
