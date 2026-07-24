@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>План усиления существующей страницы зарядных станций — InService SEO</title>
+  <style>
+    :root{--bg:#f3f6fa;--card:#fff;--ink:#14243a;--muted:#5f7087;--line:#dbe6f2;--orange:#ff6422;--blue:#0f3766;--green:#157347;--red:#b42318;--amber:#9a6700}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif} .wrap{max-width:1180px;margin:0 auto;padding:34px 22px 60px} .top{background:#0d1b2d;color:#fff;padding:18px 0} .top .wrap{padding:0 22px}.kicker{color:#ff8a4b;text-transform:uppercase;letter-spacing:.08em;font:700 12px/1.3 Arial,sans-serif} h1{font:800 40px/1.08 Arial,sans-serif;margin:12px 0 16px} h2{font:800 26px/1.15 Arial,sans-serif;margin:0 0 14px} h3{font:800 18px/1.2 Arial,sans-serif;margin:0 0 8px}.lead{font-size:19px;color:#dce7f5;max-width:900px}.grid{display:grid;gap:18px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 14px 36px rgba(15,55,102,.06);margin-top:20px}.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffd3be;background:#fff7f2;color:#a13c10;border-radius:999px;padding:8px 12px;font:700 13px/1 Arial,sans-serif;margin:4px 6px 4px 0}.ok{color:var(--green);font-weight:800}.bad{color:var(--red);font-weight:800}.warn{color:var(--amber);font-weight:800}.muted{color:var(--muted)} table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line)} th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top} th{background:#eef5fc;font:800 13px/1.3 Arial,sans-serif;color:#183b63} tr:last-child td{border-bottom:0}.todo li{margin:8px 0}.source a,.links a{color:#0b63ce}.note{border-left:5px solid var(--orange);background:#fff8f3;padding:14px 16px;border-radius:14px}.decision{border:2px solid #ffd0ba;background:linear-gradient(135deg,#fff,#fff7f1);border-radius:22px;padding:22px;margin-top:20px}.small{font-size:14px}.tag{display:inline-block;background:#edf6ff;border:1px solid #c9ddf4;border-radius:10px;padding:5px 9px;margin:3px;font:700 12px/1 Arial,sans-serif;color:#16436f}@media(max-width:850px){.grid.two,.grid.three{grid-template-columns:1fr}h1{font-size:31px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="kicker">InService SEO / план без полной переделки</div>
+      <h1>Как усиливать текущую страницу “ремонт зарядных станций”, не ломая то, что уже работает</h1>
+      <p class="lead">Правильная задача здесь не “сверстать новую страницу вместо старой”, а доработать опубликованную страницу под реальные запросы, конкурентов и AI-выдачу: сохранить URL и накопленные сигналы, усилить слабые блоки, решить вопрос дубля.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="decision">
+      <h2>Ключевое решение</h2>
+      <p><strong>Основной URL пока оставляем:</strong> <a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/">https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsyj/</a></p>
+      <p><strong>Не создаем новую посадочную вместо нее.</strong> Прототип используется как ТЗ на усиление существующей страницы: какие блоки добавить, что переписать, какие мета-теги заменить, какие FAQ/schema внедрить.</p>
+      <p><strong>Отдельно решить дубль:</strong> <a href="https://inservic.com.ua/remont-portatyvnykh-zariadnykh-stantsij-servisnyj-tsentr-inservice-kharkiv-tsina/">страница с “servisnyj-tsentr / tsina”</a> уже индексируется и конкурирует по тому же интенту. Ее нельзя оставлять как вторую почти такую же страницу без canonical/301 или четкого другого назначения.</p>
+    </section>
+
+    <section class="card">
+      <h2>Что сейчас есть на сайте</h2>
+      <table>
+        <thead><tr><th>Страница</th><th>Статус</th><th>Title / Description / H1</th><th>Вывод</th></tr></thead>
+        <tbody>
+          <tr><td>UA основная</td><td class="ok">200 OK</td><td>Title: “Професійний ремонт мобільних зарядних станцій - InService”<br>Description длинный, общий, с “Підтримка 24/7”<br>H1: “Професійний ремонт мобільних зарядних станцій”</td><td>Есть история и показы, но страница выглядит как статья, а не коммерческая услуга. Нужно усиление, не замена.</td></tr>
+          <tr><td>UA дубль / ціна</td><td class="warn">200 OK</td><td>Title: “Ремонт портативних зарядних станцій - InService”<br>Description шаблонный<br>H1: “Ремонт портативних зарядних станцій”</td><td>Риск каннибализации. Надо решить: canonical/301 на основную или сделать узкую страницу “ціни”, если владелец подтвердит прайс.</td></tr>
+          <tr><td>RU версия</td><td class="ok">200 OK</td><td>URL: /ru/remont-2/<br>Title нормальный, description слабый<br>H1 без города</td><td>URL неудачный, но есть сигналы GSC. Не менять без 301.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>GSC: почему страницу нужно дожимать</h2>
+      <table>
+        <thead><tr><th>URL</th><th>Показы</th><th>Клики</th><th>CTR</th><th>Средняя позиция</th><th>Что это значит</th></tr></thead>
+        <tbody>
+          <tr><td>UA основная</td><td>6388</td><td>20</td><td class="bad">0.31%</td><td>23.05</td><td>Google уже показывает страницу, но сниппет и содержание не добирают клики и позиции.</td></tr>
+          <tr><td>RU версия</td><td>4585</td><td>28</td><td class="bad">0.61%</td><td>22.16</td><td>Есть спрос, но слабое описание и URL/контент не закрывают интент достаточно точно.</td></tr>
+          <tr><td>UA дубль</td><td>536</td><td>9</td><td>1.68%</td><td>12.24</td><td>Дубль может забирать часть релевантности. Решение по склейке важно.</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted">Данные взяты из локальной очереди проекта на основе выгрузки GSC.</p>
+    </section>
+
+    <section class="card">
+      <h2>Где проигрываем конкурентам и AI-выдаче</h2>
+      <div class="grid two">
+        <div>
+          <h3>Конкуренты сильнее в конкретике</h3>
+          <ul class="todo">
+            <li>Пишут конкретные бренды: EcoFlow, Bluetti, Jackery, Anker, Stark, Voltronic, Ugreen;</li>
+            <li>Раскрывают узлы: АКБ, BMS, інвертор, плата, зарядний порт, AC/DC-виходи;</li>
+            <li>Показывают сроки диагностики, гарантию, адрес, процесс ремонта;</li>
+            <li>Имеют страницы или блоки под бренды и типовые неисправности.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Что не хватает для AI-ответов</h3>
+          <ul class="todo">
+            <li>Короткого прямого ответа “що ремонтуємо / коли звертатись” в первом экране;</li>
+            <li>FAQ с конкретными ответами, пригодными для цитирования;</li>
+            <li>Структурированных данных FAQPage/Service/LocalBusiness;</li>
+            <li>Ясных сущностей: місто, адреса, бренди, вузли, умови діагностики, гарантія.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Что меняем на существующей странице</h2>
+      <table>
+        <thead><tr><th>Зона страницы</th><th>Что сделать</th><th>Зачем</th></tr></thead>
+        <tbody>
+          <tr><td>Title</td><td>Заменить на: <strong>Ремонт зарядних станцій у Харкові — EcoFlow, Bluetti, Jackery | InService</strong></td><td>Добавляет город, основной интент и бренды, повышает CTR.</td></tr>
+          <tr><td>Description</td><td>Сделать короче и технически точнее: ремонт АКБ, BMS, інвертора, плати, порту зарядки, помилок. Цена после диагностики.</td><td>Сниппет должен объяснять, почему кликнуть именно сюда.</td></tr>
+          <tr><td>H1</td><td><strong>Ремонт зарядних станцій у Харкові</strong></td><td>Текущий H1 слишком общий и без гео.</td></tr>
+          <tr><td>Первый экран</td><td>Оставить дизайн сайта, но добавить быстрые факты: бренды, диагностика, цена после проверки, адрес из контактного блока сайта.</td><td>Пользователь сразу понимает услугу, город и следующий шаг.</td></tr>
+          <tr><td>Существующий текст</td><td>Не удалять полностью. Переписать верхнюю часть и добавить коммерческие блоки перед длинным информационным текстом.</td><td>Сохраняем объем и историю, но убираем “статейность”.</td></tr>
+          <tr><td>Бренды</td><td>Добавить блок брендов на странице. Отдельные бренд-страницы не запускать сейчас без проверки спроса и плана.</td><td>Закрывает брендовый спрос, но не плодит тонкие страницы.</td></tr>
+          <tr><td>Цены</td><td>Писать только “від” или “після діагностики”. Конкретные суммы брать только из подтвержденного прайса владельца/сайта.</td><td>Не создаем отсебятину и юридические ожидания.</td></tr>
+          <tr><td>FAQ/schema</td><td>Добавить 6-8 вопросов и FAQPage schema.</td><td>Усиливает сниппеты и AI-ответы.</td></tr>
+          <tr><td>Перелинковка</td><td>Связать с генераторами, зарядными устройствами, электроблоком, контактами и RU/UA версией.</td><td>Улучшает навигацию и распределение веса.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Блоки, которые нужно добавить без ломки дизайна</h2>
+      <div class="grid three">
+        <div><span class="tag">1</span><h3>Hero-усиление</h3><p>H1, 2-3 предложения, CTA, телефон, быстрые факты. Не менять всю шапку сайта.</p></div>
+        <div><span class="tag">2</span><h3>Типовые проблемы</h3><p>Не заряджается, не включается, ошибка, нет 220V, быстро садится, перегрев, после воды.</p></div>
+        <div><span class="tag">3</span><h3>Диагностика узлов</h3><p>АКБ, BMS, інвертор, контролер, плата, порти, дисплей, охолодження.</p></div>
+        <div><span class="tag">4</span><h3>Бренды</h3><p>EcoFlow, Bluetti, Jackery, Anker, Stark, Voltronic, Ugreen, Choetech, інші.</p></div>
+        <div><span class="tag">5</span><h3>Цены от</h3><p>Только подтвержденные цены. Если нет прайса — “точна ціна після діагностики”.</p></div>
+        <div><span class="tag">6</span><h3>FAQ + schema</h3><p>Ответы на реальные возражения: сроки, гарантия, АКБ, после воды, бренды, запись.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Что нельзя делать</h2>
+      <ul class="todo">
+        <li><strong>Нельзя</strong> просто заменить текущую страницу новым отдельным HTML-дизайном без учета WordPress/WPBakery;</li>
+        <li><strong>Нельзя</strong> оптимизировать под Львов, Днепр, Одессу, если там нет подтвержденного присутствия;</li>
+        <li><strong>Нельзя</strong> плодить отдельные бренд-страницы сразу, пока не ясно, какие бренды дают спрос и есть ли под них достаточный контент;</li>
+        <li><strong>Нельзя</strong> обещать 24/7, выезд, гарантию или точные цены, если это не подтверждено владельцем;</li>
+        <li><strong>Нельзя</strong> держать две почти одинаковые UA-страницы без решения по canonical/301.</li>
+      </ul>
+    </section>
+
+    <section class="card links">
+      <h2>Рабочие ссылки</h2>
+      <p><a href="https://yaroslav775-eng.github.io/inservic-seo-2026/site/charging-stations/remont-portatyvnykh-zariadnykh-stantsij-kharkiv.html?rev=b4cbede">Существующий прототип усиленной UA-страницы</a></p>
+      <p><a href="https://yaroslav775-eng.github.io/inservic-seo-2026/site/charging-stations/ru-remont-portativnykh-zaryadnykh-stantsiy-kharkov.html?rev=b4cbede">Существующий прототип усиленной RU-страницы</a></p>
+      <p><a href="https://yaroslav775-eng.github.io/inservic-seo-2026/docs/handoff/charging-stations-handoff-2026-07-23.html?rev=b4cbede">Handoff по зарядным станциям</a></p>
+      <p><a href="https://yaroslav775-eng.github.io/inservic-seo-2026/docs/strategy/seo-review-charging-stations-2026-07-23.html?rev=b4cbede">SEO/AI review</a></p>
+    </section>
+
+    <section class="card source">
+      <h2>Источники для проверки выдачи</h2>
+      <p>Сравнивались текущие страницы InService и видимые конкуренты: Skeleton, Remkom Service, IT-TECH, IT World Kharkiv, PowerLabs, KomPom и другие страницы из выдачи.</p>
+    </section>
+  </main>
+</body>
+</html>
