@@ -314,7 +314,7 @@ document.title='Миття підлоги професійною техніко�
 let meta=document.querySelector('meta[name="description"]'); if(meta) meta.setAttribute('content','Машинне миття підлоги у Хмельницькому для офісів, магазинів, ТРЦ, кафе, складів, будинків і квартир. Підлогомийна машина, ціна від 30 грн/м².');
 let h1=findContains('h1','Миття підлоги професійною технікою'); if(h1) h1.innerHTML=mark('Миття підлоги професійною технікою у Хмельницькому');
 let hero=findContains('p, .elementor-widget-text-editor','Професійне миття підлоги технікою'); if(hero) hero.innerHTML=mark('Машинне миття підлоги підлогомийною машиною у Хмельницькому: для офісів, магазинів, кафе, ТРЦ, складів, під’їздів, будинків і квартир, коли потрібно швидко вимити велику площу без розводів, зайвої вологи та нерівномірного результату ручного миття.');
-let firstSection=h1?block(h1):null; if(firstSection) firstSection.insertAdjacentHTML('beforebegin',`<section class="sk-owner-note"><span class="sk-owner-note__label">Версія для погодження</span><h2>${mark('Що потрібно погодити на цій сторінці')}</h2><p>${mark('Це не редизайн і не публікація у WordPress. Візуальний шаблон, фото, ціни, кнопки та форма залишаються як на чинній сторінці. Підсвічені фрагменти показують, який текст пропонується додати або замінити, щоб сторінка краще пояснювала послугу миття підлоги професійною технікою.')}</p></section>`);
+let firstSection=h1?block(h1):null; if(firstSection) firstSection.insertAdjacentHTML('beforebegin',`<section class="sk-owner-note"><span class="sk-owner-note__label">Для погодження</span><h2>${mark('Текстові уточнення до сторінки')}</h2><p>${mark('Жовтим підсвічено фрагменти, які пропонується додати або уточнити. Дизайн сторінки, фото, кнопки, форма заявки та ціни залишаються без змін.')}</p></section>`);
 const priceAnchor=findContains('h2','Миття підлоги підлогомийною машиною');
 if(priceAnchor) insertBefore(priceAnchor,`<section class="sk-soft-section"><div class="sk-soft-panel"><h2>${mark('Коротко: що саме робить підлогомийна машина')}</h2><div class="sk-soft-grid"><div class="sk-soft-card"><strong>${mark('Миє і збирає воду')}</strong><span>${mark('Машина подає мийний розчин, очищує покриття щітками та одразу збирає брудну воду в окремий бак.')}</span></div><div class="sk-soft-card"><strong>${mark('Працює швидше на площах')}</strong><span>${mark('Підходить для об’єктів, де ручне миття займає багато часу: офіси, магазини, коридори, зали, склади, ТРЦ.')}</span></div><div class="sk-soft-card"><strong>${mark('Дає рівномірний результат')}</strong><span>${mark('Підлога миється однаково по всій площі, без “острівців” бруду, зайвих калюж і хаотичних слідів від швабри.')}</span></div><div class="sk-soft-card"><strong>${mark('Потребує оцінки покриття')}</strong><span>${mark('Перед роботою важливо уточнити тип підлоги, стан швів, плям, доступ до води та чи є делікатні або пошкоджені ділянки.')}</span></div></div></div></section>`);
 const benefitsAnchor=findContains('h2','Переваги використання підлогомийної машини');
@@ -336,5 +336,6 @@ Page Caching using Disk: Enhanced
 
 Served from: skshine.com.ua @ 2026-08-18 07:02:07 by W3 Total Cache
 -->
+
 
 
