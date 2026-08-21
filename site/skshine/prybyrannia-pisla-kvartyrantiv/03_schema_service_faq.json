@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Прибирання після квартирантів у Хмельницькому",
+  "serviceType": "CleaningService",
+  "areaServed": {
+    "@type": "City",
+    "name": "Хмельницький"
+  },
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "SK SHINE",
+    "telephone": "+380989634202",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Хмельницький",
+      "addressCountry": "UA"
+    }
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "UAH",
+    "lowPrice": "70",
+    "offerCount": "3"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Роботи після виїзду квартирантів",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Прибирання кухні після квартирантів"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Прибирання санвузла після квартирантів"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Прибирання кімнат і коридорів після квартирантів"
+        }
+      }
+    ]
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Скільки коштує прибирання після квартирантів?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На сторінці залишаються чинні ціни від 80 грн/м² для площі до 50 м², від 75 грн/м² для 50-100 м² і від 70 грн/м² для площі від 100 м². Остаточна сума залежить від стану квартири та додаткових робіт."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи входить миття вікон у вартість?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні, миття вікон рахується окремо. Якщо потрібно підготувати квартиру до показу або нового заселення, краще одразу повідомити менеджеру про кількість вікон."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи прибираєте запахи після проживання?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ми прибираємо джерела побутових запахів: бруд на кухні, у санвузлі, на поверхнях, підлозі та в доступних місцях. Якщо запах вʼївся у меблі, килими або текстиль, може знадобитися хімчистка."
+      }
+    }
+  ]
+}
