@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сравнительный SEO-чек-лист: ремонт бензиновых генераторов</title>
+  <style>
+    :root {
+      --ink: #132944;
+      --muted: #5d6f82;
+      --line: #d7e1eb;
+      --paper: #ffffff;
+      --canvas: #eef3f7;
+      --orange: #f56524;
+      --orange-soft: #fff1e9;
+      --good: #16734a;
+      --good-soft: #eaf7f0;
+      --mid: #9a6500;
+      --mid-soft: #fff7dc;
+      --bad: #b3332e;
+      --bad-soft: #fff0ef;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: linear-gradient(135deg, #f8fafc 0%, var(--canvas) 55%, #f7eee8 100%); font: 15px/1.55 "Segoe UI", sans-serif; }
+    a { color: #0f5b9e; }
+    .wrap { width: min(1500px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 46px 0 28px; }
+    .eyebrow { display: inline-flex; padding: 7px 12px; border: 1px solid #ffc6a8; border-radius: 999px; color: #b54412; background: var(--orange-soft); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 16px 0 10px; max-width: 900px; font: 800 clamp(32px, 5vw, 58px)/1.02 Georgia, serif; }
+    h2 { margin: 0 0 14px; font: 800 27px/1.15 Georgia, serif; }
+    p { margin: 0 0 12px; }
+    .lead { max-width: 930px; color: var(--muted); font-size: 18px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pill { padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); font-size: 13px; }
+    .summary { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+    .card { padding: 20px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.92); box-shadow: 0 14px 35px rgba(19,41,68,.06); }
+    .card strong { display: block; margin-bottom: 6px; font-size: 18px; }
+    .card.primary { border-color: #ffc3a4; background: linear-gradient(145deg, #fff 0%, var(--orange-soft) 100%); }
+    .metric { color: var(--muted); }
+    .table-shell { overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); box-shadow: 0 18px 45px rgba(19,41,68,.08); }
+    .scroll { overflow-x: auto; }
+    table { width: 100%; min-width: 1220px; border-collapse: collapse; }
+    th, td { padding: 14px 13px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th:last-child, td:last-child { border-right: 0; }
+    tr:last-child td { border-bottom: 0; }
+    thead th { position: sticky; top: 0; z-index: 1; background: #132944; color: white; font-size: 13px; }
+    tbody tr:hover td { background: #fbfdff; }
+    .criterion { width: 190px; font-weight: 800; }
+    .action { width: 270px; background: #fffaf6; }
+    .state { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 5px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .035em; }
+    .state::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+    .good { color: var(--good); }
+    .mid { color: var(--mid); }
+    .bad { color: var(--bad); }
+    .note { color: var(--muted); font-size: 13px; }
+    .priority-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 22px 0; }
+    .ai-audit { margin-top: 22px; padding: 26px; border: 1px solid #b9cad9; border-radius: 22px; background: linear-gradient(145deg, #10263f 0%, #183b5c 100%); color: #eef6fc; box-shadow: 0 18px 45px rgba(19,41,68,.12); }
+    .ai-audit h2 { color: white; }
+    .ai-audit .intro-note { max-width: 980px; color: #bdd0df; }
+    .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+    .ai-panel { padding: 18px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.06); }
+    .ai-panel strong { display: block; margin-bottom: 8px; color: #ffbd99; font-size: 17px; }
+    .ai-panel ul { margin-top: 0; }
+    .ai-actions { margin-top: 16px; padding: 18px; border-radius: 16px; background: white; color: var(--ink); }
+    .ai-actions strong { color: var(--orange); }
+    .priority { padding: 22px; border-radius: 20px; border: 1px solid var(--line); background: var(--paper); }
+    .priority b { display: inline-block; margin-bottom: 10px; padding: 4px 9px; border-radius: 8px; font-size: 12px; }
+    .p0 b { color: var(--bad); background: var(--bad-soft); }
+    .p1 b { color: var(--mid); background: var(--mid-soft); }
+    .p2 b { color: var(--good); background: var(--good-soft); }
+    ul { margin: 8px 0 0; padding-left: 20px; }
+    li { margin: 7px 0; }
+    .acceptance { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+    .check { display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px dashed var(--line); }
+    .box { flex: 0 0 19px; width: 19px; height: 19px; border: 2px solid #9bb0c3; border-radius: 5px; }
+    .sources { margin: 26px 0 50px; padding: 20px; border-radius: 20px; background: #132944; color: #dbe7f2; }
+    .sources a { color: #ffd0b7; }
+    .sources small { color: #9fb0c2; }
+    @media (max-width: 900px) {
+      .summary, .priority-grid, .acceptance, .ai-grid { grid-template-columns: 1fr; }
+      header { padding-top: 28px; }
+    }
+    @media print {
+      body { background: white; }
+      .wrap { width: 100%; }
+      .table-shell, .card { box-shadow: none; }
+      .scroll { overflow: visible; }
+      table { min-width: 0; font-size: 10px; }
+      th, td { padding: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <span class="eyebrow">InService / контроль качества</span>
+    <h1>Сравнительный чек-лист страницы ремонта бензиновых генераторов</h1>
+    <p class="lead">Сравнение показывает не «кто красивее», а какие элементы помогают странице отвечать на локальный коммерческий запрос, вызывать доверие и давать прямые ответы поиску и AI-системам.</p>
+    <div class="meta"><span class="pill">Регион: Харьков</span><span class="pill">Язык: украинский</span><span class="pill">Дата проверки: 24.08.2026</span><span class="pill">Целевая страница: существующий URL InService</span></div>
+  </header>
+
+  <main class="wrap">
+    <section class="summary">
+      <div class="card primary"><strong>Вывод по InService</strong><p class="metric">Структура уже сильнее большинства обычных сервисных страниц: хорошо раскрыты симптомы, узлы, диагностика, цены, процесс, FAQ и локальные контакты. Главный недостаток — мало реальных доказательств выполненных работ.</p></div>
+      <div class="card"><strong>Сильнее конкурентов</strong><p class="metric">Сценарии поломок, техническая конкретика, понятный путь клиента и подготовка к обращению.</p></div>
+      <div class="card"><strong>На уровне выдачи</strong><p class="metric">Локальность, цены «от», контакты, форма, FAQ и перелинковка по типам генераторов.</p></div>
+      <div class="card"><strong>Проигрываем</strong><p class="metric">Отзывы по генераторам, реальные кейсы и фото, подтвержденный список брендов, конкретные сроки.</p></div>
+    </section>
+
+    <section class="table-shell">
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Критерий</th><th>InService</th><th>Kabanchik</th><th>Power 4U</th><th>UNIX</th><th>Toolgrand</th><th>Что делаем в InService</th></tr></thead>
+          <tbody>
+            <tr><td class="criterion">Локальный интент</td><td><span class="state good">Сильный</span><div class="note">Харьков в H1, адрес, телефоны и локальный CTA.</div></td><td><span class="state good">Сильный</span><div class="note">Категория и мастера Харькова.</div></td><td><span class="state good">Сильный</span><div class="note">Харьков, адрес и контакты.</div></td><td><span class="state good">Сильный</span><div class="note">Харьков и два адреса.</div></td><td><span class="state good">Сильный</span><div class="note">Харьков и адрес компании.</div></td><td class="action">Оставить текущую локальную привязку. Не добавлять другие города.</td></tr>
+            <tr><td class="criterion">Первый экран</td><td><span class="state good">Сильный</span><div class="note">Услуга, цена диагностики, адрес, гарантия, звонок.</div></td><td><span class="state mid">Частично</span><div class="note">Главный акцент на выборе мастера.</div></td><td><span class="state mid">Частично</span><div class="note">Общий оффер без глубокой конкретики.</div></td><td><span class="state mid">Частично</span><div class="note">Текстовый оффер и гарантия.</div></td><td><span class="state mid">Частично</span><div class="note">Цена и краткое обещание.</div></td><td class="action">Ничего не расширять. Текущий экран закрывает основной вопрос пользователя.</td></tr>
+            <tr><td class="criterion">Симптомы поломок</td><td><span class="state good">Сильный</span><div class="note">Не заводится, нет напряжения, глохнет, дымит, шумит, нужен ТО.</div></td><td><span class="state good">Сильный</span><div class="note">Есть типовые неисправности и пояснения.</div></td><td><span class="state bad">Слабо</span><div class="note">Вопросы есть, часть ответов не заполнена.</div></td><td><span class="state mid">Частично</span><div class="note">Перечень неисправностей без удобной подачи.</div></td><td><span class="state bad">Нет</span><div class="note">Почти нет диагностического содержания.</div></td><td class="action">Блок уже конкурентный. Сохранить карточки и предупреждение об остановке генератора.</td></tr>
+            <tr><td class="criterion">Что именно ремонтируют</td><td><span class="state good">Сильный</span><div class="note">Двигатель, топливная система, запуск, AVR, альтернатор, электрика, ТО.</div></td><td><span class="state mid">Частично</span><div class="note">Услуги распределены по тексту и прайсу.</div></td><td><span class="state bad">Слабо</span><div class="note">Три общих направления.</div></td><td><span class="state mid">Частично</span><div class="note">Есть перечень неисправностей и инструментов.</div></td><td><span class="state bad">Слабо</span><div class="note">Общее обещание ремонта.</div></td><td class="action">Новый блок оставить. Он делает страницу понятной человеку и AI.</td></tr>
+            <tr><td class="criterion">Диагностика</td><td><span class="state good">Сильный</span><div class="note">Показано, какие системы проверяются и что сообщить мастеру.</div></td><td><span class="state mid">Частично</span><div class="note">Есть цена и общие причины.</div></td><td><span class="state mid">Частично</span><div class="note">Есть стоимость, но мало состава проверки.</div></td><td><span class="state mid">Частично</span><div class="note">Упомянута ремонтная база и оборудование.</div></td><td><span class="state bad">Слабо</span><div class="note">Диагностика почти не раскрыта.</div></td><td class="action">Оставить без дополнительного SEO-текста.</td></tr>
+            <tr><td class="criterion">Цены</td><td><span class="state good">Сильный</span><div class="note">Существующие цены «от» и объяснение формирования суммы.</div></td><td><span class="state good">Сильный</span><div class="note">Самый детальный прайс по операциям.</div></td><td><span class="state mid">Частично</span><div class="note">Указана в основном диагностика.</div></td><td><span class="state bad">Не видно</span><div class="note">Цена не является сильной частью страницы.</div></td><td><span class="state mid">Частично</span><div class="note">Одна стартовая цена.</div></td><td class="action">Текущий прайс оставить. Детализировать только после подтверждения новых цен.</td></tr>
+            <tr><td class="criterion">Сроки ремонта</td><td><span class="state good">Честно объяснено</span><div class="note">Ориентир сообщается после диагностики с учетом сложности и запчастей.</div></td><td><span class="state good">Есть</span><div class="note">Указан ориентир от одного до нескольких дней.</div></td><td><span class="state good">Есть</span><div class="note">От двух часов до недели.</div></td><td><span class="state mid">Обещание</span><div class="note">Заявлена скорость без точного диапазона.</div></td><td><span class="state mid">Обещание</span><div class="note">«В кратчайшие сроки» без конкретики.</div></td><td class="action">Не обещать фиксированный срок до диагностики. Сохранять формулировку о зависимости от сложности и наличия запчастей.</td></tr>
+            <tr><td class="criterion">Гарантия</td><td><span class="state good">Подтверждена</span><div class="note">От 1 до 12 месяцев на действующей странице.</div></td><td><span class="state mid">Другая модель</span><div class="note">Компенсация платформы, а не гарантия одного сервиса.</div></td><td><span class="state good">Есть</span><div class="note">От трех месяцев на ремонтировавшийся узел.</div></td><td><span class="state mid">Есть</span><div class="note">Заявлена гарантия без видимого срока.</div></td><td><span class="state good">Есть</span><div class="note">Указаны два месяца.</div></td><td class="action">Оставить диапазон, но при внедрении точно описать, от чего зависит срок.</td></tr>
+            <tr><td class="criterion">Бренды и модели</td><td><span class="state good">Сильный</span><div class="note">Показаны 12 распространенных брендов, а прием конкретной модели подтверждается по шильдику и запчастям.</div></td><td><span class="state mid">Широкий охват</span><div class="note">Разные мастера принимают разные модели.</div></td><td><span class="state bad">Не раскрыто</span><div class="note">Списка брендов нет.</div></td><td><span class="state good">Сильный</span><div class="note">Перечислены популярные производители.</div></td><td><span class="state good">Сильный</span><div class="note">Есть бренды и ограничение до 8 кВт.</div></td><td class="action">Перед публикацией владелец подтверждает список. Ссылки на отдельные брендовые страницы пока не создавать.</td></tr>
+            <tr><td class="criterion">Процесс ремонта</td><td><span class="state good">Сильный</span><div class="note">Обращение, диагностика, согласование, ремонт и тест.</div></td><td><span class="state mid">Иной процесс</span><div class="note">Создание заказа и выбор мастера.</div></td><td><span class="state bad">Слабо</span><div class="note">Нет ясной последовательности.</div></td><td><span class="state bad">Слабо</span><div class="note">Процесс не является отдельным блоком.</div></td><td><span class="state bad">Нет</span><div class="note">Процесс практически не раскрыт.</div></td><td class="action">Оставить текущие четыре этапа.</td></tr>
+            <tr><td class="criterion">FAQ и AI-ответы</td><td><span class="state good">Сильный</span><div class="note">Прямые ответы и FAQPage schema.</div></td><td><span class="state good">Сильный</span><div class="note">Цена, сроки и выбор исполнителя.</div></td><td><span class="state mid">Частично</span><div class="note">FAQ есть, но встречается незаполненный текст.</div></td><td><span class="state bad">Слабо</span><div class="note">Нет полноценного FAQ.</div></td><td><span class="state bad">Нет</span><div class="note">Вопросы не раскрыты.</div></td><td class="action">Добавить один вопрос о брендах и один о гарантии; видимый FAQ и schema должны совпадать.</td></tr>
+            <tr><td class="criterion">Отзывы и кейсы</td><td><span class="state bad">Нет релевантных</span><div class="note">На старой странице отзывы о планшете и кондиционере — использовать нельзя.</div></td><td><span class="state good">Очень сильный</span><div class="note">Много свежих отзывов и конкретных заказов.</div></td><td><span class="state mid">Частично</span><div class="note">Есть блок «мы за работой», но мало доказательной конкретики.</div></td><td><span class="state bad">Слабо</span><div class="note">На странице нет сильного блока кейсов.</div></td><td><span class="state bad">Нет</span><div class="note">Нет кейсов и релевантных отзывов.</div></td><td class="action">Главный резерв роста доверия: добавить 2 реальных ремонта с моделью, симптомом и результатом.</td></tr>
+            <tr><td class="criterion">Фото мастерской и работ</td><td><span class="state bad">Недостаточно</span><div class="note">Есть тематическое изображение, но не доказательство работы.</div></td><td><span class="state mid">Фото профилей</span><div class="note">Доверие строится через мастеров и рейтинг.</div></td><td><span class="state good">Есть</span><div class="note">Показывается работа сервиса.</div></td><td><span class="state mid">Частично</span><div class="note">Сервис заявлен, но доказательств немного.</div></td><td><span class="state mid">Товарное фото</span><div class="note">Не полноценный кейс ремонта.</div></td><td class="action">Добавить 2–4 настоящих фото без постановочной AI-графики.</td></tr>
+            <tr><td class="criterion">Внутренняя перелинковка</td><td><span class="state good">Сильный</span><div class="note">Хаб, дизельные и инверторные генераторы.</div></td><td><span class="state good">Сильный</span><div class="note">Большая сеть связанных категорий.</div></td><td><span class="state bad">Слабо</span><div class="note">Небольшое число внутренних направлений.</div></td><td><span class="state mid">Частично</span><div class="note">Есть структура сервисного центра.</div></td><td><span class="state bad">Нерелевантно</span><div class="note">Много ссылок на магазинное оборудование.</div></td><td class="action">Текущую перелинковку сохранить, не добавлять нерелевантные услуги.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ai-audit">
+      <span class="eyebrow">Google AI Mode / снимок ответа</span>
+      <h2>Как AI сейчас понимает InService</h2>
+      <p class="intro-note">Ответ AI уже связывает InService с ремонтом генераторов, зарядных станций и техники в Харькове. Одновременно он смешивает несколько организаций и показывает противоречивые локальные данные. Для локального SEO это важнее, чем добавление еще одного абзаца текста.</p>
+      <div class="ai-grid">
+        <div class="ai-panel"><strong>Что Google распознал правильно</strong><ul><li>Название InService и официальный домен;</li><li>основные телефоны сервиса;</li><li>ремонт генераторов и зарядных станций;</li><li>наличие нескольких направлений и адресов;</li><li>точку на улице Деревянко, 58.</li></ul></div>
+        <div class="ai-panel"><strong>Где AI путается</strong><ul><li>Смешивает сервис техники с одноименным автосервисом;</li><li>показывает адрес на проспекте Науки, которого нет в актуальном списке на сайте;</li><li>использует варианты «Чабана, 92в» и «92м» вместо единого адреса;</li><li>указывает для генераторов 10:00–16:00 вместо графика страницы 10:00–18:00;</li><li>привязывает общий профиль на Деревянко к категории подрядчика зарядных станций.</li></ul></div>
+        <div class="ai-panel"><strong>Чего AI не хватает</strong><ul><li>Отдельной однозначной сущности мастерской генераторов;</li><li>стабильного названия каждой точки;</li><li>единого адреса и графика во всех источниках;</li><li>страницы с маршрутом и картой именно для генераторов;</li><li>реальных отзывов и фото по ремонту генераторов.</li></ul></div>
+      </div>
+      <div class="ai-actions"><strong>Приоритетное действие:</strong> привести к одному формату название, адрес и график мастерской генераторов на странице услуги, странице контактов, в подвале, LocalBusiness-разметке и Google Business Profile. Для направления использовать понятное название «InService — ремонт генераторів у Харкові», адрес «вул. Олександра Чабана, 92, ГК “Ювілейний-2”, гараж 869» и один подтвержденный график. Старый или ошибочный адрес на проспекте Науки нужно найти в источниках и исправить либо удалить.</div>
+    </section>
+
+    <section class="priority-grid">
+      <div class="priority p0"><b>P0 / до публикации</b><h2>Исправить обязательно</h2><ul><li>Сохранить существующий URL и текущие цены;</li><li>Проверить условия гарантии 1–12 месяцев;</li><li>Синхронизировать FAQ и schema;</li><li>Не переносить старые нерелевантные отзывы.</li></ul></div>
+      <div class="priority p1"><b>P1 / усиление доверия</b><h2>Получить у владельца</h2><ul><li>Подтверждение списка обслуживаемых брендов;</li><li>Минимальную и максимальную мощность;</li><li>Условия гарантии для разных видов работ;</li><li>Два кейса и несколько фотографий.</li></ul></div>
+      <div class="priority p2"><b>P2 / после публикации</b><h2>Проверить результат</h2><ul><li>Индексацию обновленной страницы;</li><li>Запросы и позиции в Search Console;</li><li>CTR по локальному кластеру;</li><li>Звонки и отправки формы.</li></ul></div>
+    </section>
+
+    <section class="acceptance">
+      <div class="card"><h2>Чек-лист владельца</h2><div class="check"><span class="box"></span><span>Подтверждены бренды и диапазон мощности.</span></div><div class="check"><span class="box"></span><span>Подтвержден порядок согласования ориентировочного срока после диагностики.</span></div><div class="check"><span class="box"></span><span>Подтверждены условия гарантии.</span></div><div class="check"><span class="box"></span><span>Переданы реальные фото и два примера работ.</span></div></div>
+      <div class="card"><h2>Чек-лист разработчика</h2><div class="check"><span class="box"></span><span>Обновлен существующий URL без создания дубля.</span></div><div class="check"><span class="box"></span><span>Title, description, H1 и canonical установлены.</span></div><div class="check"><span class="box"></span><span>Форма и телефонные ссылки работают.</span></div><div class="check"><span class="box"></span><span>FAQ-разметка совпадает с видимым содержанием.</span></div></div>
+    </section>
+
+    <section class="sources">
+      <h2>Страницы для сравнения</h2>
+      <p><a href="../../site/generators/remont-benzynovykh-generatoriv-kharkiv-delta-prototype.html">Прототип InService</a> · <a href="https://inservic.com.ua/service/tekhnchne-obslugovuvannya-ta-remont-benzinovikh-generatoriv/">действующая страница InService</a> · <a href="https://kabanchik.ua/ua/kharkiv/category/remont-benzynovykh-heneratoriv">Kabanchik</a> · <a href="https://encom.com.ua/">Power 4U</a> · <a href="https://unix.kh.ua/servisnyj-centr-unix/remont-benzinovyh-generatorov/">UNIX</a> · <a href="https://toolgrand.com.ua/ua/p45961888-remont-obsluzhivanie-generatorov.html">Toolgrand</a></p>
+      <small>Чек-лист оценивает видимую структуру страниц, а не фактическое качество ремонта или внутренние показатели компаний.</small>
+    </section>
+  </main>
+</body>
+</html>
