@@ -314,7 +314,6 @@ document.title='Додаткові послуги до прибирання у �
 let meta=document.querySelector('meta[name="description"]'); if(meta) meta.setAttribute('content','Додаткові послуги до прибирання у Хмельницькому: миття духовки, холодильника, витяжки, шаф, посуду, батарей, люстр, прання, прасування, шви плитки.');
 let h1=findContains('h1','Додаткові послуги до прибирання'); if(h1) h1.innerHTML=mark('Додаткові послуги до прибирання у Хмельницькому');
 let hero=findContains('p, .elementor-widget-text-editor','Додаткові послуги це ваша економія'); if(hero) hero.innerHTML=mark('Додаткові послуги можна замовити разом з основним прибиранням або окремо: миття техніки, шаф, посуду, батарей, люстр, натяжної стелі, прання, прасування та чистка швів плитки. Це зручно, коли потрібна не вся генеральна послуга, а конкретна додаткова робота.');
-let firstSection=h1?block(h1):null; if(firstSection) firstSection.insertAdjacentHTML('beforebegin',`<section class="sk-owner-note"><span class="sk-owner-note__label">Для погодження</span><h2>${mark('Текстові уточнення до сторінки')}</h2><p>${mark('Жовтим підсвічено фрагменти, які пропонується додати або уточнити. Дизайн сторінки, фото, кнопки, форма заявки та ціни залишаються без змін.')}</p></section>`);
 const priceAnchor=findContains('h2','Додаткові послуги');
 if(priceAnchor) insertBefore(priceAnchor,`<section class="sk-soft-section"><div class="sk-soft-panel"><h2>${mark('Коротко: що можна дозамовити')}</h2><div class="sk-soft-grid"><div class="sk-soft-card"><strong>${mark('Кухонна техніка')}</strong><span>${mark('Духова шафа, мікрохвильова піч, витяжка, гриль, чайник, мультиварка, посудомийка.')}</span></div><div class="sk-soft-card"><strong>${mark('Холодильник і шафи')}</strong><span>${mark('Холодильник або морозильна камера, кухонні шафи, складання речей у шафах.')}</span></div><div class="sk-soft-card"><strong>${mark('Побутові дрібниці')}</strong><span>${mark('Миття посуду, прання, прасування, пральна машина, батареї, люстри.')}</span></div><div class="sk-soft-card"><strong>${mark('Складні поверхні')}</strong><span>${mark('Натяжна стеля, шви плитки, окремі зони з жиром, нальотом або забрудненням.')}</span></div></div><p class="sk-soft-note">${mark('Ця сторінка працює як зручний прайс і довідник: клієнт бачить, що можна додати до прибирання, а менеджер уточнює стан, обсяг і фінальну вартість перед виїздом.')}</p></div></section>`);
 const workAnchor=findContains('h2','Наша робота');
@@ -335,4 +334,5 @@ Page Caching using Disk: Enhanced
 
 Served from: skshine.com.ua @ 2026-08-20 07:02:18 by W3 Total Cache
 -->
+
 
